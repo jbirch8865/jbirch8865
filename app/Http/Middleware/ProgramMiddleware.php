@@ -16,21 +16,21 @@ class ProgramMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!$request->headers->has('Authorization'))
+        if(!$request->headers->has('Authorization-Token'))
         {
             return response()->json([
-                'message' => 'The Authorization header with client_id is required.'
-            ],400);
+                'message' => 'The Authorization-Token header is required.'
+            ],422);
         }
         $program = new \API\Program();
         try
         {
-            $program->Load_Program_By_Client_ID($request->header('Authorization'));
+            $program->Load_Program_By_Client_ID($request->header('Authorization-Token'));
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
             return response()->json([
-                'message' => 'The client id is not valid.'
-            ],400);
+                'message' => 'The Authorization-Token is not valid.'
+            ],422);
         }
         return $next($request);
     }

@@ -13,7 +13,15 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/', function () {
-    return 'hello world';
+Route::prefix('v1/{company_identifier}')->group(function(){
+    Route::resource('signin', 'SigninController',['only' => ['store','destroy']]);
 });
+
+
+
+
+Route::get('{any}', function ($any = null) {
+    return response()->json([
+        'message' => 'Not a valid endpoint'
+    ],404);
+})->where('any', '.*');
