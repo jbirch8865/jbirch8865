@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+/**
+ * @group Authentication
+ * Requesting an End User Access Token for authenticating future requests
+ */
 class SigninController extends Controller
 {
-
+    /**
+     * @bodyParam user_name string required
+     * @bodyParam plain_text_password string required
+     * @responseFile responses/signin.json
+     * 
+     */
     public function store(Request $request,int $company_id)
     {
         $toolbelt = new \Test_Tools\toolbelt;
@@ -50,10 +59,5 @@ class SigninController extends Controller
             'session_token' => $session->Get_Access_Token(),
             'expires' => $session->Get_Experation()
         ],201);
-    }
-
-    public function destroy(Request $request)
-    {
-        //
     }
 }
