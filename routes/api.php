@@ -14,7 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::prefix('v1/{company}')->group(function(){
-    Route::resource('signin', 'SigninController',['only' => ['store']]);
+    Route::resource('signin', 'SigninController',[
+        'only' => ['store'],
+        'names' => ['store' => 'User_Signin']
+    ]);
+    Route::resource('Users', 'UsersController',[
+        'only' => ['index'],
+        'names' => ['index' => 'List_Users']
+        ]);
 });
 
 

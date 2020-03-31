@@ -152,7 +152,7 @@ return [
                      * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
                      * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
                      */
-                    'methods' => ['GET'],
+                    'methods' => ['GET','POST'],
 
                     /*
                      * Laravel config variables which should be set for the API call.
@@ -204,16 +204,19 @@ return [
         ],
         'headers' => [
             \Mpociot\ApiDoc\Extracting\Strategies\RequestHeaders\GetFromRouteRules::class,
+            Add_Client_ID_Header::class,
+            Add_Secret_ID_Header::class
         ],
         'bodyParameters' => [
             \Mpociot\ApiDoc\Extracting\Strategies\BodyParameters\GetFromBodyParamTag::class,
+            Add_Post_Data::class
         ],
         'responses' => [
             \Mpociot\ApiDoc\Extracting\Strategies\Responses\UseTransformerTags::class,
             \Mpociot\ApiDoc\Extracting\Strategies\Responses\UseResponseTag::class,
             \Mpociot\ApiDoc\Extracting\Strategies\Responses\UseResponseFileTag::class,
             \Mpociot\ApiDoc\Extracting\Strategies\Responses\UseApiResourceTags::class,
-            \Mpociot\ApiDoc\Extracting\Strategies\Responses\ResponseCalls::class,
+            \Mpociot\ApiDoc\Extracting\Strategies\Responses\ResponseCalls::class
         ],
     ],
 

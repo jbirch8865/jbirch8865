@@ -10,9 +10,6 @@ use Illuminate\Http\Request;
 class SigninController extends Controller
 {
     /**
-     * @bodyParam user_name string required
-     * @bodyParam plain_text_password string required
-     * @responseFile responses/signin.json
      * 
      */
     public function store(Request $request,int $company_id)
@@ -24,16 +21,12 @@ class SigninController extends Controller
         ]);
         if(!$request->headers->has('Secret-Token'))
         {
-            return response()->json([
-                'message' => 'The Secret header with secret Secret-Token is required.'
-            ],422);
+            return Response_422(['message' => 'The Secret header with secret Secret-Token is required.'],$request);
         }
         if(strlen($request->header('Authorization-Token')) > $toolbelt->Programs->Get_Column('client_id')->Get_Data_Length() ||
         strlen($request->header('Secret-Token')) > $toolbelt->Programs->Get_Column('secret')->Get_Data_Length())
-        {
-            return response()->json([
-                'message' => 'Authorization-Token or Secret-Token is malformed'
-            ],422);
+        {            
+            return Response_422(['message' => 'Authorization-Token or Secret-Token is malformed.'],$request);
         }
         try
         {
@@ -41,23 +34,17 @@ class SigninController extends Controller
             $session->Create_New_Session($request->header('Authorization-Token'),$request->header('Secret-Token'),$company_id,$request->input('user_name'),$request->input('plain_text_password')); 
         } catch (\Authentication\Incorrect_Password $e)
         {
-            return response()->json([
-                'message' => 'credentials incorrect'
-            ],401);
+            return Response_401(['message' => 'credentials incorrect.'],$request);
         } catch (\Authentication\User_Does_Not_Exist $e)
         {
-            return response()->json([
-                'message' => 'credentials incorrect'
-            ],401);
+            return Response_401(['message' => 'credentials incorrect.'],$request);
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
-            return response()->json([
-                'message' => 'The Authorization-Token or Secret-Token is not valid.'
-            ],400);
+            return Response_400(['message' => 'The Authorization-Token or Secret-Token is not valid.'],$request);
         }
-        return response()->json([
+        return Response_201([
             'session_token' => $session->Get_Access_Token(),
             'expires' => $session->Get_Experation()
-        ],201);
+        ],$request);
     }
 }

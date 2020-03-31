@@ -18,9 +18,7 @@ class ProgramMiddleware
     {
         if(!$request->headers->has('Authorization-Token'))
         {
-            return response()->json([
-                'message' => 'The Authorization-Token header is required.'
-            ],422);
+            return Response_422(array('message' => 'The Authorization-Token header is required.'),$request);
         }
         $program = new \API\Program();
         try
@@ -28,9 +26,15 @@ class ProgramMiddleware
             $program->Load_Program_By_Client_ID($request->header('Authorization-Token'));
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
-            return response()->json([
-                'message' => 'The Authorization-Token is not valid.'
-            ],422);
+            return Response_422(array('message' => 'The Authorization-Token is not valid.'),$request);
+        }
+        $company = new \Company\Company;
+        try
+        {
+            $company->Load_Company_By_ID($request->route('company'));
+        } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+        {
+            return Response_422(array('message' => 'The Company '.$request->route('company').' does not exist.'),$request);
         }
         return $next($request);
     }

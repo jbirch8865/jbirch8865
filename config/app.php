@@ -1,5 +1,6 @@
 <?php
 
+$toolbelt = new \Test_Tools\toolbelt;
 return [
 
     /*
@@ -13,7 +14,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', $toolbelt->cConfigs->Get_Name_Of_Project()),
 
     /*
     |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', $toolbelt->cConfigs->Get_Environment()),
 
     /*
     |--------------------------------------------------------------------------
