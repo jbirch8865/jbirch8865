@@ -22,8 +22,8 @@ Welcome to the generated API reference.
 #Authentication
 
 Requesting an End User Access Token for authenticating future requests
-<!-- START_2cb38f1f812a602469c22d7858e3f5a2 -->
-## api/v1/{company}/signin
+<!-- START_3cb60164618dd6dfd435f39ac4ef6402 -->
+## api/v1/{company_id}/signin
 > Example request:
 
 ```bash
@@ -33,7 +33,7 @@ curl -X POST \
     -H "Accept: application/json" \
     -H "Authorization-Token: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z" \
     -H "Secret-Token: AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i" \
-    -d '{"user_name":"project2","plain_text_password":"FlgFFgl&nl@hhg@hg&"}'
+    -d '{"username":"project2","plain_text_password":"FlgFFgl&nl@hhg@hg&"}'
 
 ```
 
@@ -50,7 +50,7 @@ let headers = {
 };
 
 let body = {
-    "user_name": "project2",
+    "username": "project2",
     "plain_text_password": "FlgFFgl&nl@hhg@hg&"
 }
 
@@ -68,36 +68,43 @@ fetch(url, {
 
 ```json
 {
-    "session_token": "Jr0TC0BzG9$4j?CtkUfywWb.2FWEj?M21XN==216Ui8Zn",
+    "session_token": "6H0pMCbinT.9nV48T$gQ6I0pbA+cjLa=T+fl=8=HQ=M87",
     "expires": {
-        "date": "2020-03-31 16:32:44.000000",
+        "date": "2020-03-31 23:32:22.000000",
         "timezone_type": 3,
         "timezone": "UTC"
+    },
+    "user": {
+        "id": "1",
+        "username": "project2",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": "1"
     }
 }
 ```
 
 ### HTTP Request
-`POST api/v1/{company}/signin`
+`POST api/v1/{company_id}/signin`
 
 #### URL Parameters
 
 Parameter | Status | Description
 --------- | ------- | ------- | -------
-    `company_id` |  required  | The ID of the organization
+    `company` |  required  | The ID of the organization
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `user_name` | string |  required  | 
+    `username` | string |  required  | 
         `plain_text_password` | string |  required  | 
     
-<!-- END_2cb38f1f812a602469c22d7858e3f5a2 -->
+<!-- END_3cb60164618dd6dfd435f39ac4ef6402 -->
 
 #Company
 
 Basic CRUD operations for Companies, Company Configs and Users
-<!-- START_184e047bad4015900de0f043d91a1177 -->
-## api/v1/{company}/Users
+<!-- START_81fc4121563abd0a0a65cb26f4a0a066 -->
+## api/v1/{company_id}/Users
 > Example request:
 
 ```bash
@@ -134,29 +141,36 @@ fetch(url, {
 ```
 
 
-> Example response (422):
+> Example response (200):
 
 ```json
 {
-    "message": "The Secret header with secret Secret-Token is required."
+    "message": {
+        "Users": [
+            {
+                "username": "project2",
+                "active_status": true
+            }
+        ]
+    }
 }
 ```
 
 ### HTTP Request
-`GET api/v1/{company}/Users`
+`GET api/v1/{company_id}/Users`
 
 #### URL Parameters
 
 Parameter | Status | Description
 --------- | ------- | ------- | -------
-    `company_id` |  required  | The ID of the organization
+    `company` |  required  | The ID of the organization
 #### Query Parameters
 
 Parameter | Status | Description
 --------- | ------- | ------- | -----------
     `only_active` |  optional  | if set will only return active users
 
-<!-- END_184e047bad4015900de0f043d91a1177 -->
+<!-- END_81fc4121563abd0a0a65cb26f4a0a066 -->
 
 #Tools
 

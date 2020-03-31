@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::prefix('v1/{company}')->group(function(){
+Route::prefix('v1/{company_id}')->group(function(){
     Route::resource('signin', 'SigninController',[
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']

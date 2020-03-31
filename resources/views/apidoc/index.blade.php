@@ -49,8 +49,8 @@
 <!-- END_INFO -->
 <h1>Authentication</h1>
 <p>Requesting an End User Access Token for authenticating future requests</p>
-<!-- START_2cb38f1f812a602469c22d7858e3f5a2 -->
-<h2>api/v1/{company}/signin</h2>
+<!-- START_3cb60164618dd6dfd435f39ac4ef6402 -->
+<h2>api/v1/{company_id}/signin</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -60,7 +60,7 @@
     -H "Accept: application/json" \
     -H "Authorization-Token: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z" \
     -H "Secret-Token: AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i" \
-    -d '{"user_name":"project2","plain_text_password":"FlgFFgl&amp;nl@hhg@hg&amp;"}'
+    -d '{"username":"project2","plain_text_password":"FlgFFgl&amp;nl@hhg@hg&amp;"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/signin"
@@ -74,7 +74,7 @@ let headers = {
 };
 
 let body = {
-    "user_name": "project2",
+    "username": "project2",
     "plain_text_password": "FlgFFgl&amp;nl@hhg@hg&amp;"
 }
 
@@ -89,15 +89,22 @@ fetch(url, {
 <p>Example response (201):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "session_token": "Jr0TC0BzG9$4j?CtkUfywWb.2FWEj?M21XN==216Ui8Zn",
+    "session_token": "6H0pMCbinT.9nV48T$gQ6I0pbA+cjLa=T+fl=8=HQ=M87",
     "expires": {
-        "date": "2020-03-31 16:32:44.000000",
+        "date": "2020-03-31 23:32:22.000000",
         "timezone_type": 3,
         "timezone": "UTC"
+    },
+    "user": {
+        "id": "1",
+        "username": "project2",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": "1"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/{company}/signin</code></p>
+<p><code>POST api/v1/{company_id}/signin</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -109,7 +116,7 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>company_id</code></td>
+<td><code>company</code></td>
 <td>required</td>
 <td>The ID of the organization</td>
 </tr>
@@ -127,7 +134,7 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>user_name</code></td>
+<td><code>username</code></td>
 <td>string</td>
 <td>required</td>
 </tr>
@@ -138,11 +145,11 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_2cb38f1f812a602469c22d7858e3f5a2 -->
+<!-- END_3cb60164618dd6dfd435f39ac4ef6402 -->
 <h1>Company</h1>
 <p>Basic CRUD operations for Companies, Company Configs and Users</p>
-<!-- START_184e047bad4015900de0f043d91a1177 -->
-<h2>api/v1/{company}/Users</h2>
+<!-- START_81fc4121563abd0a0a65cb26f4a0a066 -->
+<h2>api/v1/{company_id}/Users</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
@@ -174,13 +181,20 @@ fetch(url, {
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <blockquote>
-<p>Example response (422):</p>
+<p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "The Secret header with secret Secret-Token is required."
+    "message": {
+        "Users": [
+            {
+                "username": "project2",
+                "active_status": true
+            }
+        ]
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/{company}/Users</code></p>
+<p><code>GET api/v1/{company_id}/Users</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -192,7 +206,7 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>company_id</code></td>
+<td><code>company</code></td>
 <td>required</td>
 <td>The ID of the organization</td>
 </tr>
@@ -215,7 +229,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_184e047bad4015900de0f043d91a1177 -->
+<!-- END_81fc4121563abd0a0a65cb26f4a0a066 -->
 <h1>Tools</h1>
 <!-- START_cd4a874127cd23508641c63b640ee838 -->
 <h2>doc.json</h2>

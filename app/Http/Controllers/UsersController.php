@@ -26,19 +26,20 @@ class UsersController extends Controller
         $count = 0;
         While($row = $toolbelt->Users->Get_Queried_Data())
         {
-            $Users[$count]['user_name'] = $row['username'];
-            $Users[$count++]['active'] = (bool) $row['active_status'];
+            $Users[$count]['username'] = $row['username'];
+            $Users[$count++]['active_status'] = (bool) $row['active_status'];
         }
-        return response()->json([
-            'message' => $Users
-        ],200);
+        return Response_200([
+            'message' => array('Users' => $Users)
+        ],$request);
     }
     /**
-     * @bodyParam user_name string required
+     * @bodyParam username string required
      * @bodyParam plain_text_password string required
      */
     public function store(Request $request,int $company_id)
     {
+        /*
         $toolbelt = new \Test_Tools\toolbelt;
         $request->validate([
             'user_name' => ['required','max:'.$toolbelt->Users->Get_Column('username')->Get_Data_Length()],
@@ -50,6 +51,7 @@ class UsersController extends Controller
                 'message' => 'The Secret header with secret Secret-Token is required.'
             ],422);
         }
+        */
     }
 
     /**

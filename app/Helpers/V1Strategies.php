@@ -10,11 +10,11 @@ class AddOrganizationIdUrlParameter extends Strategy
        {
            
             return [
-                'company_id' => [
+                'company' => [
                     'type' => 'integer',
                     'description' => 'The ID of the organization', 
                     'required' => true, 
-                    'value' => 2,
+                    'value' => 1,
                 ]
             ];
        }
@@ -53,7 +53,7 @@ class Add_Post_Data extends Strategy
         {
             $toolbelt = new \Test_Tools\toolbelt;
             return [
-            'user_name' => [
+            'username' => [
                 'type' => 'string',
                 'description' => '', 
                 'required' => true, 

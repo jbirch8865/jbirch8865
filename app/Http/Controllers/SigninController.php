@@ -16,7 +16,7 @@ class SigninController extends Controller
     {
         $toolbelt = new \Test_Tools\toolbelt;
         $request->validate([
-            'user_name' => ['required','max:'.$toolbelt->Users->Get_Column('username')->Get_Data_Length()],
+            'username' => ['required','max:'.$toolbelt->Users->Get_Column('username')->Get_Data_Length()],
             'plain_text_password' => ['required','max:'.$toolbelt->Users->Get_Column('verified_hashed_password')->Get_Data_Length()],
         ]);
         if(!$request->headers->has('Secret-Token'))
@@ -31,20 +31,22 @@ class SigninController extends Controller
         try
         {
             $session = new \API\Program_Session;
-            $session->Create_New_Session($request->header('Authorization-Token'),$request->header('Secret-Token'),$company_id,$request->input('user_name'),$request->input('plain_text_password')); 
+            $session->Create_New_Session($request->header('Authorization-Token'),$company_id,$request->input('username'),$request->input('plain_text_password')); 
         } catch (\Authentication\Incorrect_Password $e)
         {
             return Response_401(['message' => 'credentials incorrect.'],$request);
         } catch (\Authentication\User_Does_Not_Exist $e)
         {
             return Response_401(['message' => 'credentials incorrect.'],$request);
-        } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+        } catch (\Active_Record\Object_Is_Currently_Inactive $e)
         {
-            return Response_400(['message' => 'The Authorization-Token or Secret-Token is not valid.'],$request);
+            return Response_401(['message' => 'The user is currently inactive.'],$request);
         }
+        $user = new \User($request->input('username'),$request->input('plain_text_password'),$company_id,false);
         return Response_201([
             'session_token' => $session->Get_Access_Token(),
-            'expires' => $session->Get_Experation()
+            'expires' => $session->Get_Experation(),
+            'user' => $user->Get_Response_Collection()
         ],$request);
     }
 }

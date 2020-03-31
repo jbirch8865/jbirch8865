@@ -31,10 +31,10 @@ class ProgramMiddleware
         $company = new \Company\Company;
         try
         {
-            $company->Load_Company_By_ID($request->route('company'));
+            $company->Load_Company_By_ID($request->route('company_id'));
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
-            return Response_422(array('message' => 'The Company '.$request->route('company').' does not exist.'),$request);
+            return Response_422(array('message' => 'The Company '.$request->route('company_id').' does not exist.'),$request);
         }
         return $next($request);
     }
