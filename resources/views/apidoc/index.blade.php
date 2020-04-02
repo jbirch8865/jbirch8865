@@ -45,7 +45,7 @@
       <div class="content">
           <!-- START_INFO -->
 <h1>Info</h1>
-<p>Welcome to the generated API reference.</p>
+<p>Welcome to the JRTS Solutions platform.  Please contact jbirch88655@gmail.com to get a client id and secret token to make requests</p>
 <!-- END_INFO -->
 <h1>Authentication</h1>
 <p>Requesting an End User Access Token for authenticating future requests</p>
