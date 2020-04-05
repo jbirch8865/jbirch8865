@@ -1,5 +1,5 @@
 <?php declare(strict_types=1);
-
+namespace app\Helpers;
 use Active_Record\Active_Record;
 class Route extends Active_Record
 {
@@ -33,6 +33,14 @@ class Route extends Active_Record
     {
         $this->Load_From_Varchar('name',$route_name);
     }
+    /**
+     * @throws Update_Failed if not all required values set and update_immediately is true
+     */
+    public function Set_Implicit_Allow(bool $implicit_allow = false,bool $update_immediately = false) : void
+    {
+        $this->Set_Int('implicit_allow',(int) $implicit_allow,$update_immediately);
+    }
+
 }
 
 ?>

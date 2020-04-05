@@ -7,6 +7,7 @@ use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Facade;
 use app\Facades\Program;
+use app\Facades\Company;
 class ProgramMiddleware
 {
     /**
@@ -29,13 +30,12 @@ class ProgramMiddleware
         {
             return Response_422(array('message' => 'The Authorization-Token is not valid.'),$request);
         }
-        $company = new \Company\Company;
         try
         {
-            $company->Load_Company_By_ID($request->route('company_id'));
+            Company::class;
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
-            return Response_422(array('message' => 'The Company '.$request->route('company_id').' does not exist.'),$request);
+            return Response_422(array('message' => 'The Company '.$this->app->request->route('company_id').' does not exist.'),$request);
         }
         return $next($request);
     }

@@ -1,4 +1,6 @@
 <?php
+namespace app\Helpers;
+
 class User extends \Authentication\User
 {
     function __construct(string $unverified_username,string $unverified_password,int $company_id,bool $create_user = false,bool $only_if_active = true)

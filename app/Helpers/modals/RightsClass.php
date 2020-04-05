@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+namespace app\Helpers;
 
 use Active_Record\Active_Record;
 class Rights extends Active_Record

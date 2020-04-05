@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use app\Facades\Program_Session;
 use Closure;
 
 class UserMiddleware
@@ -15,17 +15,16 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!strpos($request->route()->currentRouteName(),'ATR'))
+        if(!strpos($request->route()->getName(),'ATNR'))
         {
             if(!$request->headers->has('User-Access-Token'))
             {
                 return Response_422(['message' => 'The User-Access-Token header is required.'],$request);
             }
-            $program_session = new \API\Program_Session();
             try
             {
-                $program_session->Load_Session_By_Access_Token($request->header('User-Access-Token'));
-                if($program_session->Is_Expired())
+                Program_Session::Load_Session_By_Access_Token($request->header('User-Access-Token'));
+                if(Program_Session::Is_Expired())
                 {
                     return Response_422(['message' => 'The User-Access-Token has expired.','links' => [
                         'href' => route('Signin_User'),
@@ -36,7 +35,6 @@ class UserMiddleware
             {
                 return Response_422(['message' => 'The User-Access-Token is not valid.'],$request);
             }
-            
         }
         return $next($request);
     }

@@ -3,6 +3,7 @@ global $toolbelt_base;
 $toolbelt_base->Routes = new \DatabaseLink\Table('Routes',$toolbelt_base->dblink);
 routes_Validate_ID_Column($toolbelt_base->Routes);
 routes_Validate_Route_Column($toolbelt_base->Routes);
+routes_Validate_Implicit_Allow($toolbelt_base->Routes);
 $toolbelt_base->Routes->Load_Columns();
 function routes_Validate_ID_Column(\DatabaseLink\Table $routes)
 {
@@ -51,6 +52,42 @@ function routes_Validate_Route_Column(\DatabaseLink\Table $routes)
         {
             $column->Set_Data_Type("varchar(200)");
         }
+        if($column->Get_Default_Value() != '')
+        {
+            $column->Set_Default_Value('');
+        }
+        if($column->Is_Column_Nullable())
+        {
+            $column->Column_Is_Not_Nullable();
+        }
+        if($column->Does_Auto_Increment())
+        {
+            $column->Column_Does_Not_Auto_Increments();
+        }
+        $column->Update_Column();
+    }else
+    {
+        $column = new \DatabaseLink\Column('name',$routes,array(
+            'COLUMN_TYPE' => 'varchar(250)',
+            'COLUMN_DEFAULT' => '',
+            'is_nullable' => false,
+            'column_key' => "UNI",
+            'EXTRA' => "")
+        );
+    }
+}
+function routes_Validate_Implicit_Allow(\DatabaseLink\Table $routes)
+{
+    if($column = $routes->Get_Column('implicit_allow'))
+    {
+        if($column->Get_Column_Key() != "")
+        {
+            $column->Set_Column_Key(""); 
+        }
+        if($column->Get_Data_Type() != "int(1)")
+        {
+            $column->Set_Data_Type("int(1)");
+        }
         if($column->Get_Default_Value() != '0')
         {
             $column->Set_Default_Value('0');
@@ -66,11 +103,11 @@ function routes_Validate_Route_Column(\DatabaseLink\Table $routes)
         $column->Update_Column();
     }else
     {
-        $column = new \DatabaseLink\Column('name',$routes,array(
+        $column = new \DatabaseLink\Column('implicit_allow',$routes,array(
             'COLUMN_TYPE' => 'varchar(250)',
             'COLUMN_DEFAULT' => '0',
             'is_nullable' => false,
-            'column_key' => "UNI",
+            'column_key' => "",
             'EXTRA' => "")
         );
     }

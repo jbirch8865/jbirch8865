@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+namespace app\Helpers;
 
 use Active_Record\Active_Record;
 class Route_Role extends Active_Record
@@ -39,9 +40,6 @@ class Route_Role extends Active_Record
     {
         $this->Set_Int('route_id',$route_id,$update_immediately);
     }
-
-
-
     /**
      * @throws Active_Record_Object_Failed_To_Load — — if role id doesn't exist
      */
@@ -84,7 +82,6 @@ class Route_Role extends Active_Record
     {
         $this->Set_Int('right_id',$right_id,$update_immediately);
     }   
-
 
 }
 
