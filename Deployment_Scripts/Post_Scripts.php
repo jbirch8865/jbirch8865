@@ -9,16 +9,21 @@ function Create_Configs()
     $config->Create_Or_Update_Config('company_time_zone','UTC');
     */
 }
+function Add_Column_Constraint(\DatabaseLink\Column $from_column,\DatabaseLink\Column $to_column):void
+{
+    $from_column->Add_Constraint_If_Does_Not_Exist($to_column);
+}
+
 function Add_All_Constraints()
 {
     global $toolbelt_base;
-    $from_to_columns = [
-        [['Routes_Have_Roles'=>'route_id'],['Routes'=>'id']],
-        [['Routes_Have_Roles'=>'role_id'],['Roles'=>'id']],
-        [['Routes_Have_Roles'=>'right_id'],['Rights'=>'id']],
+    $columns = [
+        [['Routes_Have_Roles','route_id'],['Routes','id']],
+        [['Routes_Have_Roles','role_id'],['Company_Roles','id']],
+        [['Routes_Have_Roles','right_id'],['Rights','id']],
     ];
 
-    ForEach($from_to_columns as $index => $value)
+    ForEach($columns as $index => $value)
     {
         $from_column_name = $value[0][1];
         $from_table_name = $value[0][0];

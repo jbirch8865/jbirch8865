@@ -4,7 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Facade\FlareClient\Http\Response;
-use \Illuminate\Http\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Facade;
+use app\Facades\Program;
 class ProgramMiddleware
 {
     /**
@@ -15,15 +17,14 @@ class ProgramMiddleware
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
+    {            
         if(!$request->headers->has('Authorization-Token'))
         {
             return Response_422(array('message' => 'The Authorization-Token header is required.'),$request);
         }
-        $program = new \API\Program();
         try
         {
-            $program->Load_Program_By_Client_ID($request->header('Authorization-Token'));
+            Program::Load_Program_By_Client_ID($request->header('Authorization-Token'));
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
             return Response_422(array('message' => 'The Authorization-Token is not valid.'),$request);

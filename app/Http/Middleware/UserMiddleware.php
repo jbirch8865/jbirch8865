@@ -34,8 +34,9 @@ class UserMiddleware
                 }
             } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
             {
-
+                return Response_422(['message' => 'The User-Access-Token is not valid.'],$request);
             }
+            
         }
         return $next($request);
     }
