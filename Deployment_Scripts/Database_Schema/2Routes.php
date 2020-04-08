@@ -104,7 +104,7 @@ function routes_Validate_Implicit_Allow(\DatabaseLink\Table $routes)
     }else
     {
         $column = new \DatabaseLink\Column('implicit_allow',$routes,array(
-            'COLUMN_TYPE' => 'varchar(250)',
+            'COLUMN_TYPE' => 'int(1)',
             'COLUMN_DEFAULT' => '0',
             'is_nullable' => false,
             'column_key' => "",

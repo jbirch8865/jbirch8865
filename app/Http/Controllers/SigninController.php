@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Facades\Program_Session;
 use app\Facades\Programs;
 use app\Facades\Users;
 use Illuminate\Http\Request;
@@ -24,14 +23,15 @@ class SigninController extends Controller
         {
             return Response_422(['message' => 'The Secret header with secret Secret-Token is required.'],$request);
         }
-        if(strlen($request->header('Authorization-Token')) > Programs::Get_Column('client_id')->Get_Data_Length() ||
-        strlen($request->header('Secret-Token')) > Programs::Get_Column('secret')->Get_Data_Length())
+        if(strlen($request->header('Secret-Token')) > Programs::Get_Column('secret')->Get_Data_Length())
         {            
-            return Response_422(['message' => 'Authorization-Token or Secret-Token is malformed.'],$request);
+            return Response_422(['message' => 'Secret-Token is malformed.'],$request);
         }
         try
         {
-            Program_Session::Create_New_Session($request->header('Authorization-Token'),$company_id,$request->input('username'),$request->input('plain_text_password')); 
+            /**I don't want to bind actually getting the user access token, the bound Program_Session service is expecting the user access token  */
+            $program_sesson = new \API\Program_Session;
+            $program_sesson->Create_New_Session($request->header('Authorization-Token'),app()->make('Company'),$request->input('username'),$request->input('plain_text_password')); 
         } catch (\Authentication\Incorrect_Password $e)
         {
             return Response_401(['message' => 'credentials incorrect.'],$request);
@@ -43,9 +43,7 @@ class SigninController extends Controller
             return Response_401(['message' => 'The user is currently inactive.'],$request);
         }
         return Response_201([
-            'session_token' => Program_Session::Get_Access_Token(),
-            'expires' => Program_Session::Get_Experation(),
-            'user' => Program_Session::Get_Username()
+            'Program_Session' => $program_sesson->Get_Response_Collection(2)
         ],$request);
     }
 }

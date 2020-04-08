@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use app\Facades\Program_Session;
+use app\Facades\Programs;
 use Illuminate\Support\ServiceProvider;
 
 class HelperServiceProvider extends ServiceProvider
@@ -21,37 +23,76 @@ class HelperServiceProvider extends ServiceProvider
                 require_once $file;
             }
         }
-        \ADODB_Active_Record::TableKeyHasMany('Routes_Have_Roles','route_id','Routes','id','\app\Helpers\Route');
+
     }
     public function boot()
     {
-        app()->singleton('Program',function(){
-            return new \API\Program();
-        });
-        app()->singleton('Program_Session',function(){
-            $session = new \API\Program_Session;
-            return $session;
-        });
-        app()->singleton('Route',function(){
-            $request = app(\Illuminate\Http\Request::class);
-            $route = new \app\Helpers\Route;
-            $route->Load_From_Route_Name($request->route()->getName());
-            return $route;
-        });
-        app()->singleton('Company',function(){
-            $request = app(\Illuminate\Http\Request::class);
+        app()->singleton('Company',function($app){
             $company = new \Company\Company;
-            $company->Load_Company_By_ID($request->route('company_id'));
-        });
-        app()->bind('Company_Config',function(){
-            $company_config = new \Company\Company_Config;
-            return $company_config;   
-        });
-        
-        app()->bind('Company_Role',function(){
-            $company_role = new \Company\Company_Role;
-            return $company_role;   
+            try 
+            {
+                $company->Load_Company_By_ID($app->request->route('company_id'));
+                return $company;
+            } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+            {
+                return Response_401(array('message' => 'The Company '.$app->request->route('company_id').' does not exist.'),$app->request);
+            }
         });
 
+
+
+        app()->singleton('Program',function($app){
+            $program = new \API\Program();
+            if(!$app->request->headers->has('Authorization-Token'))
+            {
+                return Response_422(array('message' => 'The Authorization-Token header is required.'),$app->request);
+            }
+            if(strlen($app->request->header('Authorization-Token')) > Programs::Get_Column('client_id')->Get_Data_Length())
+            {
+                return Response_422(['message' => 'Authorization-Token is malformed.'],$app->request);
+            }        
+            try
+            {
+                $program->Load_Program_By_Client_ID($app->request->header('Authorization-Token'));
+            } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+            {
+                return Response_401(array('message' => 'The Authorization-Token is not valid.'),$app->request);
+            }
+            return $program;
+        });
+
+
+
+        app()->singleton('Program_Session',function($app){
+            $session = new \API\Program_Session;
+            if(!$app->request->headers->has('User-Access-Token'))
+            {
+                return Response_422(['message' => 'The User-Access-Token header is required.'],$app->request);
+            }
+            try
+            {
+                $session->Load_Session_By_Access_Token($app->request->header('User-Access-Token'));
+                if($session->Is_Expired())
+                {
+                    return Response_422(['message' => 'The User-Access-Token has expired.','links' => [
+                        'href' => route('User_Signin',['company_id' => $app->request->route('company_id')]),
+                        'type' => 'POST'
+                    ]],$app->request);
+                }
+            } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+            {
+                return Response_422(['message' => 'The User-Access-Token is not valid.'],$app->request);
+            }
+            return $session;
+            
+        });
+
+
+
+        app()->singleton('Route', function(){
+            $route = new \app\Helpers\Route;
+            $route->Load_From_Route_Name(Route::currentRouteName());
+            return $route;
+        });
     }
 }

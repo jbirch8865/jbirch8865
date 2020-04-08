@@ -7,15 +7,20 @@ class Route extends Active_Record
 
     function __construct()
     {
+        $toolbelt = new \toolbelt;
         parent::__construct();
+        $toolbelt->active_record_relationship_manager->Load_Table_Has_Many_If_Empty($this->table_dblink,$toolbelt->Routes_Have_Roles,$toolbelt->Routes_Have_Roles->Get_Column('route_id'),'\app\Helpers\Route_Role');
     }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
     public function Get_Name() : string
     {
         return $this->Get_Value_From_Name('name');
     }
     public function Set_Name(string $route_name) : void
     {
-        $this->Set_Varchar('name',$route_name,false);
+        $this->Set_Varchar($this->table_dblink->Get_Column('name'),$route_name,false);
     }
     /**
      * @throws Object_Is_Already_Loaded
@@ -38,7 +43,15 @@ class Route extends Active_Record
      */
     public function Set_Implicit_Allow(bool $implicit_allow = false,bool $update_immediately = false) : void
     {
-        $this->Set_Int('implicit_allow',(int) $implicit_allow,$update_immediately);
+        $this->Set_Int($this->table_dblink->Get_Column('implicit_allow'),(int) $implicit_allow,$update_immediately);
+    }
+
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    public function Am_I_Implicitly_Allowed() : bool
+    {
+        return (bool) $this->Get_Value_From_Name('implicit_allow');
     }
 
 }

@@ -2,53 +2,63 @@
 namespace app\Helpers;
 
 use Active_Record\Active_Record;
-class Rights extends Active_Record
+class Right extends Active_Record
 {
     public $_table = "Rights";
 
     function __construct()
     {
+        $toolbelt = new \toolbelt;
         parent::__construct();
+        $toolbelt->active_record_relationship_manager->Load_Table_Belongs_To_If_Empty($this->table_dblink,$this->table_dblink->Get_Column('id'),$toolbelt->Routes_Have_Roles,$toolbelt->Routes_Have_Roles->Get_Column('right_id'),'\app\Helpers\Route_Role');
     }
     public function Allow_Get() : void
     {
-        $this->Set_Int('get',1);
+        $this->Set_Int($this->table_dblink->Get_Column('get'),1);
     }
     public function Deny_Get() : void
     {
-        $this->Set_Int('get',0);
+        $this->Set_Int($this->table_dblink->Get_Column('get'),0);
     }
     public function Allow_Delete() : void
     {
-        $this->Set_Int('delete',1);
+        $this->Set_Int($this->table_dblink->Get_Column('delete'),1);
     }
     public function Deny_Delete() : void
     {
-        $this->Set_Int('delete',0);
+        $this->Set_Int($this->table_dblink->Get_Column('delete'),0);
     }
     public function Allow_Post() : void
     {
-        $this->Set_Int('post',1);
+        $this->Set_Int($this->table_dblink->Get_Column('post'),1);
     }
     public function Deny_Post() : void
     {
-        $this->Set_Int('post',0);
+        $this->Set_Int($this->table_dblink->Get_Column('post'),0);
     }
     public function Allow_Patch() : void
     {
-        $this->Set_Int('patch',1);
+        $this->Set_Int($this->table_dblink->Get_Column('patch'),1);
     }
     public function Deny_Patch() : void
     {
-        $this->Set_Int('patch',0);
+        $this->Set_Int($this->table_dblink->Get_Column('patch'),0);
     }
     public function Allow_Put() : void
     {
-        $this->Set_Int('put',1);
+        $this->Set_Int($this->table_dblink->Get_Column('put'),1);
     }
     public function Deny_Put() : void
     {
-        $this->Set_Int('put',0);
+        $this->Set_Int($this->table_dblink->Get_Column('put'),0);
+    }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    public function Is_Method_Allowed(string $method)
+    {
+        $method = strtolower($method);
+        return (bool) $this->Get_Value_From_Name($method);
     }
     /**
      * @throws \Active_Record\Active_Record_Object_Failed_To_Load if adodb->load method fails

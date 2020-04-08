@@ -8,81 +8,78 @@ class Route_Role extends Active_Record
 
     function __construct()
     {
+        $toolbelt = new \toolbelt;
         parent::__construct();
+        $toolbelt->active_record_relationship_manager->Load_Table_Belongs_To_If_Empty($this->table_dblink,$this->table_dblink->Get_Column('route_id'),$toolbelt->Routes,$toolbelt->Routes->Get_Column('id'),'\app\Helpers\Route');
+        $toolbelt->active_record_relationship_manager->Load_Table_Belongs_To_If_Empty($this->table_dblink,$this->table_dblink->Get_Column('role_id'),$toolbelt->Company_Roles,$toolbelt->Company_Roles->Get_Column('id'),'\Company\Company_Role');
+        $toolbelt->active_record_relationship_manager->Load_Table_Belongs_To_If_Empty($this->table_dblink,$this->table_dblink->Get_Column('right_id'),$toolbelt->Rights,$toolbelt->Rights->Get_Column('id'),'\app\Helpers\Right');
     }
     /**
-     * @throws Active_Record_Object_Failed_To_Load — — if route id doesn't exist
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
-    public function Get_Route_Name() : ?string
+    public function Get_Route_Name() : string
     {
-        $route = new Route;
-        $route->Load_From_Route_ID($this->Get_Route_ID());
-        return $route->Get_Value_From_Name('name');
+        $this->Get_Verified_ID();
+        return $this->Route->Get_Value_From_Name('name');
     }
-    public function Get_Route_ID() : ?int
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    public function Get_Route_ID() : int
     {
         return (int) $this->Get_Value_From_Name('route_id');
     }    
     /**
-     * @throws Active_Record_Object_Failed_To_Load — — if name doesn't exist
      * @throws Update_Failed if other required parameters aren't set yet
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded for route
      */
-    public function Set_Route_By_Name(string $route_name,bool $update_immediately) : void
+    public function Set_Route(\app\Helpers\Route $route,bool $update_immediately) : void
     {
-        $route = new Route;
-        $route->Load_From_Route_Name($route_name);
-        $this->Set_Int('route_id',$route->Get_Verified_ID(),$update_immediately);
+        $this->Set_Int($this->table_dblink->Get_Column('route_id'),$route->Get_Verified_ID(),$update_immediately);
     }
     /**
-     * @throws Update_Failed if other required parameters aren't set yet
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
-    public function Set_Route_By_ID(int $route_id,bool $update_immediately) : void
+    public function Get_Role_Name() : string
     {
-        $this->Set_Int('route_id',$route_id,$update_immediately);
+        return $this->Company_Role->Get_Value_From_Name('name');
     }
     /**
-     * @throws Active_Record_Object_Failed_To_Load — — if role id doesn't exist
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
-    public function Get_Role_Name() : ?string
-    {
-        $role = new \Company\Company_Role;
-        $role->Load_Role_By_ID($this->Get_Role_ID());
-        return $role->Get_Value_From_Name('name');
-    }
-    public function Get_Role_ID() : ?int
+    public function Get_Role_ID() : int
     {
         return (int) $this->Get_Value_From_Name('role_id');
     }    
     /**
-     * @throws Active_Record_Object_Failed_To_Load — — if name doesn't exist
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded for company_role
      * @throws Update_Failed if other required parameters aren't set yet
      */
-    public function Set_Role_By_Name(string $role_name,bool $update_immediately) : void
+    public function Set_Role(\Company\Company_Role $company_role,bool $update_immediately) : void
     {
-        $role = new \Company\Company_Role;
-        $role->Load_Role_By_Name($role_name);
-        $this->Set_Int('role_id',$role->Get_Verified_ID(),$update_immediately);
-    }
+        $this->Set_Int($this->table_dblink->Get_Column('role_id'),$company_role->Get_Verified_ID(),$update_immediately);
+    }    
     /**
-     * @throws Update_Failed if other required parameters aren't set yet
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
-    public function Set_Role_By_ID(int $role_id,bool $update_immediately) : void
-    {
-        $this->Set_Int('id',$role_id,$update_immediately);
-    }   
-    
-    public function Get_Right_ID() : ?int
+    public function Get_Right_ID() : int
     {
         return (int) $this->Get_Value_From_Name('right_id');
     }   
     /**
      * @throws Update_Failed if other required parameters aren't set yet
      */
-    public function Set_Right_By_ID(int $right_id,bool $update_immediately) : void
+    public function Set_Right(\app\Helpers\Right $right,bool $update_immediately) : void
     {
-        $this->Set_Int('right_id',$right_id,$update_immediately);
+        $this->Set_Int($this->table_dblink->Get_Column('right_id'),$right->Get_Verified_ID(),$update_immediately);
     }   
-
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded for route and role
+     */
+    public function Load_From_Route_And_Role(\app\Helpers\Route $route,\Company\Company_Role $role) : void
+    {
+        $this->Load_From_Multiple_Vars([['route_id',$route->Get_Verified_ID()],['role_id',$role->Get_Verified_ID()]]);
+    }
 }
 
 ?>

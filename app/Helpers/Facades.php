@@ -21,6 +21,12 @@ class Company extends Facade
 {
     protected static function getFacadeAccessor(){ return 'Company'; }
 }
+
+class Route extends Facade
+{
+    protected static function getFacadeAccessor(){ return 'Route'; }
+}
+
 //tables
 class Users extends Facade
 {
