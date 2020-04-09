@@ -37,7 +37,7 @@ curl -X POST \
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
     -H "Secret-Token: P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj" \
-    -H "User-Access-Token: J+V53FP3bqpSKlrRKbm09rw16tYd9hlRSB.PzLA??s8DS" \
+    -H "User-Access-Token: VFPgwBsV2z5Pq1LLpbc1la4.gVlEe4Be8XugGBhRlcVyC" \
     -d '{"username":"default","password":"Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV"}'
 
 ```
@@ -52,7 +52,7 @@ let headers = {
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
     "Secret-Token": "P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj",
-    "User-Access-Token": "J+V53FP3bqpSKlrRKbm09rw16tYd9hlRSB.PzLA??s8DS",
+    "User-Access-Token": "VFPgwBsV2z5Pq1LLpbc1la4.gVlEe4Be8XugGBhRlcVyC",
 };
 
 let body = {
@@ -77,9 +77,9 @@ fetch(url, {
     "Program_Session": {
         "id": "92",
         "client_id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-        "access_token": "+ZyYTsMl$BPuSePuEcqepOr03sP5S3R3lslyIobJU9dxr",
+        "access_token": "QLiRhnQX3fuOKvt0HfC=3LWLnHeJp4.owpoT1XWMNhLI7",
         "user_id": "221",
-        "experation_timestamp": "2020-04-09 03:13:02",
+        "experation_timestamp": "2020-04-09 04:44:01",
         "Users_Have_Roles": [
             {
                 "id": "262",
@@ -100,13 +100,6 @@ fetch(url, {
                                 "company_id": "1",
                                 "config_id": "3",
                                 "config_value": "UTC",
-                                "active_status": "1"
-                            },
-                            {
-                                "id": "313",
-                                "company_id": "1",
-                                "config_id": "4",
-                                "config_value": "300",
                                 "active_status": "1"
                             }
                         ],
@@ -166,11 +159,11 @@ Return a list of users belonging to the company
 
 ```bash
 curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/Users?only_active=true" \
+    -G "https://project.dsfellowship.com/api/v1/1/Users?include_disabled=true&offset=0&limit=2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
-    -H "User-Access-Token: hY1TsDwzfo6L$e5G.5=jzuwo7oaqVt6w4zyJZ??US0WwC"
+    -H "User-Access-Token: dofCEp0FTnPKlz$S?$.tZ3v4C$c9eJ=f3ck1nWYO0qTnY"
 ```
 
 ```javascript
@@ -179,7 +172,9 @@ const url = new URL(
 );
 
 let params = {
-    "only_active": "true",
+    "include_disabled": "true",
+    "offset": "0",
+    "limit": "2",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -188,7 +183,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-    "User-Access-Token": "hY1TsDwzfo6L$e5G.5=jzuwo7oaqVt6w4zyJZ??US0WwC",
+    "User-Access-Token": "dofCEp0FTnPKlz$S?$.tZ3v4C$c9eJ=f3ck1nWYO0qTnY",
 };
 
 fetch(url, {
@@ -210,6 +205,11 @@ fetch(url, {
                 "id": "221",
                 "username": "default",
                 "active_status": true
+            },
+            {
+                "id": "235",
+                "username": "default_2",
+                "active_status": true
             }
         ]
     }
@@ -228,7 +228,9 @@ Parameter | Status | Description
 
 Parameter | Status | Description
 --------- | ------- | ------- | -----------
-    `only_active` |  optional  | if set will only return active users
+    `include_disabled` |  optional  | if set will only return active users
+    `offset` |  optional  | a number between 0 and infinite that represents which object to start with default is 0
+    `limit` |  optional  | a number between 1 and 100 representing the number of records to return after the offset default is 50
 
 <!-- END_81fc4121563abd0a0a65cb26f4a0a066 -->
 
@@ -245,7 +247,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
-    -H "User-Access-Token: NHjOtgk=kYRHXByjLKjipl0JOIeB5IjsGg=MB=ZUihG1H" \
+    -H "User-Access-Token: HJwhY5im0jJSt2UxOLXOFvspNRVc.Nc+u6o8x=m4.1j7f" \
     -d '{"username":"default","password":"Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV"}'
 
 ```
@@ -259,7 +261,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-    "User-Access-Token": "NHjOtgk=kYRHXByjLKjipl0JOIeB5IjsGg=MB=ZUihG1H",
+    "User-Access-Token": "HJwhY5im0jJSt2UxOLXOFvspNRVc.Nc+u6o8x=m4.1j7f",
 };
 
 let body = {
@@ -365,18 +367,18 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "2aVU?tf.kc=NI8",
+    "master_password": "TuQdqC=wpCT6oy",
     "company": {
         "company_name": "documentation_company",
         "Company_Configs": [
             {
-                "id": "322",
-                "company_id": "1006",
+                "id": "340",
+                "company_id": "1015",
                 "config_id": "3",
                 "config_value": "UTC",
                 "active_status": "1",
                 "Companies": {
-                    "id": "1006",
+                    "id": "1015",
                     "company_name": "documentation_company",
                     "active_status": "1"
                 },
@@ -386,42 +388,24 @@ fetch(url, {
                     "config_name": "company_time_zone",
                     "default_value": "UTC"
                 }
-            },
-            {
-                "id": "321",
-                "company_id": "1006",
-                "config_id": "4",
-                "config_value": "300",
-                "active_status": "1",
-                "Companies": {
-                    "id": "1006",
-                    "company_name": "documentation_company",
-                    "active_status": "1"
-                },
-                "Configs": {
-                    "id": "4",
-                    "active_status": "1",
-                    "config_name": "session_time_limit",
-                    "default_value": "300"
-                }
             }
         ],
         "Company_Roles": [
             {
-                "id": "192",
-                "company_id": "1006",
+                "id": "201",
+                "company_id": "1015",
                 "active_status": "1",
                 "role_name": "master",
                 "Companies": {
-                    "id": "1006",
+                    "id": "1015",
                     "company_name": "documentation_company",
                     "active_status": "1"
                 },
                 "Users_Have_Roles": [
                     {
-                        "id": "264",
-                        "user_id": "228",
-                        "role_id": "192"
+                        "id": "273",
+                        "user_id": "238",
+                        "role_id": "201"
                     }
                 ]
             }
@@ -445,6 +429,129 @@ Parameter | Type | Status | Description
     
 <!-- END_523a394728ab8a79e82878761dcb790f -->
 
+<!-- START_8060c49b9883262b12e22f0571825e95 -->
+## {GET} app/v1/Companies
+List all companies
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/Companies?include_disabled=true&include_details=2&details_offset=0&details_limit=1&offset=0&limit=1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
+    -H "Secret-Token: P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/Companies"
+);
+
+let params = {
+    "include_disabled": "true",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "1",
+    "offset": "0",
+    "limit": "1",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
+    "Secret-Token": "P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": "List of Current Companies",
+    "Companies": {
+        "documentation_company": {
+            "id": "1015",
+            "company_name": "documentation_company",
+            "active_status": "1",
+            "Company_Configs": [
+                {
+                    "id": "340",
+                    "company_id": "1015",
+                    "config_id": "3",
+                    "config_value": "UTC",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1015",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "3",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
+                }
+            ],
+            "Company_Roles": [
+                {
+                    "id": "201",
+                    "company_id": "1015",
+                    "active_status": "1",
+                    "role_name": "master",
+                    "Companies": {
+                        "id": "1015",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Users_Have_Roles": [
+                        {
+                            "id": "273",
+                            "user_id": "238",
+                            "role_id": "201"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/Companies`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | The ID of the organization
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `include_disabled` |  optional  | if set will only return active companies
+    `include_details` |  optional  | is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled
+    `details_offset` |  optional  | a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0
+    `details_limit` |  optional  | a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1
+    `offset` |  optional  | a number between 0 and infinite that represents which object to start with default is 0
+    `limit` |  optional  | a number between 1 and 100 representing the number of records to return after the offset default is 50
+
+<!-- END_8060c49b9883262b12e22f0571825e95 -->
+
 #Tools
 
 
@@ -457,7 +564,7 @@ curl -X GET \
     -G "https://project.dsfellowship.com/doc.json" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "User-Access-Token: i23uSOaz9DXlrBMn8eSgBAv2GEz394yPWuGy0TgGLrm09"
+    -H "User-Access-Token: Q13TQwW0q2VydmYUeTj7ywNCh1c?ckFt64VoTOHq7?k7y"
 ```
 
 ```javascript
@@ -468,7 +575,7 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "User-Access-Token": "i23uSOaz9DXlrBMn8eSgBAv2GEz394yPWuGy0TgGLrm09",
+    "User-Access-Token": "Q13TQwW0q2VydmYUeTj7ywNCh1c?ckFt64VoTOHq7?k7y",
 };
 
 fetch(url, {

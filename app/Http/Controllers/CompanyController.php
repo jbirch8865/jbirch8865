@@ -11,11 +11,46 @@ use app\Facades\Companies;
  */
 class CompanyController extends Controller
 {
-/*
+    /**
+     * {GET} app/v1/Companies
+     * List all companies
+     * 
+     * @queryParam include_disabled if set will only return active companies Example: true
+     * @queryParam include_details is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled Example: 2
+     * @queryParam details_offset a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0 Example: 0
+     * @queryParam details_limit a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1 Example: 1 
+     * @queryParam offset a number between 0 and infinite that represents which object to start with default is 0 Example: 0
+     * @queryParam limit a number between 1 and 100 representing the number of records to return after the offset default is 50 Example: 1
+     */
     public function index(Request $request)
     {
+
+        if($request->input('include_disabled',false))
+        {
+            Companies::Query_Single_Table(array('id'),false,"LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
+        }else
+        {
+            Companies::Query_Single_Table(array('id'),false,"WHERE `Active_Status` = '1' LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
+        }
+        $Companies = array();
+        While($row = Companies::Get_Queried_Data())
+        {
+            $company = new \app\Helpers\Company;
+            $company->Load_Company_By_ID($row['id']);
+            if($request->input('include_details',false))
+            {
+                $Companies[$company->Get_Company_Name()] = $company->Get_Response_Collection($request->input('include_details'),$request->input('details_offset',0),$request->input('details_limit',1));
+            }else
+            {
+                $Companies[] = $company->Get_Company_Name();
+            }
+        }
+        return Response_200([
+            'message' => 'List of Current Companies',
+            'Companies' => $Companies
+        ],$request);
     }
-*/
+
     /**
      * {POST} api/v1/Company
      * 

@@ -29,10 +29,14 @@ Route::prefix('v1/{company_id}')->group(function(){
 });
 Route::prefix('v1')->group(function(){
     Route::resource('/Company', 'CompanyController',[
-        'only' => ['store','index'],
-        'names' => ['store' => 'Create_Company',
-        'index' => 'List_Companies']
+        'only' => ['store'],
+        'names' => ['store' => 'Create_Company']
     ])->middleware('secret');
+    Route::resource('/Companies', 'CompanyController',[
+        'only' => ['index'],
+        'names' => ['index' => 'List_Companies']
+    ])->middleware('secret');
+    
 });
 Route::get('{any}', function ($any = null) {
     return response()->json([

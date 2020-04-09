@@ -62,7 +62,7 @@ The access_token experation date is based on the company_config session_timeout 
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
     -H "Secret-Token: P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj" \
-    -H "User-Access-Token: J+V53FP3bqpSKlrRKbm09rw16tYd9hlRSB.PzLA??s8DS" \
+    -H "User-Access-Token: VFPgwBsV2z5Pq1LLpbc1la4.gVlEe4Be8XugGBhRlcVyC" \
     -d '{"username":"default","password":"Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -74,7 +74,7 @@ let headers = {
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
     "Secret-Token": "P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj",
-    "User-Access-Token": "J+V53FP3bqpSKlrRKbm09rw16tYd9hlRSB.PzLA??s8DS",
+    "User-Access-Token": "VFPgwBsV2z5Pq1LLpbc1la4.gVlEe4Be8XugGBhRlcVyC",
 };
 
 let body = {
@@ -96,9 +96,9 @@ fetch(url, {
     "Program_Session": {
         "id": "92",
         "client_id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-        "access_token": "+ZyYTsMl$BPuSePuEcqepOr03sP5S3R3lslyIobJU9dxr",
+        "access_token": "QLiRhnQX3fuOKvt0HfC=3LWLnHeJp4.owpoT1XWMNhLI7",
         "user_id": "221",
-        "experation_timestamp": "2020-04-09 03:13:02",
+        "experation_timestamp": "2020-04-09 04:44:01",
         "Users_Have_Roles": [
             {
                 "id": "262",
@@ -119,13 +119,6 @@ fetch(url, {
                                 "company_id": "1",
                                 "config_id": "3",
                                 "config_value": "UTC",
-                                "active_status": "1"
-                            },
-                            {
-                                "id": "313",
-                                "company_id": "1",
-                                "config_id": "4",
-                                "config_value": "300",
                                 "active_status": "1"
                             }
                         ],
@@ -208,17 +201,19 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/Users?only_active=true" \
+    -G "https://project.dsfellowship.com/api/v1/1/Users?include_disabled=true&amp;offset=0&amp;limit=2" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
-    -H "User-Access-Token: hY1TsDwzfo6L$e5G.5=jzuwo7oaqVt6w4zyJZ??US0WwC"</code></pre>
+    -H "User-Access-Token: dofCEp0FTnPKlz$S?$.tZ3v4C$c9eJ=f3ck1nWYO0qTnY"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/Users"
 );
 
 let params = {
-    "only_active": "true",
+    "include_disabled": "true",
+    "offset": "0",
+    "limit": "2",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -227,7 +222,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-    "User-Access-Token": "hY1TsDwzfo6L$e5G.5=jzuwo7oaqVt6w4zyJZ??US0WwC",
+    "User-Access-Token": "dofCEp0FTnPKlz$S?$.tZ3v4C$c9eJ=f3ck1nWYO0qTnY",
 };
 
 fetch(url, {
@@ -245,6 +240,11 @@ fetch(url, {
             {
                 "id": "221",
                 "username": "default",
+                "active_status": true
+            },
+            {
+                "id": "235",
+                "username": "default_2",
                 "active_status": true
             }
         ]
@@ -280,9 +280,19 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>only_active</code></td>
+<td><code>include_disabled</code></td>
 <td>optional</td>
 <td>if set will only return active users</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>optional</td>
+<td>a number between 0 and infinite that represents which object to start with default is 0</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>optional</td>
+<td>a number between 1 and 100 representing the number of records to return after the offset default is 50</td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +308,7 @@ fetch(url, {
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
-    -H "User-Access-Token: NHjOtgk=kYRHXByjLKjipl0JOIeB5IjsGg=MB=ZUihG1H" \
+    -H "User-Access-Token: HJwhY5im0jJSt2UxOLXOFvspNRVc.Nc+u6o8x=m4.1j7f" \
     -d '{"username":"default","password":"Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -309,7 +319,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
-    "User-Access-Token": "NHjOtgk=kYRHXByjLKjipl0JOIeB5IjsGg=MB=ZUihG1H",
+    "User-Access-Token": "HJwhY5im0jJSt2UxOLXOFvspNRVc.Nc+u6o8x=m4.1j7f",
 };
 
 let body = {
@@ -429,18 +439,18 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "message": "Company successfully created",
-    "master_password": "2aVU?tf.kc=NI8",
+    "master_password": "TuQdqC=wpCT6oy",
     "company": {
         "company_name": "documentation_company",
         "Company_Configs": [
             {
-                "id": "322",
-                "company_id": "1006",
+                "id": "340",
+                "company_id": "1015",
                 "config_id": "3",
                 "config_value": "UTC",
                 "active_status": "1",
                 "Companies": {
-                    "id": "1006",
+                    "id": "1015",
                     "company_name": "documentation_company",
                     "active_status": "1"
                 },
@@ -450,42 +460,24 @@ fetch(url, {
                     "config_name": "company_time_zone",
                     "default_value": "UTC"
                 }
-            },
-            {
-                "id": "321",
-                "company_id": "1006",
-                "config_id": "4",
-                "config_value": "300",
-                "active_status": "1",
-                "Companies": {
-                    "id": "1006",
-                    "company_name": "documentation_company",
-                    "active_status": "1"
-                },
-                "Configs": {
-                    "id": "4",
-                    "active_status": "1",
-                    "config_name": "session_time_limit",
-                    "default_value": "300"
-                }
             }
         ],
         "Company_Roles": [
             {
-                "id": "192",
-                "company_id": "1006",
+                "id": "201",
+                "company_id": "1015",
                 "active_status": "1",
                 "role_name": "master",
                 "Companies": {
-                    "id": "1006",
+                    "id": "1015",
                     "company_name": "documentation_company",
                     "active_status": "1"
                 },
                 "Users_Have_Roles": [
                     {
-                        "id": "264",
-                        "user_id": "228",
-                        "role_id": "192"
+                        "id": "273",
+                        "user_id": "238",
+                        "role_id": "201"
                     }
                 ]
             }
@@ -530,6 +522,161 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_523a394728ab8a79e82878761dcb790f -->
+<!-- START_8060c49b9883262b12e22f0571825e95 -->
+<h2>{GET} app/v1/Companies</h2>
+<p>List all companies</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/Companies?include_disabled=true&amp;include_details=2&amp;details_offset=0&amp;details_limit=1&amp;offset=0&amp;limit=1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV" \
+    -H "Secret-Token: P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/Companies"
+);
+
+let params = {
+    "include_disabled": "true",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "1",
+    "offset": "0",
+    "limit": "1",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "Q8NfiyrBUzoXAl?1PYVzBv3jc$Nk1ZMV",
+    "Secret-Token": "P.N?KqJXK4CT54QuW4H2eWU+guM4Q2KtPx0JuFIAAzsPtbzj",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "List of Current Companies",
+    "Companies": {
+        "documentation_company": {
+            "id": "1015",
+            "company_name": "documentation_company",
+            "active_status": "1",
+            "Company_Configs": [
+                {
+                    "id": "340",
+                    "company_id": "1015",
+                    "config_id": "3",
+                    "config_value": "UTC",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1015",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "3",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
+                }
+            ],
+            "Company_Roles": [
+                {
+                    "id": "201",
+                    "company_id": "1015",
+                    "active_status": "1",
+                    "role_name": "master",
+                    "Companies": {
+                        "id": "1015",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Users_Have_Roles": [
+                        {
+                            "id": "273",
+                            "user_id": "238",
+                            "role_id": "201"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/Companies</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>company</code></td>
+<td>required</td>
+<td>The ID of the organization</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>include_disabled</code></td>
+<td>optional</td>
+<td>if set will only return active companies</td>
+</tr>
+<tr>
+<td><code>include_details</code></td>
+<td>optional</td>
+<td>is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled</td>
+</tr>
+<tr>
+<td><code>details_offset</code></td>
+<td>optional</td>
+<td>a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0</td>
+</tr>
+<tr>
+<td><code>details_limit</code></td>
+<td>optional</td>
+<td>a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>optional</td>
+<td>a number between 0 and infinite that represents which object to start with default is 0</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>optional</td>
+<td>a number between 1 and 100 representing the number of records to return after the offset default is 50</td>
+</tr>
+</tbody>
+</table>
+<!-- END_8060c49b9883262b12e22f0571825e95 -->
 <h1>Tools</h1>
 <!-- START_cd4a874127cd23508641c63b640ee838 -->
 <h2>doc.json</h2>
@@ -540,7 +687,7 @@ fetch(url, {
     -G "https://project.dsfellowship.com/doc.json" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "User-Access-Token: i23uSOaz9DXlrBMn8eSgBAv2GEz394yPWuGy0TgGLrm09"</code></pre>
+    -H "User-Access-Token: Q13TQwW0q2VydmYUeTj7ywNCh1c?ckFt64VoTOHq7?k7y"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/doc.json"
 );
@@ -548,7 +695,7 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "User-Access-Token": "i23uSOaz9DXlrBMn8eSgBAv2GEz394yPWuGy0TgGLrm09",
+    "User-Access-Token": "Q13TQwW0q2VydmYUeTj7ywNCh1c?ckFt64VoTOHq7?k7y",
 };
 
 fetch(url, {

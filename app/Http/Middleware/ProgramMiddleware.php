@@ -25,6 +25,13 @@ class ProgramMiddleware
         {
             return $program;
         }
+        $request->validate([
+            'limit' => ['lte:100','gte:1'],
+            'details_limit' => ['lte:25','gte:1'],
+            'offset' => ['gte:0'],
+            'details_offset' => ['gte:0'],
+            'include_details' => ['gte:0','lte:5']
+        ]);
         return $next($request);
     }
 }

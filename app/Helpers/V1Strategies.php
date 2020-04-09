@@ -25,7 +25,7 @@ class Add_Secret_ID_Header extends Strategy
 {
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
     {
-        if($route->named('User_Signin') || $route->named('Create_Company'))
+        if($route->named('User_Signin') || $route->named('Create_Company') || $route->named('List_Companies'))
         {
             $toolbelt = new \Test_Tools\toolbelt;
             return array('Secret-Token' => $toolbelt->cConfigs->Get_Secret_ID());    
