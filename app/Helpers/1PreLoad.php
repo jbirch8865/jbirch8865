@@ -37,3 +37,12 @@ class Programs extends \DatabaseLink\Table
         parent::__construct('Programs',$toolbelt_base->dblink);
     }
 }
+
+class Companies extends \DatabaseLink\Table
+{
+    function __construct()
+    {
+        global $toolbelt_base;
+        parent::__construct('Companies',$toolbelt_base->dblink);
+    }
+}

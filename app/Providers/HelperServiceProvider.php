@@ -43,20 +43,20 @@ class HelperServiceProvider extends ServiceProvider
 
         app()->singleton('Program',function($app){
             $program = new \API\Program();
-            if(!$app->request->headers->has('Authorization-Token'))
+            if(!$app->request->headers->has('client-id'))
             {
-                return Response_422(array('message' => 'The Authorization-Token header is required.'),$app->request);
+                return Response_422(array('message' => 'The client-id header is required.'),$app->request);
             }
-            if(strlen($app->request->header('Authorization-Token')) > Programs::Get_Column('client_id')->Get_Data_Length())
+            if(strlen($app->request->header('client-id')) > Programs::Get_Column('client_id')->Get_Data_Length())
             {
-                return Response_422(['message' => 'Authorization-Token is malformed.'],$app->request);
+                return Response_422(['message' => 'client-id is malformed.'],$app->request);
             }        
             try
             {
-                $program->Load_Program_By_Client_ID($app->request->header('Authorization-Token'));
+                $program->Load_Program_By_Client_ID($app->request->header('client-id'));
             } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
             {
-                return Response_401(array('message' => 'The Authorization-Token is not valid.'),$app->request);
+                return Response_401(array('message' => 'The client-id is not valid.'),$app->request);
             }
             return $program;
         });
@@ -94,5 +94,6 @@ class HelperServiceProvider extends ServiceProvider
             $route->Load_From_Route_Name(Route::currentRouteName());
             return $route;
         });
+
     }
 }

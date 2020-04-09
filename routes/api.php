@@ -17,16 +17,23 @@ Route::prefix('v1/{company_id}')->group(function(){
     Route::resource('signin', 'SigninController',[
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']
-    ]);
+    ])->middleware('secret');
     Route::resource('Users', 'UsersController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Users']
         ]);
+    Route::resource('User', 'UserController',[
+        'only' => ['store'],
+        'names' => ['store' => 'Create_User']
+    ]);
 });
-
-
-
-
+Route::prefix('v1')->group(function(){
+    Route::resource('/Company', 'CompanyController',[
+        'only' => ['store','index'],
+        'names' => ['store' => 'Create_Company',
+        'index' => 'List_Companies']
+    ])->middleware('secret');
+});
 Route::get('{any}', function ($any = null) {
     return response()->json([
         'message' => 'Not a valid endpoint'

@@ -2,6 +2,7 @@
 namespace app\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use SebastianBergmann\FileIterator\Facade as FileIteratorFacade;
 
 class Program extends Facade {
    protected static function getFacadeAccessor() { return 'Program'; }
@@ -36,4 +37,14 @@ class Users extends Facade
 class Programs extends Facade
 {
     protected static function getFacadeAccessor() { return 'Programs'; }
+}
+
+class Companies extends Facade
+{
+    protected static function getFacadeAccessor() { return 'Companies'; }
+}
+
+class Routes extends Facade
+{
+    protected static function getFacadeAccessor() { return 'Routes'; }
 }

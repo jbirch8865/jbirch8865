@@ -31,9 +31,9 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/1/signin" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "Authorization-Token: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z" \
+    -H "client-id: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z" \
     -H "Secret-Token: AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i" \
-    -d '{"username":"project2","plain_text_password":"FlgFFgl&nl@hhg@hg&"}'
+    -d '{"username":"project2","password":"FlgFFgl&nl@hhg@hg&"}'
 
 ```
 
@@ -45,13 +45,13 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization-Token": "kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z",
+    "client-id": "kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z",
     "Secret-Token": "AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i",
 };
 
 let body = {
     "username": "project2",
-    "plain_text_password": "FlgFFgl&nl@hhg@hg&"
+    "password": "FlgFFgl&nl@hhg@hg&"
 }
 
 fetch(url, {
@@ -96,7 +96,7 @@ Parameter | Status | Description
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
     `username` | string |  required  | 
-        `plain_text_password` | string |  required  | 
+        `password` | string |  required  | 
     
 <!-- END_3cb60164618dd6dfd435f39ac4ef6402 -->
 
@@ -112,7 +112,7 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/1/Users?only_active=true" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "Authorization-Token: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z"
+    -H "client-id: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z"
 ```
 
 ```javascript
@@ -129,7 +129,7 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "Authorization-Token": "kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z",
+    "client-id": "kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z",
 };
 
 fetch(url, {
@@ -243,7 +243,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user_name\": \"magnam\",\n    \"plain_text_password\": \"quia\"\n}"
+                            "raw": "{\n    \"user_name\": \"magnam\",\n    \"password\": \"quia\"\n}"
                         },
                         "description": "",
                         "response": []

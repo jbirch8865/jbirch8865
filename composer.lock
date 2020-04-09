@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70637f3f3b966ac3c9d1535aeea12a88",
+    "content-hash": "0b80642053facb5d717504e4d10a06f8",
     "packages": [
         {
             "name": "adodb/adodb-php",
@@ -998,16 +998,16 @@
         },
         {
             "name": "jbirch8865/php_tools",
-            "version": "v2.2.8",
+            "version": "v2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jbirch8865/php_tools.git",
-                "reference": "9bde571a282159075863d5c70fc40c01838719fe"
+                "reference": "4dc7382e8965c891e060dac4fd067f41f744bccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jbirch8865/php_tools/zipball/9bde571a282159075863d5c70fc40c01838719fe",
-                "reference": "9bde571a282159075863d5c70fc40c01838719fe",
+                "url": "https://api.github.com/repos/jbirch8865/php_tools/zipball/4dc7382e8965c891e060dac4fd067f41f744bccf",
+                "reference": "4dc7382e8965c891e060dac4fd067f41f744bccf",
                 "shasum": ""
             },
             "require": {
@@ -1036,20 +1036,20 @@
                 }
             ],
             "description": "Base PHP tools and classes",
-            "time": "2020-04-08T03:24:09+00:00"
+            "time": "2020-04-08T22:34:29+00:00"
         },
         {
             "name": "laravel/framework",
-            "version": "v7.5.1",
+            "version": "v7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b2457b1ddb9c59396313eae4e948bdc5fa5251db"
+                "reference": "3a3b3f7fea69813f5a03449c6314bfb42c3ccf78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b2457b1ddb9c59396313eae4e948bdc5fa5251db",
-                "reference": "b2457b1ddb9c59396313eae4e948bdc5fa5251db",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3a3b3f7fea69813f5a03449c6314bfb42c3ccf78",
+                "reference": "3a3b3f7fea69813f5a03449c6314bfb42c3ccf78",
                 "shasum": ""
             },
             "require": {
@@ -1187,7 +1187,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-04-07T18:52:38+00:00"
+            "time": "2020-04-08T15:54:18+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1673,12 +1673,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/mpociot/laravel-apidoc-generator.git",
-                "reference": "655e40f7a7b246d906f8f7c9413bf258c6d80288"
+                "reference": "181a3af0e814480607274971d360dce442124635"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mpociot/laravel-apidoc-generator/zipball/655e40f7a7b246d906f8f7c9413bf258c6d80288",
-                "reference": "655e40f7a7b246d906f8f7c9413bf258c6d80288",
+                "url": "https://api.github.com/repos/mpociot/laravel-apidoc-generator/zipball/181a3af0e814480607274971d360dce442124635",
+                "reference": "181a3af0e814480607274971d360dce442124635",
                 "shasum": ""
             },
             "require": {
@@ -1739,7 +1739,7 @@
                 "documentation",
                 "laravel"
             ],
-            "time": "2020-04-04T12:57:52+00:00"
+            "time": "2020-04-08T18:50:34+00:00"
         },
         {
             "name": "mpociot/reflection-docblock",

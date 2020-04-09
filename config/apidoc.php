@@ -205,7 +205,8 @@ return [
         'headers' => [
             \Mpociot\ApiDoc\Extracting\Strategies\RequestHeaders\GetFromRouteRules::class,
             Add_Client_ID_Header::class,
-            Add_Secret_ID_Header::class
+            Add_Secret_ID_Header::class,
+            Add_Access_Token::class
         ],
         'bodyParameters' => [
             \Mpociot\ApiDoc\Extracting\Strategies\BodyParameters\GetFromBodyParamTag::class,

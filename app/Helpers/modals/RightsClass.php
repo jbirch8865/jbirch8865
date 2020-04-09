@@ -11,6 +11,11 @@ class Right extends Active_Record
         $toolbelt = new \toolbelt;
         parent::__construct();
         $toolbelt->active_record_relationship_manager->Load_Table_Belongs_To_If_Empty($this->table_dblink,$this->table_dblink->Get_Column('id'),$toolbelt->Routes_Have_Roles,$toolbelt->Routes_Have_Roles->Get_Column('right_id'),'\app\Helpers\Route_Role');
+        $this->get = 0;
+        $this->post = 0;
+        $this->put = 0;
+        $this->patch = 0;
+        $this->destroy = 0;
     }
     public function Allow_Get() : void
     {
@@ -22,11 +27,11 @@ class Right extends Active_Record
     }
     public function Allow_Delete() : void
     {
-        $this->Set_Int($this->table_dblink->Get_Column('delete'),1);
+        $this->Set_Int($this->table_dblink->Get_Column('destroy'),1);
     }
     public function Deny_Delete() : void
     {
-        $this->Set_Int($this->table_dblink->Get_Column('delete'),0);
+        $this->Set_Int($this->table_dblink->Get_Column('destroy'),0);
     }
     public function Allow_Post() : void
     {

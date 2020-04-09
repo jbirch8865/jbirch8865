@@ -2,6 +2,7 @@
 Add_All_Constraints();
 Add_All_Multi_Column_Unique_Indexes();
 Create_Configs();
+Override_Master_Role();
 function Create_Configs()
 {
     /*
@@ -38,5 +39,16 @@ function Add_All_Multi_Column_Unique_Indexes()
 {
     global $toolbelt_base;
     $toolbelt_base->Routes_Have_Roles->Add_Unique_Columns(array('route_id','role_id'));
+}
+
+function Override_Master_Role()
+{
+    $company = new \app\Helpers\Company;
+    $company->Load_Company_By_ID(1);
+    $role = $company->Get_Master_Role();
+    $role->Delete_Role(false);
+    $company->Create_Company_Role('master');
+    $user = new \Authentication\User('default',$company->cConfigs->Get_Client_ID(),$company,false);
+    $user->Assign_Company_Role($company->Get_Master_Role());
 }
 ?>
