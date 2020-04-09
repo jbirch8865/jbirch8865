@@ -3,6 +3,7 @@ Add_All_Constraints();
 Add_All_Multi_Column_Unique_Indexes();
 Create_Configs();
 Override_Master_Role();
+Build_Routes();
 function Create_Configs()
 {
     /*
@@ -50,5 +51,29 @@ function Override_Master_Role()
     $company->Create_Company_Role('master');
     $user = new \Authentication\User('default',$company->cConfigs->Get_Client_ID(),$company,false);
     $user->Assign_Company_Role($company->Get_Master_Role());
+}
+
+function Build_Routes()
+{
+    Create_Route_If_Not_Exist('User_Signin',true);
+    Create_Route_If_Not_Exist('List_Users',false);
+    Create_Route_If_Not_Exist('Create_User',false);
+    Create_Route_If_Not_Exist('List_Companies',true);
+    Create_Route_If_Not_Exist('Create_Company',true);
+    Create_Route_If_Not_Exist('List_Roles');
+}
+
+function Create_Route_If_Not_Exist(string $name,bool $implicit_allow = false)
+{
+    try
+    {
+        $route = new \app\Helpers\Route;
+        $route->Load_From_Route_Name($name);
+        $route->Set_Implicit_Allow($implicit_allow,true);
+    } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+    {
+        $route->Set_Name($name,false);
+        $route->Set_Implicit_Allow($implicit_allow,true);
+    }
 }
 ?>

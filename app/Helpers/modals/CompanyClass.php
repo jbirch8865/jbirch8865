@@ -10,7 +10,7 @@ class Company extends \Company\Company
    /**
     * @throws \Active_Record\Object_Has_Not_Been_Loaded
     */
-    function Create_Company_Role(string $role_name): void
+    function Create_Company_Role(string $role_name,bool $get = true,bool $delete = false,bool $post = true,bool $patch = true,bool $put = true): void
     {
         parent::Create_Company_Role($role_name);
         $new_role = $this->Company_Roles[count($this->Company_Roles) - 1];
@@ -25,11 +25,41 @@ class Company extends \Company\Company
                 continue;
             }
             $right = new \app\Helpers\Right;
-            $right->Allow_Get();
-            $right->Allow_Delete();
-            $right->Allow_Patch();
-            $right->Allow_Post();
-            $right->Allow_Put();
+            if($get)
+            {
+                $right->Allow_Get();
+            }else
+            {
+                $right->Deny_Get();
+            }
+            if($delete)
+            {
+                $right->Allow_Delete();
+            }else
+            {
+                $right->Deny_Delete();
+            }
+            if($post)
+            {
+                $right->Allow_Post();
+            }else
+            {
+                $right->Deny_Post();
+            }
+            if($patch)
+            {
+                $right->Allow_Patch();
+            }else
+            {
+                $right->Deny_Patch();
+            }
+            if($put)
+            {
+                $right->Allow_Put();
+            }else
+            {
+                $right->Deny_Put();
+            }
             $route_has_role = new \app\Helpers\Route_Role;
             $route_has_role->Set_Right($right,false);
             $route_has_role->Set_Role($new_role,false);

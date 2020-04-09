@@ -26,6 +26,7 @@ Route::prefix('v1/{company_id}')->group(function(){
         'only' => ['store'],
         'names' => ['store' => 'Create_User']
     ]);
+   // Route::resource()
 });
 Route::prefix('v1')->group(function(){
     Route::resource('/Company', 'CompanyController',[

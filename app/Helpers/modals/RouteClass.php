@@ -18,9 +18,9 @@ class Route extends Active_Record
     {
         return $this->Get_Value_From_Name('name');
     }
-    public function Set_Name(string $route_name) : void
+    public function Set_Name(string $route_name,bool $update_immediately = true) : void
     {
-        $this->Set_Varchar($this->table_dblink->Get_Column('name'),$route_name,false);
+        $this->Set_Varchar($this->table_dblink->Get_Column('name'),$route_name,false,$update_immediately);
     }
     /**
      * @throws Object_Is_Already_Loaded
@@ -45,7 +45,11 @@ class Route extends Active_Record
     {
         $this->Set_Int($this->table_dblink->Get_Column('implicit_allow'),(int) $implicit_allow,$update_immediately);
     }
-
+    protected function Create_Object() : void
+    {
+        parent::Create_Object();
+        $this->Add_To_All_Companies_Master_Role();
+    }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
@@ -54,6 +58,27 @@ class Route extends Active_Record
         return (bool) $this->Get_Value_From_Name('implicit_allow');
     }
 
+    private function Add_To_All_Companies_Master_Role() : void
+    {
+        $toolbelt = new \toolbelt;
+        $toolbelt->Companies->Query_Single_Table(['id'],false);
+        while($row = $toolbelt->Companies->Get_Queried_Data())
+        {
+            $right = new \app\Helpers\Right;
+            $right->Allow_Delete();
+            $right->Allow_Get();
+            $right->Allow_Patch();
+            $right->Allow_Post();
+            $right->Allow_Put();
+            $company = new \app\Helpers\Company;
+            $company->Load_Company_By_ID((int) $row['id']);
+            $role = $company->Get_Master_Role();
+            $route_role = new \app\Helpers\Route_Role;
+            $route_role->Set_Right($right,false);
+            $route_role->Set_Role($role,false);
+            $route_role->Set_Route($this,true);
+        }
+    }
 }
 
 ?>
