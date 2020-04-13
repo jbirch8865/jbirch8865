@@ -55,24 +55,28 @@ function Override_Master_Role()
 
 function Build_Routes()
 {
-    Create_Route_If_Not_Exist('User_Signin',true);
-    Create_Route_If_Not_Exist('List_Users',false);
-    Create_Route_If_Not_Exist('Create_User',false);
-    Create_Route_If_Not_Exist('List_Companies',true);
-    Create_Route_If_Not_Exist('Create_Company',true);
-    Create_Route_If_Not_Exist('List_Roles');
+    Create_Route_If_Not_Exist('User_Signin','',true);
+    Create_Route_If_Not_Exist('List_Users','Company',false);
+    Create_Route_If_Not_Exist('Create_User','Company',false);
+    Create_Route_If_Not_Exist('List_Companies','',true);
+    Create_Route_If_Not_Exist('Create_Company','',true);
+    Create_Route_If_Not_Exist('List_Roles','Company',false);
+    Create_Route_If_Not_Exist('Update_User','Company',false);
+    
 }
 
-function Create_Route_If_Not_Exist(string $name,bool $implicit_allow = false)
+function Create_Route_If_Not_Exist(string $name,string $module,bool $implicit_allow = false)
 {
     try
     {
         $route = new \app\Helpers\Route;
         $route->Load_From_Route_Name($name);
-        $route->Set_Implicit_Allow($implicit_allow,true);
+        $route->Set_Implicit_Allow($implicit_allow);
+        $route->Set_Module_Name($module);
     } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
     {
         $route->Set_Name($name,false);
+        $route->Set_Module_Name($module,false);
         $route->Set_Implicit_Allow($implicit_allow,true);
     }
 }

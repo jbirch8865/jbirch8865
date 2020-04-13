@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Twilio\TwiML\Voice\Pay;
-use app\Facades\Users;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * @group Company
- * 
+ *
  */
 
 class UserController extends Controller
@@ -19,30 +18,17 @@ class UserController extends Controller
     }
 
     /**
-     * {POST} api/v1/{company_id}/User
-     * 
+     * {POST} api/v1/{company}/user
+     *
      * Create a user
-     * 
+     *
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'username' => ['required','max:'.Users::Get_Column('username')->Get_Data_Length()],
-            'password' => ['required','max:'.Users::Get_Column('verified_hashed_password')->Get_Data_Length()],
-        ]);
-        try
-        {
-            $user = new \Authentication\User($request->input('username'),$request->input('password'),app()->make('Company'),true);
-        } catch (\Authentication\Incorrect_Password $e)
-        {
-            return Response_422(['message' => 'Sorry the user already exists'],$request);
-        } catch (\Active_Record\Object_Is_Currently_Inactive $e)
-        {
-            return Response_422(['message' => 'This user already exists and is currently inactive'],$request);
-        }
+        $user = app()->make('Create_User');
         return Response_201([
             'message' => 'User successfully created or already exists with that password',
-            'user' => $user->Get_Response_Collection(1)
+            'user' => $user->Get_API_Response_Collection()
         ],$request);
     }
 
@@ -50,14 +36,26 @@ class UserController extends Controller
     {
         //
     }
-
+    /**
+     * {PUT} api/v1/{company}/user/{user}
+     * Currently this endpoint is only able to change a password
+     * Please note that the User-Access-Token does not have to be the access token for the username
+     * you are changing the password for.  It just needs to be a user that has rights to this endpoint.
+     * Currently there is no way for the User to change their own password if they don't have rights
+     * to this endpoint.  So you would need to first authenticate with a user who does have rights to change
+     * the password.
+     * @urlParam user required this is the username not id
+     */
     public function update(Request $request, $id)
     {
-        //
+        $user = app()->make('Update_User');
+        $user->Change_Password($request->input('new_password'));
+        return Response_201(['message' => 'password successfully changed',
+        'user' => $user->Get_API_Response_Collection()],$request);
     }
 
     public function destroy($id)
     {
-        //
+
     }
 }

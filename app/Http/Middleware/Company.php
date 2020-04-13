@@ -1,12 +1,11 @@
 <?php
 
 namespace App\Http\Middleware;
-use app\Facades\Program_Session;
-use app\Facades\Route;
+
 use Closure;
 use Symfony\Component\HttpFoundation\Response;
 
-class UserMiddleware
+class Company
 {
     /**
      * Handle an incoming request.
@@ -17,12 +16,7 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-
-        if(!Route::Am_I_Implicitly_Allowed())
-        {
-            $session = app()->make('Program_Session');
-        }
-
+        $company = app()->make('Company');
         return $next($request);
     }
 }

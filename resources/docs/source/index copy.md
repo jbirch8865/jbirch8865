@@ -32,7 +32,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z" \
-    -H "Secret-Token: AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i" \
+    -H "secret-token: AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i" \
     -d '{"username":"project2","password":"FlgFFgl&nl@hhg@hg&"}'
 
 ```
@@ -46,7 +46,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "kBfFF9COlHfnnXfX4O7b27dBxDO9lm3z",
-    "Secret-Token": "AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i",
+    "secret-token": "AhrTwTY3JcOClfqOXGXd4YNObtm8sXcYrUIUsuEJrvqmCy3i",
 };
 
 let body = {

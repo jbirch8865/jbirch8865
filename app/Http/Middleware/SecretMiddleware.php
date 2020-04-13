@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use app\Facades\Programs;
-use app\Facades\Program;
+use Symfony\Component\HttpFoundation\Response;
+
 class SecretMiddleware
 {
     /**
@@ -16,25 +17,26 @@ class SecretMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!$request->headers->has('Secret-Token'))
+        if(!$request->headers->has('secret-token'))
         {
-            return Response_422(['message' => 'The Secret header with secret Secret-Token is required.'],$request);
+            return Response_422(['message' => 'The secret-token header is required.'],$request);
         }
-        if(strlen($request->header('Secret-Token')) > Programs::Get_Column('secret')->Get_Data_Length())
-        {            
-            return Response_422(['message' => 'Secret-Token is malformed.'],$request);
+        if(strlen($request->header('secret-token')) > Programs::Get_Column('secret')->Get_Data_Length())
+        {
+            return Response_422(['message' => 'secret-token is malformed.'],$request);
         }
-        if($request->header('Secret_Token') == Program::Get_Secret())
+        $program = app()->make('Program');
+        if($request->header('secret-token') == $program->Get_Secret())
         {
             $toolbelt = new \toolbelt;
-            if($toolbelt->cConfigs->Is_Prod() && $request->header('Secret_Token') == $toolbelt->cConfigs->Get_Secret_ID())
+            if($toolbelt->cConfigs->Is_Prod() && $request->header('secret-token') == $toolbelt->cConfigs->Get_Secret_ID())
             {
-                return Response_401(['message' => 'Sorry this client id/secret is only allowed in the sandbox environment.'],$request);
+                return Response_401(['message' => 'Sorry this client-id/secret-token is only allowed in the sandbox environment.'],$request);
             }
             return $next($request);
         }else
         {
-            return Response_401(['message' => 'Secret_Token is incorrect.'],$request);
+            return Response_401(['message' => 'secret-token is incorrect.'],$request);
         }
     }
 }

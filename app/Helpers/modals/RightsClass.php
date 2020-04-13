@@ -2,7 +2,7 @@
 namespace app\Helpers;
 
 use Active_Record\Active_Record;
-class Right extends Active_Record
+class Right extends Active_Record implements iActiveRecord
 {
     public $_table = "Rights";
 
@@ -72,6 +72,13 @@ class Right extends Active_Record
     public function Load_Right_By_ID(int $right_id) : void
     {
         $this->Load_From_Int('id',$right_id);
+    }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    function Get_API_Response_Collection(): array
+    {
+        return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
 }
 

@@ -4,6 +4,7 @@ $toolbelt_base->Routes = new \DatabaseLink\Table('Routes',$toolbelt_base->dblink
 routes_Validate_ID_Column($toolbelt_base->Routes);
 routes_Validate_Route_Column($toolbelt_base->Routes);
 routes_Validate_Implicit_Allow($toolbelt_base->Routes);
+routes_Validate_Module_Column($toolbelt_base->Routes);
 $toolbelt_base->Routes->Load_Columns();
 function routes_Validate_ID_Column(\DatabaseLink\Table $routes)
 {
@@ -50,7 +51,7 @@ function routes_Validate_Route_Column(\DatabaseLink\Table $routes)
         }
         if($column->Get_Data_Type() != "varchar(250)")
         {
-            $column->Set_Data_Type("varchar(200)");
+            $column->Set_Data_Type("varchar(250)");
         }
         if($column->Get_Default_Value() != '')
         {
@@ -112,6 +113,40 @@ function routes_Validate_Implicit_Allow(\DatabaseLink\Table $routes)
         );
     }
 }
-
-
+function routes_Validate_Module_Column(\DatabaseLink\Table $routes)
+{
+    if($column = $routes->Get_Column('module'))
+    {
+        if($column->Get_Column_Key() != "")
+        {
+            $column->Set_Column_Key(""); 
+        }
+        if($column->Get_Data_Type() != "varchar(250)")
+        {
+            $column->Set_Data_Type("varchar(250)");
+        }
+        if($column->Get_Default_Value() != null)
+        {
+            $column->Set_Default_Value(null);
+        }
+        if($column->Is_Column_Nullable())
+        {
+            $column->Column_Is_Not_Nullable();
+        }
+        if($column->Does_Auto_Increment())
+        {
+            $column->Column_Does_Not_Auto_Increments();
+        }
+        $column->Update_Column();
+    }else
+    {
+        $column = new \DatabaseLink\Column('module',$routes,array(
+            'COLUMN_TYPE' => 'varchar(250)',
+            'COLUMN_DEFAULT' => null,
+            'is_nullable' => false,
+            'column_key' => "",
+            'EXTRA' => "")
+        );
+    }
+}
 ?>

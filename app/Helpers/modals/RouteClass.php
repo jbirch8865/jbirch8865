@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 namespace app\Helpers;
 use Active_Record\Active_Record;
-class Route extends Active_Record
+class Route extends Active_Record implements iActiveRecord
 {
     public $_table = "Routes";
 
@@ -23,6 +23,17 @@ class Route extends Active_Record
         $this->Set_Varchar($this->table_dblink->Get_Column('name'),$route_name,false,$update_immediately);
     }
     /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    public function Get_Module_Name() : string
+    {
+        return $this->Get_Value_From_Name('module');
+    }
+    public function Set_Module_Name(string $module_name,bool $update_immediately = true) : void
+    {
+        $this->Set_Varchar($this->table_dblink->Get_Column('module'),$module_name,false,$update_immediately);
+    }
+    /**
      * @throws Object_Is_Already_Loaded
      * @throws Active_Record_Object_Failed_To_Load — if id doesn't exist
      */
@@ -41,7 +52,7 @@ class Route extends Active_Record
     /**
      * @throws Update_Failed if not all required values set and update_immediately is true
      */
-    public function Set_Implicit_Allow(bool $implicit_allow = false,bool $update_immediately = false) : void
+    public function Set_Implicit_Allow(bool $implicit_allow = false,bool $update_immediately = true) : void
     {
         $this->Set_Int($this->table_dblink->Get_Column('implicit_allow'),(int) $implicit_allow,$update_immediately);
     }
@@ -62,22 +73,52 @@ class Route extends Active_Record
     {
         $toolbelt = new \toolbelt;
         $toolbelt->Companies->Query_Single_Table(['id'],false);
+        $toolbelt->Companies->Reset_Queried_Data();
         while($row = $toolbelt->Companies->Get_Queried_Data())
         {
+            $company = new \app\Helpers\Company;
+            $company->Load_Company_By_ID((int) $row['id']);
+            $role = $company->Get_Master_Role();
+            $route_role = new \app\Helpers\Route_Role;
+            try
+            {
+                $route_role->Load_From_Route_And_Role($this,$role);
+                continue;
+            } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+            {
+            }
             $right = new \app\Helpers\Right;
             $right->Allow_Delete();
             $right->Allow_Get();
             $right->Allow_Patch();
             $right->Allow_Post();
             $right->Allow_Put();
-            $company = new \app\Helpers\Company;
-            $company->Load_Company_By_ID((int) $row['id']);
-            $role = $company->Get_Master_Role();
-            $route_role = new \app\Helpers\Route_Role;
             $route_role->Set_Right($right,false);
             $route_role->Set_Role($role,false);
             $route_role->Set_Route($this,true);
         }
+    }
+
+    /**
+     * @throws \Exception if no route
+     */
+    function Get_Current_Route_Name() : string
+    {
+        $route = \Illuminate\Support\Facades\Route::currentRouteName();
+        if(is_null($route))
+        {
+            throw new \Exception('no route');
+        }else
+        {
+            return $route;
+        }
+    }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    function Get_API_Response_Collection(): array
+    {
+        return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
 }
 

@@ -2,7 +2,7 @@
 namespace app\Helpers;
 
 use Active_Record\Active_Record;
-class Route_Role extends Active_Record
+class Route_Role extends Active_Record implements iActiveRecord
 {
     public $_table = "Routes_Have_Roles";
 
@@ -28,7 +28,7 @@ class Route_Role extends Active_Record
     public function Get_Route_ID() : int
     {
         return (int) $this->Get_Value_From_Name('route_id');
-    }    
+    }
     /**
      * @throws Update_Failed if other required parameters aren't set yet
      * @throws \Active_Record\Object_Has_Not_Been_Loaded for route
@@ -50,7 +50,7 @@ class Route_Role extends Active_Record
     public function Get_Role_ID() : int
     {
         return (int) $this->Get_Value_From_Name('role_id');
-    }    
+    }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded for company_role
      * @throws Update_Failed if other required parameters aren't set yet
@@ -58,27 +58,34 @@ class Route_Role extends Active_Record
     public function Set_Role(\Company\Company_Role $company_role,bool $update_immediately) : void
     {
         $this->Set_Int($this->table_dblink->Get_Column('role_id'),$company_role->Get_Verified_ID(),$update_immediately);
-    }    
+    }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
     public function Get_Right_ID() : int
     {
         return (int) $this->Get_Value_From_Name('right_id');
-    }   
+    }
     /**
      * @throws Update_Failed if other required parameters aren't set yet
      */
     public function Set_Right(\app\Helpers\Right $right,bool $update_immediately) : void
     {
         $this->Set_Int($this->table_dblink->Get_Column('right_id'),$right->Get_Verified_ID(),$update_immediately);
-    }   
+    }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded for route and role
      */
     public function Load_From_Route_And_Role(\app\Helpers\Route $route,\Company\Company_Role $role) : void
     {
         $this->Load_From_Multiple_Vars([['route_id',$route->Get_Verified_ID()],['role_id',$role->Get_Verified_ID()]]);
+    }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    function Get_API_Response_Collection(): array
+    {
+        return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
 }
 

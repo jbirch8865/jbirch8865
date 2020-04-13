@@ -1,7 +1,7 @@
 <?php
 namespace app\Helpers;
 
-class Company extends \Company\Company
+class Company extends \Company\Company implements iActiveRecord
 {
     function __construct()
     {
@@ -65,6 +65,13 @@ class Company extends \Company\Company
             $route_has_role->Set_Role($new_role,false);
             $route_has_role->Set_Route($route,true);
         }
+    }
+    /**
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded
+     */
+    function Get_API_Response_Collection(): array
+    {
+        return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
 }
 ?>

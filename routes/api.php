@@ -13,31 +13,33 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::prefix('v1/{company_id}')->group(function(){
+Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function(){
     Route::resource('signin', 'SigninController',[
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']
     ])->middleware('secret');
-    Route::resource('Users', 'UsersController',[
+    Route::resource('users', 'UsersController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Users']
         ]);
-    Route::resource('User', 'UserController',[
+    Route::resource('user', 'UserController',[
         'only' => ['store'],
         'names' => ['store' => 'Create_User']
     ]);
-   // Route::resource()
+    Route::resource('user', 'UserController',[
+        'only' => ['update'],
+        'names' => ['update' => 'Update_User']
+    ]);
 });
-Route::prefix('v1')->group(function(){
-    Route::resource('/Company', 'CompanyController',[
+Route::group(['prefix' => 'v1',  'middleware' => 'secret'],function(){
+    Route::resource('/company', 'CompanyController',[
         'only' => ['store'],
         'names' => ['store' => 'Create_Company']
-    ])->middleware('secret');
-    Route::resource('/Companies', 'CompanyController',[
+    ]);
+    Route::resource('/companies', 'CompanyController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Companies']
-    ])->middleware('secret');
-    
+    ]);
 });
 Route::get('{any}', function ($any = null) {
     return response()->json([

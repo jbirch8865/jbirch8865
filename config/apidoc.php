@@ -53,7 +53,7 @@ return [
         /*
          * Specify whether the Postman collection should be generated.
          */
-        'enabled' => false,
+        'enabled' => true,
 
         /*
          * The name for the exported Postman collection. Default: config('app.name')." API"
@@ -197,10 +197,11 @@ return [
         ],
         'urlParameters' => [
             \Mpociot\ApiDoc\Extracting\Strategies\UrlParameters\GetFromUrlParamTag::class,
-            AddOrganizationIdUrlParameter::class
+            AddOrganizationIdUrlParameter::class,
+            Add_URI_Parameters::class
         ],
         'queryParameters' => [
-            \Mpociot\ApiDoc\Extracting\Strategies\QueryParameters\GetFromQueryParamTag::class,
+            \Mpociot\ApiDoc\Extracting\Strategies\QueryParameters\GetFromQueryParamTag::class
         ],
         'headers' => [
             \Mpociot\ApiDoc\Extracting\Strategies\RequestHeaders\GetFromRouteRules::class,
