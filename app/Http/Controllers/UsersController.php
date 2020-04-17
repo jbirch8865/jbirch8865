@@ -10,11 +10,8 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     /**
-     * {GET} api/v1/{company_id}/users
+     * {GET} api/v1/{company}/users
      * Return a list of users belonging to the company
-     * @queryParam include_disabled if set will only return active users Example: true
-     * @queryParam offset a number between 0 and infinite that represents which object to start with default is 0 Example: 0
-     * @queryParam limit a number between 1 and 100 representing the number of records to return after the offset default is 50 Example: 2
      *
      */
     public function index(Request $request,int $company_id)
@@ -39,4 +36,38 @@ class UsersController extends Controller
         ],$request);
     }
 
+    /**
+     * {PUT} api/v1/{company}/user/{user}
+     * Currently this endpoint is only able to change a password and re-enable a disabled user
+     * Please note that the User-Access-Token does not have to be the access token for the username
+     * you are changing the password for.  It just needs to be a user that has rights to this endpoint.
+     * Currently there is no way for the User to change their own password if they don't have rights
+     * to this endpoint.  So you would need to first authenticate with a user who does have rights to change
+     * the password.  This could be accomplished by first enabling the default user, authenticating and updating
+     * the password.  Then remember to disable the default user.
+     */
+    public function update(Request $request, $id)
+    {
+        app()->request->validate([
+            'new_password' => ['max:'.Users::Get_Column('verified_hashed_password')->Get_Data_Length()],
+            'active_status' => ['bool']
+        ]);
+        $user = app()->make('Update_User');
+        $user->Change_Password($request->input('new_password'));
+        $user->Set_Active_Status((bool) $request->input('active_status'));
+        return Response_201(['message' => 'User successfully updated',
+        'user' => $user->Get_API_Response_Collection()],$request);
+    }
+    /**
+     * {DELETE} api/v1/{company}/user/{user}
+     *
+     */
+    public function destroy(Request $request, $id)
+    {
+        $user = app()->make('Update_User');
+        $user->Delete_User($request->input('active_status'));
+        return Response_201(['message' => 'User Successfully Deleted',
+        'user' => $user->Get_API_Response_Collection()],$request);
+
+    }
 }

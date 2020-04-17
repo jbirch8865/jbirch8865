@@ -19,12 +19,8 @@ class ProgramMiddleware
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {            
-        $program = app()->make('Program');
-        if(!$program instanceof \API\Program)
-        {
-            return $program;
-        }
+    {
+        app()->make('Program');
         $request->validate([
             'limit' => ['lte:100','gte:1'],
             'details_limit' => ['lte:25','gte:1'],

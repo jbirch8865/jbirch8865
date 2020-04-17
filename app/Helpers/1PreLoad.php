@@ -9,7 +9,7 @@ class toolbelt extends \Test_Tools\toolbelt
     public \DatabaseLink\Table $Rights;
     public \DatabaseLink\Table $Routes;
     public \DatabaseLink\Table $Routes_Have_Roles;
-    
+
     function __construct()
     {
         global $toolbelt_base;
@@ -44,5 +44,14 @@ class Companies extends \DatabaseLink\Table
     {
         global $toolbelt_base;
         parent::__construct('Companies',$toolbelt_base->dblink);
+    }
+}
+
+class Routes extends \DatabaseLink\Table
+{
+    function __construct()
+    {
+        global $toolbelt_base;
+        parent::__construct('Routes',$toolbelt_base->dblink);
     }
 }

@@ -37,3 +37,10 @@ function Response_401(array $payload,Request $request)
 {
     return response()->json($payload,401);
 }
+/**
+ * My Bad Sorry I need to fix this
+ */
+function Response_500(array $payload,Request $request)
+{
+    return response()->json($payload,500);
+}

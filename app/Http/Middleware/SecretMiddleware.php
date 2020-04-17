@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use app\Facades\Programs;
+use app\Facades\Route;
 use Symfony\Component\HttpFoundation\Response;
 
 class SecretMiddleware
@@ -17,6 +18,7 @@ class SecretMiddleware
      */
     public function handle($request, Closure $next)
     {
+        $name = Route::Get_Current_Route_Name();
         if(!$request->headers->has('secret-token'))
         {
             return Response_422(['message' => 'The secret-token header is required.'],$request);

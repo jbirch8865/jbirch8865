@@ -16,7 +16,7 @@ class Company
      */
     public function handle($request, Closure $next)
     {
-        $company = app()->make('Company');
+        app()->make('Company');
         return $next($request);
     }
 }

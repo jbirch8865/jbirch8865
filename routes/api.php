@@ -18,18 +18,19 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']
     ])->middleware('secret');
-    Route::resource('users', 'UsersController',[
-        'only' => ['index'],
-        'names' => ['index' => 'List_Users']
-        ]);
     Route::resource('user', 'UserController',[
         'only' => ['store'],
-        'names' => ['store' => 'Create_User']
+        'names' => [
+            'store' => 'Create_User'
+            ]
     ]);
-    Route::resource('user', 'UserController',[
-        'only' => ['update'],
-        'names' => ['update' => 'Update_User']
-    ]);
+    Route::resource('users', 'UsersController',[
+        'only' => ['index','update','destroy'],
+        'names' => [
+            'index' => 'List_Users',
+            'update' => 'Update_User',
+            'destroy' => 'Delete_User']
+        ]);
 });
 Route::group(['prefix' => 'v1',  'middleware' => 'secret'],function(){
     Route::resource('/company', 'CompanyController',[
@@ -39,6 +40,10 @@ Route::group(['prefix' => 'v1',  'middleware' => 'secret'],function(){
     Route::resource('/companies', 'CompanyController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Companies']
+    ]);
+    Route::resource('/routes', 'RouteController',[
+        'only' => ['index'],
+        'names' => ['index' => 'List_Routes']
     ]);
 });
 Route::get('{any}', function ($any = null) {

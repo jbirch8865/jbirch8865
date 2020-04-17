@@ -36,14 +36,14 @@ class CompanyController extends Controller
         $Companies = array();
         While($row = Companies::Get_Queried_Data())
         {
-            $company = app()->make('Company');
+            $company = new \app\Helpers\Company;
             $company->Load_Company_By_ID($row['id']);
             if($request->input('include_details',false))
             {
                 $Companies[$company->Get_Company_Name()] = $company->Get_API_Response_Collection();
             }else
             {
-                $Companies[] = $company->Get_Company_Name();
+                $Companies[$company->Get_Company_Name()] = $company->Get_Verified_ID();
             }
         }
         return Response_200([

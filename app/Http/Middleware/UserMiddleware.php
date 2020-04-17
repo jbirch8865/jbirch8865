@@ -17,10 +17,9 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-
         if(!Route::Am_I_Implicitly_Allowed())
         {
-            $session = app()->make('Program_Session');
+            app()->make('Program_Session');
         }
 
         return $next($request);

@@ -36,9 +36,9 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/1/signin" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "secret-token: 6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9" \
-    -d '{"username":"default","password":"?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"}'
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0" \
+    -d '{"user":"default","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
 
 ```
 
@@ -50,13 +50,13 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "secret-token": "6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
 };
 
 let body = {
-    "username": "default",
-    "password": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"
+    "user": "default",
+    "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
 }
 
 fetch(url, {
@@ -75,10 +75,10 @@ fetch(url, {
 {
     "Program_Session": {
         "id": "3",
-        "client_id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-        "access_token": "Go54SYIFyLLU.q.01Mt55fZ1FoFVCWk04KrT3hzJIfLZV",
+        "client_id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+        "access_token": "AcGSoxNBD6ml9Y9TlD9JQhz7nWPBwhCHp9D7D3XlWNZ0r",
         "user_id": "1",
-        "experation_timestamp": "2020-04-10 20:24:10"
+        "experation_timestamp": "2020-04-17 19:37:20"
     }
 }
 ```
@@ -90,31 +90,107 @@ fetch(url, {
 
 Parameter | Status | Description
 --------- | ------- | ------- | -------
-    `company` |  required  | The ID of the organization
+    `company` |  required  | {integer} The ID of the organization
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `username` | string |  required  | 
-        `password` | string |  required  | 
+    `user` | string |  required  | {string}
+        `password` | string |  required  | {string}
     
 <!-- END_2cb38f1f812a602469c22d7858e3f5a2 -->
 
 #Company
 
 Basic CRUD operations for Companies, Company Configs and Users
+<!-- START_93ebf56a5f43247bf91c25a2be5cb179 -->
+## {POST} api/v1/{company}/user
+
+Create a user
+
+> Example request:
+
+```bash
+curl -X POST \
+    "https://project.dsfellowship.com/api/v1/1/user" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: UXHY5r64SuNjkwDsczwQ=sVIw56P6dE8.doc8oFRGHAQZ" \
+    -d '{"user":"5e9a04441f797","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
+
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/1/user"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "UXHY5r64SuNjkwDsczwQ=sVIw56P6dE8.doc8oFRGHAQZ",
+};
+
+let body = {
+    "user": "5e9a04441f797",
+    "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "User successfully created or already exists with that password",
+    "user": {
+        "id": 50,
+        "username": "5e9a04441f797",
+        "company_id": 1,
+        "project_name": "project2",
+        "active_status": 1
+    }
+}
+```
+
+### HTTP Request
+`POST api/v1/{company}/user`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | {integer} The ID of the organization
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `user` | string |  required  | {string}
+        `password` | string |  required  | {string}
+    
+<!-- END_93ebf56a5f43247bf91c25a2be5cb179 -->
+
 <!-- START_98c7cd9e1616fc65c12af185be991ff8 -->
-## {GET} api/v1/{company_id}/users
+## {GET} api/v1/{company}/users
 Return a list of users belonging to the company
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/users?include_disabled=true&offset=0&limit=2" \
+    -G "https://project.dsfellowship.com/api/v1/1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "User-Access-Token: mpgJlNxeUgn+F0edQ8SGE8XFBNz3v5+th$4CLQYyav?7T"
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: hS1fqe3jQ16BBlxcdeITmj=9BBKxQiu2D=JuVATGqJCCp"
 ```
 
 ```javascript
@@ -122,19 +198,11 @@ const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/users"
 );
 
-let params = {
-    "include_disabled": "true",
-    "offset": "0",
-    "limit": "2",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
-
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "User-Access-Token": "mpgJlNxeUgn+F0edQ8SGE8XFBNz3v5+th$4CLQYyav?7T",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "hS1fqe3jQ16BBlxcdeITmj=9BBKxQiu2D=JuVATGqJCCp",
 };
 
 fetch(url, {
@@ -158,6 +226,27 @@ fetch(url, {
                 "company_id": "1",
                 "project_name": "project2",
                 "active_status": "1"
+            },
+            "5e9a03c28215c": {
+                "id": "44",
+                "username": "5e9a03c28215c",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1"
+            },
+            "5e9a03f2714d6": {
+                "id": "46",
+                "username": "5e9a03f2714d6",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1"
+            },
+            "5e9a04441f797": {
+                "id": "50",
+                "username": "5e9a04441f797",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1"
             }
         }
     }
@@ -171,130 +260,55 @@ fetch(url, {
 
 Parameter | Status | Description
 --------- | ------- | ------- | -------
-    `company` |  required  | The ID of the organization
-#### Query Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -----------
-    `include_disabled` |  optional  | if set will only return active users
-    `offset` |  optional  | a number between 0 and infinite that represents which object to start with default is 0
-    `limit` |  optional  | a number between 1 and 100 representing the number of records to return after the offset default is 50
+    `company` |  required  | {integer} The ID of the organization
+    `active_status` |  optional  | {bool} Include inactive objects
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
 
 <!-- END_98c7cd9e1616fc65c12af185be991ff8 -->
 
-<!-- START_93ebf56a5f43247bf91c25a2be5cb179 -->
-## {POST} api/v1/{company}/user
-
-Create a user
-
-> Example request:
-
-```bash
-curl -X POST \
-    "https://project.dsfellowship.com/api/v1/1/user" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "User-Access-Token: Kx.7tZSGZm3UB0cL1e=qBsAURoIU9P9XfBCp8=74xSCsQ" \
-    -d '{"username":"default","password":"?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"}'
-
-```
-
-```javascript
-const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/user"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "User-Access-Token": "Kx.7tZSGZm3UB0cL1e=qBsAURoIU9P9XfBCp8=74xSCsQ",
-};
-
-let body = {
-    "username": "default",
-    "password": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (201):
-
-```json
-{
-    "message": "User successfully created or already exists with that password",
-    "user": {
-        "id": "1",
-        "username": "default",
-        "company_id": "1",
-        "project_name": "project2",
-        "active_status": "1"
-    }
-}
-```
-
-### HTTP Request
-`POST api/v1/{company}/user`
-
-#### URL Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -------
-    `company` |  required  | The ID of the organization
-#### Body Parameters
-Parameter | Type | Status | Description
---------- | ------- | ------- | ------- | -----------
-    `username` | string |  required  | 
-        `password` | string |  required  | 
-    
-<!-- END_93ebf56a5f43247bf91c25a2be5cb179 -->
-
-<!-- START_5149dfea124049ab5e5b0e37d1c9e78e -->
+<!-- START_0b2e8585c58a2fdc22e4236c22e7da46 -->
 ## {PUT} api/v1/{company}/user/{user}
-Currently this endpoint is only able to change a password
+Currently this endpoint is only able to change a password and re-enable a disabled user
 Please note that the User-Access-Token does not have to be the access token for the username
 you are changing the password for.  It just needs to be a user that has rights to this endpoint.
 
 Currently there is no way for the User to change their own password if they don't have rights
 to this endpoint.  So you would need to first authenticate with a user who does have rights to change
-the password.
+the password.  This could be accomplished by first enabling the default user, authenticating and updating
+the password.  Then remember to disable the default user.
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/user/default" \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "User-Access-Token: 5P8vYSZrnG+oq=Ghm1oRKedZCaJFXh0EDKbi.U=YEFCST" \
-    -d '{"new_password":"?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"}'
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: WrVp=.eNTXFswEu1.U8k1+ftJr0haCBSFVw=Rzi6tkjH3" \
+    -d '{"new_password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb","active_status":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/user/default"
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "User-Access-Token": "5P8vYSZrnG+oq=Ghm1oRKedZCaJFXh0EDKbi.U=YEFCST",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "WrVp=.eNTXFswEu1.U8k1+ftJr0haCBSFVw=Rzi6tkjH3",
 };
 
 let body = {
-    "new_password": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7"
+    "new_password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "active_status": true
 }
 
 fetch(url, {
@@ -307,24 +321,112 @@ fetch(url, {
 ```
 
 
+> Example response (201):
+
+```json
+{
+    "message": "User successfully updated",
+    "user": {
+        "id": "50",
+        "username": "5e9a04441f797",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": 1
+    }
+}
+```
 
 ### HTTP Request
-`PUT api/v1/{company}/user/{user}`
+`PUT api/v1/{company}/users/{user}`
 
-`PATCH api/v1/{company}/user/{user}`
+`PATCH api/v1/{company}/users/{user}`
 
 #### URL Parameters
 
 Parameter | Status | Description
 --------- | ------- | ------- | -------
-    `user` |  required  | username to change password
-    `company` |  required  | The ID of the organization
+    `company` |  required  | {integer} The ID of the organization
+    `user` |  required  | {string} username to change password
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `new_password` | string |  required  | 
+    `new_password` | string |  optional  | {string}
+        `active_status` | bool |  optional  | {string}
     
-<!-- END_5149dfea124049ab5e5b0e37d1c9e78e -->
+<!-- END_0b2e8585c58a2fdc22e4236c22e7da46 -->
+
+<!-- START_ff18a82b48db2f4db7ea36392e0da63c -->
+## {DELETE} api/v1/{company}/user/{user}
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797?active_status=1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: tiHlSMu.EIhhmowOQxOAMbX0kpFEGuX4V76UBOw7OPKdB"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797"
+);
+
+let params = {
+    "active_status": "1",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "tiHlSMu.EIhhmowOQxOAMbX0kpFEGuX4V76UBOw7OPKdB",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "User Successfully Deleted",
+    "user": {
+        "id": "50",
+        "username": "5e9a04441f797",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": 0
+    }
+}
+```
+
+### HTTP Request
+`DELETE api/v1/{company}/users/{user}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | {integer} The ID of the organization
+    `user` |  required  | {string} username to delete
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `active_status` |  required  | {bool} When true user will be marked inactive.  When false the user will be deleted.
+
+<!-- END_ff18a82b48db2f4db7ea36392e0da63c -->
 
 <!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
 ## {POST} api/v1/company
@@ -341,8 +443,8 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "secret-token: 6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0" \
     -d '{"company_name":"documentation_company"}'
 
 ```
@@ -355,8 +457,8 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "secret-token": "6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
 };
 
 let body = {
@@ -378,9 +480,11 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "x.3GxsaZA2D=D9",
+    "master_password": "5GjHi6eCgVd2pW",
     "company": {
-        "company_name": "documentation_company"
+        "id": 36,
+        "company_name": "documentation_company",
+        "active_status": 1
     }
 }
 ```
@@ -391,7 +495,7 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `company_name` | string |  required  | 
+    `company_name` | string |  required  | {string}
     
 <!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
 
@@ -406,8 +510,8 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&include_details=2&details_offset=0&details_limit=1&offset=0&limit=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ?e+gC2UgQP3otYdJmra66Sfnslq?qxU7" \
-    -H "secret-token: 6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9"
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
 ```
 
 ```javascript
@@ -429,8 +533,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "?e+gC2UgQP3otYdJmra66Sfnslq?qxU7",
-    "secret-token": "6iehsRzeKNOz5jKAhkmbwD7c8B73S$++AV$uPDa0lku4YHH9",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
 };
 
 fetch(url, {
@@ -442,17 +546,74 @@ fetch(url, {
 ```
 
 
-> Example response (500):
+> Example response (200):
 
 ```json
 {
-    "message": "Server Error"
+    "message": "List of Current Companies",
+    "Companies": {
+        "documentation_company": {
+            "id": "36",
+            "company_name": "documentation_company",
+            "active_status": "1",
+            "Company_Configs": [
+                {
+                    "id": "52",
+                    "company_id": "36",
+                    "config_id": "1",
+                    "config_value": "UTC",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "36",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "1",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
+                }
+            ],
+            "Company_Roles": [
+                {
+                    "id": "29",
+                    "company_id": "36",
+                    "role_name": "master",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "36",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Users_Have_Roles": [
+                        {
+                            "id": "31",
+                            "user_id": "51",
+                            "role_id": "29"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
 ```
 
 ### HTTP Request
 `GET api/v1/companies`
 
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `active_status` |  optional  | {bool} Include inactive objects
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
 #### Query Parameters
 
 Parameter | Status | Description
@@ -478,7 +639,7 @@ curl -X GET \
     -G "https://project.dsfellowship.com/doc.json" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "User-Access-Token: tiMgUVkJ.DotF6R?6mfCHqfR$dsR8LhgxYbaeRWwHj?04"
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
 ```
 
 ```javascript
@@ -489,7 +650,7 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "User-Access-Token": "tiMgUVkJ.DotF6R?6mfCHqfR$dsR8LhgxYbaeRWwHj?04",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
 };
 
 fetch(url, {
@@ -508,7 +669,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "8904bbf7-4b60-4006-a0a7-787648ddc573",
+        "_postman_id": "735d6ae1-53e3-4bca-8a33-a93848741490",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -530,7 +691,7 @@ fetch(url, {
                                     "id": "company",
                                     "key": "company",
                                     "value": "1",
-                                    "description": "The ID of the organization"
+                                    "description": "{integer} The ID of the organization"
                                 }
                             ]
                         },
@@ -546,16 +707,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "FYE?0YgY.DuO1$a4W=XTfLE6JSVLAQki"
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Ah3U+s.7mNFJ=CRqA6qELfcs+0GWrBt9S$.qJSqTmerSI764"
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"username\": \"default\",\n    \"password\": \"FYE?0YgY.DuO1$a4W=XTfLE6JSVLAQki\"\n}"
+                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
                         },
                         "description": "Returns a unique access_token used to authenticate in place of the username and password\nThe access_token experation date is based on the company_config session_timeout which is comany specific",
                         "response": []
@@ -567,6 +728,201 @@ fetch(url, {
             "name": "Company",
             "description": "",
             "item": [
+                {
+                    "name": "{POST} api\/v1\/{company}\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/user",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "sz3epB4841HUCAedbPFU4ev27?FU4RCiqfj8G9FqqT3AT"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"user\": \"5e9a04130cda7\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
+                        },
+                        "description": "Create a user",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{GET} api\/v1\/{company}\/users\nReturn a list of users belonging to the company",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/users",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "Tgvxenhm2AMGoKAGjbTZ9C+EfXbXdKLhtr24MblRsV5d="
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{PUT} api\/v1\/{company}\/user\/{user}\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/users\/:user",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                },
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "5e9a04130cda7",
+                                    "description": "{string} username to change password"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "Q+J818DhIzo70hHogiXNNY.1weJ=Yu0S?JC.hH.2z9LUK"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"new_password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\",\n    \"active_status\": true\n}"
+                        },
+                        "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{DELETE} api\/v1\/{company}\/user\/{user}",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/users\/:user",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "1",
+                                    "description": "{bool} When true user will be marked inactive.  When false the user will be deleted.",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                },
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "5e9a04130cda7",
+                                    "description": "{string} username to delete"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "R=eckm2dptbRRIoBBTTRle0IrDsJ6I.rUU3BxI9NgTVhd"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
                 {
                     "name": "{POST} api\/v1\/company",
                     "request": {
@@ -588,11 +944,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "FYE?0YgY.DuO1$a4W=XTfLE6JSVLAQki"
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Ah3U+s.7mNFJ=CRqA6qELfcs+0GWrBt9S$.qJSqTmerSI764"
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
                             }
                         ],
                         "body": {
@@ -661,11 +1017,85 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "FYE?0YgY.DuO1$a4W=XTfLE6JSVLAQki"
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Ah3U+s.7mNFJ=CRqA6qELfcs+0GWrBt9S$.qJSqTmerSI764"
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tools",
+            "description": "",
+            "item": [
+                {
+                    "name": "doc.json",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "doc.json",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "secret-token",
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "See all the endpoints and if their explicit rights",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/routes",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "secret-token",
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
                             }
                         ],
                         "body": {
@@ -687,5 +1117,117 @@ fetch(url, {
 
 
 <!-- END_cd4a874127cd23508641c63b640ee838 -->
+
+<!-- START_392f39a571495220f725e466d873f08b -->
+## {GET} api/v1/routes
+See all the endpoints and if their explicit rights
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/routes" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/routes"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": "List of Current Routes",
+    "Routes": {
+        "User_Signin": {
+            "id": "1",
+            "name": "User_Signin",
+            "implicit_allow": "1",
+            "module": ""
+        },
+        "List_Users": {
+            "id": "2",
+            "name": "List_Users",
+            "implicit_allow": "0",
+            "module": "Company"
+        },
+        "Create_User": {
+            "id": "3",
+            "name": "Create_User",
+            "implicit_allow": "0",
+            "module": "Company"
+        },
+        "List_Companies": {
+            "id": "4",
+            "name": "List_Companies",
+            "implicit_allow": "1",
+            "module": ""
+        },
+        "Create_Company": {
+            "id": "5",
+            "name": "Create_Company",
+            "implicit_allow": "1",
+            "module": ""
+        },
+        "List_Roles": {
+            "id": "6",
+            "name": "List_Roles",
+            "implicit_allow": "0",
+            "module": "Company"
+        },
+        "Update_User": {
+            "id": "7",
+            "name": "Update_User",
+            "implicit_allow": "0",
+            "module": "Company"
+        },
+        "List_Routes": {
+            "id": "8",
+            "name": "List_Routes",
+            "implicit_allow": "1",
+            "module": ""
+        },
+        "apidoc.json": {
+            "id": "9",
+            "name": "apidoc.json",
+            "implicit_allow": "1",
+            "module": ""
+        },
+        "Delete_User": {
+            "id": "10",
+            "name": "Delete_User",
+            "implicit_allow": "0",
+            "module": ""
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/routes`
+
+
+<!-- END_392f39a571495220f725e466d873f08b -->
 
 

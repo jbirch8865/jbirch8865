@@ -21,13 +21,41 @@ class User extends \Authentication\User implements iActiveRecord
     {
         return $this->Is_Object_Active();
     }
+
+    public function Set_Active_Status(?bool $active_status)
+    {
+        if(!is_null($active_status))
+        {
+            if($active_status)
+            {
+                $this->Set_Object_Active();
+            }else
+            {
+                $this->Set_Object_Inactive();
+            }
+        }
+    }
     /**
      * @throws Varchar_Too_Long_To_Set
      */
-    public function Change_Password(string $new_password) : void
+    public function Change_Password(?string $new_password) : void
     {
-        $password = $this->Hash_Password($new_password);
-        $this->Set_Varchar($this->table_dblink->Get_Column('verified_hashed_password'),$password,false);
+        if(is_null($new_password)){return;}
+        if($new_password)
+        {
+            $password = $this->Hash_Password($new_password);
+            $this->Set_Varchar($this->table_dblink->Get_Column('verified_hashed_password'),$password,false,false);
+            $this->Update_Object();
+        }
+    }
+    public function Delete_User(bool $mark_inactive = true)
+    {
+        if($this->Get_Username() == 'default' && (is_null($mark_inactive) || !$mark_inactive))
+        {
+            Response_401(['message' => 'Sorry the default user cannot be permanently deleted'],app()->request)->send();
+            exit();
+        }
+        parent::Delete_User($mark_inactive);
     }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
