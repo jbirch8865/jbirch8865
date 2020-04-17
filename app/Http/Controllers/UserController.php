@@ -41,4 +41,22 @@ class UserController extends Controller
             'user' => $user->Get_API_Response_Collection()
         ],$request);
     }
+
+
+    /**
+     * @group Tools
+     * {PUT} api/v1/{company}/default_user/{user}
+     * This endpoint is exclusively to re-enable the default user specified
+     * it should be used when for some reason ALL users in a company are locked out
+     * or at least one person doesn't have all rights.
+     */
+    public function update(Request $request, $id)
+    {
+        app()->request->user = 'default';
+        $user = app()->make('Update_User');
+        $user->Set_Active_Status(true);
+        return Response_201(['message' => 'Default User Enabled',
+        'user' => $user->Get_API_Response_Collection()],$request);
+    }
+
 }

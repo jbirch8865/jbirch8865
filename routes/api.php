@@ -45,6 +45,10 @@ Route::group(['prefix' => 'v1',  'middleware' => 'secret'],function(){
         'only' => ['index'],
         'names' => ['index' => 'List_Routes']
     ]);
+    Route::resource('/{company}/default_user', 'UserController',[
+        'only' => ['update'],
+        'names' => ['update' => 'Enable_Default_User']
+    ]);
 });
 Route::get('{any}', function ($any = null) {
     return response()->json([

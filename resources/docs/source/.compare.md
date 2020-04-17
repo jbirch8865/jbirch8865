@@ -76,9 +76,9 @@ fetch(url, {
     "Program_Session": {
         "id": "3",
         "client_id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-        "access_token": "AcGSoxNBD6ml9Y9TlD9JQhz7nWPBwhCHp9D7D3XlWNZ0r",
+        "access_token": "ZCbds615woQ712cWkJDqVHJu5pjoKzwOBJEV7zyEwWwXU",
         "user_id": "1",
-        "experation_timestamp": "2020-04-17 19:37:20"
+        "experation_timestamp": "2020-04-17 23:24:01"
     }
 }
 ```
@@ -115,8 +115,8 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: UXHY5r64SuNjkwDsczwQ=sVIw56P6dE8.doc8oFRGHAQZ" \
-    -d '{"user":"5e9a04441f797","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
+    -H "User-Access-Token: MvB+QI+g94KdKKjgfO3Nky+UiodmrXeS2K5+D9d+6cQyF" \
+    -d '{"user":"5e9a3965871be","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
 
 ```
 
@@ -129,11 +129,11 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "UXHY5r64SuNjkwDsczwQ=sVIw56P6dE8.doc8oFRGHAQZ",
+    "User-Access-Token": "MvB+QI+g94KdKKjgfO3Nky+UiodmrXeS2K5+D9d+6cQyF",
 };
 
 let body = {
-    "user": "5e9a04441f797",
+    "user": "5e9a3965871be",
     "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
 }
 
@@ -153,8 +153,8 @@ fetch(url, {
 {
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 50,
-        "username": "5e9a04441f797",
+        "id": 66,
+        "username": "5e9a3965871be",
         "company_id": 1,
         "project_name": "project2",
         "active_status": 1
@@ -190,7 +190,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: hS1fqe3jQ16BBlxcdeITmj=9BBKxQiu2D=JuVATGqJCCp"
+    -H "User-Access-Token: yndjlpT6.lbMGTi2CpmkK.n7yEp8tOaUNF+61j?vPyBw2"
 ```
 
 ```javascript
@@ -202,7 +202,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "hS1fqe3jQ16BBlxcdeITmj=9BBKxQiu2D=JuVATGqJCCp",
+    "User-Access-Token": "yndjlpT6.lbMGTi2CpmkK.n7yEp8tOaUNF+61j?vPyBw2",
 };
 
 fetch(url, {
@@ -241,9 +241,9 @@ fetch(url, {
                 "project_name": "project2",
                 "active_status": "1"
             },
-            "5e9a04441f797": {
-                "id": "50",
-                "username": "5e9a04441f797",
+            "5e9a3965871be": {
+                "id": "66",
+                "username": "5e9a3965871be",
                 "company_id": "1",
                 "project_name": "project2",
                 "active_status": "1"
@@ -285,25 +285,25 @@ the password.  Then remember to disable the default user.
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797" \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: WrVp=.eNTXFswEu1.U8k1+ftJr0haCBSFVw=Rzi6tkjH3" \
+    -H "User-Access-Token: udpce7ec?s7nC9W6Az9?YBK1IfZXRiEIHDa+YLh4qlvUh" \
     -d '{"new_password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb","active_status":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797"
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "WrVp=.eNTXFswEu1.U8k1+ftJr0haCBSFVw=Rzi6tkjH3",
+    "User-Access-Token": "udpce7ec?s7nC9W6Az9?YBK1IfZXRiEIHDa+YLh4qlvUh",
 };
 
 let body = {
@@ -327,8 +327,8 @@ fetch(url, {
 {
     "message": "User successfully updated",
     "user": {
-        "id": "50",
-        "username": "5e9a04441f797",
+        "id": "66",
+        "username": "5e9a3965871be",
         "company_id": "1",
         "project_name": "project2",
         "active_status": 1
@@ -362,16 +362,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797?active_status=1" \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be?active_status=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: tiHlSMu.EIhhmowOQxOAMbX0kpFEGuX4V76UBOw7OPKdB"
+    -H "User-Access-Token: h+KfuR0Jsbt6GjGccH6++THjPMk01T0sI+4yO+w?zF7vE"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a04441f797"
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be"
 );
 
 let params = {
@@ -384,7 +384,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "tiHlSMu.EIhhmowOQxOAMbX0kpFEGuX4V76UBOw7OPKdB",
+    "User-Access-Token": "h+KfuR0Jsbt6GjGccH6++THjPMk01T0sI+4yO+w?zF7vE",
 };
 
 fetch(url, {
@@ -402,8 +402,8 @@ fetch(url, {
 {
     "message": "User Successfully Deleted",
     "user": {
-        "id": "50",
-        "username": "5e9a04441f797",
+        "id": "66",
+        "username": "5e9a3965871be",
         "company_id": "1",
         "project_name": "project2",
         "active_status": 0
@@ -480,9 +480,9 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "5GjHi6eCgVd2pW",
+    "master_password": "Tj5.CDJ1.07A92",
     "company": {
-        "id": 36,
+        "id": 44,
         "company_name": "documentation_company",
         "active_status": 1
     }
@@ -553,18 +553,18 @@ fetch(url, {
     "message": "List of Current Companies",
     "Companies": {
         "documentation_company": {
-            "id": "36",
+            "id": "44",
             "company_name": "documentation_company",
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "52",
-                    "company_id": "36",
+                    "id": "68",
+                    "company_id": "44",
                     "config_id": "1",
                     "config_value": "UTC",
                     "active_status": "1",
                     "Companies": {
-                        "id": "36",
+                        "id": "44",
                         "company_name": "documentation_company",
                         "active_status": "1"
                     },
@@ -578,20 +578,20 @@ fetch(url, {
             ],
             "Company_Roles": [
                 {
-                    "id": "29",
-                    "company_id": "36",
+                    "id": "40",
+                    "company_id": "44",
                     "role_name": "master",
                     "active_status": "1",
                     "Companies": {
-                        "id": "36",
+                        "id": "44",
                         "company_name": "documentation_company",
                         "active_status": "1"
                     },
                     "Users_Have_Roles": [
                         {
-                            "id": "31",
-                            "user_id": "51",
-                            "role_id": "29"
+                            "id": "42",
+                            "user_id": "67",
+                            "role_id": "40"
                         }
                     ]
                 }
@@ -669,7 +669,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "735d6ae1-53e3-4bca-8a33-a93848741490",
+        "_postman_id": "5fab22b9-d8f7-469f-acd9-7be81f709cde",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -761,12 +761,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "sz3epB4841HUCAedbPFU4ev27?FU4RCiqfj8G9FqqT3AT"
+                                "value": "OJM7DNVgm=VjxbHO3wm5nsikxk?Uu30ExiCKtvWZRalNk"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"5e9a04130cda7\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
+                            "raw": "{\n    \"user\": \"5e9a392b6db4f\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
                         },
                         "description": "Create a user",
                         "response": []
@@ -805,7 +805,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "Tgvxenhm2AMGoKAGjbTZ9C+EfXbXdKLhtr24MblRsV5d="
+                                "value": "DNkQ+WK=OeZTIiU7FMEQFqYNuTboVLwSu+rgbOyV.h?hr"
                             }
                         ],
                         "body": {
@@ -834,7 +834,7 @@ fetch(url, {
                                 {
                                     "id": "user",
                                     "key": "user",
-                                    "value": "5e9a04130cda7",
+                                    "value": "5e9a392b6db4f",
                                     "description": "{string} username to change password"
                                 }
                             ]
@@ -855,7 +855,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "Q+J818DhIzo70hHogiXNNY.1weJ=Yu0S?JC.hH.2z9LUK"
+                                "value": "73kuQCO8gm?u00PXuMBMcp98TcFkDLq+FZJriBZCFdimT"
                             }
                         ],
                         "body": {
@@ -891,7 +891,7 @@ fetch(url, {
                                 {
                                     "id": "user",
                                     "key": "user",
-                                    "value": "5e9a04130cda7",
+                                    "value": "5e9a392b6db4f",
                                     "description": "{string} username to delete"
                                 }
                             ]
@@ -912,7 +912,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "R=eckm2dptbRRIoBBTTRle0IrDsJ6I.rUU3BxI9NgTVhd"
+                                "value": "Il46o5f9uk9aNk59Ow?pWFlASsKqPVOJIfUQ??+8rQyoK"
                             }
                         ],
                         "body": {
@@ -1071,7 +1071,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "See all the endpoints and if their explicit rights",
+                    "name": "{GET} api\/v1\/routes\nSee all the endpoints and if their explicit rights",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -1080,6 +1080,50 @@ fetch(url, {
                             "query": []
                         },
                         "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "secret-token",
+                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{PUT} api\/v1\/{company}\/default_user\/{user}\nThis endpoint is exclusively to re-enable the default user specified\nit should be used when for some reason ALL users in a company are locked out\nor at least one person doesn't have all rights.",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/default_user\/:default_user",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
                         "header": [
                             {
                                 "key": "Content-Type",
@@ -1219,6 +1263,12 @@ fetch(url, {
             "name": "Delete_User",
             "implicit_allow": "0",
             "module": ""
+        },
+        "Enable_Default_User": {
+            "id": "11",
+            "name": "Enable_Default_User",
+            "implicit_allow": "1",
+            "module": ""
         }
     }
 }
@@ -1229,5 +1279,72 @@ fetch(url, {
 
 
 <!-- END_392f39a571495220f725e466d873f08b -->
+
+<!-- START_bc0f2a216f00c2aa2122a1a7be9ad77b -->
+## {PUT} api/v1/{company}/default_user/{user}
+This endpoint is exclusively to re-enable the default user specified
+it should be used when for some reason ALL users in a company are locked out
+or at least one person doesn&#039;t have all rights.
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "https://project.dsfellowship.com/api/v1/1/default_user/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/1/default_user/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "Default User Enabled",
+    "user": {
+        "id": "1",
+        "username": "default",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": 1
+    }
+}
+```
+
+### HTTP Request
+`PUT api/v1/{company}/default_user/{default_user}`
+
+`PATCH api/v1/{company}/default_user/{default_user}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | {integer} The ID of the organization
+    `user` |  optional  | {string} default username.  Not required. In fact will be overridden
+
+<!-- END_bc0f2a216f00c2aa2122a1a7be9ad77b -->
 
 

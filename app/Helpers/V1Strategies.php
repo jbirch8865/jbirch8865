@@ -87,8 +87,7 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $new_user_for_documentation,
             ];
-        }
-        if($route->named('Update_User'))
+        }elseif($route->named('Update_User'))
         {
             global $new_user_for_documentation;
             $array['user'] = [
@@ -97,7 +96,16 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $new_user_for_documentation
             ];
+        }elseif($route->named('Enable_Default_User'))
+        {
+            $array['user'] = [
+                'type' => 'string',
+                'description' => '{string} default username.  Not required. In fact will be overridden',
+                'required' => false,
+                'value' => 'default'
+            ];
         }
+
         if($method->name == 'index' && !$route->named('List_Routes'))
         {
             $array['active_status'] = [
@@ -221,7 +229,7 @@ class Add_Post_Data extends Strategy
                     'value' => 'documentation_company'
                ];
         }
-        if($method->name == 'update')
+        if($method->name == 'update' && !$route->named('Enable_Default_User'))
         {
             $array['active_status'] = [
                     'type' => 'bool',

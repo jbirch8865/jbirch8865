@@ -33,8 +33,8 @@ function Add_All_Constraints()
         $to_table_name = $value[1][0];
         $from_column = new \DatabaseLink\Column($from_column_name,$toolbelt_base->$from_table_name);
         $to_column = new \DatabaseLink\Column($to_column_name,$toolbelt_base->$to_table_name);
-        Add_Column_Constraint($from_column,$to_column);            
-    }    
+        Add_Column_Constraint($from_column,$to_column);
+    }
 }
 function Add_All_Multi_Column_Unique_Indexes()
 {
@@ -62,7 +62,10 @@ function Build_Routes()
     Create_Route_If_Not_Exist('Create_Company','',true);
     Create_Route_If_Not_Exist('List_Roles','Company',false);
     Create_Route_If_Not_Exist('Update_User','Company',false);
-    
+    Create_Route_If_Not_Exist('List_Routes','',true);
+    Create_Route_If_Not_Exist('apidoc.json','',true);
+    Create_Route_If_Not_Exist('Delete_User','',false);
+    Create_Route_If_Not_Exist('Enable_Default_User','',true);
 }
 
 function Create_Route_If_Not_Exist(string $name,string $module,bool $implicit_allow = false)

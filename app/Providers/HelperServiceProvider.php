@@ -40,7 +40,7 @@ class HelperServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        app()->singleton('Company',function(){
+        app()->bind('Company',function(){
             $company = new Company;
             $this->Validate_Uri_Int_Parameter('company');
             try
@@ -56,7 +56,7 @@ class HelperServiceProvider extends ServiceProvider
 
 
 
-        app()->singleton('Program',function(){
+        app()->bind('Program',function(){
             $program = new Program;
             if(!app()->request->headers->has('client-id'))
             {
@@ -79,7 +79,7 @@ class HelperServiceProvider extends ServiceProvider
             return $program;
         });
 
-        app()->singleton('Program_Session_Username',function(){
+        app()->bind('Program_Session_Username',function(){
             $this->User_Post_Required();
             $session = new Program_Session;
             try
@@ -103,7 +103,7 @@ class HelperServiceProvider extends ServiceProvider
         });
 
 
-        app()->singleton('Program_Session',function(){
+        app()->bind('Program_Session',function(){
             $session = new Program_Session;
             if(!app()->request->headers->has('User-Access-Token'))
             {
@@ -129,7 +129,7 @@ class HelperServiceProvider extends ServiceProvider
 
         });
 
-        app()->singleton('Route', function(){
+        app()->bind('Route', function(){
             $route = new Route;
             try
             {
@@ -142,11 +142,11 @@ class HelperServiceProvider extends ServiceProvider
             return $route;
         });
 
-        app()->singleton('Route_Has_Role', function(){
+        app()->bind('Route_Has_Role', function(){
             $route_role = new Route_Role;
             return $route_role;
         });
-        app()->singleton('Get_Active_User', function(){
+        app()->bind('Get_Active_User', function(){
             $this->User_Post_Required();
             try
             {
@@ -166,7 +166,7 @@ class HelperServiceProvider extends ServiceProvider
             }
         });
 
-        app()->singleton('Get_User', function(){
+        app()->bind('Get_User', function(){
             $this->User_Post_Required();
             try
             {
@@ -182,7 +182,7 @@ class HelperServiceProvider extends ServiceProvider
             }
         });
 
-        app()->singleton('Create_User', function(){
+        app()->bind('Create_User', function(){
             $this->User_Post_Required();
             app()->request->validate([
                 'user' => [new Unique_User]
@@ -191,7 +191,7 @@ class HelperServiceProvider extends ServiceProvider
             return $user;
         });
 
-        app()->singleton('Update_User', function(){
+        app()->bind('Update_User', function(){
             if(!isset(app()->request->user))
             {
                 Response_400(['message' => 'username is required in the url.'],app()->request)->send();
