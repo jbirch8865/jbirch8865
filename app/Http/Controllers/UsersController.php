@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     /**
-     * {GET} api/v1/{company}/users
+     * {GET} users/{company}/v1/api
      * Return a list of users belonging to the company
      *
      */
@@ -35,9 +35,27 @@ class UsersController extends Controller
             'message' => array('Users' => $users)
         ],$request);
     }
+    /**
+     * {POST} users/{company}/v1/api
+     *
+     * Create a user
+     *
+     */
+    public function store(Request $request)
+    {
+        if($request->user == 'default')
+        {
+            return Response_422(['message' => 'Default user already created'],$request);
+        }
+        $user = app()->make('Create_User');
+        return Response_201([
+            'message' => 'User successfully created or already exists with that password',
+            'user' => $user->Get_API_Response_Collection()
+        ],$request);
+    }
 
     /**
-     * {PUT} api/v1/{company}/user/{user}
+     * {PUT} {user}/users/{company}/v1/api
      * Currently this endpoint is only able to change a password and re-enable a disabled user
      * Please note that the User-Access-Token does not have to be the access token for the username
      * you are changing the password for.  It just needs to be a user that has rights to this endpoint.
@@ -59,11 +77,18 @@ class UsersController extends Controller
         'user' => $user->Get_API_Response_Collection()],$request);
     }
     /**
-     * {DELETE} api/v1/{company}/user/{user}
+     * {DELETE} {user}/users/{company}/v1/api
      *
      */
     public function destroy(Request $request, $id)
     {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+        if($request->user == 'default' && !$request->input('active_status'))
+        {
+            return Response_422(['message' => 'Default user can only be marked inactive.'],$request);
+        }
         $user = app()->make('Update_User');
         $user->Delete_User($request->input('active_status'));
         return Response_201(['message' => 'User Successfully Deleted',

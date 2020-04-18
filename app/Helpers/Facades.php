@@ -48,3 +48,8 @@ class Routes extends Facade
 {
     protected static function getFacadeAccessor() { return 'Routes'; }
 }
+
+Class Company_Roles extends Facade
+{
+    protected static function getFacadeAccessor() { return 'Company_Roles'; }
+}

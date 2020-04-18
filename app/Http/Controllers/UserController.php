@@ -18,34 +18,8 @@ class UserController extends Controller
     }
 
     /**
-     * {POST} api/v1/{company}/user
-     *
-     * Create a user
-     *
-     */
-    public function store(Request $request)
-    {
-        /*
-        $request->validate(['username' => [
-            function ($attribute, $value, $fail){
-                if(strtolower($value) === 'default')
-                {
-                    $fail('Default user is already created and cannot be recreated');
-                }
-            },
-        ]]);
-        */
-        $user = app()->make('Create_User');
-        return Response_201([
-            'message' => 'User successfully created or already exists with that password',
-            'user' => $user->Get_API_Response_Collection()
-        ],$request);
-    }
-
-
-    /**
      * @group Tools
-     * {PUT} api/v1/{company}/default_user/{user}
+     * {PUT} default_user/{company}/v1/api
      * This endpoint is exclusively to re-enable the default user specified
      * it should be used when for some reason ALL users in a company are locked out
      * or at least one person doesn't have all rights.

@@ -66,7 +66,7 @@ class Add_Access_Token extends Strategy
             $name = $route->getName();
             $session = new \API\Program_Session;
             $company = new \app\Helpers\Company;
-            $company->Load_Company_By_ID(1);
+            $company->Load_Object_By_ID(1);
             $session->Create_New_Session($session->cConfigs->Get_Client_ID(),$company,'default',$session->cConfigs->Get_Client_ID());
             $array['User-Access-Token'] = $session->Get_Access_Token();
         }
@@ -105,7 +105,31 @@ class Add_URI_Parameters extends Strategy
                 'value' => 'default'
             ];
         }
-
+        return $array;
+    }
+}
+class Add_Query_Data extends Strategy
+{
+    public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
+    {
+        $array = [];
+        if($method->name == 'index')
+        {
+            $array['active_status'] = [
+                'type' => 'bool',
+                'description' => '{bool} When true will only return active objects.  When false all objects returned.',
+                'required' => true,
+                'value' => true
+            ];
+        }elseif($method->name == 'destroy')
+        {
+            $array['active_status'] = [
+                'type' => 'bool',
+                'description' => '{bool} When true object will be marked inactive.  When false the object will be deleted.',
+                'required' => true,
+                'value' => true
+            ];
+        }
         if($method->name == 'index' && !$route->named('List_Routes'))
         {
             $array['active_status'] = [
@@ -145,23 +169,7 @@ class Add_URI_Parameters extends Strategy
                     'value' => '0'
             ];
         }
-        return $array;
-    }
-}
-class Add_Query_Data extends Strategy
-{
-    public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
-    {
-        $array = [];
-        if($route->named('Delete_User'))
-        {
-            $array['active_status'] = [
-                'type' => 'bool',
-                'description' => '{bool} When true user will be marked inactive.  When false the user will be deleted.',
-                'required' => true,
-                'value' => true
-            ];
-        }
+
         return $array;
     }
 }

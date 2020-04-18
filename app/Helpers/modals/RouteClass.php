@@ -77,7 +77,7 @@ class Route extends Active_Record implements iActiveRecord
         while($row = $toolbelt->Companies->Get_Queried_Data())
         {
             $company = new \app\Helpers\Company;
-            $company->Load_Company_By_ID((int) $row['id']);
+            $company->Load_Object_By_ID((int) $row['id']);
             $role = $company->Get_Master_Role();
             $route_role = new \app\Helpers\Route_Role;
             try

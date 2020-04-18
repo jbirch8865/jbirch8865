@@ -45,7 +45,7 @@ class HelperServiceProvider extends ServiceProvider
             $this->Validate_Uri_Int_Parameter('company');
             try
             {
-                $company->Load_Company_By_ID(app()->request->company);
+                $company->Load_Object_By_ID(app()->request->company);
                 return $company;
             } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
             {

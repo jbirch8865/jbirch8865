@@ -9,7 +9,7 @@ use app\Facades\Routes;
 class RouteController extends Controller
 {
     /**
-     * {GET} api/v1/routes
+     * {GET} routes/v1/api
      * See all the endpoints and if their explicit rights
      *
      * @return \Illuminate\Http\Response

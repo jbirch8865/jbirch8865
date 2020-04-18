@@ -24,7 +24,7 @@ Welcome to the generated API reference.
 
 Requesting an End User Access Token for authenticating future requests
 <!-- START_2cb38f1f812a602469c22d7858e3f5a2 -->
-## {POST} api/v1/{company}/signin
+## {POST} signin/{company}/v1/api
 
 Returns a unique access_token used to authenticate in place of the username and password
 The access_token experation date is based on the company_config session_timeout which is comany specific
@@ -76,9 +76,9 @@ fetch(url, {
     "Program_Session": {
         "id": "3",
         "client_id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-        "access_token": "ZCbds615woQ712cWkJDqVHJu5pjoKzwOBJEV7zyEwWwXU",
+        "access_token": "QojcTZwaI1jNJlmxkJEQRtZCbJJmMhA+uE21DePAUXRe1",
         "user_id": "1",
-        "experation_timestamp": "2020-04-17 23:24:01"
+        "experation_timestamp": "2020-04-18 03:16:39"
     }
 }
 ```
@@ -102,8 +102,232 @@ Parameter | Type | Status | Description
 #Company
 
 Basic CRUD operations for Companies, Company Configs and Users
-<!-- START_93ebf56a5f43247bf91c25a2be5cb179 -->
-## {POST} api/v1/{company}/user
+<!-- START_98c7cd9e1616fc65c12af185be991ff8 -->
+## {GET} users/{company}/v1/api
+Return a list of users belonging to the company
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/1/users?active_status=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: DdYvTSrbLntKzv+PQh8KjTQ7+5NrYONQZeT3LFii7ZPJ4"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/1/users"
+);
+
+let params = {
+    "active_status": "",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "5",
+    "limit": "10",
+    "offset": "0",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "DdYvTSrbLntKzv+PQh8KjTQ7+5NrYONQZeT3LFii7ZPJ4",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": {
+        "Users": {
+            "5e9a03c28215c": {
+                "id": "44",
+                "username": "5e9a03c28215c",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "54",
+                            "company_id": "1",
+                            "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ]
+                }
+            },
+            "5e9a03f2714d6": {
+                "id": "46",
+                "username": "5e9a03f2714d6",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "54",
+                            "company_id": "1",
+                            "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ]
+                }
+            },
+            "5e9a6b2a4053c": {
+                "id": "89",
+                "username": "5e9a6b2a4053c",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "54",
+                            "company_id": "1",
+                            "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ]
+                }
+            },
+            "5e9a6f1d6f692": {
+                "id": "91",
+                "username": "5e9a6f1d6f692",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "54",
+                            "company_id": "1",
+                            "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ]
+                }
+            },
+            "default": {
+                "id": "1",
+                "username": "default",
+                "company_id": "1",
+                "project_name": "project2",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "54",
+                            "company_id": "1",
+                            "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/{company}/users`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | {integer} The ID of the organization
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `active_status` |  optional  | {bool} Include inactive objects
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+
+<!-- END_98c7cd9e1616fc65c12af185be991ff8 -->
+
+<!-- START_37cc2f7db7536431917bf10b848bd8e4 -->
+## {POST} users/{company}/v1/api
 
 Create a user
 
@@ -111,29 +335,29 @@ Create a user
 
 ```bash
 curl -X POST \
-    "https://project.dsfellowship.com/api/v1/1/user" \
+    "https://project.dsfellowship.com/api/v1/1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: MvB+QI+g94KdKKjgfO3Nky+UiodmrXeS2K5+D9d+6cQyF" \
-    -d '{"user":"5e9a3965871be","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
+    -H "User-Access-Token: NUEPi225hSoNRUI6FlFahmHh+gHtpES8xRkEGIusGJofB" \
+    -d '{"user":"5e9a6fec2ce33","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/user"
+    "https://project.dsfellowship.com/api/v1/1/users"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "MvB+QI+g94KdKKjgfO3Nky+UiodmrXeS2K5+D9d+6cQyF",
+    "User-Access-Token": "NUEPi225hSoNRUI6FlFahmHh+gHtpES8xRkEGIusGJofB",
 };
 
 let body = {
-    "user": "5e9a3965871be",
+    "user": "5e9a6fec2ce33",
     "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
 }
 
@@ -153,17 +377,14 @@ fetch(url, {
 {
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 66,
-        "username": "5e9a3965871be",
-        "company_id": 1,
-        "project_name": "project2",
-        "active_status": 1
+        "username": "5e9a6fec2ce33",
+        "project_name": "project2"
     }
 }
 ```
 
 ### HTTP Request
-`POST api/v1/{company}/user`
+`POST api/v1/{company}/users`
 
 #### URL Parameters
 
@@ -176,102 +397,10 @@ Parameter | Type | Status | Description
     `user` | string |  required  | {string}
         `password` | string |  required  | {string}
     
-<!-- END_93ebf56a5f43247bf91c25a2be5cb179 -->
-
-<!-- START_98c7cd9e1616fc65c12af185be991ff8 -->
-## {GET} api/v1/{company}/users
-Return a list of users belonging to the company
-
-> Example request:
-
-```bash
-curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/users" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: yndjlpT6.lbMGTi2CpmkK.n7yEp8tOaUNF+61j?vPyBw2"
-```
-
-```javascript
-const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "yndjlpT6.lbMGTi2CpmkK.n7yEp8tOaUNF+61j?vPyBw2",
-};
-
-fetch(url, {
-    method: "GET",
-    headers: headers,
-})
-    .then(response => response.json())
-    .then(json => console.log(json));
-```
-
-
-> Example response (200):
-
-```json
-{
-    "message": {
-        "Users": {
-            "default": {
-                "id": "1",
-                "username": "default",
-                "company_id": "1",
-                "project_name": "project2",
-                "active_status": "1"
-            },
-            "5e9a03c28215c": {
-                "id": "44",
-                "username": "5e9a03c28215c",
-                "company_id": "1",
-                "project_name": "project2",
-                "active_status": "1"
-            },
-            "5e9a03f2714d6": {
-                "id": "46",
-                "username": "5e9a03f2714d6",
-                "company_id": "1",
-                "project_name": "project2",
-                "active_status": "1"
-            },
-            "5e9a3965871be": {
-                "id": "66",
-                "username": "5e9a3965871be",
-                "company_id": "1",
-                "project_name": "project2",
-                "active_status": "1"
-            }
-        }
-    }
-}
-```
-
-### HTTP Request
-`GET api/v1/{company}/users`
-
-#### URL Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -------
-    `company` |  required  | {integer} The ID of the organization
-    `active_status` |  optional  | {bool} Include inactive objects
-    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
-    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
-    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
-    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
-    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
-
-<!-- END_98c7cd9e1616fc65c12af185be991ff8 -->
+<!-- END_37cc2f7db7536431917bf10b848bd8e4 -->
 
 <!-- START_0b2e8585c58a2fdc22e4236c22e7da46 -->
-## {PUT} api/v1/{company}/user/{user}
+## {PUT} {user}/users/{company}/v1/api
 Currently this endpoint is only able to change a password and re-enable a disabled user
 Please note that the User-Access-Token does not have to be the access token for the username
 you are changing the password for.  It just needs to be a user that has rights to this endpoint.
@@ -285,25 +414,25 @@ the password.  Then remember to disable the default user.
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be" \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a6fec2ce33" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: udpce7ec?s7nC9W6Az9?YBK1IfZXRiEIHDa+YLh4qlvUh" \
+    -H "User-Access-Token: +MjnnnhDddPeg=aIVLx81QDyaTv2GZ0cy8SnOexbPnYyi" \
     -d '{"new_password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb","active_status":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be"
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a6fec2ce33"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "udpce7ec?s7nC9W6Az9?YBK1IfZXRiEIHDa+YLh4qlvUh",
+    "User-Access-Token": "+MjnnnhDddPeg=aIVLx81QDyaTv2GZ0cy8SnOexbPnYyi",
 };
 
 let body = {
@@ -327,11 +456,10 @@ fetch(url, {
 {
     "message": "User successfully updated",
     "user": {
-        "id": "66",
-        "username": "5e9a3965871be",
+        "id": "93",
+        "username": "5e9a6fec2ce33",
         "company_id": "1",
-        "project_name": "project2",
-        "active_status": 1
+        "project_name": "project2"
     }
 }
 ```
@@ -356,22 +484,22 @@ Parameter | Type | Status | Description
 <!-- END_0b2e8585c58a2fdc22e4236c22e7da46 -->
 
 <!-- START_ff18a82b48db2f4db7ea36392e0da63c -->
-## {DELETE} api/v1/{company}/user/{user}
+## {DELETE} {user}/users/{company}/v1/api
 
 > Example request:
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be?active_status=1" \
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a6fec2ce33?active_status=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: h+KfuR0Jsbt6GjGccH6++THjPMk01T0sI+4yO+w?zF7vE"
+    -H "User-Access-Token: p7xfAkOESo1OF7iWdOQr8LG5vzVHQRxkPmh3=3EtH0?Yq"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/5e9a3965871be"
+    "https://project.dsfellowship.com/api/v1/1/users/5e9a6fec2ce33"
 );
 
 let params = {
@@ -384,7 +512,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "h+KfuR0Jsbt6GjGccH6++THjPMk01T0sI+4yO+w?zF7vE",
+    "User-Access-Token": "p7xfAkOESo1OF7iWdOQr8LG5vzVHQRxkPmh3=3EtH0?Yq",
 };
 
 fetch(url, {
@@ -402,11 +530,10 @@ fetch(url, {
 {
     "message": "User Successfully Deleted",
     "user": {
-        "id": "66",
-        "username": "5e9a3965871be",
+        "id": "93",
+        "username": "5e9a6fec2ce33",
         "company_id": "1",
-        "project_name": "project2",
-        "active_status": 0
+        "project_name": "project2"
     }
 }
 ```
@@ -424,12 +551,262 @@ Parameter | Status | Description
 
 Parameter | Status | Description
 --------- | ------- | ------- | -----------
-    `active_status` |  required  | {bool} When true user will be marked inactive.  When false the user will be deleted.
+    `active_status` |  required  | {bool} When true object will be marked inactive.  When false the object will be deleted.
 
 <!-- END_ff18a82b48db2f4db7ea36392e0da63c -->
 
+<!-- START_110cfd4e77fbf74bd678ea1fbf46b800 -->
+## {GET} roles/{company}/v1/api
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/1/roles?active_status=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
+    -H "User-Access-Token: iUrTy.+Z+zt.M1GySO+RGMt+HiGNZoJ4GjOmksNL1PEHd"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/1/roles"
+);
+
+let params = {
+    "active_status": "",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "5",
+    "limit": "10",
+    "offset": "0",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "User-Access-Token": "iUrTy.+Z+zt.M1GySO+RGMt+HiGNZoJ4GjOmksNL1PEHd",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": "Response Objects",
+    "Company_Role": {
+        "master": {
+            "id": "58",
+            "company_id": "85",
+            "role_name": "master",
+            "active_status": "1",
+            "Companies": {
+                "id": "85",
+                "company_name": "documentation_company",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "90",
+                        "company_id": "85",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Users_Have_Roles": [
+                {
+                    "id": "69",
+                    "user_id": "92",
+                    "role_id": "58",
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                }
+            ],
+            "Routes_Have_Roles": [
+                {
+                    "id": "218",
+                    "route_id": "3",
+                    "role_id": "58",
+                    "right_id": "218",
+                    "Routes": {
+                        "id": "3",
+                        "name": "Create_User",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "218",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "219",
+                    "route_id": "10",
+                    "role_id": "58",
+                    "right_id": "219",
+                    "Routes": {
+                        "id": "10",
+                        "name": "Delete_User",
+                        "implicit_allow": "0",
+                        "module": ""
+                    },
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "219",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "220",
+                    "route_id": "6",
+                    "role_id": "58",
+                    "right_id": "220",
+                    "Routes": {
+                        "id": "6",
+                        "name": "List_Roles",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "220",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "221",
+                    "route_id": "2",
+                    "role_id": "58",
+                    "right_id": "221",
+                    "Routes": {
+                        "id": "2",
+                        "name": "List_Users",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "221",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "222",
+                    "route_id": "7",
+                    "role_id": "58",
+                    "right_id": "222",
+                    "Routes": {
+                        "id": "7",
+                        "name": "Update_User",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "58",
+                        "company_id": "85",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "222",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                }
+            ]
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/{company}/roles`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `company` |  required  | {integer} The ID of the organization
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `active_status` |  optional  | {bool} Include inactive objects
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+
+<!-- END_110cfd4e77fbf74bd678ea1fbf46b800 -->
+
 <!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
-## {POST} api/v1/company
+## {POST} company/v1/api
 
 This framework doesn't allow a company to do anything unless there is an authorized user making the request.
 So as part of creating a company this will auto create a master role that has access to all methods on all routes
@@ -480,11 +857,9 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "Tj5.CDJ1.07A92",
+    "master_password": ".YHsiIhRQfJUzt",
     "company": {
-        "id": 44,
-        "company_name": "documentation_company",
-        "active_status": 1
+        "company_name": "documentation_company"
     }
 }
 ```
@@ -500,14 +875,14 @@ Parameter | Type | Status | Description
 <!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
 
 <!-- START_3325a7e1462036041b5bb9084e516f11 -->
-## {GET} app/v1/companies
+## {GET} companies/v1/api
 List all companies
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&include_details=2&details_offset=0&details_limit=1&offset=0&limit=1" \
+    -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&include_details=2&details_offset=0&details_limit=5&offset=0&limit=10&active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
@@ -523,9 +898,10 @@ let params = {
     "include_disabled": "true",
     "include_details": "2",
     "details_offset": "0",
-    "details_limit": "1",
+    "details_limit": "5",
     "offset": "0",
-    "limit": "1",
+    "limit": "10",
+    "active_status": "",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -550,21 +926,21 @@ fetch(url, {
 
 ```json
 {
-    "message": "List of Current Companies",
-    "Companies": {
+    "message": "Response Objects",
+    "Company": {
         "documentation_company": {
-            "id": "44",
+            "id": "86",
             "company_name": "documentation_company",
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "68",
-                    "company_id": "44",
+                    "id": "92",
+                    "company_id": "86",
                     "config_id": "1",
                     "config_value": "UTC",
                     "active_status": "1",
                     "Companies": {
-                        "id": "44",
+                        "id": "86",
                         "company_name": "documentation_company",
                         "active_status": "1"
                     },
@@ -574,24 +950,121 @@ fetch(url, {
                         "config_name": "company_time_zone",
                         "default_value": "UTC"
                     }
+                },
+                {
+                    "id": "91",
+                    "company_id": "86",
+                    "config_id": "2",
+                    "config_value": "300",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "86",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "2",
+                        "active_status": "1",
+                        "config_name": "session_time_limit",
+                        "default_value": "300"
+                    }
                 }
             ],
             "Company_Roles": [
                 {
-                    "id": "40",
-                    "company_id": "44",
+                    "id": "59",
+                    "company_id": "86",
                     "role_name": "master",
                     "active_status": "1",
                     "Companies": {
-                        "id": "44",
+                        "id": "86",
                         "company_name": "documentation_company",
                         "active_status": "1"
                     },
                     "Users_Have_Roles": [
                         {
-                            "id": "42",
-                            "user_id": "67",
-                            "role_id": "40"
+                            "id": "70",
+                            "user_id": "94",
+                            "role_id": "59"
+                        }
+                    ],
+                    "Routes_Have_Roles": [
+                        {
+                            "id": "223",
+                            "route_id": "3",
+                            "role_id": "59",
+                            "right_id": "223"
+                        }
+                    ]
+                }
+            ]
+        },
+        "System": {
+            "id": "1",
+            "company_name": "System",
+            "active_status": "1",
+            "Company_Configs": [
+                {
+                    "id": "2",
+                    "company_id": "1",
+                    "config_id": "1",
+                    "config_value": "UTC",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "1",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
+                },
+                {
+                    "id": "1",
+                    "company_id": "1",
+                    "config_id": "2",
+                    "config_value": "300",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "2",
+                        "active_status": "1",
+                        "config_name": "session_time_limit",
+                        "default_value": "300"
+                    }
+                }
+            ],
+            "Company_Roles": [
+                {
+                    "id": "54",
+                    "company_id": "1",
+                    "role_name": "master",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Users_Have_Roles": [
+                        {
+                            "id": "65",
+                            "user_id": "1",
+                            "role_id": "54"
+                        }
+                    ],
+                    "Routes_Have_Roles": [
+                        {
+                            "id": "186",
+                            "route_id": "3",
+                            "role_id": "54",
+                            "right_id": "186"
                         }
                     ]
                 }
@@ -604,26 +1077,17 @@ fetch(url, {
 ### HTTP Request
 `GET api/v1/companies`
 
-#### URL Parameters
-
-Parameter | Status | Description
---------- | ------- | ------- | -------
-    `active_status` |  optional  | {bool} Include inactive objects
-    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
-    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
-    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
-    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
-    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
 #### Query Parameters
 
 Parameter | Status | Description
 --------- | ------- | ------- | -----------
     `include_disabled` |  optional  | if set will only return active companies
-    `include_details` |  optional  | is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled
-    `details_offset` |  optional  | a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0
-    `details_limit` |  optional  | a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1
-    `offset` |  optional  | a number between 0 and infinite that represents which object to start with default is 0
-    `limit` |  optional  | a number between 1 and 100 representing the number of records to return after the offset default is 50
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `active_status` |  optional  | {bool} Include inactive objects
 
 <!-- END_3325a7e1462036041b5bb9084e516f11 -->
 
@@ -669,7 +1133,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "5fab22b9-d8f7-469f-acd9-7be81f709cde",
+        "_postman_id": "26699e8f-6766-463d-84d8-11a8424932bd",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -679,7 +1143,7 @@ fetch(url, {
             "description": "Requesting an End User Access Token for authenticating future requests",
             "item": [
                 {
-                    "name": "{POST} api\/v1\/{company}\/signin",
+                    "name": "{POST} signin\/{company}\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -726,15 +1190,96 @@ fetch(url, {
         },
         {
             "name": "Company",
-            "description": "",
+            "description": "Basic CRUD operations for Companies, Company Configs and Users",
             "item": [
                 {
-                    "name": "{POST} api\/v1\/{company}\/user",
+                    "name": "{GET} users\/{company}\/v1\/api\nReturn a list of users belonging to the company",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/user",
+                            "path": "api\/v1\/:company\/users",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} Include inactive objects",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_details",
+                                    "value": "2",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "details_offset",
+                                    "value": "0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "details_limit",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "cPgdireqdNfbevjOh5+q?cjhLJ0T3uObIuMCv3RCtZjcD"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{POST} users\/{company}\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/users",
                             "query": [],
                             "variable": [
                                 {
@@ -761,25 +1306,162 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "OJM7DNVgm=VjxbHO3wm5nsikxk?Uu30ExiCKtvWZRalNk"
+                                "value": "Q5uZquouehgYEmh7GrH9ixh6$0zEe68K0A7pto62LLiyg"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"5e9a392b6db4f\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
+                            "raw": "{\n    \"user\": \"5e9a6f1d6f692\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
                         },
                         "description": "Create a user",
                         "response": []
                     }
                 },
                 {
-                    "name": "{GET} api\/v1\/{company}\/users\nReturn a list of users belonging to the company",
+                    "name": "{PUT} {user}\/users\/{company}\/v1\/api\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users",
+                            "path": "api\/v1\/:company\/users\/:user",
                             "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                },
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "5e9a6f1d6f692",
+                                    "description": "{string} username to change password"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "tZU4DvCRn9H91oVSkwJnV3.+1SPDVlKeOCDtXWmZq0fyd"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"new_password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\",\n    \"active_status\": true\n}"
+                        },
+                        "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{DELETE} {user}\/users\/{company}\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/users\/:user",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "company",
+                                    "key": "company",
+                                    "value": "1",
+                                    "description": "{integer} The ID of the organization"
+                                },
+                                {
+                                    "id": "user",
+                                    "key": "user",
+                                    "value": "5e9a6f1d6f692",
+                                    "description": "{string} username to delete"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "zq$PGgTynQ5ahO6mFIiRG9ZcsXzLH$7WkZnUgeI8LiU=8"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{GET} roles\/{company}\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/:company\/roles",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} Include inactive objects",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_details",
+                                    "value": "2",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "details_offset",
+                                    "value": "0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "details_limit",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                }
+                            ],
                             "variable": [
                                 {
                                     "id": "company",
@@ -805,7 +1487,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "DNkQ+WK=OeZTIiU7FMEQFqYNuTboVLwSu+rgbOyV.h?hr"
+                                "value": "rrAYJkt+q?zniB7Tmrx6CUSZX6FQZrYiHZNahTaTk5oxv"
                             }
                         ],
                         "body": {
@@ -817,114 +1499,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{PUT} api\/v1\/{company}\/user\/{user}\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users\/:user",
-                            "query": [],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
-                                {
-                                    "id": "user",
-                                    "key": "user",
-                                    "value": "5e9a392b6db4f",
-                                    "description": "{string} username to change password"
-                                }
-                            ]
-                        },
-                        "method": "PUT",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
-                            },
-                            {
-                                "key": "User-Access-Token",
-                                "value": "73kuQCO8gm?u00PXuMBMcp98TcFkDLq+FZJriBZCFdimT"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"new_password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\",\n    \"active_status\": true\n}"
-                        },
-                        "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "{DELETE} api\/v1\/{company}\/user\/{user}",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users\/:user",
-                            "query": [
-                                {
-                                    "key": "active_status",
-                                    "value": "1",
-                                    "description": "{bool} When true user will be marked inactive.  When false the user will be deleted.",
-                                    "disabled": false
-                                }
-                            ],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
-                                {
-                                    "id": "user",
-                                    "key": "user",
-                                    "value": "5e9a392b6db4f",
-                                    "description": "{string} username to delete"
-                                }
-                            ]
-                        },
-                        "method": "DELETE",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
-                            },
-                            {
-                                "key": "User-Access-Token",
-                                "value": "Il46o5f9uk9aNk59Ow?pWFlASsKqPVOJIfUQ??+8rQyoK"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "[]"
-                        },
-                        "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "{POST} api\/v1\/company",
+                    "name": "{POST} company\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -960,7 +1535,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} app\/v1\/companies\nList all companies",
+                    "name": "{GET} companies\/v1\/api\nList all companies",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -976,32 +1551,38 @@ fetch(url, {
                                 {
                                     "key": "include_details",
                                     "value": "2",
-                                    "description": "is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "details_offset",
                                     "value": "0",
-                                    "description": "a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
                                     "disabled": true
                                 },
                                 {
                                     "key": "details_limit",
-                                    "value": "1",
-                                    "description": "a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
                                     "disabled": false
                                 },
                                 {
                                     "key": "offset",
                                     "value": "0",
-                                    "description": "a number between 0 and infinite that represents which object to start with default is 0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
                                     "disabled": true
                                 },
                                 {
                                     "key": "limit",
-                                    "value": "1",
-                                    "description": "a number between 1 and 100 representing the number of records to return after the offset default is 50",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
                                     "disabled": false
+                                },
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} Include inactive objects",
+                                    "disabled": true
                                 }
                             ]
                         },
@@ -1071,13 +1652,20 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} api\/v1\/routes\nSee all the endpoints and if their explicit rights",
+                    "name": "{GET} routes\/v1\/api\nSee all the endpoints and if their explicit rights",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
                             "path": "api\/v1\/routes",
-                            "query": []
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "1",
+                                    "description": "{bool} When true object will be marked inactive.  When false the object will be deleted.",
+                                    "disabled": false
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -1107,7 +1695,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{PUT} api\/v1\/{company}\/default_user\/{user}\nThis endpoint is exclusively to re-enable the default user specified\nit should be used when for some reason ALL users in a company are locked out\nor at least one person doesn't have all rights.",
+                    "name": "{PUT} default_user\/{company}\/v1\/api\nThis endpoint is exclusively to re-enable the default user specified\nit should be used when for some reason ALL users in a company are locked out\nor at least one person doesn't have all rights.",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -1163,14 +1751,14 @@ fetch(url, {
 <!-- END_cd4a874127cd23508641c63b640ee838 -->
 
 <!-- START_392f39a571495220f725e466d873f08b -->
-## {GET} api/v1/routes
+## {GET} routes/v1/api
 See all the endpoints and if their explicit rights
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/routes" \
+    -G "https://project.dsfellowship.com/api/v1/routes?active_status=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
@@ -1181,6 +1769,12 @@ curl -X GET \
 const url = new URL(
     "https://project.dsfellowship.com/api/v1/routes"
 );
+
+let params = {
+    "active_status": "1",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Content-Type": "application/json",
@@ -1277,11 +1871,16 @@ fetch(url, {
 ### HTTP Request
 `GET api/v1/routes`
 
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `active_status` |  required  | {bool} When true will only return active objects.  When false all objects returned.
 
 <!-- END_392f39a571495220f725e466d873f08b -->
 
 <!-- START_bc0f2a216f00c2aa2122a1a7be9ad77b -->
-## {PUT} api/v1/{company}/default_user/{user}
+## {PUT} default_user/{company}/v1/api
 This endpoint is exclusively to re-enable the default user specified
 it should be used when for some reason ALL users in a company are locked out
 or at least one person doesn&#039;t have all rights.
@@ -1327,8 +1926,7 @@ fetch(url, {
         "id": "1",
         "username": "default",
         "company_id": "1",
-        "project_name": "project2",
-        "active_status": 1
+        "project_name": "project2"
     }
 }
 ```

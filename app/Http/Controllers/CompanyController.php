@@ -13,7 +13,7 @@ use app\Helpers\User_Role;
 class CompanyController extends Controller
 {
     /**
-     * {GET} app/v1/companies
+     * {GET} companies/v1/api
      * List all companies
      *
      * @queryParam include_disabled if set will only return active companies Example: true
@@ -25,35 +25,11 @@ class CompanyController extends Controller
      */
     public function index(Request $request)
     {
-
-        if($request->input('include_disabled',false))
-        {
-            Companies::Query_Single_Table(array('id'),false,"LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
-        }else
-        {
-            Companies::Query_Single_Table(array('id'),false,"WHERE `Active_Status` = '1' LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
-        }
-        $Companies = array();
-        While($row = Companies::Get_Queried_Data())
-        {
-            $company = new \app\Helpers\Company;
-            $company->Load_Company_By_ID($row['id']);
-            if($request->input('include_details',false))
-            {
-                $Companies[$company->Get_Company_Name()] = $company->Get_API_Response_Collection();
-            }else
-            {
-                $Companies[$company->Get_Company_Name()] = $company->Get_Verified_ID();
-            }
-        }
-        return Response_200([
-            'message' => 'List of Current Companies',
-            'Companies' => $Companies
-        ],$request);
+        return Companies::Get_All_Objects('Company',$request);
     }
 
     /**
-     * {POST} api/v1/company
+     * {POST} company/v1/api
      *
      * This framework doesn't allow a company to do anything unless there is an authorized user making the request.
      * So as part of creating a company this will auto create a master role that has access to all methods on all routes

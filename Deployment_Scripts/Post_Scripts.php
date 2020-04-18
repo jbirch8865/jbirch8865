@@ -45,7 +45,7 @@ function Add_All_Multi_Column_Unique_Indexes()
 function Override_Master_Role()
 {
     $company = new \app\Helpers\Company;
-    $company->Load_Company_By_ID(1);
+    $company->Load_Object_By_ID(1);
     $role = $company->Get_Master_Role();
     $role->Delete_Role(false);
     $company->Create_Company_Role('master');

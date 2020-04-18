@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 class SigninController extends Controller
 {
     /**
-     * {POST} api/v1/{company}/signin
+     * {POST} signin/{company}/v1/api
      *
      * Returns a unique access_token used to authenticate in place of the username and password
      * The access_token experation date is based on the company_config session_timeout which is comany specific

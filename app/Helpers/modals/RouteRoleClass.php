@@ -40,7 +40,7 @@ class Route_Role extends Active_Record implements iActiveRecord
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
-    public function Get_Role_Name() : string
+    public function Get_Friendly_Name() : string
     {
         return $this->Company_Role->Get_Value_From_Name('name');
     }
