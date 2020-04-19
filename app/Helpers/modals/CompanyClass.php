@@ -1,6 +1,7 @@
 <?php
 namespace app\Helpers;
 
+
 class Company extends \Company\Company implements iActiveRecord
 {
     function __construct()
@@ -13,7 +14,8 @@ class Company extends \Company\Company implements iActiveRecord
     function Create_Company_Role(string $role_name,bool $get = true,bool $delete = false,bool $post = true,bool $patch = true,bool $put = true): void
     {
         parent::Create_Company_Role($role_name);
-        $new_role = $this->Company_Roles[count($this->Company_Roles) - 1];
+        $new_role = new Company_Role;
+        $new_role->Load_By_Friendly_Name($role_name,$this);
         $toolbelt = new \toolbelt;
         $toolbelt->Routes->Query_Single_Table(['id'],false);
         while($row = $toolbelt->Routes->Get_Queried_Data())
@@ -34,10 +36,10 @@ class Company extends \Company\Company implements iActiveRecord
             }
             if($delete)
             {
-                $right->Allow_Delete();
+                $right->Allow_Destroy();
             }else
             {
-                $right->Deny_Delete();
+                $right->Deny_Destroy();
             }
             if($post)
             {
@@ -65,6 +67,13 @@ class Company extends \Company\Company implements iActiveRecord
             $route_has_role->Set_Role($new_role,false);
             $route_has_role->Set_Route($route,true);
         }
+    }
+    public function Delete_Active_Record() : void
+    {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+
     }
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded

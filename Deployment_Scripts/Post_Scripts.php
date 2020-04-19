@@ -66,6 +66,9 @@ function Build_Routes()
     Create_Route_If_Not_Exist('apidoc.json','',true);
     Create_Route_If_Not_Exist('Delete_User','',false);
     Create_Route_If_Not_Exist('Enable_Default_User','',true);
+    Create_Route_If_Not_Exist('Create_Role','',false);
+    Create_Route_If_Not_Exist('Delete_Role','',false);
+
 }
 
 function Create_Route_If_Not_Exist(string $name,string $module,bool $implicit_allow = false)

@@ -1,6 +1,8 @@
 <?php
 namespace app\Helpers;
-    /**
+
+
+/**
      *
      */
 
@@ -39,6 +41,14 @@ class Program_Session extends \API\Program_Session implements iActiveRecord
     {
         return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
+    public function Delete_Active_Record() : void
+    {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+
+    }
+
 }
 
 ?>

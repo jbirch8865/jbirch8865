@@ -1,6 +1,8 @@
 <?php
 namespace app\Helpers;
-    /**
+
+
+/**
      * @throws Incorrect_Password
      * @throws User_Does_Not_Exist
      * @throws UpdateFailed
@@ -50,13 +52,22 @@ class User extends \Authentication\User implements iActiveRecord
     }
     public function Delete_User(bool $mark_inactive = true)
     {
-        if($this->Get_Username() == 'default' && (is_null($mark_inactive) || !$mark_inactive))
+        if($this->Get_Username() == 'default' && !$mark_inactive)
         {
             Response_401(['message' => 'Sorry the default user cannot be permanently deleted'],app()->request)->send();
             exit();
         }
         parent::Delete_User($mark_inactive);
     }
+
+    public function Delete_Active_Record() : void
+    {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+        $this->Delete_User(app()->request->input('active_status'));
+    }
+
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */

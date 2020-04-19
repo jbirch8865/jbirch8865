@@ -82,15 +82,8 @@ class UsersController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        app()->request->validate([
-            'active_status' => ['required','bool']
-        ]);
-        if($request->user == 'default' && !$request->input('active_status'))
-        {
-            return Response_422(['message' => 'Default user can only be marked inactive.'],$request);
-        }
         $user = app()->make('Update_User');
-        $user->Delete_User($request->input('active_status'));
+        $user->Delete_Active_Record();
         return Response_201(['message' => 'User Successfully Deleted',
         'user' => $user->Get_API_Response_Collection()],$request);
 

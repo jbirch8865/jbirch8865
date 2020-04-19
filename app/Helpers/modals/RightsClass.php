@@ -2,6 +2,7 @@
 namespace app\Helpers;
 
 use Active_Record\Active_Record;
+
 class Right extends Active_Record implements iActiveRecord
 {
     public $_table = "Rights";
@@ -25,11 +26,11 @@ class Right extends Active_Record implements iActiveRecord
     {
         $this->Set_Int($this->table_dblink->Get_Column('get'),0);
     }
-    public function Allow_Delete() : void
+    public function Allow_Destroy() : void
     {
         $this->Set_Int($this->table_dblink->Get_Column('destroy'),1);
     }
-    public function Deny_Delete() : void
+    public function Deny_Destroy() : void
     {
         $this->Set_Int($this->table_dblink->Get_Column('destroy'),0);
     }
@@ -80,6 +81,14 @@ class Right extends Active_Record implements iActiveRecord
     {
         return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
+    public function Delete_Active_Record() : void
+    {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+
+    }
+
 }
 
 ?>

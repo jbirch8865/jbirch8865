@@ -19,6 +19,10 @@ class RoleMiddleware
             {
                 $route_has_role = app()->make('Route_Has_Role');
                 $route = app()->make('Route');
+                if(!$user_role->Company_Roles->Is_Object_Active())
+                {
+                    continue;
+                }
                 $route_has_role->Load_From_Route_And_Role($route,$user_role->Company_Roles);
                 if($route_has_role->Rights->Is_Method_Allowed($method))
                 {

@@ -2,6 +2,7 @@
 namespace app\Helpers;
 
 use Active_Record\Active_Record;
+
 class Route_Role extends Active_Record implements iActiveRecord
 {
     public $_table = "Routes_Have_Roles";
@@ -45,6 +46,16 @@ class Route_Role extends Active_Record implements iActiveRecord
         return $this->Company_Role->Get_Value_From_Name('name');
     }
     /**
+     * @throws Active_Record_Object_Failed_To_Load
+     * @throws \Active_Record\Object_Has_Not_Been_Loaded For $route required
+     * @throws Object_Is_Already_Loaded
+     */
+    public function Load_By_Friendly_Name(string $friendly_name,\Active_Record\Active_Record $route): void
+    {
+        $this->Load_From_Multiple_Vars([['role_name',$friendly_name],['route_id',$route->Get_Verified_ID()]]);
+    }
+
+    /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
     public function Get_Role_ID() : int
@@ -87,6 +98,15 @@ class Route_Role extends Active_Record implements iActiveRecord
     {
         return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
+
+    public function Delete_Active_Record() : void
+    {
+        app()->request->validate([
+            'active_status' => ['required','bool']
+        ]);
+
+    }
+
 }
 
 ?>

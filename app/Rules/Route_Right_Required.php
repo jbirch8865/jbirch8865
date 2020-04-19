@@ -3,9 +3,10 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use toolbelt;
-class Company_Valid implements Rule
+
+class Route_Right_Required implements Rule
 {
+    private \app\Helpers\Route $route;
     /**
      * Create a new rule instance.
      *
@@ -25,9 +26,15 @@ class Company_Valid implements Rule
      */
     public function passes($attribute, $value)
     {
-        $toolbelt = new toolbelt;
-        $value = $toolbelt->root_dblink->Escape_String((string) $value);
-        return $toolbelt->Users->database_dblink->dblink->Does_This_Return_A_Count_Of_More_Than_Zero('Companies',"`id` = '".$value."'",'understood');
+        $this->route = new \app\Helpers\Route;
+        $this->route->Load_Object_By_ID($value);
+        if($this->route->Am_I_Implicitly_Allowed())
+        {
+            return false;
+        }else
+        {
+            return true;
+        }
     }
 
     /**
@@ -37,6 +44,6 @@ class Company_Valid implements Rule
      */
     public function message()
     {
-        return 'The Company does not exist.';
+        return $this->route->Get_Name().' is explicitely allowed by all';
     }
 }

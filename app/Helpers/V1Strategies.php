@@ -78,6 +78,7 @@ class Add_URI_Parameters extends Strategy
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
     {
         $array = [];
+        global $documentation_role_id_to_delete;
         if($route->named('Delete_User'))
         {
             global $new_user_for_documentation;
@@ -103,6 +104,14 @@ class Add_URI_Parameters extends Strategy
                 'description' => '{string} default username.  Not required. In fact will be overridden',
                 'required' => false,
                 'value' => 'default'
+            ];
+        }elseif($route->named('Delete_Role'))
+        {
+            $array['role'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => $documentation_role_id_to_delete
             ];
         }
         return $array;
@@ -236,6 +245,41 @@ class Add_Post_Data extends Strategy
                     'required' => true,
                     'value' => 'documentation_company'
                ];
+        }elseif($route->named('Create_Role'))
+        {
+            $array['role_name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => true,
+                'value' => uniqid()
+           ];
+           $array['Routes_Have_Roles'] = [
+            'type' => 'array',
+            'description' => '{array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.',
+            'required' => true,
+            'value' => [
+                [
+                    'route_id' => '3',
+                    'Rights' => [
+                        'get' => true,
+                        'post' => false,
+                        'patch' => false,
+                        'put' => false,
+                        'destroy' => false
+                    ]
+                ],
+                [
+                    'route_id' => '6',
+                    'Rights' => [
+                        'get' => false,
+                        'post' => true,
+                        'patch' => false,
+                        'put' => false,
+                        'destroy' => false
+                    ]
+                ]
+            ]
+           ];
         }
         if($method->name == 'update' && !$route->named('Enable_Default_User'))
         {

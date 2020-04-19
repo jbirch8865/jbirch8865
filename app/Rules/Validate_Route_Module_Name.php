@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class Credentials_Valid implements Rule
+class Validate_Route_Module_Name implements Rule
 {
     /**
      * Create a new rule instance.
@@ -25,7 +25,15 @@ class Credentials_Valid implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        $toolbelt = new \toolbelt;
+        $value = $toolbelt->root_dblink->Escape_String($value);
+        if($toolbelt->Routes->database_dblink->dblink->Does_This_Return_A_Count_Of_More_Than_Zero('Routes','WHERE `module` = '.$value,'understood'))
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
     }
 
     /**
@@ -35,6 +43,6 @@ class Credentials_Valid implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'The module doesn\'t exist';
     }
 }

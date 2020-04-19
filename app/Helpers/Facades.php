@@ -28,6 +28,21 @@ class Route extends Facade
     protected static function getFacadeAccessor(){ return 'Route'; }
 }
 
+class Route_Role extends Facade
+{
+    protected static function getFacadeAccessor(){ return 'Route_Role'; }
+}
+
+class Right extends Facade
+{
+    protected static function getFacadeAccessor(){ return 'Right'; }
+}
+
+class Company_Role extends Facade
+{
+    protected static function getFacadeAccessor(){ return 'Company_Role'; }
+}
+
 //tables
 class Users extends Facade
 {
