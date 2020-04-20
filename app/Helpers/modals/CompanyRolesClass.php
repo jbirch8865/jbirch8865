@@ -17,6 +17,7 @@ class Company_Role extends \Company\Company_Role implements iActiveRecord
     {
         return $this->Get_Response_Collection(app()->request->input('include_details',0),app()->request->input('details_offset',0),app()->request->input('details_limit',1));
     }
+
     /**
      * @throws \Active_Record\Object_Has_Not_Been_Loaded
      */
@@ -27,6 +28,7 @@ class Company_Role extends \Company\Company_Role implements iActiveRecord
         ]);
         $this->Delete_Role(app()->request->input('active_status'));
     }
+
 
 }
 

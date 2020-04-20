@@ -27,11 +27,12 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
             'store' => 'Create_User']
         ]);
     Route::resource('roles', 'CompanyRole',[
-        'only' => ['index','store','destroy'],
+        'only' => ['index','store','update','destroy'],
         'names' => [
             'index' => 'List_Roles',
             'store' => 'Create_Role',
-            'destroy' => 'Delete_Role'
+            'destroy' => 'Delete_Role',
+            'update' => 'Edit_Role'
             ]
     ]);
 });

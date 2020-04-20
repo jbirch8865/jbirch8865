@@ -24,19 +24,6 @@ class User extends \Authentication\User implements iActiveRecord
         return $this->Is_Object_Active();
     }
 
-    public function Set_Active_Status(?bool $active_status)
-    {
-        if(!is_null($active_status))
-        {
-            if($active_status)
-            {
-                $this->Set_Object_Active();
-            }else
-            {
-                $this->Set_Object_Inactive();
-            }
-        }
-    }
     /**
      * @throws Varchar_Too_Long_To_Set
      */

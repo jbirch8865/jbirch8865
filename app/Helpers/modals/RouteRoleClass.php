@@ -101,10 +101,7 @@ class Route_Role extends Active_Record implements iActiveRecord
 
     public function Delete_Active_Record() : void
     {
-        app()->request->validate([
-            'active_status' => ['required','bool']
-        ]);
-
+        $this->Delete_Object('destroy');
     }
 
 }

@@ -105,7 +105,7 @@ class Add_URI_Parameters extends Strategy
                 'required' => false,
                 'value' => 'default'
             ];
-        }elseif($route->named('Delete_Role'))
+        }elseif($route->named('Delete_Role') || $route->named('Edit_Role'))
         {
             $array['role'] = [
             'type' => 'int',
@@ -245,7 +245,7 @@ class Add_Post_Data extends Strategy
                     'required' => true,
                     'value' => 'documentation_company'
                ];
-        }elseif($route->named('Create_Role'))
+        }elseif($route->named('Create_Role') || $route->named('Edit_Role'))
         {
             $array['role_name'] = [
                 'type' => 'string',

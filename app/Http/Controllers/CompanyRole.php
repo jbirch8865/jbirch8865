@@ -7,6 +7,8 @@ use app\Facades\Company_Roles;
 use app\Facades\Routes;
 use app\Facades\Company_Role;
 use App\Rules\Route_Right_Required;
+use App\Rules\Validate_Established_Friendly_Name;
+use App\Rules\Validate_Name_Is_Not_Already_Taken;
 use App\Rules\Validate_Object_With_ID;
 use App\Rules\Validate_Route_Module_Name;
 use App\Rules\Validate_Unique_Friendly_Name;
@@ -23,11 +25,6 @@ class CompanyRole extends Controller
     public function index(Request $request)
     {
         return Company_Roles::Get_All_Objects('Company_Role',$request);
-    }
-
-    private function Process_By_Module_Name()
-    {
-
     }
 
     private function Process_By_Route_ID(array $route_info,\app\Helpers\Company_Role &$role)
@@ -133,15 +130,62 @@ class CompanyRole extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * {PUT} roles/{company}/v1/api
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * This will recreate the role with the provided modal
+     * Anything previous will be deleted so make sure this
+     * is the complete modal you are expecting
+     *
+     * @bodyParam Routes_Have_Roles.*.module string if route_id is missing then the module name will be used to create rights with multiple roles. Example Company
+     * @bodyParam Routes_Have_Roles.*.route_id int if route_id is missing then the module name will be used to create rights with multiple roles.
+     * @bodyParam Routes_Have_Roles.*.get bool true allows method false denys method
+     * @bodyParam Routes_Have_Roles.*.post bool true allows method false denys method
+     * @bodyParam Routes_Have_Roles.*.put bool true allows method false denys method
+     * @bodyParam Routes_Have_Roles.*.patch bool true allows method false denys method
+     * @bodyParam Routes_Have_Roles.*.delete bool true allows method false denys method
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $i,$id)
     {
-        //
+        $request->validate([
+            'role_name' => ['string', new Validate_Name_Is_Not_Already_Taken('app\\Helpers\\Company_Role')],
+            'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Object_With_ID('\\app\\Helpers\\Route'),new Route_Right_Required],
+            'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','lte:'.Routes::Get_Column('module')->Get_Data_Length(),new Validate_Route_Module_Name],
+            'Routes_Have_Roles.*.Rights.get' => ['bool','required'],
+            'Routes_Have_Roles.*.Rights.destroy' => ['bool','required'],
+            'Routes_Have_Roles.*.Rights.post' => ['bool','required'],
+            'Routes_Have_Roles.*.Rights.patch' => ['bool','required'],
+            'Routes_Have_Roles.*.Rights.put' => ['bool','required'],
+            'active_status' => ['bool']
+        ]);
+
+        $role = new \app\Helpers\Company_Role;
+        $role->Load_Object_By_ID($id);
+        $role->Set_Active_Status($request->input('active_status'));
+        if($request->input('role_name',false))
+        {
+            $role->Set_Role_Name($request->input('role_name'));
+        }
+        ForEach($request->input('Routes_Have_Roles') as $route_info)
+        {
+            if(isset($route_info['route_id']))
+            {
+                $this->Process_By_Route_ID($route_info,$role);
+            }else
+            {
+                $toolbelt = new \toolbelt;
+                $toolbelt->Routes->Query_Single_Table(['id'],false,"WHERE `module` = '".$route_info['module']."'");
+                while($row = $toolbelt->Routes->Get_Queried_Data())
+                {
+                    $route_info['route_id'] = $row['id'];
+                    $this->Process_By_Route_ID($route_info,$role);
+                }
+            }
+        }
+        return Response_201([
+            'message' => 'Company Role Updated',
+            'company role' => $role->Get_API_Response_Collection()
+        ],$request);
+
     }
 
     /**
