@@ -69,6 +69,7 @@ function Build_Routes()
     Create_Route_If_Not_Exist('Create_Role','Company',false);
     Create_Route_If_Not_Exist('Delete_Role','Company',false);
     Create_Route_If_Not_Exist('Edit_Role','Company',false);
+    Create_Route_If_Not_Exist('User_Signout','',true);
 
 }
 

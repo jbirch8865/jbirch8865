@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use app\Facades\Users;
+use App\Rules\Validate_Active_Status_True;
+use App\Rules\Validate_Object_With_ID;
 use Illuminate\Http\Request;
 /**
  * @group Company
@@ -43,11 +45,25 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'company_roles' => ['array'],
+            'company_roles.*' => ['int','required_with:company_roles',new Validate_Object_With_ID('app\\Helpers\\Company_Role')]
+        ]);
         if($request->user == 'default')
         {
             return Response_422(['message' => 'Default user already created'],$request);
         }
         $user = app()->make('Create_User');
+        $roles = $request->input('company_roles');
+        if(!is_null($roles))
+        {
+            ForEach($roles as $role_id)
+            {
+                $role = new \app\Helpers\Company_Role;
+                $role->Load_Object_By_ID($role_id);
+                $user->Assign_Company_Role($role);
+            }
+        }
         return Response_201([
             'message' => 'User successfully created or already exists with that password',
             'user' => $user->Get_API_Response_Collection()
@@ -67,12 +83,15 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         app()->request->validate([
-            'new_password' => ['max:'.Users::Get_Column('verified_hashed_password')->Get_Data_Length()],
-            'active_status' => ['bool']
+            'new_password' => ['Max:'.Users::Get_Column('verified_hashed_password')->Get_Data_Length()],
+            'company_roles' => ['Required','Array'],
+            'company_roles.*' => ['Required','Integer','required_with:company_roles',new Validate_Object_With_ID('app\\Helpers\\Company_Role')],
+            'active_status' => ['Required','Boolean',new Validate_Active_Status_True]
         ]);
         $user = app()->make('Update_User');
+        $user->Remove_All_Roles();
         $user->Change_Password($request->input('new_password'));
-        $user->Set_Active_Status((bool) $request->input('active_status'));
+        $user->Set_Active_Status(true);
         return Response_201(['message' => 'User successfully updated',
         'user' => $user->Get_API_Response_Collection()],$request);
     }

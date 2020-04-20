@@ -19,13 +19,21 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
         'names' => ['store' => 'User_Signin']
     ])->middleware('secret');
     Route::resource('users', 'UsersController',[
-        'only' => ['index','update','destroy','store'],
+        'only' => ['index','update','store'],
         'names' => [
             'index' => 'List_Users',
             'update' => 'Update_User',
-            'destroy' => 'Delete_User',
             'store' => 'Create_User']
         ]);
+    Route::resource('signin', 'SigninController',[
+            'only' => ['destroy'],
+            'names' => ['destroy' => 'User_Signout']
+        ])->middleware('secret');
+    Route::resource('users', 'UsersController',[
+            'only' => ['destroy'],
+            'names' => [
+                'destroy' => 'Delete_User']
+            ]);
     Route::resource('roles', 'CompanyRole',[
         'only' => ['index','store','update','destroy'],
         'names' => [

@@ -9,10 +9,10 @@ class AddOrganizationIdUrlParameter extends Strategy
 {
    public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
    {
+
        $array = [];
        if($route->uri() != 'doc.json' && strpos($route->uri(),'{company}'))
        {
-
             $array ['company'] = [
                     'type' => 'integer',
                     'description' => '{integer} The ID of the organization',
@@ -81,21 +81,19 @@ class Add_URI_Parameters extends Strategy
         global $documentation_role_id_to_delete;
         if($route->named('Delete_User'))
         {
-            global $new_user_for_documentation;
             $array['user'] = [
                 'type' => 'string',
                 'description' => '{string} username to delete',
                 'required' => true,
-                'value' => $new_user_for_documentation,
+                'value' => 'new_user'
             ];
         }elseif($route->named('Update_User'))
         {
-            global $new_user_for_documentation;
             $array['user'] = [
                 'type' => 'string',
                 'description' => '{string} username to change password',
                 'required' => true,
-                'value' => $new_user_for_documentation
+                'value' => 'new_user'
             ];
         }elseif($route->named('Enable_Default_User'))
         {
@@ -112,6 +110,14 @@ class Add_URI_Parameters extends Strategy
             'description' => '{int}',
             'required' => true,
             'value' => $documentation_role_id_to_delete
+            ];
+        }elseif($route->named('User_Signout'))
+        {
+            $array['signin'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => true,
+                'value' => 'default'
             ];
         }
         return $array;
@@ -136,7 +142,7 @@ class Add_Query_Data extends Strategy
                 'type' => 'bool',
                 'description' => '{bool} When true object will be marked inactive.  When false the object will be deleted.',
                 'required' => true,
-                'value' => true
+                'value' => false
             ];
         }
         if($method->name == 'index' && !$route->named('List_Routes'))
@@ -208,13 +214,11 @@ class Add_Post_Data extends Strategy
         }elseif($route->named('Create_User'))
         {
             $toolbelt = new \Test_Tools\toolbelt;
-            global $new_user_for_documentation;
-            $new_user_for_documentation = uniqid();
             $array['user'] = [
                 'type' => 'string',
                 'description' => '{string}',
                 'required' => true,
-                'value' => $new_user_for_documentation
+                'value' => 'new_user'
             ];
             $array['password'] = [
                 'type' => 'string',
