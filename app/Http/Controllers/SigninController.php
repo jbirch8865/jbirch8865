@@ -11,6 +11,13 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class SigninController extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
+
     /**
      * {POST} signin/{company}/v1/api
      *
@@ -31,13 +38,12 @@ class SigninController extends Controller
      */
     public function destroy($co,$user_name)
     {
-        $toolbelt = new \toolbelt;
-        $username = $toolbelt->dblink->dblink->Escape_String($user_name);
-        $toolbelt->Users->Query_Single_Table(['id'],false,"WHERE `username` = '".$username."'");
-        $user_id = $toolbelt->Users->Get_Queried_Data();
+        $username = $this->toolbelt->dblink->dblink->Escape_String($user_name);
+        $this->toolbelt->Users->Query_Single_Table(['id'],false,"WHERE `username` = '".$username."'");
+        $user_id = $this->toolbelt->Users->Get_Queried_Data();
         $user_id = $user_id['id'];
-        $toolbelt->Programs_Have_Sessions->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
-        $access_token = $toolbelt->Programs_Have_Sessions->Get_Queried_Data();
+        $this->toolbelt->Programs_Have_Sessions->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
+        $access_token = $this->toolbelt->Programs_Have_Sessions->Get_Queried_Data();
         $access_token = $access_token['access_token'];
         $program_session = new \app\Helpers\Program_Session;
         $program_session->Load_Session_By_Access_Token($access_token);

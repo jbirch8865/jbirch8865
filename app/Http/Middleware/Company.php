@@ -16,7 +16,8 @@ class Company
      */
     public function handle($request, Closure $next)
     {
-        app()->make('Company');
+        $toolbelt = new \Test_Tools\toolbelt;
+        $toolbelt->Get_Company();
         return $next($request);
     }
 }

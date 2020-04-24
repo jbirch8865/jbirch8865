@@ -61,9 +61,9 @@ The access_token experation date is based on the company_config session_timeout 
     "https://project.dsfellowship.com/api/v1/1/signin" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0" \
-    -d '{"user":"default","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
+    -d '{"user":"default","password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/signin"
@@ -72,13 +72,13 @@ The access_token experation date is based on the company_config session_timeout 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 let body = {
     "user": "default",
-    "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+    "password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
 }
 
 fetch(url, {
@@ -94,10 +94,10 @@ fetch(url, {
 <pre><code class="language-json">{
     "Program_Session": {
         "id": "3",
-        "client_id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-        "access_token": ".8GYC=nkc7DPfY4c9tGFOtke7MTuKJY$ya$hmfjkDN4zi",
+        "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+        "access_token": "41T$3YBaYDR?P0NSSIZ$ibf0Mg+DJM?0$a3yxV$FGaO55",
         "user_id": "1",
-        "experation_timestamp": "2020-04-20 06:57:31"
+        "experation_timestamp": "2020-04-24 23:06:32"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -154,8 +154,8 @@ fetch(url, {
     "https://project.dsfellowship.com/api/v1/1/signin/default?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/signin/default"
 );
@@ -169,8 +169,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 fetch(url, {
@@ -186,10 +186,10 @@ fetch(url, {
     "message": "Session revoked",
     "Program_Session": {
         "id": "3",
-        "client_id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-        "access_token": "JTvOBaSx+YgSNHVbboT3djk+3Ab7f4+=+MLKkKUU5v$0j",
+        "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+        "access_token": "$8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z",
         "user_id": "1",
-        "experation_timestamp": "2020-04-20 06:47:32"
+        "experation_timestamp": "2020-04-24 22:56:33"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -246,8 +246,8 @@ fetch(url, {
     -G "https://project.dsfellowship.com/api/v1/1/users?active_status=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: cIiYna?cvvH1O=$AsJlLlJCSfuW7YiEUjGozHnjjUXB+E"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 0=tPalb2da45ih6xOyMnFqtJ9CQr$+vT3ESLX6GiOu75="</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/users"
 );
@@ -266,8 +266,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "cIiYna?cvvH1O=$AsJlLlJCSfuW7YiEUjGozHnjjUXB+E",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "0=tPalb2da45ih6xOyMnFqtJ9CQr$+vT3ESLX6GiOu75=",
 };
 
 fetch(url, {
@@ -287,29 +287,7 @@ fetch(url, {
                 "username": "default",
                 "company_id": "1",
                 "project_name": "project2",
-                "active_status": "1",
-                "Companies": {
-                    "id": "1",
-                    "company_name": "System",
-                    "active_status": "1",
-                    "Company_Configs": [
-                        {
-                            "id": "2",
-                            "company_id": "1",
-                            "config_id": "1",
-                            "config_value": "UTC",
-                            "active_status": "1"
-                        }
-                    ],
-                    "Company_Roles": [
-                        {
-                            "id": "99",
-                            "company_id": "1",
-                            "role_name": "5e9b84865c81e",
-                            "active_status": "1"
-                        }
-                    ]
-                }
+                "active_status": "1"
             }
         }
     }
@@ -386,9 +364,9 @@ fetch(url, {
     "https://project.dsfellowship.com/api/v1/1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: psSmUoqMu3THwHUW6mWEfLY=x0V$i0e1wVMb4dG9zmiax" \
-    -d '{"user":"new_user","password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"}'
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 7anfPxsoPuFT6FNAZABg0tgcZb9Dfpx6Mx3=eFcCp4m9Y" \
+    -d '{"user":"new_user","password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1","Users_Have_Roles":[{"id":"2","user_id":"1","role_id":"2"}],"Routes_Have_Roles":[{"id":"1","route_id":"1","role_id":"2","right_id":"1"},{"id":"2","route_id":"2","role_id":"2","right_id":"2"},{"id":"3","route_id":"3","role_id":"2","right_id":"3"},{"id":"4","route_id":"4","role_id":"2","right_id":"4"},{"id":"5","route_id":"5","role_id":"2","right_id":"5"}]}]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/users"
@@ -397,13 +375,60 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "psSmUoqMu3THwHUW6mWEfLY=x0V$i0e1wVMb4dG9zmiax",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "7anfPxsoPuFT6FNAZABg0tgcZb9Dfpx6Mx3=eFcCp4m9Y",
 };
 
 let body = {
     "user": "new_user",
-    "password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+    "password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "company_roles": [
+        {
+            "id": "2",
+            "company_id": "1",
+            "role_name": "master",
+            "active_status": "1",
+            "Users_Have_Roles": [
+                {
+                    "id": "2",
+                    "user_id": "1",
+                    "role_id": "2"
+                }
+            ],
+            "Routes_Have_Roles": [
+                {
+                    "id": "1",
+                    "route_id": "1",
+                    "role_id": "2",
+                    "right_id": "1"
+                },
+                {
+                    "id": "2",
+                    "route_id": "2",
+                    "role_id": "2",
+                    "right_id": "2"
+                },
+                {
+                    "id": "3",
+                    "route_id": "3",
+                    "role_id": "2",
+                    "right_id": "3"
+                },
+                {
+                    "id": "4",
+                    "route_id": "4",
+                    "role_id": "2",
+                    "right_id": "4"
+                },
+                {
+                    "id": "5",
+                    "route_id": "5",
+                    "role_id": "2",
+                    "right_id": "5"
+                }
+            ]
+        }
+    ]
 }
 
 fetch(url, {
@@ -419,8 +444,11 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User successfully created or already exists with that password",
     "user": {
+        "id": 17,
         "username": "new_user",
-        "project_name": "project2"
+        "company_id": 1,
+        "project_name": "project2",
+        "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -465,6 +493,12 @@ fetch(url, {
 <td>required</td>
 <td>{string}</td>
 </tr>
+<tr>
+<td><code>company_roles</code></td>
+<td>array</td>
+<td>required</td>
+<td>{array}</td>
+</tr>
 </tbody>
 </table>
 <!-- END_37cc2f7db7536431917bf10b848bd8e4 -->
@@ -484,9 +518,9 @@ the password.  Then remember to disable the default user.</p>
     "https://project.dsfellowship.com/api/v1/1/users/new_user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: JTvOBaSx+YgSNHVbboT3djk+3Ab7f4+=+MLKkKUU5v$0j" \
-    -d '{"new_password":"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb","active_status":true}'
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: $8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z" \
+    -d '{"new_password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1"}],"active_status":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/users/new_user"
@@ -495,12 +529,20 @@ the password.  Then remember to disable the default user.</p>
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "JTvOBaSx+YgSNHVbboT3djk+3Ab7f4+=+MLKkKUU5v$0j",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "$8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z",
 };
 
 let body = {
-    "new_password": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
+    "new_password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "company_roles": [
+        {
+            "id": "2",
+            "company_id": "1",
+            "role_name": "master",
+            "active_status": "1"
+        }
+    ],
     "active_status": true
 }
 
@@ -512,14 +554,16 @@ fetch(url, {
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <blockquote>
-<p>Example response (422):</p>
+<p>Example response (201):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "The given data was invalid.",
-    "errors": {
-        "company_roles": [
-            "The company roles field is required."
-        ]
+    "message": "User successfully updated",
+    "user": {
+        "id": "17",
+        "username": "new_user",
+        "company_id": "1",
+        "project_name": "project2",
+        "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -565,6 +609,12 @@ fetch(url, {
 <td>{string}</td>
 </tr>
 <tr>
+<td><code>company_roles</code></td>
+<td>array</td>
+<td>required</td>
+<td>{array}</td>
+</tr>
+<tr>
 <td><code>active_status</code></td>
 <td>bool</td>
 <td>optional</td>
@@ -582,8 +632,8 @@ fetch(url, {
     "https://project.dsfellowship.com/api/v1/1/users/new_user?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: 0ReQN?xkJQX.at9TmiFVlN6+kPN?5EZ5FCFZ4NXnj=QMx"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: a5l.Tk59QMPWLzJVr5j1SzJis6TdTh7O=1g1j8S2P?DO3"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/users/new_user"
 );
@@ -597,8 +647,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "0ReQN?xkJQX.at9TmiFVlN6+kPN?5EZ5FCFZ4NXnj=QMx",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "a5l.Tk59QMPWLzJVr5j1SzJis6TdTh7O=1g1j8S2P?DO3",
 };
 
 fetch(url, {
@@ -613,7 +663,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User Successfully Deleted",
     "user": {
-        "id": "259",
+        "id": "17",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -671,8 +721,8 @@ fetch(url, {
     -G "https://project.dsfellowship.com/api/v1/1/roles?active_status=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: EkszSIKLpRekHIHGYhOqKLiBLyXCy6z8tH8lh7rZ9ndyG"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 3+Cp6q0+X8rgYQ2OJ$74kHyuTui4yWfYy0X8GwFsUq3Wx"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/roles"
 );
@@ -691,8 +741,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "EkszSIKLpRekHIHGYhOqKLiBLyXCy6z8tH8lh7rZ9ndyG",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "3+Cp6q0+X8rgYQ2OJ$74kHyuTui4yWfYy0X8GwFsUq3Wx",
 };
 
 fetch(url, {
@@ -707,1456 +757,383 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Company_Role": {
-        "5e9b84865c81e": {
-            "id": "99",
+        "5ea358e714492": {
+            "id": "9",
             "company_id": "1",
-            "role_name": "5e9b84865c81e",
+            "role_name": "5ea358e714492",
             "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
             "Routes_Have_Roles": [
                 {
-                    "id": "385",
+                    "id": "64",
                     "route_id": "12",
-                    "role_id": "99",
-                    "right_id": "390",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "390",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
+                    "role_id": "9",
+                    "right_id": "64"
                 },
                 {
-                    "id": "386",
+                    "id": "65",
                     "route_id": "3",
-                    "role_id": "99",
-                    "right_id": "391",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "391",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
+                    "role_id": "9",
+                    "right_id": "65"
                 },
                 {
-                    "id": "387",
-                    "route_id": "10",
-                    "role_id": "99",
-                    "right_id": "392",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "392",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "388",
-                    "route_id": "6",
-                    "role_id": "99",
-                    "right_id": "393",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "393",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "389",
-                    "route_id": "2",
-                    "role_id": "99",
-                    "right_id": "394",
-                    "Routes": {
-                        "id": "2",
-                        "name": "List_Users",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "394",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b87ae6d1c8": {
-            "id": "101",
-            "company_id": "1",
-            "role_name": "5e9b87ae6d1c8",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "397",
-                    "route_id": "12",
-                    "role_id": "101",
-                    "right_id": "402",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "101",
-                        "company_id": "1",
-                        "role_name": "5e9b87ae6d1c8",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "402",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "398",
-                    "route_id": "3",
-                    "role_id": "101",
-                    "right_id": "403",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "101",
-                        "company_id": "1",
-                        "role_name": "5e9b87ae6d1c8",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "403",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "399",
-                    "route_id": "10",
-                    "role_id": "101",
-                    "right_id": "404",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "101",
-                        "company_id": "1",
-                        "role_name": "5e9b87ae6d1c8",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "404",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "400",
-                    "route_id": "6",
-                    "role_id": "101",
-                    "right_id": "405",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "101",
-                        "company_id": "1",
-                        "role_name": "5e9b87ae6d1c8",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "405",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "401",
-                    "route_id": "2",
-                    "role_id": "101",
-                    "right_id": "406",
-                    "Routes": {
-                        "id": "2",
-                        "name": "List_Users",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "101",
-                        "company_id": "1",
-                        "role_name": "5e9b87ae6d1c8",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "406",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b87eb3d3e5": {
-            "id": "103",
-            "company_id": "1",
-            "role_name": "5e9b87eb3d3e5",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "409",
-                    "route_id": "12",
-                    "role_id": "103",
-                    "right_id": "414",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "103",
-                        "company_id": "1",
-                        "role_name": "5e9b87eb3d3e5",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "414",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "410",
-                    "route_id": "3",
-                    "role_id": "103",
-                    "right_id": "415",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "103",
-                        "company_id": "1",
-                        "role_name": "5e9b87eb3d3e5",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "415",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "411",
-                    "route_id": "10",
-                    "role_id": "103",
-                    "right_id": "416",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "103",
-                        "company_id": "1",
-                        "role_name": "5e9b87eb3d3e5",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "416",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "412",
-                    "route_id": "6",
-                    "role_id": "103",
-                    "right_id": "417",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "103",
-                        "company_id": "1",
-                        "role_name": "5e9b87eb3d3e5",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "417",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "413",
-                    "route_id": "2",
-                    "role_id": "103",
-                    "right_id": "418",
-                    "Routes": {
-                        "id": "2",
-                        "name": "List_Users",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "103",
-                        "company_id": "1",
-                        "role_name": "5e9b87eb3d3e5",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "418",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b88f3acf10": {
-            "id": "105",
-            "company_id": "1",
-            "role_name": "5e9b88f3acf10",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "421",
-                    "route_id": "12",
-                    "role_id": "105",
-                    "right_id": "426",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "105",
-                        "company_id": "1",
-                        "role_name": "5e9b88f3acf10",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "426",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "422",
-                    "route_id": "3",
-                    "role_id": "105",
-                    "right_id": "427",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "105",
-                        "company_id": "1",
-                        "role_name": "5e9b88f3acf10",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "427",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "423",
-                    "route_id": "10",
-                    "role_id": "105",
-                    "right_id": "428",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "105",
-                        "company_id": "1",
-                        "role_name": "5e9b88f3acf10",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "428",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "424",
-                    "route_id": "6",
-                    "role_id": "105",
-                    "right_id": "429",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "105",
-                        "company_id": "1",
-                        "role_name": "5e9b88f3acf10",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "429",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "425",
-                    "route_id": "2",
-                    "role_id": "105",
-                    "right_id": "430",
-                    "Routes": {
-                        "id": "2",
-                        "name": "List_Users",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "105",
-                        "company_id": "1",
-                        "role_name": "5e9b88f3acf10",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "430",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b9cae49dca": {
-            "id": "114",
-            "company_id": "1",
-            "role_name": "5e9b9cae49dca",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "494",
-                    "route_id": "12",
-                    "role_id": "114",
-                    "right_id": "499",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "114",
-                        "company_id": "1",
-                        "role_name": "5e9b9cae49dca",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "499",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "495",
-                    "route_id": "3",
-                    "role_id": "114",
-                    "right_id": "500",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "114",
-                        "company_id": "1",
-                        "role_name": "5e9b9cae49dca",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "500",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "496",
+                    "id": "66",
                     "route_id": "13",
-                    "role_id": "114",
-                    "right_id": "501",
-                    "Routes": {
-                        "id": "13",
-                        "name": "Delete_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "114",
-                        "company_id": "1",
-                        "role_name": "5e9b9cae49dca",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "501",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
+                    "role_id": "9",
+                    "right_id": "66"
                 },
                 {
-                    "id": "497",
+                    "id": "67",
                     "route_id": "10",
-                    "role_id": "114",
-                    "right_id": "502",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "114",
-                        "company_id": "1",
-                        "role_name": "5e9b9cae49dca",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "502",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
+                    "role_id": "9",
+                    "right_id": "67"
                 },
                 {
-                    "id": "498",
-                    "route_id": "6",
-                    "role_id": "114",
-                    "right_id": "503",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "114",
-                        "company_id": "1",
-                        "role_name": "5e9b9cae49dca",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "503",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b9e46971e7": {
-            "id": "116",
-            "company_id": "1",
-            "role_name": "5e9b9e46971e7",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "508",
-                    "route_id": "12",
-                    "role_id": "116",
-                    "right_id": "513",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "116",
-                        "company_id": "1",
-                        "role_name": "5e9b9e46971e7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "513",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "509",
-                    "route_id": "3",
-                    "role_id": "116",
-                    "right_id": "514",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "116",
-                        "company_id": "1",
-                        "role_name": "5e9b9e46971e7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "514",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "510",
-                    "route_id": "13",
-                    "role_id": "116",
-                    "right_id": "515",
-                    "Routes": {
-                        "id": "13",
-                        "name": "Delete_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "116",
-                        "company_id": "1",
-                        "role_name": "5e9b9e46971e7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "515",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "511",
-                    "route_id": "10",
-                    "role_id": "116",
-                    "right_id": "516",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "116",
-                        "company_id": "1",
-                        "role_name": "5e9b9e46971e7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "516",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "512",
-                    "route_id": "6",
-                    "role_id": "116",
-                    "right_id": "517",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "116",
-                        "company_id": "1",
-                        "role_name": "5e9b9e46971e7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "517",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9b9eafb0db7": {
-            "id": "122",
-            "company_id": "1",
-            "role_name": "5e9b9eafb0db7",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "550",
-                    "route_id": "12",
-                    "role_id": "122",
-                    "right_id": "555",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "122",
-                        "company_id": "1",
-                        "role_name": "5e9b9eafb0db7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "555",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "551",
-                    "route_id": "3",
-                    "role_id": "122",
-                    "right_id": "556",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "122",
-                        "company_id": "1",
-                        "role_name": "5e9b9eafb0db7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "556",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "552",
-                    "route_id": "13",
-                    "role_id": "122",
-                    "right_id": "557",
-                    "Routes": {
-                        "id": "13",
-                        "name": "Delete_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "122",
-                        "company_id": "1",
-                        "role_name": "5e9b9eafb0db7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "557",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "553",
-                    "route_id": "10",
-                    "role_id": "122",
-                    "right_id": "558",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "122",
-                        "company_id": "1",
-                        "role_name": "5e9b9eafb0db7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "558",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "554",
-                    "route_id": "6",
-                    "role_id": "122",
-                    "right_id": "559",
-                    "Routes": {
-                        "id": "6",
-                        "name": "List_Roles",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "122",
-                        "company_id": "1",
-                        "role_name": "5e9b9eafb0db7",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "559",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "1",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                }
-            ]
-        },
-        "5e9d095668926": {
-            "id": "158",
-            "company_id": "1",
-            "role_name": "5e9d095668926",
-            "active_status": "1",
-            "Companies": {
-                "id": "1",
-                "company_name": "System",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "2",
-                        "company_id": "1",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "99",
-                        "company_id": "1",
-                        "role_name": "5e9b84865c81e",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Routes_Have_Roles": [
-                {
-                    "id": "916",
-                    "route_id": "12",
-                    "role_id": "158",
-                    "right_id": "921",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "158",
-                        "company_id": "1",
-                        "role_name": "5e9d095668926",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "921",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "917",
-                    "route_id": "3",
-                    "role_id": "158",
-                    "right_id": "922",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "158",
-                        "company_id": "1",
-                        "role_name": "5e9d095668926",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "922",
-                        "get": "1",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "918",
-                    "route_id": "13",
-                    "role_id": "158",
-                    "right_id": "923",
-                    "Routes": {
-                        "id": "13",
-                        "name": "Delete_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "158",
-                        "company_id": "1",
-                        "role_name": "5e9d095668926",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "923",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "919",
-                    "route_id": "10",
-                    "role_id": "158",
-                    "right_id": "924",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "158",
-                        "company_id": "1",
-                        "role_name": "5e9d095668926",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "924",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
-                },
-                {
-                    "id": "920",
+                    "id": "68",
                     "route_id": "14",
-                    "role_id": "158",
-                    "right_id": "925",
-                    "Routes": {
-                        "id": "14",
-                        "name": "Edit_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "158",
-                        "company_id": "1",
-                        "role_name": "5e9d095668926",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "925",
-                        "get": "0",
-                        "destroy": "0",
-                        "post": "0",
-                        "patch": "0",
-                        "put": "0"
-                    }
+                    "role_id": "9",
+                    "right_id": "68"
                 }
             ]
         },
-        "master": {
-            "id": "236",
-            "company_id": "194",
-            "role_name": "master",
+        "5ea35c33f172e": {
+            "id": "10",
+            "company_id": "1",
+            "role_name": "5ea35c33f172e",
             "active_status": "1",
-            "Companies": {
-                "id": "194",
-                "company_name": "documentation_company",
-                "active_status": "1",
-                "Company_Configs": [
-                    {
-                        "id": "248",
-                        "company_id": "194",
-                        "config_id": "1",
-                        "config_value": "UTC",
-                        "active_status": "1"
-                    }
-                ],
-                "Company_Roles": [
-                    {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    }
-                ]
-            },
-            "Users_Have_Roles": [
-                {
-                    "id": "169",
-                    "user_id": "258",
-                    "role_id": "236",
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    }
-                }
-            ],
             "Routes_Have_Roles": [
                 {
-                    "id": "1661",
+                    "id": "72",
                     "route_id": "12",
-                    "role_id": "236",
-                    "right_id": "1666",
-                    "Routes": {
-                        "id": "12",
-                        "name": "Create_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "1666",
-                        "get": "1",
-                        "destroy": "1",
-                        "post": "1",
-                        "patch": "1",
-                        "put": "1"
-                    }
+                    "role_id": "10",
+                    "right_id": "72"
                 },
                 {
-                    "id": "1662",
+                    "id": "73",
                     "route_id": "3",
-                    "role_id": "236",
-                    "right_id": "1667",
-                    "Routes": {
-                        "id": "3",
-                        "name": "Create_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "1667",
-                        "get": "1",
-                        "destroy": "1",
-                        "post": "1",
-                        "patch": "1",
-                        "put": "1"
-                    }
+                    "role_id": "10",
+                    "right_id": "73"
                 },
                 {
-                    "id": "1663",
+                    "id": "74",
                     "route_id": "13",
-                    "role_id": "236",
-                    "right_id": "1668",
-                    "Routes": {
-                        "id": "13",
-                        "name": "Delete_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "1668",
-                        "get": "1",
-                        "destroy": "1",
-                        "post": "1",
-                        "patch": "1",
-                        "put": "1"
-                    }
+                    "role_id": "10",
+                    "right_id": "74"
                 },
                 {
-                    "id": "1664",
+                    "id": "75",
                     "route_id": "10",
-                    "role_id": "236",
-                    "right_id": "1669",
-                    "Routes": {
-                        "id": "10",
-                        "name": "Delete_User",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "1669",
-                        "get": "1",
-                        "destroy": "1",
-                        "post": "1",
-                        "patch": "1",
-                        "put": "1"
-                    }
+                    "role_id": "10",
+                    "right_id": "75"
                 },
                 {
-                    "id": "1665",
+                    "id": "76",
                     "route_id": "14",
-                    "role_id": "236",
-                    "right_id": "1670",
-                    "Routes": {
-                        "id": "14",
-                        "name": "Edit_Role",
-                        "implicit_allow": "0",
-                        "module": "Company"
-                    },
-                    "Company_Roles": {
-                        "id": "236",
-                        "company_id": "194",
-                        "role_name": "master",
-                        "active_status": "1"
-                    },
-                    "Rights": {
-                        "id": "1670",
-                        "get": "1",
-                        "destroy": "1",
-                        "post": "1",
-                        "patch": "1",
-                        "put": "1"
-                    }
+                    "role_id": "10",
+                    "right_id": "76"
+                }
+            ]
+        },
+        "5ea35c747e77f": {
+            "id": "11",
+            "company_id": "1",
+            "role_name": "5ea35c747e77f",
+            "active_status": "1",
+            "Routes_Have_Roles": [
+                {
+                    "id": "80",
+                    "route_id": "12",
+                    "role_id": "11",
+                    "right_id": "80"
+                },
+                {
+                    "id": "81",
+                    "route_id": "3",
+                    "role_id": "11",
+                    "right_id": "81"
+                },
+                {
+                    "id": "82",
+                    "route_id": "13",
+                    "role_id": "11",
+                    "right_id": "82"
+                },
+                {
+                    "id": "83",
+                    "route_id": "10",
+                    "role_id": "11",
+                    "right_id": "83"
+                },
+                {
+                    "id": "84",
+                    "route_id": "14",
+                    "role_id": "11",
+                    "right_id": "84"
+                }
+            ]
+        },
+        "5ea3628f9f8af": {
+            "id": "12",
+            "company_id": "1",
+            "role_name": "5ea3628f9f8af",
+            "active_status": "1",
+            "Routes_Have_Roles": [
+                {
+                    "id": "88",
+                    "route_id": "12",
+                    "role_id": "12",
+                    "right_id": "88"
+                },
+                {
+                    "id": "89",
+                    "route_id": "3",
+                    "role_id": "12",
+                    "right_id": "89"
+                },
+                {
+                    "id": "90",
+                    "route_id": "13",
+                    "role_id": "12",
+                    "right_id": "90"
+                },
+                {
+                    "id": "91",
+                    "route_id": "10",
+                    "role_id": "12",
+                    "right_id": "91"
+                },
+                {
+                    "id": "92",
+                    "route_id": "14",
+                    "role_id": "12",
+                    "right_id": "92"
+                }
+            ]
+        },
+        "5ea3643372858": {
+            "id": "13",
+            "company_id": "1",
+            "role_name": "5ea3643372858",
+            "active_status": "1",
+            "Routes_Have_Roles": [
+                {
+                    "id": "96",
+                    "route_id": "12",
+                    "role_id": "13",
+                    "right_id": "96"
+                },
+                {
+                    "id": "97",
+                    "route_id": "3",
+                    "role_id": "13",
+                    "right_id": "97"
+                },
+                {
+                    "id": "98",
+                    "route_id": "13",
+                    "role_id": "13",
+                    "right_id": "98"
+                },
+                {
+                    "id": "99",
+                    "route_id": "10",
+                    "role_id": "13",
+                    "right_id": "99"
+                },
+                {
+                    "id": "100",
+                    "route_id": "14",
+                    "role_id": "13",
+                    "right_id": "100"
+                }
+            ]
+        },
+        "5ea36887b113d": {
+            "id": "15",
+            "company_id": "1",
+            "role_name": "5ea36887b113d",
+            "active_status": "0",
+            "Routes_Have_Roles": [
+                {
+                    "id": "112",
+                    "route_id": "12",
+                    "role_id": "15",
+                    "right_id": "112"
+                },
+                {
+                    "id": "113",
+                    "route_id": "3",
+                    "role_id": "15",
+                    "right_id": "113"
+                },
+                {
+                    "id": "114",
+                    "route_id": "13",
+                    "role_id": "15",
+                    "right_id": "114"
+                },
+                {
+                    "id": "115",
+                    "route_id": "10",
+                    "role_id": "15",
+                    "right_id": "115"
+                },
+                {
+                    "id": "116",
+                    "route_id": "14",
+                    "role_id": "15",
+                    "right_id": "116"
+                }
+            ]
+        },
+        "5ea369528cba4": {
+            "id": "16",
+            "company_id": "1",
+            "role_name": "5ea369528cba4",
+            "active_status": "1",
+            "Routes_Have_Roles": [
+                {
+                    "id": "120",
+                    "route_id": "12",
+                    "role_id": "16",
+                    "right_id": "120"
+                },
+                {
+                    "id": "121",
+                    "route_id": "3",
+                    "role_id": "16",
+                    "right_id": "121"
+                },
+                {
+                    "id": "122",
+                    "route_id": "13",
+                    "role_id": "16",
+                    "right_id": "122"
+                },
+                {
+                    "id": "123",
+                    "route_id": "10",
+                    "role_id": "16",
+                    "right_id": "123"
+                },
+                {
+                    "id": "124",
+                    "route_id": "14",
+                    "role_id": "16",
+                    "right_id": "124"
+                }
+            ]
+        },
+        "5ea36a0c5e6fb": {
+            "id": "17",
+            "company_id": "1",
+            "role_name": "5ea36a0c5e6fb",
+            "active_status": "0",
+            "Routes_Have_Roles": [
+                {
+                    "id": "128",
+                    "route_id": "12",
+                    "role_id": "17",
+                    "right_id": "128"
+                },
+                {
+                    "id": "129",
+                    "route_id": "3",
+                    "role_id": "17",
+                    "right_id": "129"
+                },
+                {
+                    "id": "130",
+                    "route_id": "13",
+                    "role_id": "17",
+                    "right_id": "130"
+                },
+                {
+                    "id": "131",
+                    "route_id": "10",
+                    "role_id": "17",
+                    "right_id": "131"
+                },
+                {
+                    "id": "132",
+                    "route_id": "14",
+                    "role_id": "17",
+                    "right_id": "132"
+                }
+            ]
+        },
+        "5ea36acf7e951": {
+            "id": "18",
+            "company_id": "1",
+            "role_name": "5ea36acf7e951",
+            "active_status": "0",
+            "Routes_Have_Roles": [
+                {
+                    "id": "136",
+                    "route_id": "12",
+                    "role_id": "18",
+                    "right_id": "136"
+                },
+                {
+                    "id": "137",
+                    "route_id": "3",
+                    "role_id": "18",
+                    "right_id": "137"
+                },
+                {
+                    "id": "138",
+                    "route_id": "13",
+                    "role_id": "18",
+                    "right_id": "138"
+                },
+                {
+                    "id": "139",
+                    "route_id": "10",
+                    "role_id": "18",
+                    "right_id": "139"
+                },
+                {
+                    "id": "140",
+                    "route_id": "14",
+                    "role_id": "18",
+                    "right_id": "140"
+                }
+            ]
+        },
+        "5ea36da305350": {
+            "id": "20",
+            "company_id": "1",
+            "role_name": "5ea36da305350",
+            "active_status": "0",
+            "Routes_Have_Roles": [
+                {
+                    "id": "152",
+                    "route_id": "12",
+                    "role_id": "20",
+                    "right_id": "152"
+                },
+                {
+                    "id": "153",
+                    "route_id": "3",
+                    "role_id": "20",
+                    "right_id": "153"
+                },
+                {
+                    "id": "154",
+                    "route_id": "13",
+                    "role_id": "20",
+                    "right_id": "154"
+                },
+                {
+                    "id": "155",
+                    "route_id": "10",
+                    "role_id": "20",
+                    "right_id": "155"
+                },
+                {
+                    "id": "156",
+                    "route_id": "14",
+                    "role_id": "20",
+                    "right_id": "156"
                 }
             ]
         }
@@ -2237,9 +1214,9 @@ with that route.</p>
     "https://project.dsfellowship.com/api/v1/1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: =FSLuQDJsTo7+3WruTXVyFOmotoIxntPATyE.DpgSRi5K" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5e9d46c2edc90"}'
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 5F9aOFFcVcROIvb1B.ynHqy66mXpoIxCJnLzwUKfGQF5F" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea36fce63be3"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/roles"
@@ -2248,8 +1225,8 @@ with that route.</p>
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "=FSLuQDJsTo7+3WruTXVyFOmotoIxntPATyE.DpgSRi5K",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "5F9aOFFcVcROIvb1B.ynHqy66mXpoIxCJnLzwUKfGQF5F",
 };
 
 let body = {
@@ -2275,7 +1252,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5e9d46c2edc90"
+    "role_name": "5ea36fce63be3"
 }
 
 fetch(url, {
@@ -2291,9 +1268,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role created",
     "company role": {
-        "id": "237",
+        "id": "26",
         "company_id": "1",
-        "role_name": "5e9d46c2edc90",
+        "role_name": "5ea36fce63be3",
         "active_status": "1"
     }
 }</code></pre>
@@ -2393,22 +1370,22 @@ is the complete modal you are expecting</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/roles/237" \
+    "https://project.dsfellowship.com/api/v1/1/roles/26" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: TBom96x=ccL9FYfGmgk$=YQoJ3.RI.sZhCJKw5.?qC63Z" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5e9d46c3c29d8","active_status":true}'
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 9jKoPSr+qVMt7m9LFYdCy6m1Q9O7ZI4Y7ncsaRxF0ARH1" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea36fcee799d","active_status":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles/237"
+    "https://project.dsfellowship.com/api/v1/1/roles/26"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "TBom96x=ccL9FYfGmgk$=YQoJ3.RI.sZhCJKw5.?qC63Z",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "9jKoPSr+qVMt7m9LFYdCy6m1Q9O7ZI4Y7ncsaRxF0ARH1",
 };
 
 let body = {
@@ -2434,7 +1411,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5e9d46c3c29d8",
+    "role_name": "5ea36fcee799d",
     "active_status": true
 }
 
@@ -2451,9 +1428,10 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role Updated",
     "company role": {
-        "id": "237",
+        "id": "26",
         "company_id": "1",
-        "role_name": "5e9d46c3c29d8"
+        "role_name": "5ea36fcee799d",
+        "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -2561,13 +1539,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/1/roles/237?active_status=" \
+    "https://project.dsfellowship.com/api/v1/1/roles/26?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "User-Access-Token: ?LpWbY4XwYvvYX=szpdpd2rWwVR8Os0PKP0OlytuM1DyQ"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "User-Access-Token: 6X0kdjNyH4Ohe4kjZfNROP9Hnk.co0x7SDs78nR3yEXYf"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles/237"
+    "https://project.dsfellowship.com/api/v1/1/roles/26"
 );
 
 let params = {
@@ -2579,8 +1557,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "User-Access-Token": "?LpWbY4XwYvvYX=szpdpd2rWwVR8Os0PKP0OlytuM1DyQ",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "User-Access-Token": "6X0kdjNyH4Ohe4kjZfNROP9Hnk.co0x7SDs78nR3yEXYf",
 };
 
 fetch(url, {
@@ -2650,8 +1628,8 @@ Make sure to record the default password upon success, this password is unrecove
     "https://project.dsfellowship.com/api/v1/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0" \
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
     -d '{"company_name":"documentation_company"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -2661,8 +1639,8 @@ Make sure to record the default password upon success, this password is unrecove
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 let body = {
@@ -2681,9 +1659,11 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "message": "Company successfully created",
-    "master_password": ".RGjh3E6.Xqp$m",
+    "master_password": "O9QuL9pgDhm5TU",
     "company": {
-        "company_name": "documentation_company"
+        "id": 18,
+        "company_name": "documentation_company",
+        "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -2718,8 +1698,8 @@ fetch(url, {
     -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;offset=0&amp;limit=10&amp;active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/companies"
 );
@@ -2739,8 +1719,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 fetch(url, {
@@ -2756,71 +1736,44 @@ fetch(url, {
     "message": "Response Objects",
     "Company": {
         "documentation_company": {
-            "id": "195",
+            "id": "18",
             "company_name": "documentation_company",
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "250",
-                    "company_id": "195",
+                    "id": "16",
+                    "company_id": "18",
                     "config_id": "1",
                     "config_value": "UTC",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "195",
-                        "company_name": "documentation_company",
-                        "active_status": "1"
-                    },
-                    "Configs": {
-                        "id": "1",
-                        "active_status": "1",
-                        "config_name": "company_time_zone",
-                        "default_value": "UTC"
-                    }
+                    "active_status": "1"
                 },
                 {
-                    "id": "249",
-                    "company_id": "195",
+                    "id": "15",
+                    "company_id": "18",
                     "config_id": "2",
                     "config_value": "300",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "195",
-                        "company_name": "documentation_company",
-                        "active_status": "1"
-                    },
-                    "Configs": {
-                        "id": "2",
-                        "active_status": "1",
-                        "config_name": "session_time_limit",
-                        "default_value": "300"
-                    }
+                    "active_status": "1"
                 }
             ],
             "Company_Roles": [
                 {
-                    "id": "238",
-                    "company_id": "195",
+                    "id": "27",
+                    "company_id": "18",
                     "role_name": "master",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "195",
-                        "company_name": "documentation_company",
-                        "active_status": "1"
-                    },
                     "Users_Have_Roles": [
                         {
-                            "id": "170",
-                            "user_id": "260",
-                            "role_id": "238"
+                            "id": "32",
+                            "user_id": "18",
+                            "role_id": "27"
                         }
                     ],
                     "Routes_Have_Roles": [
                         {
-                            "id": "1677",
+                            "id": "208",
                             "route_id": "12",
-                            "role_id": "238",
-                            "right_id": "1682"
+                            "role_id": "27",
+                            "right_id": "208"
                         }
                     ]
                 }
@@ -2836,131 +1789,84 @@ fetch(url, {
                     "company_id": "1",
                     "config_id": "1",
                     "config_value": "UTC",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
-                    "Configs": {
-                        "id": "1",
-                        "active_status": "1",
-                        "config_name": "company_time_zone",
-                        "default_value": "UTC"
-                    }
+                    "active_status": "1"
                 },
                 {
                     "id": "1",
                     "company_id": "1",
                     "config_id": "2",
                     "config_value": "300",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
-                    "Configs": {
-                        "id": "2",
-                        "active_status": "1",
-                        "config_name": "session_time_limit",
-                        "default_value": "300"
-                    }
+                    "active_status": "1"
                 }
             ],
             "Company_Roles": [
                 {
-                    "id": "99",
+                    "id": "9",
                     "company_id": "1",
-                    "role_name": "5e9b84865c81e",
+                    "role_name": "5ea358e714492",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "385",
+                            "id": "64",
                             "route_id": "12",
-                            "role_id": "99",
-                            "right_id": "390"
+                            "role_id": "9",
+                            "right_id": "64"
                         }
                     ]
                 },
                 {
-                    "id": "101",
+                    "id": "10",
                     "company_id": "1",
-                    "role_name": "5e9b87ae6d1c8",
+                    "role_name": "5ea35c33f172e",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "397",
+                            "id": "72",
                             "route_id": "12",
-                            "role_id": "101",
-                            "right_id": "402"
+                            "role_id": "10",
+                            "right_id": "72"
                         }
                     ]
                 },
                 {
-                    "id": "103",
+                    "id": "11",
                     "company_id": "1",
-                    "role_name": "5e9b87eb3d3e5",
+                    "role_name": "5ea35c747e77f",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "409",
+                            "id": "80",
                             "route_id": "12",
-                            "role_id": "103",
-                            "right_id": "414"
+                            "role_id": "11",
+                            "right_id": "80"
                         }
                     ]
                 },
                 {
-                    "id": "105",
+                    "id": "12",
                     "company_id": "1",
-                    "role_name": "5e9b88f3acf10",
+                    "role_name": "5ea3628f9f8af",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "421",
+                            "id": "88",
                             "route_id": "12",
-                            "role_id": "105",
-                            "right_id": "426"
+                            "role_id": "12",
+                            "right_id": "88"
                         }
                     ]
                 },
                 {
-                    "id": "114",
+                    "id": "13",
                     "company_id": "1",
-                    "role_name": "5e9b9cae49dca",
+                    "role_name": "5ea3643372858",
                     "active_status": "1",
-                    "Companies": {
-                        "id": "1",
-                        "company_name": "System",
-                        "active_status": "1"
-                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "494",
+                            "id": "96",
                             "route_id": "12",
-                            "role_id": "114",
-                            "right_id": "499"
+                            "role_id": "13",
+                            "right_id": "96"
                         }
                     ]
                 }
@@ -3028,7 +1934,7 @@ fetch(url, {
     -G "https://project.dsfellowship.com/doc.json" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"</code></pre>
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/doc.json"
 );
@@ -3036,7 +1942,7 @@ fetch(url, {
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 fetch(url, {
@@ -3052,7 +1958,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "d455c0b4-3f65-412d-97d6-e0e9c18042a6",
+        "_postman_id": "f035d501-984d-42f8-b867-15606e20c3ce",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -3090,16 +1996,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
+                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\"\n}"
                         },
                         "description": "Returns a unique access_token used to authenticate in place of the username and password\nThe access_token experation date is based on the company_config session_timeout which is comany specific",
                         "response": []
@@ -3147,11 +2053,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3234,11 +2140,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "qmPIaN2PqgsIpYazL7ubjS0ebtSsU5+AnJMxwt.x8$6ts"
+                                "value": "X?+jojLXcSRT0ODEd.G0EntwfqWQtyrN$Gsm13YDPvemb"
                             }
                         ],
                         "body": {
@@ -3278,16 +2184,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "9?n=he.aBECXjmJ?n8iPb7tRG+oy6tF+s7mIxYXGnKc1x"
+                                "value": "9b=4JK.b7ewI20kSMsC5gRXXZa6j8B0?$M4G2x1IVh3xZ"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\"\n}"
+                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"2\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"2\"\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1\",\n                    \"route_id\": \"1\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"1\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"route_id\": \"2\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"2\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"route_id\": \"3\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"3\"\n                },\n                {\n                    \"id\": \"4\",\n                    \"route_id\": \"4\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"4\"\n                },\n                {\n                    \"id\": \"5\",\n                    \"route_id\": \"5\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"5\"\n                }\n            ]\n        }\n    ]\n}"
                         },
                         "description": "Create a user",
                         "response": []
@@ -3328,16 +2234,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "r?C9$aToCuw2qk3MKDGO2l9=Xsghr.Ehnhhc?gV=gFV6n"
+                                "value": "pOL8kzo2Ws7LC9VmYMyf$mzpfY$IqBpmIhaDKN+Vk9bZe"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"new_password\": \"ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb\",\n    \"active_status\": true\n}"
+                            "raw": "{\n    \"new_password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ],\n    \"active_status\": true\n}"
                         },
                         "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
                         "response": []
@@ -3385,11 +2291,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "abPp0EMSj.uI6GuwqRR7ye0c9grzx.ysOJS0dFklDkj45"
+                                "value": "Tn8zxq5rrnK.cxgPmNuJKN1gSs?bRq.qUOEX78g9Ukc8F"
                             }
                         ],
                         "body": {
@@ -3466,11 +2372,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": ".0GTfEpFAU=tOc$EaddGBHzA3BoIw3$APnGNo3LRcM9zN"
+                                "value": "wXChRarYd0bCGSteyfzjZYLo69zhoWaWglB?M6ukVkDcF"
                             }
                         ],
                         "body": {
@@ -3510,16 +2416,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "xV4k+l$.N9KUkSvRKCPTF6WlPfrESLWI4nY.Rb?1bWS0c"
+                                "value": "EZIXSfYS+bN3cjJSZUWpivCkB4TfiyYCqFkbD6ewZRK.f"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5e9d468770fa9\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea36fc51ce23\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
@@ -3543,7 +2449,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "235",
+                                    "value": "24",
                                     "description": "{int}"
                                 }
                             ]
@@ -3560,16 +2466,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "aU$ynki74?LhRKgN7dp8QXn6BcDQ5lEnKnjO2ENMnvZ76"
+                                "value": "g6cWZtiFL5=8wo$kZXxgg4siM$KIxshcN+VdfF+CxC$tF"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5e9d4687ea8ec\",\n    \"active_status\": true\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea36fc58e326\",\n    \"active_status\": true\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []
@@ -3600,7 +2506,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "235",
+                                    "value": "24",
                                     "description": "{int}"
                                 }
                             ]
@@ -3617,11 +2523,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4Hu6z=Pudqsl3t4j=.yHmifk6X1m2+Cfxikln882J7iy0"
+                                "value": "6H?2X=3FXssjcP3edHa8yhbh.rP05z87tIuQD49ys+Vf$"
                             }
                         ],
                         "body": {
@@ -3653,11 +2559,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3732,11 +2638,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3774,7 +2680,7 @@ fetch(url, {
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3813,11 +2719,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3857,11 +2763,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb"
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
                             }
                         ],
                         "body": {
@@ -3889,8 +2795,8 @@ fetch(url, {
     -G "https://project.dsfellowship.com/api/v1/routes?active_status=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/routes"
 );
@@ -3904,8 +2810,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 fetch(url, {
@@ -3920,96 +2826,28 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "List of Current Routes",
     "Routes": {
-        "User_Signin": {
-            "id": "1",
-            "name": "User_Signin",
-            "implicit_allow": "1",
-            "module": ""
+        "headers": {},
+        "original": {
+            "message": "Response Objects",
+            "Route": {
+                "apidoc.json": 9,
+                "Create_Company": 5,
+                "Create_Role": 12,
+                "Create_User": 3,
+                "Delete_Role": 13,
+                "Delete_User": 10,
+                "Edit_Role": 14,
+                "Enable_Default_User": 11,
+                "List_Companies": 4,
+                "List_Roles": 6,
+                "List_Routes": 8,
+                "List_Users": 2,
+                "Update_User": 7,
+                "User_Signin": 1,
+                "User_Signout": 15
+            }
         },
-        "List_Users": {
-            "id": "2",
-            "name": "List_Users",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "Create_User": {
-            "id": "3",
-            "name": "Create_User",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "List_Companies": {
-            "id": "4",
-            "name": "List_Companies",
-            "implicit_allow": "1",
-            "module": ""
-        },
-        "Create_Company": {
-            "id": "5",
-            "name": "Create_Company",
-            "implicit_allow": "1",
-            "module": ""
-        },
-        "List_Roles": {
-            "id": "6",
-            "name": "List_Roles",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "Update_User": {
-            "id": "7",
-            "name": "Update_User",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "List_Routes": {
-            "id": "8",
-            "name": "List_Routes",
-            "implicit_allow": "1",
-            "module": ""
-        },
-        "apidoc.json": {
-            "id": "9",
-            "name": "apidoc.json",
-            "implicit_allow": "1",
-            "module": ""
-        },
-        "Delete_User": {
-            "id": "10",
-            "name": "Delete_User",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "Enable_Default_User": {
-            "id": "11",
-            "name": "Enable_Default_User",
-            "implicit_allow": "1",
-            "module": ""
-        },
-        "Create_Role": {
-            "id": "12",
-            "name": "Create_Role",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "Delete_Role": {
-            "id": "13",
-            "name": "Delete_Role",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "Edit_Role": {
-            "id": "14",
-            "name": "Edit_Role",
-            "implicit_allow": "0",
-            "module": "Company"
-        },
-        "User_Signout": {
-            "id": "15",
-            "name": "User_Signout",
-            "implicit_allow": "1",
-            "module": ""
-        }
+        "exception": null
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -4044,8 +2882,8 @@ or at least one person doesn&#039;t have all rights.</p>
     "https://project.dsfellowship.com/api/v1/1/default_user/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb" \
-    -H "secret-token: moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0"</code></pre>
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/default_user/1"
 );
@@ -4053,8 +2891,8 @@ or at least one person doesn&#039;t have all rights.</p>
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "ANcyx9Ibg5xp9SX0H4LD0?htjMP+wqmb",
-    "secret-token": "moME8sUcpFzwqV5Lo7WVh4jezgQxfFnxrKJ391EY0tP9Psh0",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
 };
 
 fetch(url, {
@@ -4072,7 +2910,8 @@ fetch(url, {
         "id": "1",
         "username": "default",
         "company_id": "1",
-        "project_name": "project2"
+        "project_name": "project2",
+        "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>

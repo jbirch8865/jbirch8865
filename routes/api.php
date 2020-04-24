@@ -17,18 +17,18 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
     Route::resource('signin', 'SigninController',[
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']
-    ])->middleware('secret');
+    ]);
     Route::resource('users', 'UsersController',[
         'only' => ['index','update','store'],
         'names' => [
             'index' => 'List_Users',
-            'update' => 'Update_User',
-            'store' => 'Create_User']
+            'store' => 'Create_User',
+            'update' => 'Update_User']
         ]);
     Route::resource('signin', 'SigninController',[
             'only' => ['destroy'],
             'names' => ['destroy' => 'User_Signout']
-        ])->middleware('secret');
+        ]);
     Route::resource('users', 'UsersController',[
             'only' => ['destroy'],
             'names' => [
@@ -44,7 +44,7 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
             ]
     ]);
 });
-Route::group(['prefix' => 'v1',  'middleware' => 'secret'],function(){
+Route::group(['prefix' => 'v1'],function(){
     Route::resource('/company', 'CompanyController',[
         'only' => ['store'],
         'names' => ['store' => 'Create_Company']

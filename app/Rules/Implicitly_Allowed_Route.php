@@ -4,7 +4,7 @@ namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class Route_Right_Required implements Rule
+class Implicitly_Allowed_Route implements Rule
 {
     private \app\Helpers\Route $route;
     /**

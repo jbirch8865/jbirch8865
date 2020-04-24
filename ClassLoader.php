@@ -7,5 +7,4 @@ $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
 
-require 'Deployment_Scripts/Loader.php';
 $kernel->terminate($request, $response);

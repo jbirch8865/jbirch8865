@@ -8,6 +8,11 @@ use app\Facades\Routes;
 
 class RouteController extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
     /**
      * {GET} routes/v1/api
      * See all the endpoints and if their explicit rights
@@ -16,17 +21,9 @@ class RouteController extends Controller
      */
     public function index()
     {
-        Routes::Query_Single_Table([],true);
-        $routes = array();
-        While($row = Routes::Get_Queried_Data())
-        {
-            $route = new \app\Helpers\Route;
-            $route->Load_From_Route_ID($row['id']);
-            $routes[$route->Get_Name()] = $route->Get_API_Response_Collection();
-        }
         return Response_200([
             'message' => 'List of Current Routes',
-            'Routes' => $routes
+            'Routes' => $this->toolbelt->Routes->Get_All_Objects('Route',app()->request)
         ],app()->request);
     }
 }

@@ -6,25 +6,34 @@ use Illuminate\Http\Request;
 use app\Facades\Company_Roles;
 use app\Facades\Routes;
 use app\Facades\Company_Role;
+use App\Rules\Implicitly_Allowed_Route;
 use App\Rules\Route_Right_Required;
 use App\Rules\Validate_Established_Friendly_Name;
 use App\Rules\Validate_Name_Is_Not_Already_Taken;
 use App\Rules\Validate_Object_With_ID;
 use App\Rules\Validate_Route_Module_Name;
 use App\Rules\Validate_Unique_Friendly_Name;
+use App\Rules\Validate_Unique_Value_In_Column;
+use App\Rules\Validate_Value_Exists_In_Column;
 
 /**
  * @group Company
  */
 class CompanyRole extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
     /**
      * {GET} roles/{company}/v1/api
      *
      */
     public function index(Request $request)
     {
-        return Company_Roles::Get_All_Objects('Company_Role',$request);
+        return $this->toolbelt->Company_Roles->Get_All_Objects('Company_Role',$request);
     }
 
     private function Process_By_Route_ID(array $route_info,\app\Helpers\Company_Role &$role)
@@ -92,9 +101,10 @@ class CompanyRole extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'role_name' => ['required','string',new Validate_Unique_Friendly_Name('\\app\\Helpers\\Company_Role')],
-            'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Object_With_ID('\\app\\Helpers\\Route'),new Route_Right_Required],
-            'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','gt:'.Routes::Get_Column('module')->Get_Data_Length(),new Validate_Route_Module_Name],
+            'role_name' => ['required','string',new Validate_Unique_Value_In_Column($this->toolbelt->Company_Roles->Get_Column('role_name'))],
+            'Routes_Have_Roles' => ['required','array'],
+            'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('id'))],
+            'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','gt:'.$this->toolbelt->Routes->Get_Column('module')->Get_Data_Length(),new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('module'))],
             'Routes_Have_Roles.*.Rights.get' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.destroy' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.post' => ['bool','required'],
@@ -114,7 +124,7 @@ class CompanyRole extends Controller
                 $this->Process_By_Route_ID($route_info,$role);
             }else
             {
-                $toolbelt = new \toolbelt;
+                $toolbelt = new \Test_Tools\toolbelt;
                 $toolbelt->Routes->Query_Single_Table(['id'],false,"WHERE `module` = '".$route_info['module']."'");
                 while($row = $toolbelt->Routes->Get_Queried_Data())
                 {
@@ -147,9 +157,9 @@ class CompanyRole extends Controller
     public function update(Request $request, $i,$id)
     {
         $request->validate([
-            'role_name' => ['string', new Validate_Name_Is_Not_Already_Taken('app\\Helpers\\Company_Role')],
-            'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Object_With_ID('\\app\\Helpers\\Route'),new Route_Right_Required],
-            'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','lte:'.Routes::Get_Column('module')->Get_Data_Length(),new Validate_Route_Module_Name],
+            'role_name' => ['string', new Validate_Unique_Value_In_Column($this->toolbelt->Company_Roles->Get_Column('role_name'))],
+            'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('id')),new Implicitly_Allowed_Route],
+            'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','lte:'.$this->toolbelt->Routes->Get_Column('module')->Get_Data_Length(),new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('module'))],
             'Routes_Have_Roles.*.Rights.get' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.destroy' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.post' => ['bool','required'],
@@ -172,7 +182,7 @@ class CompanyRole extends Controller
                 $this->Process_By_Route_ID($route_info,$role);
             }else
             {
-                $toolbelt = new \toolbelt;
+                $toolbelt = new \Test_Tooles\toolbelt;
                 $toolbelt->Routes->Query_Single_Table(['id'],false,"WHERE `module` = '".$route_info['module']."'");
                 while($row = $toolbelt->Routes->Get_Queried_Data())
                 {

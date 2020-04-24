@@ -1,6 +1,6 @@
 <?php
 
-use app\Helpers\Route as HelpersRoute;
+use \app\Helpers\Route as HelpersRoute;
 use Faker\UniqueGenerator;
 use Illuminate\Routing\Route;
 use Mpociot\ApiDoc\Extracting\Strategies\Strategy;
@@ -64,7 +64,7 @@ class Add_Access_Token extends Strategy
         if(!$cur_route->Am_I_Implicitly_Allowed())
         {
             $name = $route->getName();
-            $session = new \API\Program_Session;
+            $session = new \app\Helpers\Program_Session;
             $company = new \app\Helpers\Company;
             $company->Load_Object_By_ID(1);
             $session->Create_New_Session($session->cConfigs->Get_Client_ID(),$company,'default',$session->cConfigs->Get_Client_ID());
@@ -226,6 +226,12 @@ class Add_Post_Data extends Strategy
                 'required' => true,
                 'value' => $toolbelt->cConfigs->Get_Client_ID()
             ];
+            $array['company_roles'] = [
+                'type' => 'array',
+                'description' => '{array}',
+                'required' => true,
+                'value' => [app()->make('Company')->Get_Master_Role()->Get_API_Response_Collection()]
+            ];
         }elseif($route->named('Update_User'))
         {
             $toolbelt = new \Test_Tools\toolbelt;
@@ -234,6 +240,12 @@ class Add_Post_Data extends Strategy
                 'description' => '{string}',
                 'required' => false,
                 'value' => $toolbelt->cConfigs->Get_Client_ID()
+            ];
+            $array['company_roles'] = [
+                'type' => 'array',
+                'description' => '{array}',
+                'required' => true,
+                'value' => [app()->make('Company')->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Create_Company'))
         {

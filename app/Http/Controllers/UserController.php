@@ -12,6 +12,13 @@ use app\Facades\Users;
 
 class UserController extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
+
     public function index()
     {
         //

@@ -6,12 +6,21 @@ use Illuminate\Http\Request;
 use app\Facades\Companies;
 use app\Helpers\User;
 use app\Helpers\User_Role;
+use App\Rules\Validate_Unique_Value_In_Column;
+use App\Rules\Validate_Value_Exists_In_Column;
+
 /**
  * @group Company
  *
  */
 class CompanyController extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
     /**
      * {GET} companies/v1/api
      * List all companies
@@ -22,10 +31,11 @@ class CompanyController extends Controller
      * @queryParam details_limit a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1 Example: 1
      * @queryParam offset a number between 0 and infinite that represents which object to start with default is 0 Example: 0
      * @queryParam limit a number between 1 and 100 representing the number of records to return after the offset default is 50 Example: 1
+     *
      */
     public function index(Request $request)
     {
-        return Companies::Get_All_Objects('Company',$request);
+        return $this->toolbelt->Companies->Get_All_Objects('Company',$request);
     }
 
     /**
@@ -39,22 +49,15 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'company_name' => ['required','max:'.Companies::Get_Column('company_name')->Get_Data_Length()]
+            'company_name' => ['required','max:'.$this->toolbelt->Companies->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->Companies->Get_Column('company_name'))]
         ]);
         $company = new \app\Helpers\Company;
-        try
-        {
-            $company->Set_Company_Name($request->input('company_name'));
-            $company->Create_Company_Role('master',true,true,true,true,true);
-            $password = Generate_CSPRNG(14);
-            $user = new User('default',$password,$company,true);
-            $user_role = new User_Role;
-            $user_role->Set_Role($company->Company_Roles[0],false);
-            $user_role->Set_User($user);
-        } catch (\Active_Record\UpdateFailed $e)
-        {
-            return Response_422(['message' => 'Company already exists'],$request);
-        }
+        $company->Set_Company_Name($request->input('company_name'));
+        $password = Generate_CSPRNG(14);
+        $user = new \app\Helpers\User('default',$password,$company,true);
+        $user_role = new \app\Helpers\User_Role;
+        $user_role->Set_Role($company->Company_Roles[0],false);
+        $user_role->Set_User($user);
         return Response_201([
             'message' => 'Company successfully created',
             'master_password' => $password,

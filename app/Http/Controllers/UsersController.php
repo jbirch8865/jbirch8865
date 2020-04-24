@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use app\Facades\Users;
 use App\Rules\Validate_Active_Status_True;
 use App\Rules\Validate_Object_With_ID;
+use App\Rules\Validate_Value_Exists_In_Column;
 use Illuminate\Http\Request;
 /**
  * @group Company
@@ -11,6 +12,13 @@ use Illuminate\Http\Request;
  */
 class UsersController extends Controller
 {
+    private \Test_Tools\toolbelt $toolbelt;
+
+    function __construct()
+    {
+        $this->toolbelt = new \Test_Tools\toolbelt;
+    }
+
     /**
      * {GET} users/{company}/v1/api
      * Return a list of users belonging to the company
@@ -18,17 +26,13 @@ class UsersController extends Controller
      */
     public function index(Request $request,int $company_id)
     {
-        if($request->input('include_disabled',false))
-        {
-            Users::Query_Single_Table(array('id','username','active_status'),false,"WHERE `company_id` = '".$company_id."' LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
-        }else
-        {
-            Users::Query_Single_Table(array('id','username','active_status'),false,"WHERE `company_id` = '".$company_id."' AND `Active_Status` = '1' LIMIT ".$request->input('offset',0).", ".$request->input('limit',50));
-        }
+        $company = app()->make('Company');
+        $this->toolbelt->Users->LimitBy($this->toolbelt->Users->Get_Column('company_id')->
+        Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
+        $this->toolbelt->Users->Query_Table(['username']);
         $users = array();
         $count = 0;
-        $company = app()->make('Company');
-        While($row = Users::Get_Queried_Data())
+        While($row = $this->toolbelt->Users->Get_Queried_Data())
         {
             $user = new \app\Helpers\User($row['username'],'skip_check',$company,false,$request->input('include_disabled',false));
             $users[$row['username']] = $user->Get_API_Response_Collection();
@@ -46,23 +50,19 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'company_roles' => ['array'],
-            'company_roles.*' => ['int','required_with:company_roles',new Validate_Object_With_ID('app\\Helpers\\Company_Role')]
+            'company_roles' => ['required','array'],
+            'company_roles.*.id' => ['int','required',new Validate_Value_Exists_In_Column($this->toolbelt->Company_Roles->Get_Column('id'))]
         ]);
         if($request->user == 'default')
         {
             return Response_422(['message' => 'Default user already created'],$request);
         }
         $user = app()->make('Create_User');
-        $roles = $request->input('company_roles');
-        if(!is_null($roles))
+        ForEach($request->input('company_roles') as $company_role)
         {
-            ForEach($roles as $role_id)
-            {
-                $role = new \app\Helpers\Company_Role;
-                $role->Load_Object_By_ID($role_id);
-                $user->Assign_Company_Role($role);
-            }
+            $role = new \app\Helpers\Company_Role;
+            $role->Load_Object_By_ID($company_role['id']);
+            $user->Assign_Company_Role($role);
         }
         return Response_201([
             'message' => 'User successfully created or already exists with that password',
@@ -83,14 +83,20 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         app()->request->validate([
-            'new_password' => ['Max:'.Users::Get_Column('verified_hashed_password')->Get_Data_Length()],
+            'new_password' => ['Max:'.$this->toolbelt->Users->Get_Column('verified_hashed_password')->Get_Data_Length()],
             'company_roles' => ['Required','Array'],
-            'company_roles.*' => ['Required','Integer','required_with:company_roles',new Validate_Object_With_ID('app\\Helpers\\Company_Role')],
+            'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->Company_Roles->Get_Column('id'))],
             'active_status' => ['Required','Boolean',new Validate_Active_Status_True]
         ]);
         $user = app()->make('Update_User');
-        $user->Remove_All_Roles();
         $user->Change_Password($request->input('new_password'));
+        $user->Remove_All_Roles();
+        ForEach($request->input('company_roles') as $company_role)
+        {
+            $role = new \app\Helpers\Company_Role;
+            $role->Load_Object_By_ID($company_role['id']);
+            $user->Assign_Company_Role($role);
+        }
         $user->Set_Active_Status(true);
         return Response_201(['message' => 'User successfully updated',
         'user' => $user->Get_API_Response_Collection()],$request);
