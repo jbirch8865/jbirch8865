@@ -10,6 +10,7 @@ use app\Helpers\Program;
 use Illuminate\Support\ServiceProvider;
 use app\Rules\Unique_User;
 use App\Rules\Validate_Unique_Value_In_Column;
+use App\Rules\Validate_Unique_Value_In_Columns;
 use App\Rules\Validate_Value_Exists_In_Column;
 
 class HelperServiceProvider extends ServiceProvider
@@ -56,7 +57,18 @@ class HelperServiceProvider extends ServiceProvider
             }
         });
 
-
+        app()->bind('Company_Access_Token',function(){
+            $company = new Company;
+            try
+            {
+                $company->Load_Object_By_ID($this->toolbelt->Get_Program_Session()->Get_Company_ID());
+                return $company;
+            } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
+            {
+                Response_401(array('message' => 'The Company could not be derived from this access token.'),app()->request)->send();
+                exit();
+            }
+        });
 
         app()->bind('Program',function(){
             app()->request->validate([
@@ -87,7 +99,7 @@ class HelperServiceProvider extends ServiceProvider
             $session = new Program_Session;
             try
             {
-                $session->Create_New_Session(app()->request->header('client-id'),$this->toolbelt->Get_Company(),app()->request->input('user'),app()->request->input('password'));
+                $session->Create_New_Session(app()->request->header('client-id'),$this->toolbelt->Get_Company(false),app()->request->input('user'),app()->request->input('password'));
                 return $session;
             } catch (\app\Helpers\Incorrect_Password $e)
             {
@@ -108,27 +120,23 @@ class HelperServiceProvider extends ServiceProvider
 
         app()->bind('Program_Session_Access_Token',function(){
             $this->Validate_Header_Exists('User-Access-Token');
-
             $this->Validate_Header_Data_Length('User-Access-Token',$this->toolbelt->Programs_Have_Sessions->Get_Column('access_token'));
             $session = new Program_Session;
             try
             {
                 $session->Load_Session_By_Access_Token(app()->request->header('User-Access-Token'));
-                return $session;
                 if($session->Is_Expired())
                 {
                     Response_422(['message' => 'The User-Access-Token has expired.','links' => [
-                        'href' => route('User_Signin',['company' => $this->toolbelt->Get_Company()->Get_Verified_ID()]),
+                        'href' => route('User_Signin',['company' => $session->Get_Company_ID()]),
                         'type' => 'POST'
                     ]],app()->request)->send();
                     exit();
                 }
+                return $session;
             } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
             {
-                Response_422(['message' => 'The User-Access-Token is not valid.','links' => [
-                    'href' => route('User_Signin',['company' => $this->toolbelt->Get_Company()->Get_Verified_ID()]),
-                    'type' => 'POST'
-                ]],app()->request)->send();
+                Response_422(['message' => 'The User-Access-Token is not valid.'],app()->request)->send();
                 exit();
             }
         });
@@ -188,8 +196,13 @@ class HelperServiceProvider extends ServiceProvider
         app()->bind('Create_User', function(){
             $this->Validate_Post_Field_Required('user',$this->toolbelt->Users->Get_Column('username'));
             $this->Validate_Post_Field_Required('password',$this->toolbelt->Users->Get_Column('verified_hashed_password'));
+            $columns = [];
+            $this->toolbelt->Users->Get_Column('company_id')->Set_Field_Value($this->toolbelt->Get_Company()->Get_Verified_ID());
+            $this->toolbelt->Users->Get_Column('project_name')->Set_Field_Value($this->toolbelt->cConfigs->Get_Name_Of_Project());
+            $columns[] = $this->toolbelt->Users->Get_Column('company_id');
+            $columns[] = $this->toolbelt->Users->Get_Column('project_name');
             app()->request->validate([
-                'user' => [new Validate_Unique_Value_In_Column($this->toolbelt->Users->Get_Column('username'))],
+                'user' => [new Validate_Unique_Value_In_Columns($columns,$this->toolbelt->Users->Get_Column('username'))],
                 ]);
             $user = new User(app()->request->input('user'),app()->request->input('password'),$this->toolbelt->Get_Company(),true);
             return $user;

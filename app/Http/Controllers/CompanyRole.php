@@ -14,6 +14,7 @@ use App\Rules\Validate_Object_With_ID;
 use App\Rules\Validate_Route_Module_Name;
 use App\Rules\Validate_Unique_Friendly_Name;
 use App\Rules\Validate_Unique_Value_In_Column;
+use App\Rules\Validate_Unique_Value_In_Columns;
 use App\Rules\Validate_Value_Exists_In_Column;
 
 /**
@@ -28,7 +29,7 @@ class CompanyRole extends Controller
         $this->toolbelt = new \Test_Tools\toolbelt;
     }
     /**
-     * {GET} roles/{company}/v1/api
+     * {GET} roles/v1/api
      *
      */
     public function index(Request $request)
@@ -82,7 +83,7 @@ class CompanyRole extends Controller
 
     }
     /**
-     * {POST} roles/{company}/v1/api
+     * {POST} roles/v1/api
      *
      * So a company role is just a company and a name
      * However, in order to create a company you need to provide
@@ -100,8 +101,9 @@ class CompanyRole extends Controller
      */
     public function store(Request $request)
     {
+        $this->toolbelt->Company_Roles->Get_Column('company_id')->Set_Field_Value($this->toolbelt->Get_Company()->Get_Verified_ID());
         $request->validate([
-            'role_name' => ['required','string',new Validate_Unique_Value_In_Column($this->toolbelt->Company_Roles->Get_Column('role_name'))],
+            'role_name' => ['required','string',new Validate_Unique_Value_In_Columns([$this->toolbelt->Company_Roles->Get_Column('company_id')],$this->toolbelt->Company_Roles->Get_Column('role_name'))],
             'Routes_Have_Roles' => ['required','array'],
             'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('id'))],
             'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','gt:'.$this->toolbelt->Routes->Get_Column('module')->Get_Data_Length(),new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('module'))],
@@ -111,7 +113,7 @@ class CompanyRole extends Controller
             'Routes_Have_Roles.*.Rights.patch' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.put' => ['bool','required']
         ]);
-        $company = app()->make('Company');
+        $company = $this->toolbelt->Get_Company();
         $company->Create_Company_Role($request->input('role_name'),false,false,false,false,false);
         $role = new \app\Helpers\Company_Role;
         $role->Load_Role_By_Name($request->input('role_name'));
@@ -140,7 +142,7 @@ class CompanyRole extends Controller
     }
 
     /**
-     * {PUT} roles/{company}/v1/api
+     * {PUT} roles/v1/api
      *
      * This will recreate the role with the provided modal
      * Anything previous will be deleted so make sure this
@@ -154,10 +156,10 @@ class CompanyRole extends Controller
      * @bodyParam Routes_Have_Roles.*.patch bool true allows method false denys method
      * @bodyParam Routes_Have_Roles.*.delete bool true allows method false denys method
      */
-    public function update(Request $request, $i,$id)
+    public function update(Request $request,$id)
     {
         $request->validate([
-            'role_name' => ['string', new Validate_Unique_Value_In_Column($this->toolbelt->Company_Roles->Get_Column('role_name'))],
+            'role_name' => ['required','string'],
             'Routes_Have_Roles.*.route_id' => ['required_without:Routes_Have_Roles.*.module','integer','gt:0','bail',new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('id')),new Implicitly_Allowed_Route],
             'Routes_Have_Roles.*.module' => ['required_without:Routes_Have_Roles.*.route_id','string','lte:'.$this->toolbelt->Routes->Get_Column('module')->Get_Data_Length(),new Validate_Value_Exists_In_Column($this->toolbelt->Routes->Get_Column('module'))],
             'Routes_Have_Roles.*.Rights.get' => ['bool','required'],
@@ -165,13 +167,13 @@ class CompanyRole extends Controller
             'Routes_Have_Roles.*.Rights.post' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.patch' => ['bool','required'],
             'Routes_Have_Roles.*.Rights.put' => ['bool','required'],
-            'active_status' => ['bool']
+            'active_status' => ['bool','required']
         ]);
 
         $role = new \app\Helpers\Company_Role;
         $role->Load_Object_By_ID($id);
         $role->Set_Active_Status($request->input('active_status'));
-        if($request->input('role_name',false))
+        if($request->input('role_name'))
         {
             $role->Set_Role_Name($request->input('role_name'));
         }
@@ -199,18 +201,22 @@ class CompanyRole extends Controller
     }
 
     /**
-     * {DELETE} roles/{company}/v1/api
+     * {DELETE} roles/v1/api
      */
-    public function destroy($id,$role_id)
+    public function destroy($role_id)
     {
         $company_role = new \app\Helpers\Company_Role;
         try
         {
             $company_role->Load_Object_By_ID($role_id);
+            if($company_role->Companies->Get_Verified_ID() != $this->toolbelt->Get_Company()->Get_Verified_ID())
+            {
+                return Response_422(['message' => 'Sorry the role id '.$role_id.' does not belong to company '.$this->toolbelt->Get_Company()->Get_Verified_ID()],app()->request);
+            }
             $company_role->Delete_Active_Record();
         } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e)
         {
-            return Response_422(['message' => 'Sorry the role id '.$id.' is not a valid role'],app()->request);
+            return Response_422(['message' => 'Sorry the role id '.$role_id.' is not a valid role'],app()->request);
         }
         if(app()->request->input('active_status'))
         {

@@ -33,8 +33,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        app()->request->user = 'default';
-        $user = app()->make('Update_User');
+        $user = new \app\Helpers\User('default','skip_check',$this->toolbelt->Get_Company(false),false,false);
         $user->Set_Active_Status(true);
         return Response_201(['message' => 'Default User Enabled',
         'user' => $user->Get_API_Response_Collection()],$request);

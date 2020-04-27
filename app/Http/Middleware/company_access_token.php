@@ -3,9 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Symfony\Component\HttpFoundation\Response;
 
-class Company
+class company_access_token
 {
     /**
      * Handle an incoming request.
@@ -17,7 +16,7 @@ class Company
     public function handle($request, Closure $next)
     {
         $toolbelt = new \Test_Tools\toolbelt;
-        $toolbelt->Get_Company(false);
+        $toolbelt->Get_Company();
         return $next($request);
     }
 }

@@ -63,11 +63,8 @@ class Add_Access_Token extends Strategy
         $cur_route->Load_From_Route_Name($route->getName());
         if(!$cur_route->Am_I_Implicitly_Allowed())
         {
-            $name = $route->getName();
-            $session = new \app\Helpers\Program_Session;
-            $company = new \app\Helpers\Company;
-            $company->Load_Object_By_ID(1);
-            $session->Create_New_Session($session->cConfigs->Get_Client_ID(),$company,'default',$session->cConfigs->Get_Client_ID());
+            $toolbelt = new \Test_Tools\toolbelt;
+            $session = $toolbelt->Create_Sessions_Token_For_Documentation();
             $array['User-Access-Token'] = $session->Get_Access_Token();
         }
         return $array;
@@ -130,9 +127,9 @@ class Add_Query_Data extends Strategy
         $array = [];
         if($method->name == 'index')
         {
-            $array['active_status'] = [
+            $array['include_disabled_objects'] = [
                 'type' => 'bool',
-                'description' => '{bool} When true will only return active objects.  When false all objects returned.',
+                'description' => '{bool}',
                 'required' => true,
                 'value' => true
             ];
@@ -147,9 +144,9 @@ class Add_Query_Data extends Strategy
         }
         if($method->name == 'index' && !$route->named('List_Routes'))
         {
-            $array['active_status'] = [
+            $array['include_disabled_objects'] = [
                     'type' => 'bool',
-                    'description' => '{bool} Include inactive objects',
+                    'description' => '{bool}',
                     'required' => false,
                     'value' => false
             ];
@@ -230,7 +227,7 @@ class Add_Post_Data extends Strategy
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [app()->make('Company')->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Update_User'))
         {
@@ -245,7 +242,7 @@ class Add_Post_Data extends Strategy
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [app()->make('Company')->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Create_Company'))
         {

@@ -26,9 +26,9 @@ class SigninController extends Controller
      */
     public function store(Request $request,int $company_id)
     {
-        $program_session = app()->make('Program_Session_Username');
+        $this->toolbelt->Get_Program_Session(true);
         return Response_201([
-            'Program_Session' => $program_session->Get_API_Response_Collection()
+            'Program_Session' => $this->toolbelt->Get_Program_Session(true)->Get_API_Response_Collection()
         ],$request);
     }
 
@@ -39,7 +39,13 @@ class SigninController extends Controller
     public function destroy($co,$user_name)
     {
         $username = $this->toolbelt->dblink->dblink->Escape_String($user_name);
-        $this->toolbelt->Users->Query_Single_Table(['id'],false,"WHERE `username` = '".$username."'");
+        if($this->toolbelt->Get_Program_Session()->Get_Username() != $username)
+        {
+            return Response_422(['message' => 'This user doesn\'t appear to belong to the user-access-token'],app()->request);
+        }
+        $this->toolbelt->Users->LimitBy($this->toolbelt->Users->Get_Column('company_id')->Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
+        $this->toolbelt->Users->AndLimitBy($this->toolbelt->Users->Get_Column('username')->Equals($username));
+        $this->toolbelt->Users->Query_Table(['id']);
         $user_id = $this->toolbelt->Users->Get_Queried_Data();
         $user_id = $user_id['id'];
         $this->toolbelt->Programs_Have_Sessions->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");

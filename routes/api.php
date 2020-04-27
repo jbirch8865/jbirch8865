@@ -13,27 +13,23 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function(){
-    Route::resource('signin', 'SigninController',[
+Route::group(['prefix' => 'v1'],function(){
+    Route::resource('{company}/signin', 'SigninController',[
         'only' => ['store'],
         'names' => ['store' => 'User_Signin']
-    ]);
+    ])->middleware('company');
     Route::resource('users', 'UsersController',[
-        'only' => ['index','update','store'],
+        'only' => ['index','store','update'],
         'names' => [
             'index' => 'List_Users',
             'store' => 'Create_User',
             'update' => 'Update_User']
-        ]);
-    Route::resource('signin', 'SigninController',[
-            'only' => ['destroy'],
-            'names' => ['destroy' => 'User_Signout']
-        ]);
+        ])->middleware('company_access_token');
     Route::resource('users', 'UsersController',[
             'only' => ['destroy'],
             'names' => [
                 'destroy' => 'Delete_User']
-            ]);
+            ])->middleware('company_access_token');
     Route::resource('roles', 'CompanyRole',[
         'only' => ['index','store','update','destroy'],
         'names' => [
@@ -42,16 +38,14 @@ Route::group(['prefix' => 'v1/{company}',  'middleware' => 'company'],function()
             'destroy' => 'Delete_Role',
             'update' => 'Edit_Role'
             ]
-    ]);
-});
-Route::group(['prefix' => 'v1'],function(){
-    Route::resource('/company', 'CompanyController',[
-        'only' => ['store'],
-        'names' => ['store' => 'Create_Company']
-    ]);
+    ])->middleware('company_access_token');
     Route::resource('/companies', 'CompanyController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Companies']
+    ]);
+    Route::resource('/company', 'CompanyController',[
+        'only' => ['store'],
+        'names' => ['store' => 'Create_Company']
     ]);
     Route::resource('/routes', 'RouteController',[
         'only' => ['index'],
@@ -60,7 +54,11 @@ Route::group(['prefix' => 'v1'],function(){
     Route::resource('/{company}/default_user', 'UserController',[
         'only' => ['update'],
         'names' => ['update' => 'Enable_Default_User']
-    ]);
+    ])->middleware('company');
+    Route::resource('{company}/signin', 'SigninController',[
+        'only' => ['destroy'],
+        'names' => ['destroy' => 'User_Signout']
+    ])->middleware('company');
 });
 Route::get('{any}', function ($any = null) {
     return response()->json([

@@ -20,13 +20,13 @@ class UsersController extends Controller
     }
 
     /**
-     * {GET} users/{company}/v1/api
+     * {GET} users/v1/api
      * Return a list of users belonging to the company
      *
      */
-    public function index(Request $request,int $company_id)
+    public function index(Request $request)
     {
-        $company = app()->make('Company');
+        $company = $this->toolbelt->Get_Company();
         $this->toolbelt->Users->LimitBy($this->toolbelt->Users->Get_Column('company_id')->
         Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
         $this->toolbelt->Users->Query_Table(['username']);
@@ -42,7 +42,7 @@ class UsersController extends Controller
         ],$request);
     }
     /**
-     * {POST} users/{company}/v1/api
+     * {POST} users/v1/api
      *
      * Create a user
      *
@@ -57,7 +57,8 @@ class UsersController extends Controller
         {
             return Response_422(['message' => 'Default user already created'],$request);
         }
-        $user = app()->make('Create_User');
+        $user = $this->toolbelt->Get_User(2);
+        $user->Remove_All_Roles();
         ForEach($request->input('company_roles') as $company_role)
         {
             $role = new \app\Helpers\Company_Role;
@@ -71,7 +72,7 @@ class UsersController extends Controller
     }
 
     /**
-     * {PUT} {user}/users/{company}/v1/api
+     * {PUT} {user}/users/v1/api
      * Currently this endpoint is only able to change a password and re-enable a disabled user
      * Please note that the User-Access-Token does not have to be the access token for the username
      * you are changing the password for.  It just needs to be a user that has rights to this endpoint.
@@ -88,7 +89,7 @@ class UsersController extends Controller
             'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->Company_Roles->Get_Column('id'))],
             'active_status' => ['Required','Boolean',new Validate_Active_Status_True]
         ]);
-        $user = app()->make('Update_User');
+        $user = $this->toolbelt->Get_User(3);
         $user->Change_Password($request->input('new_password'));
         $user->Remove_All_Roles();
         ForEach($request->input('company_roles') as $company_role)
@@ -102,12 +103,12 @@ class UsersController extends Controller
         'user' => $user->Get_API_Response_Collection()],$request);
     }
     /**
-     * {DELETE} {user}/users/{company}/v1/api
+     * {DELETE} {user}/users/v1/api
      *
      */
     public function destroy(Request $request, $id)
     {
-        $user = app()->make('Update_User');
+        $user = $this->toolbelt->Get_User(3);
         $user->Delete_Active_Record();
         return Response_201(['message' => 'User Successfully Deleted',
         'user' => $user->Get_API_Response_Collection()],$request);

@@ -95,9 +95,9 @@ fetch(url, {
     "Program_Session": {
         "id": "3",
         "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-        "access_token": "41T$3YBaYDR?P0NSSIZ$ibf0Mg+DJM?0$a3yxV$FGaO55",
+        "access_token": "YIB==3ZKPzLo$uUZLlk.7?nk$4VEnP.8ovwOI.owkaGy4",
         "user_id": "1",
-        "experation_timestamp": "2020-04-24 23:06:32"
+        "experation_timestamp": "2020-04-27 06:15:03"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -155,7 +155,7 @@ fetch(url, {
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"</code></pre>
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/signin/default"
 );
@@ -170,7 +170,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 fetch(url, {
@@ -187,9 +187,9 @@ fetch(url, {
     "Program_Session": {
         "id": "3",
         "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-        "access_token": "$8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z",
+        "access_token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
         "user_id": "1",
-        "experation_timestamp": "2020-04-24 22:56:33"
+        "experation_timestamp": "2020-04-27 06:05:13"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -236,24 +236,24 @@ fetch(url, {
 <!-- END_1aee1acf38a8f7575d1a2b9eddc7a109 -->
 <h1>Company</h1>
 <p>Basic CRUD operations for Companies, Company Configs and Users</p>
-<!-- START_98c7cd9e1616fc65c12af185be991ff8 -->
-<h2>{GET} users/{company}/v1/api</h2>
+<!-- START_1aff981da377ba9a1bbc56ff8efaec0d -->
+<h2>{GET} users/v1/api</h2>
 <p>Return a list of users belonging to the company</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/users?active_status=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
+    -G "https://project.dsfellowship.com/api/v1/users?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 0=tPalb2da45ih6xOyMnFqtJ9CQr$+vT3ESLX6GiOu75="</code></pre>
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users"
+    "https://project.dsfellowship.com/api/v1/users"
 );
 
 let params = {
-    "active_status": "",
+    "include_disabled_objects": "",
     "include_details": "2",
     "details_offset": "0",
     "details_limit": "5",
@@ -267,7 +267,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "0=tPalb2da45ih6xOyMnFqtJ9CQr$+vT3ESLX6GiOu75=",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 fetch(url, {
@@ -293,24 +293,7 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/{company}/users</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
-</tbody>
-</table>
+<p><code>GET api/v1/users</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -322,9 +305,9 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>active_status</code></td>
+<td><code>include_disabled_objects</code></td>
 <td>optional</td>
-<td>{bool} Include inactive objects</td>
+<td>{bool}</td>
 </tr>
 <tr>
 <td><code>include_details</code></td>
@@ -353,30 +336,30 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_98c7cd9e1616fc65c12af185be991ff8 -->
-<!-- START_37cc2f7db7536431917bf10b848bd8e4 -->
-<h2>{POST} users/{company}/v1/api</h2>
+<!-- END_1aff981da377ba9a1bbc56ff8efaec0d -->
+<!-- START_4194ceb9a20b7f80b61d14d44df366b4 -->
+<h2>{POST} users/v1/api</h2>
 <p>Create a user</p>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "https://project.dsfellowship.com/api/v1/1/users" \
+    "https://project.dsfellowship.com/api/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 7anfPxsoPuFT6FNAZABg0tgcZb9Dfpx6Mx3=eFcCp4m9Y" \
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
     -d '{"user":"new_user","password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1","Users_Have_Roles":[{"id":"2","user_id":"1","role_id":"2"}],"Routes_Have_Roles":[{"id":"1","route_id":"1","role_id":"2","right_id":"1"},{"id":"2","route_id":"2","role_id":"2","right_id":"2"},{"id":"3","route_id":"3","role_id":"2","right_id":"3"},{"id":"4","route_id":"4","role_id":"2","right_id":"4"},{"id":"5","route_id":"5","role_id":"2","right_id":"5"}]}]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users"
+    "https://project.dsfellowship.com/api/v1/users"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "7anfPxsoPuFT6FNAZABg0tgcZb9Dfpx6Mx3=eFcCp4m9Y",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 let body = {
@@ -444,7 +427,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 17,
+        "id": 89,
         "username": "new_user",
         "company_id": 1,
         "project_name": "project2",
@@ -452,24 +435,7 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/{company}/users</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
-</tbody>
-</table>
+<p><code>POST api/v1/users</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -501,9 +467,9 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_37cc2f7db7536431917bf10b848bd8e4 -->
-<!-- START_0b2e8585c58a2fdc22e4236c22e7da46 -->
-<h2>{PUT} {user}/users/{company}/v1/api</h2>
+<!-- END_4194ceb9a20b7f80b61d14d44df366b4 -->
+<!-- START_296fac4bf818c99f6dd42a4a0eb56b58 -->
+<h2>{PUT} {user}/users/v1/api</h2>
 <p>Currently this endpoint is only able to change a password and re-enable a disabled user
 Please note that the User-Access-Token does not have to be the access token for the username
 you are changing the password for.  It just needs to be a user that has rights to this endpoint.</p>
@@ -515,22 +481,22 @@ the password.  Then remember to disable the default user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/users/new_user" \
+    "https://project.dsfellowship.com/api/v1/users/new_user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: $8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z" \
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
     -d '{"new_password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1"}],"active_status":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/new_user"
+    "https://project.dsfellowship.com/api/v1/users/new_user"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "$8n9fN.AlNIJO2iH?6WtZ=+x3TAD$2SmaIchDbdwINQ0Z",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 let body = {
@@ -559,7 +525,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User successfully updated",
     "user": {
-        "id": "17",
+        "id": "89",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -567,8 +533,8 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/v1/{company}/users/{user}</code></p>
-<p><code>PATCH api/v1/{company}/users/{user}</code></p>
+<p><code>PUT api/v1/users/{user}</code></p>
+<p><code>PATCH api/v1/users/{user}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -579,11 +545,6 @@ fetch(url, {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
 <tr>
 <td><code>user</code></td>
 <td>required</td>
@@ -622,20 +583,20 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_0b2e8585c58a2fdc22e4236c22e7da46 -->
-<!-- START_ff18a82b48db2f4db7ea36392e0da63c -->
-<h2>{DELETE} {user}/users/{company}/v1/api</h2>
+<!-- END_296fac4bf818c99f6dd42a4a0eb56b58 -->
+<!-- START_22354fc95c42d81a744eece68f5b9b9a -->
+<h2>{DELETE} {user}/users/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/1/users/new_user?active_status=" \
+    "https://project.dsfellowship.com/api/v1/users/new_user?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: a5l.Tk59QMPWLzJVr5j1SzJis6TdTh7O=1g1j8S2P?DO3"</code></pre>
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/users/new_user"
+    "https://project.dsfellowship.com/api/v1/users/new_user"
 );
 
 let params = {
@@ -648,7 +609,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "a5l.Tk59QMPWLzJVr5j1SzJis6TdTh7O=1g1j8S2P?DO3",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 fetch(url, {
@@ -663,7 +624,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User Successfully Deleted",
     "user": {
-        "id": "17",
+        "id": "89",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -671,7 +632,7 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/v1/{company}/users/{user}</code></p>
+<p><code>DELETE api/v1/users/{user}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -682,11 +643,6 @@ fetch(url, {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
 <tr>
 <td><code>user</code></td>
 <td>required</td>
@@ -711,24 +667,24 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_ff18a82b48db2f4db7ea36392e0da63c -->
-<!-- START_110cfd4e77fbf74bd678ea1fbf46b800 -->
-<h2>{GET} roles/{company}/v1/api</h2>
+<!-- END_22354fc95c42d81a744eece68f5b9b9a -->
+<!-- START_d2f16357cb4ed36dbb0e9529ea4a460c -->
+<h2>{GET} roles/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/1/roles?active_status=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
+    -G "https://project.dsfellowship.com/api/v1/roles?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 3+Cp6q0+X8rgYQ2OJ$74kHyuTui4yWfYy0X8GwFsUq3Wx"</code></pre>
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles"
+    "https://project.dsfellowship.com/api/v1/roles"
 );
 
 let params = {
-    "active_status": "",
+    "include_disabled_objects": "",
     "include_details": "2",
     "details_offset": "0",
     "details_limit": "5",
@@ -742,7 +698,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "3+Cp6q0+X8rgYQ2OJ$74kHyuTui4yWfYy0X8GwFsUq3Wx",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 fetch(url, {
@@ -757,6 +713,51 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Company_Role": {
+        "master": {
+            "id": "2",
+            "company_id": "1",
+            "role_name": "master",
+            "active_status": "1",
+            "Users_Have_Roles": [
+                {
+                    "id": "2",
+                    "user_id": "1",
+                    "role_id": "2"
+                }
+            ],
+            "Routes_Have_Roles": [
+                {
+                    "id": "1",
+                    "route_id": "1",
+                    "role_id": "2",
+                    "right_id": "1"
+                },
+                {
+                    "id": "2",
+                    "route_id": "2",
+                    "role_id": "2",
+                    "right_id": "2"
+                },
+                {
+                    "id": "3",
+                    "route_id": "3",
+                    "role_id": "2",
+                    "right_id": "3"
+                },
+                {
+                    "id": "4",
+                    "route_id": "4",
+                    "role_id": "2",
+                    "right_id": "4"
+                },
+                {
+                    "id": "5",
+                    "route_id": "5",
+                    "role_id": "2",
+                    "right_id": "5"
+                }
+            ]
+        },
         "5ea358e714492": {
             "id": "9",
             "company_id": "1",
@@ -947,44 +948,6 @@ fetch(url, {
                 }
             ]
         },
-        "5ea36887b113d": {
-            "id": "15",
-            "company_id": "1",
-            "role_name": "5ea36887b113d",
-            "active_status": "0",
-            "Routes_Have_Roles": [
-                {
-                    "id": "112",
-                    "route_id": "12",
-                    "role_id": "15",
-                    "right_id": "112"
-                },
-                {
-                    "id": "113",
-                    "route_id": "3",
-                    "role_id": "15",
-                    "right_id": "113"
-                },
-                {
-                    "id": "114",
-                    "route_id": "13",
-                    "role_id": "15",
-                    "right_id": "114"
-                },
-                {
-                    "id": "115",
-                    "route_id": "10",
-                    "role_id": "15",
-                    "right_id": "115"
-                },
-                {
-                    "id": "116",
-                    "route_id": "14",
-                    "role_id": "15",
-                    "right_id": "116"
-                }
-            ]
-        },
         "5ea369528cba4": {
             "id": "16",
             "company_id": "1",
@@ -1023,141 +986,124 @@ fetch(url, {
                 }
             ]
         },
-        "5ea36a0c5e6fb": {
-            "id": "17",
+        "5ea64f78a1f4b": {
+            "id": "68",
             "company_id": "1",
-            "role_name": "5ea36a0c5e6fb",
-            "active_status": "0",
+            "role_name": "5ea64f78a1f4b",
+            "active_status": "1",
             "Routes_Have_Roles": [
                 {
-                    "id": "128",
+                    "id": "536",
                     "route_id": "12",
-                    "role_id": "17",
-                    "right_id": "128"
+                    "role_id": "68",
+                    "right_id": "536"
                 },
                 {
-                    "id": "129",
+                    "id": "537",
                     "route_id": "3",
-                    "role_id": "17",
-                    "right_id": "129"
+                    "role_id": "68",
+                    "right_id": "537"
                 },
                 {
-                    "id": "130",
+                    "id": "538",
                     "route_id": "13",
-                    "role_id": "17",
-                    "right_id": "130"
+                    "role_id": "68",
+                    "right_id": "538"
                 },
                 {
-                    "id": "131",
+                    "id": "539",
                     "route_id": "10",
-                    "role_id": "17",
-                    "right_id": "131"
+                    "role_id": "68",
+                    "right_id": "539"
                 },
                 {
-                    "id": "132",
+                    "id": "540",
                     "route_id": "14",
-                    "role_id": "17",
-                    "right_id": "132"
+                    "role_id": "68",
+                    "right_id": "540"
                 }
             ]
         },
-        "5ea36acf7e951": {
-            "id": "18",
+        "5ea6510869884": {
+            "id": "70",
             "company_id": "1",
-            "role_name": "5ea36acf7e951",
-            "active_status": "0",
+            "role_name": "5ea6510869884",
+            "active_status": "1",
             "Routes_Have_Roles": [
                 {
-                    "id": "136",
+                    "id": "552",
                     "route_id": "12",
-                    "role_id": "18",
-                    "right_id": "136"
+                    "role_id": "70",
+                    "right_id": "552"
                 },
                 {
-                    "id": "137",
+                    "id": "553",
                     "route_id": "3",
-                    "role_id": "18",
-                    "right_id": "137"
+                    "role_id": "70",
+                    "right_id": "553"
                 },
                 {
-                    "id": "138",
+                    "id": "554",
                     "route_id": "13",
-                    "role_id": "18",
-                    "right_id": "138"
+                    "role_id": "70",
+                    "right_id": "554"
                 },
                 {
-                    "id": "139",
+                    "id": "555",
                     "route_id": "10",
-                    "role_id": "18",
-                    "right_id": "139"
+                    "role_id": "70",
+                    "right_id": "555"
                 },
                 {
-                    "id": "140",
+                    "id": "556",
                     "route_id": "14",
-                    "role_id": "18",
-                    "right_id": "140"
+                    "role_id": "70",
+                    "right_id": "556"
                 }
             ]
         },
-        "5ea36da305350": {
-            "id": "20",
+        "5ea651b81dd8f": {
+            "id": "72",
             "company_id": "1",
-            "role_name": "5ea36da305350",
-            "active_status": "0",
+            "role_name": "5ea651b81dd8f",
+            "active_status": "1",
             "Routes_Have_Roles": [
                 {
-                    "id": "152",
+                    "id": "568",
                     "route_id": "12",
-                    "role_id": "20",
-                    "right_id": "152"
+                    "role_id": "72",
+                    "right_id": "568"
                 },
                 {
-                    "id": "153",
+                    "id": "569",
                     "route_id": "3",
-                    "role_id": "20",
-                    "right_id": "153"
+                    "role_id": "72",
+                    "right_id": "569"
                 },
                 {
-                    "id": "154",
+                    "id": "570",
                     "route_id": "13",
-                    "role_id": "20",
-                    "right_id": "154"
+                    "role_id": "72",
+                    "right_id": "570"
                 },
                 {
-                    "id": "155",
+                    "id": "571",
                     "route_id": "10",
-                    "role_id": "20",
-                    "right_id": "155"
+                    "role_id": "72",
+                    "right_id": "571"
                 },
                 {
-                    "id": "156",
+                    "id": "572",
                     "route_id": "14",
-                    "role_id": "20",
-                    "right_id": "156"
+                    "role_id": "72",
+                    "right_id": "572"
                 }
             ]
         }
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/{company}/roles</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
-</tbody>
-</table>
+<p><code>GET api/v1/roles</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -1169,9 +1115,9 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>active_status</code></td>
+<td><code>include_disabled_objects</code></td>
 <td>optional</td>
-<td>{bool} Include inactive objects</td>
+<td>{bool}</td>
 </tr>
 <tr>
 <td><code>include_details</code></td>
@@ -1200,9 +1146,9 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_110cfd4e77fbf74bd678ea1fbf46b800 -->
-<!-- START_afcca4321b978edea0f876b7920559a4 -->
-<h2>{POST} roles/{company}/v1/api</h2>
+<!-- END_d2f16357cb4ed36dbb0e9529ea4a460c -->
+<!-- START_5f753b2bffb6b34b6136ddfe1be7bcce -->
+<h2>{POST} roles/v1/api</h2>
 <p>So a company role is just a company and a name
 However, in order to create a company you need to provide
 an array of routes and the associated rights you would like
@@ -1211,22 +1157,22 @@ with that route.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "https://project.dsfellowship.com/api/v1/1/roles" \
+    "https://project.dsfellowship.com/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 5F9aOFFcVcROIvb1B.ynHqy66mXpoIxCJnLzwUKfGQF5F" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea36fce63be3"}'
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea6774337b12"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles"
+    "https://project.dsfellowship.com/api/v1/roles"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "5F9aOFFcVcROIvb1B.ynHqy66mXpoIxCJnLzwUKfGQF5F",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 let body = {
@@ -1252,7 +1198,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5ea36fce63be3"
+    "role_name": "5ea6774337b12"
 }
 
 fetch(url, {
@@ -1268,31 +1214,14 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role created",
     "company role": {
-        "id": "26",
+        "id": "89",
         "company_id": "1",
-        "role_name": "5ea36fce63be3",
+        "role_name": "5ea6774337b12",
         "active_status": "1"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/{company}/roles</code></p>
-<h4>URL Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
-</tbody>
-</table>
+<p><code>POST api/v1/roles</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -1360,9 +1289,9 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_afcca4321b978edea0f876b7920559a4 -->
-<!-- START_858de4711294b15426ddfd8c8648a599 -->
-<h2>{PUT} roles/{company}/v1/api</h2>
+<!-- END_5f753b2bffb6b34b6136ddfe1be7bcce -->
+<!-- START_81ac9047f8db2b92092c5a7f13e5d28d -->
+<h2>{PUT} roles/v1/api</h2>
 <p>This will recreate the role with the provided modal
 Anything previous will be deleted so make sure this
 is the complete modal you are expecting</p>
@@ -1370,22 +1299,22 @@ is the complete modal you are expecting</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/roles/26" \
+    "https://project.dsfellowship.com/api/v1/roles/89" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 9jKoPSr+qVMt7m9LFYdCy6m1Q9O7ZI4Y7ncsaRxF0ARH1" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea36fcee799d","active_status":true}'
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea67743bef36","active_status":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles/26"
+    "https://project.dsfellowship.com/api/v1/roles/89"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "9jKoPSr+qVMt7m9LFYdCy6m1Q9O7ZI4Y7ncsaRxF0ARH1",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 let body = {
@@ -1411,7 +1340,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5ea36fcee799d",
+    "role_name": "5ea67743bef36",
     "active_status": true
 }
 
@@ -1428,15 +1357,15 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role Updated",
     "company role": {
-        "id": "26",
+        "id": "89",
         "company_id": "1",
-        "role_name": "5ea36fcee799d",
+        "role_name": "5ea67743bef36",
         "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/v1/{company}/roles/{role}</code></p>
-<p><code>PATCH api/v1/{company}/roles/{role}</code></p>
+<p><code>PUT api/v1/roles/{role}</code></p>
+<p><code>PATCH api/v1/roles/{role}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1447,11 +1376,6 @@ fetch(url, {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
 <tr>
 <td><code>role</code></td>
 <td>required</td>
@@ -1532,20 +1456,20 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_858de4711294b15426ddfd8c8648a599 -->
-<!-- START_da23e5dc8ee97937a677d1aa6cca4a86 -->
-<h2>{DELETE} roles/{company}/v1/api</h2>
+<!-- END_81ac9047f8db2b92092c5a7f13e5d28d -->
+<!-- START_04c524fc2f0ea8c793406426144b4c71 -->
+<h2>{DELETE} roles/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/1/roles/26?active_status=" \
+    "https://project.dsfellowship.com/api/v1/roles/89?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: 6X0kdjNyH4Ohe4kjZfNROP9Hnk.co0x7SDs78nR3yEXYf"</code></pre>
+    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/roles/26"
+    "https://project.dsfellowship.com/api/v1/roles/89"
 );
 
 let params = {
@@ -1558,7 +1482,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": "6X0kdjNyH4Ohe4kjZfNROP9Hnk.co0x7SDs78nR3yEXYf",
+    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
 };
 
 fetch(url, {
@@ -1574,7 +1498,7 @@ fetch(url, {
     "message": "Role successfully deleted"
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/v1/{company}/roles/{role}</code></p>
+<p><code>DELETE api/v1/roles/{role}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1585,11 +1509,6 @@ fetch(url, {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>company</code></td>
-<td>required</td>
-<td>{integer} The ID of the organization</td>
-</tr>
 <tr>
 <td><code>role</code></td>
 <td>required</td>
@@ -1614,80 +1533,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_da23e5dc8ee97937a677d1aa6cca4a86 -->
-<!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
-<h2>{POST} company/v1/api</h2>
-<p>This framework doesn't allow a company to do anything unless there is an authorized user making the request.
-So as part of creating a company this will auto create a master role that has access to all methods on all routes
-It will also create a user with the username default (recommend disabling after establishing a real person with master credentials)
-Make sure to record the default password upon success, this password is unrecoverable and the company would need to be deleted and recreated</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "https://project.dsfellowship.com/api/v1/company" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
-    -d '{"company_name":"documentation_company"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/company"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
-};
-
-let body = {
-    "company_name": "documentation_company"
-}
-
-fetch(url, {
-    method: "POST",
-    headers: headers,
-    body: body
-})
-    .then(response =&gt; response.json())
-    .then(json =&gt; console.log(json));</code></pre>
-<blockquote>
-<p>Example response (201):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Company successfully created",
-    "master_password": "O9QuL9pgDhm5TU",
-    "company": {
-        "id": 18,
-        "company_name": "documentation_company",
-        "active_status": 1
-    }
-}</code></pre>
-<h3>HTTP Request</h3>
-<p><code>POST api/v1/company</code></p>
-<h4>Body Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Status</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>company_name</code></td>
-<td>string</td>
-<td>required</td>
-<td>{string}</td>
-</tr>
-</tbody>
-</table>
-<!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
+<!-- END_04c524fc2f0ea8c793406426144b4c71 -->
 <!-- START_3325a7e1462036041b5bb9084e516f11 -->
 <h2>{GET} companies/v1/api</h2>
 <p>List all companies</p>
@@ -1695,7 +1541,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;offset=0&amp;limit=10&amp;active_status=" \
+    -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;offset=0&amp;limit=10&amp;include_disabled_objects=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
@@ -1711,7 +1557,7 @@ let params = {
     "details_limit": "5",
     "offset": "0",
     "limit": "10",
-    "active_status": "",
+    "include_disabled_objects": "",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -1735,50 +1581,6 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Company": {
-        "documentation_company": {
-            "id": "18",
-            "company_name": "documentation_company",
-            "active_status": "1",
-            "Company_Configs": [
-                {
-                    "id": "16",
-                    "company_id": "18",
-                    "config_id": "1",
-                    "config_value": "UTC",
-                    "active_status": "1"
-                },
-                {
-                    "id": "15",
-                    "company_id": "18",
-                    "config_id": "2",
-                    "config_value": "300",
-                    "active_status": "1"
-                }
-            ],
-            "Company_Roles": [
-                {
-                    "id": "27",
-                    "company_id": "18",
-                    "role_name": "master",
-                    "active_status": "1",
-                    "Users_Have_Roles": [
-                        {
-                            "id": "32",
-                            "user_id": "18",
-                            "role_id": "27"
-                        }
-                    ],
-                    "Routes_Have_Roles": [
-                        {
-                            "id": "208",
-                            "route_id": "12",
-                            "role_id": "27",
-                            "right_id": "208"
-                        }
-                    ]
-                }
-            ]
-        },
         "System": {
             "id": "1",
             "company_name": "System",
@@ -1871,6 +1673,50 @@ fetch(url, {
                     ]
                 }
             ]
+        },
+        "documentation_company": {
+            "id": "52",
+            "company_name": "documentation_company",
+            "active_status": "1",
+            "Company_Configs": [
+                {
+                    "id": "84",
+                    "company_id": "52",
+                    "config_id": "1",
+                    "config_value": "UTC",
+                    "active_status": "1"
+                },
+                {
+                    "id": "83",
+                    "company_id": "52",
+                    "config_id": "2",
+                    "config_value": "300",
+                    "active_status": "1"
+                }
+            ],
+            "Company_Roles": [
+                {
+                    "id": "87",
+                    "company_id": "52",
+                    "role_name": "master",
+                    "active_status": "1",
+                    "Users_Have_Roles": [
+                        {
+                            "id": "144",
+                            "user_id": "88",
+                            "role_id": "87"
+                        }
+                    ],
+                    "Routes_Have_Roles": [
+                        {
+                            "id": "689",
+                            "route_id": "12",
+                            "role_id": "87",
+                            "right_id": "689"
+                        }
+                    ]
+                }
+            ]
         }
     }
 }</code></pre>
@@ -1917,13 +1763,86 @@ fetch(url, {
 <td>{int} How many objects do you want to return. Must be a number between 1 and 100.</td>
 </tr>
 <tr>
-<td><code>active_status</code></td>
+<td><code>include_disabled_objects</code></td>
 <td>optional</td>
-<td>{bool} Include inactive objects</td>
+<td>{bool}</td>
 </tr>
 </tbody>
 </table>
 <!-- END_3325a7e1462036041b5bb9084e516f11 -->
+<!-- START_c694d0d5865ccb731d64c8931b1befe1 -->
+<h2>{POST} company/v1/api</h2>
+<p>This framework doesn't allow a company to do anything unless there is an authorized user making the request.
+So as part of creating a company this will auto create a master role that has access to all methods on all routes
+It will also create a user with the username default (recommend disabling after establishing a real person with master credentials)
+Make sure to record the default password upon success, this password is unrecoverable and the company would need to be deleted and recreated</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "https://project.dsfellowship.com/api/v1/company" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
+    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
+    -d '{"company_name":"documentation_company"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/company"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+};
+
+let body = {
+    "company_name": "documentation_company"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Company successfully created",
+    "master_password": "xJ7rGB9K$l8j.9",
+    "company": {
+        "id": 53,
+        "company_name": "documentation_company",
+        "active_status": 1
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/company</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>company_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>{string}</td>
+</tr>
+</tbody>
+</table>
+<!-- END_c694d0d5865ccb731d64c8931b1befe1 -->
 <h1>Tools</h1>
 <!-- START_cd4a874127cd23508641c63b640ee838 -->
 <h2>doc.json</h2>
@@ -1958,7 +1877,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "f035d501-984d-42f8-b867-15606e20c3ce",
+        "_postman_id": "433c870b-43ec-452d-b5dc-e918198946a7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -2056,8 +1975,8 @@ fetch(url, {
                                 "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
                             },
                             {
-                                "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "key": "User-Access-Token",
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2075,17 +1994,17 @@ fetch(url, {
             "description": "Basic CRUD operations for Companies, Company Configs and Users",
             "item": [
                 {
-                    "name": "{GET} users\/{company}\/v1\/api\nReturn a list of users belonging to the company",
+                    "name": "{GET} users\/v1\/api\nReturn a list of users belonging to the company",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users",
+                            "path": "api\/v1\/users",
                             "query": [
                                 {
-                                    "key": "active_status",
+                                    "key": "include_disabled_objects",
                                     "value": "",
-                                    "description": "{bool} Include inactive objects",
+                                    "description": "{bool}",
                                     "disabled": true
                                 },
                                 {
@@ -2118,14 +2037,6 @@ fetch(url, {
                                     "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
                                     "disabled": true
                                 }
-                            ],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                }
                             ]
                         },
                         "method": "GET",
@@ -2144,7 +2055,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "X?+jojLXcSRT0ODEd.G0EntwfqWQtyrN$Gsm13YDPvemb"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2156,21 +2067,13 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{POST} users\/{company}\/v1\/api",
+                    "name": "{POST} users\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users",
-                            "query": [],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                }
-                            ]
+                            "path": "api\/v1\/users",
+                            "query": []
                         },
                         "method": "POST",
                         "header": [
@@ -2188,7 +2091,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "9b=4JK.b7ewI20kSMsC5gRXXZa6j8B0?$M4G2x1IVh3xZ"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2200,20 +2103,14 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{PUT} {user}\/users\/{company}\/v1\/api\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
+                    "name": "{PUT} {user}\/users\/v1\/api\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users\/:user",
+                            "path": "api\/v1\/users\/:user",
                             "query": [],
                             "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
                                 {
                                     "id": "user",
                                     "key": "user",
@@ -2238,7 +2135,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "pOL8kzo2Ws7LC9VmYMyf$mzpfY$IqBpmIhaDKN+Vk9bZe"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2250,12 +2147,12 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{DELETE} {user}\/users\/{company}\/v1\/api",
+                    "name": "{DELETE} {user}\/users\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/users\/:user",
+                            "path": "api\/v1\/users\/:user",
                             "query": [
                                 {
                                     "key": "active_status",
@@ -2265,12 +2162,6 @@ fetch(url, {
                                 }
                             ],
                             "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
                                 {
                                     "id": "user",
                                     "key": "user",
@@ -2295,7 +2186,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "Tn8zxq5rrnK.cxgPmNuJKN1gSs?bRq.qUOEX78g9Ukc8F"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2307,17 +2198,17 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} roles\/{company}\/v1\/api",
+                    "name": "{GET} roles\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/roles",
+                            "path": "api\/v1\/roles",
                             "query": [
                                 {
-                                    "key": "active_status",
+                                    "key": "include_disabled_objects",
                                     "value": "",
-                                    "description": "{bool} Include inactive objects",
+                                    "description": "{bool}",
                                     "disabled": true
                                 },
                                 {
@@ -2350,14 +2241,6 @@ fetch(url, {
                                     "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
                                     "disabled": true
                                 }
-                            ],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                }
                             ]
                         },
                         "method": "GET",
@@ -2376,7 +2259,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "wXChRarYd0bCGSteyfzjZYLo69zhoWaWglB?M6ukVkDcF"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2388,21 +2271,13 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{POST} roles\/{company}\/v1\/api",
+                    "name": "{POST} roles\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/roles",
-                            "query": [],
-                            "variable": [
-                                {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                }
-                            ]
+                            "path": "api\/v1\/roles",
+                            "query": []
                         },
                         "method": "POST",
                         "header": [
@@ -2420,36 +2295,30 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "EZIXSfYS+bN3cjJSZUWpivCkB4TfiyYCqFkbD6ewZRK.f"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea36fc51ce23\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea6753c90181\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
                     }
                 },
                 {
-                    "name": "{PUT} roles\/{company}\/v1\/api",
+                    "name": "{PUT} roles\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/roles\/:role",
+                            "path": "api\/v1\/roles\/:role",
                             "query": [],
                             "variable": [
                                 {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
-                                {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -2470,24 +2339,24 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "g6cWZtiFL5=8wo$kZXxgg4siM$KIxshcN+VdfF+CxC$tF"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea36fc58e326\",\n    \"active_status\": true\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea6753cae679\",\n    \"active_status\": true\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []
                     }
                 },
                 {
-                    "name": "{DELETE} roles\/{company}\/v1\/api",
+                    "name": "{DELETE} roles\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/roles\/:role",
+                            "path": "api\/v1\/roles\/:role",
                             "query": [
                                 {
                                     "key": "active_status",
@@ -2498,15 +2367,9 @@ fetch(url, {
                             ],
                             "variable": [
                                 {
-                                    "id": "company",
-                                    "key": "company",
-                                    "value": "1",
-                                    "description": "{integer} The ID of the organization"
-                                },
-                                {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -2527,7 +2390,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6H?2X=3FXssjcP3edHa8yhbh.rP05z87tIuQD49ys+Vf$"
+                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
                             }
                         ],
                         "body": {
@@ -2535,42 +2398,6 @@ fetch(url, {
                             "raw": "[]"
                         },
                         "description": "",
-                        "response": []
-                    }
-                },
-                {
-                    "name": "{POST} company\/v1\/api",
-                    "request": {
-                        "url": {
-                            "protocol": "https",
-                            "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/company",
-                            "query": []
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
-                            },
-                            {
-                                "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\n    \"company_name\": \"documentation_company\"\n}"
-                        },
-                        "description": "This framework doesn't allow a company to do anything unless there is an authorized user making the request.\nSo as part of creating a company this will auto create a master role that has access to all methods on all routes\nIt will also create a user with the username default (recommend disabling after establishing a real person with master credentials)\nMake sure to record the default password upon success, this password is unrecoverable and the company would need to be deleted and recreated",
                         "response": []
                     }
                 },
@@ -2619,9 +2446,9 @@ fetch(url, {
                                     "disabled": false
                                 },
                                 {
-                                    "key": "active_status",
+                                    "key": "include_disabled_objects",
                                     "value": "",
-                                    "description": "{bool} Include inactive objects",
+                                    "description": "{bool}",
                                     "disabled": true
                                 }
                             ]
@@ -2650,6 +2477,42 @@ fetch(url, {
                             "raw": "[]"
                         },
                         "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{POST} company\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/company",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                            },
+                            {
+                                "key": "secret-token",
+                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"company_name\": \"documentation_company\"\n}"
+                        },
+                        "description": "This framework doesn't allow a company to do anything unless there is an authorized user making the request.\nSo as part of creating a company this will auto create a master role that has access to all methods on all routes\nIt will also create a user with the username default (recommend disabling after establishing a real person with master credentials)\nMake sure to record the default password upon success, this password is unrecoverable and the company would need to be deleted and recreated",
                         "response": []
                     }
                 }
@@ -2700,9 +2563,9 @@ fetch(url, {
                             "path": "api\/v1\/routes",
                             "query": [
                                 {
-                                    "key": "active_status",
+                                    "key": "include_disabled_objects",
                                     "value": "1",
-                                    "description": "{bool} When true will only return active objects.  When false all objects returned.",
+                                    "description": "{bool}",
                                     "disabled": false
                                 }
                             ]
@@ -2792,7 +2655,7 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/routes?active_status=1" \
+    -G "https://project.dsfellowship.com/api/v1/routes?include_disabled_objects=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
@@ -2802,7 +2665,7 @@ fetch(url, {
 );
 
 let params = {
-    "active_status": "1",
+    "include_disabled_objects": "1",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -2863,9 +2726,9 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>active_status</code></td>
+<td><code>include_disabled_objects</code></td>
 <td>required</td>
-<td>{bool} When true will only return active objects.  When false all objects returned.</td>
+<td>{bool}</td>
 </tr>
 </tbody>
 </table>
