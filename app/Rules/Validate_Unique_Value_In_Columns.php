@@ -11,10 +11,13 @@ class Validate_Unique_Value_In_Columns implements Rule
     private string $value;
     /**
      * @param string $object_type \app\Helpers\Company
+     * @param array $columns [\DatabaseLink\Column] to Limit in the where statement 'AND `table_name`.`column_name` = `column_field_value`
+     * @param array $tables [\DatabaseLink\Table] to inner join to the query
      */
-    public function __construct(array $columns,\DatabaseLink\Column $column)
+    public function __construct(array $columns,\DatabaseLink\Column $column,array $tables = [])
     {
         $this->column = $column;
+        $this->tables = $tables;
 //        Validate_Array_Types($columns,'DatabaseLink\Column');
         $this->columns = $columns;
     }
@@ -24,9 +27,15 @@ class Validate_Unique_Value_In_Columns implements Rule
         $this->value = $value;
         $toolbelt = new \Test_Tools\toolbelt;
         $table_name = $this->column->table_dblink->Get_Table_Name();
-        ForEach($this->columns as $column)
+        ForEach($this->columns as $key => $column)
         {
-            $toolbelt->$table_name->AndLimitBy($column->Equals($column->Get_Field_Value()));
+            if($key === array_key_first($this->columns))
+            {
+                $toolbelt->$table_name->LimitBy($column->Equals($column->Get_Field_Value()));
+            }else
+            {
+                $toolbelt->$table_name->AndLimitBy($column->Equals($column->Get_Field_Value()));
+            }
         }
         $toolbelt->$table_name->AndLimitBy($this->column->Equals($value));
         $toolbelt->$table_name->Query_Table(['id']);

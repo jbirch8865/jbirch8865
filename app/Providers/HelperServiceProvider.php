@@ -78,8 +78,7 @@ class HelperServiceProvider extends ServiceProvider
                 'details_offset' => ['gte:0'],
                 'include_details' => ['gte:0','lte:5']
             ]);
-            $this->Validate_Header_Exists('client-id');
-            $this->Validate_Header_Data_Length('client-id',$this->toolbelt->Programs->Get_Column('client_id'));
+            $this->Validate_Header_Field_Required('client-id',$this->toolbelt->Programs->Get_Column('client_id'));
             $program = new Program;
             try
             {
@@ -119,8 +118,7 @@ class HelperServiceProvider extends ServiceProvider
 
 
         app()->bind('Program_Session_Access_Token',function(){
-            $this->Validate_Header_Exists('User-Access-Token');
-            $this->Validate_Header_Data_Length('User-Access-Token',$this->toolbelt->Programs_Have_Sessions->Get_Column('access_token'));
+            $this->Validate_Header_Field_Required('User-Access-Token',$this->toolbelt->Programs_Have_Sessions->Get_Column('access_token'));
             $session = new Program_Session;
             try
             {
@@ -232,17 +230,21 @@ class HelperServiceProvider extends ServiceProvider
             $field_name => ['required','max:'.$column->Get_Data_Length()],
         ]);
     }
-
-    function Validate_Header_Exists(string $header_name) : void
+    function Validate_Post_Field($field_name,\DatabaseLink\Column $column) : void
     {
+        app()->request->validate([
+            $field_name => ['max:'.$column->Get_Data_Length()],
+        ]);
+    }
+
+    function Validate_Header_Field_Required(string $field_name,\DatabaseLink\Column $column) : void
+    {
+        $header_name = $field_name;
         if(!app()->request->headers->has($header_name))
         {
             Response_422(array('message' => 'The '.$header_name.' header is required.'),app()->request)->send();
             exit();
         }
-    }
-    function Validate_Header_Data_Length(string $header_name,\DatabaseLink\Column $column) : void
-    {
         if(strlen(app()->request->header($header_name)) > $column->Get_Data_Length())
         {
             Response_422(['message' => $header_name.' is malformed.'],app()->request)->send();
@@ -267,6 +269,7 @@ class HelperServiceProvider extends ServiceProvider
     }
     function Validate_Uri_String_Parameter($param,\DatabaseLink\Column $column) :void
     {
+        $value = $column->table_dblink->database_dblink->dblink->Escape_String(app()->request->$param);
         if(!isset(app()->request->$param))
         {
             Response_400(['message' => $param.' is required in the url.'],app()->request)->send();
@@ -279,6 +282,12 @@ class HelperServiceProvider extends ServiceProvider
         {
             Response_400(['message' => $param.'parameter is malformed.'],app()->request)->send();
             exit();
+        }elseif(
+            !$column->table_dblink->database_dblink->dblink->Does_This_Return_A_Count_Of_More_Than_Zero(
+                $column->table_dblink->Get_Table_Name(),
+                $column->Get_Column_Name()." = '".$value."'",'understood'))
+        {
+            Response_400(['message' => $param.' '.$value.' does not exist.'],app()->request)->send();
         }
     }
 

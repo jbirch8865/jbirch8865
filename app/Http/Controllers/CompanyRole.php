@@ -34,6 +34,7 @@ class CompanyRole extends Controller
      */
     public function index(Request $request)
     {
+        $this->toolbelt->Company_Roles->LimitBy($this->toolbelt->Company_Roles->Get_Column('company_id')->Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
         return $this->toolbelt->Company_Roles->Get_All_Objects('Company_Role',$request);
     }
 

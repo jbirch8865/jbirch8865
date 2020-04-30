@@ -76,6 +76,7 @@ class Add_URI_Parameters extends Strategy
     {
         $array = [];
         global $documentation_role_id_to_delete;
+        global $documentation_employee_id_to_delete;
         if($route->named('Delete_User'))
         {
             $array['user'] = [
@@ -115,6 +116,14 @@ class Add_URI_Parameters extends Strategy
                 'description' => '{string}',
                 'required' => true,
                 'value' => 'default'
+            ];
+        }elseif($route->named('Update_Employee') || $route->named('Delete_Employee'))
+        {
+            $array['employee'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_employee_id_to_delete
             ];
         }
         return $array;
@@ -292,6 +301,47 @@ class Add_Post_Data extends Strategy
                     ]
                 ]
             ]
+           ];
+        }elseif($route->named('Create_Employee'))
+        {
+            $array['first_name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => true,
+                'value' => "Bob"
+           ];
+           $array['last_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Grillman"
+           ];
+           $array['title'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "The Builder"
+           ];
+           $array['description'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Amazing Biceps"
+           ];
+           $array['email'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Bob@amazingbiceps.com"
+           ];
+
+        }elseif($route->named('Update_Employee'))
+        {
+           $array['title'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "The Founder"
            ];
         }
         if($method->name == 'update' && !$route->named('Enable_Default_User'))

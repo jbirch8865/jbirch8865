@@ -36,9 +36,9 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/1/signin" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
-    -d '{"user":"default","password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"}'
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA" \
+    -d '{"user":"default","password":"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"}'
 
 ```
 
@@ -50,13 +50,13 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 let body = {
     "user": "default",
-    "password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+    "password": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
 }
 
 fetch(url, {
@@ -75,10 +75,10 @@ fetch(url, {
 {
     "Program_Session": {
         "id": "3",
-        "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-        "access_token": "YIB==3ZKPzLo$uUZLlk.7?nk$4VEnP.8ovwOI.owkaGy4",
+        "client_id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+        "access_token": "m=IS.3+KCf4qRBcrvKdqoh54GJSykYz0=ZfHq13aoU3=W",
         "user_id": "1",
-        "experation_timestamp": "2020-04-27 06:15:03"
+        "experation_timestamp": "2020-04-30 08:46:10"
     }
 }
 ```
@@ -109,8 +109,8 @@ curl -X DELETE \
     "https://project.dsfellowship.com/api/v1/1/signin/default?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
 ```
 
 ```javascript
@@ -127,8 +127,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 fetch(url, {
@@ -147,10 +147,10 @@ fetch(url, {
     "message": "Session revoked",
     "Program_Session": {
         "id": "3",
-        "client_id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-        "access_token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+        "client_id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+        "access_token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
         "user_id": "1",
-        "experation_timestamp": "2020-04-27 06:05:13"
+        "experation_timestamp": "2020-04-30 08:36:16"
     }
 }
 ```
@@ -172,6 +172,328 @@ Parameter | Status | Description
 
 <!-- END_1aee1acf38a8f7575d1a2b9eddc7a109 -->
 
+#CDM
+
+
+<!-- START_76b5bb081b7655196b60780d41943e4e -->
+## {POST} employees/v1/api
+
+> Example request:
+
+```bash
+curl -X POST \
+    "https://project.dsfellowship.com/api/v1/employees" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"first_name":"Bob","last_name":"Grillman","title":"The Builder","description":"Amazing Biceps","email":"Bob@amazingbiceps.com"}'
+
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/employees"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
+};
+
+let body = {
+    "first_name": "Bob",
+    "last_name": "Grillman",
+    "title": "The Builder",
+    "description": "Amazing Biceps",
+    "email": "Bob@amazingbiceps.com"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "Employee Created",
+    "Employee": {
+        "id": 52,
+        "first_name": "Bob",
+        "last_name": "Grillman",
+        "title": "The Builder",
+        "description": "Amazing Biceps",
+        "active_status": 1,
+        "email": "Bob@amazingbiceps.com"
+    }
+}
+```
+
+### HTTP Request
+`POST api/v1/employees`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `first_name` | string |  required  | {string}
+        `last_name` | string |  required  | {string}
+        `title` | string |  optional  | {string}
+        `description` | string |  optional  | {string}
+        `email` | string |  optional  | {string}
+    
+<!-- END_76b5bb081b7655196b60780d41943e4e -->
+
+<!-- START_c3b1501f26d96b9bd4056f1aee29bb63 -->
+## {GET} employees/v1/api
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/employees?include_disabled_objects=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/employees"
+);
+
+let params = {
+    "include_disabled_objects": "",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "5",
+    "limit": "10",
+    "offset": "0",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "message": "Response Objects",
+    "Employee": {
+        "Bob Grillman - 52": {
+            "id": "52",
+            "first_name": "Bob",
+            "last_name": "Grillman",
+            "title": "The Builder",
+            "description": "Amazing Biceps",
+            "active_status": "1",
+            "email": "Bob@amazingbiceps.com",
+            "People_Belong_To_Company": {
+                "company_id": "1",
+                "people_id": "52",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                },
+                "People": {
+                    "id": "52",
+                    "first_name": "Bob",
+                    "last_name": "Grillman",
+                    "title": "The Builder",
+                    "description": "Amazing Biceps",
+                    "active_status": "1",
+                    "email": "Bob@amazingbiceps.com"
+                }
+            }
+        }
+    }
+}
+```
+
+### HTTP Request
+`GET api/v1/employees`
+
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `include_disabled_objects` |  optional  | {bool}
+    `include_details` |  optional  | {int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.
+    `details_offset` |  optional  | {int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+    `details_limit` |  optional  | {int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.
+    `limit` |  optional  | {int} How many objects do you want to return. Must be a number between 1 and 100.
+    `offset` |  optional  | {int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.
+
+<!-- END_c3b1501f26d96b9bd4056f1aee29bb63 -->
+
+<!-- START_cd5d44cbadeaff4191f854a8d3a69147 -->
+## {PUT} employees/v1/api
+
+> Example request:
+
+```bash
+curl -X PUT \
+    "https://project.dsfellowship.com/api/v1/employees/52" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"title":"The Founder","active_status":true}'
+
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/employees/52"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
+};
+
+let body = {
+    "title": "The Founder",
+    "active_status": true
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "Employee Updated",
+    "Employee": {
+        "id": "52",
+        "first_name": "Bob",
+        "last_name": "Grillman",
+        "title": "The Founder",
+        "description": "Amazing Biceps",
+        "active_status": "1",
+        "email": "Bob@amazingbiceps.com"
+    }
+}
+```
+
+### HTTP Request
+`PUT api/v1/employees/{employee}`
+
+`PATCH api/v1/employees/{employee}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `employee` |  required  | {int}
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `title` | string |  optional  | {string}
+        `active_status` | bool |  optional  | {string}
+    
+<!-- END_cd5d44cbadeaff4191f854a8d3a69147 -->
+
+<!-- START_68f545670c93a37a8b8428e7151a1174 -->
+## {DELETE} {employee}/employees/v1/api
+
+> Example request:
+
+```bash
+curl -X DELETE \
+    "https://project.dsfellowship.com/api/v1/employees/52?active_status=" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
+```
+
+```javascript
+const url = new URL(
+    "https://project.dsfellowship.com/api/v1/employees/52"
+);
+
+let params = {
+    "active_status": "",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (201):
+
+```json
+{
+    "message": "Employee Deleted"
+}
+```
+
+### HTTP Request
+`DELETE api/v1/employees/{employee}`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `employee` |  required  | {int}
+#### Query Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -----------
+    `active_status` |  required  | {bool} When true object will be marked inactive.  When false the object will be deleted.
+
+<!-- END_68f545670c93a37a8b8428e7151a1174 -->
+
 #Company
 
 Basic CRUD operations for Companies, Company Configs and Users
@@ -186,8 +508,8 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/users?include_disabled_objects=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
 ```
 
 ```javascript
@@ -209,8 +531,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 fetch(url, {
@@ -233,7 +555,29 @@ fetch(url, {
                 "username": "default",
                 "company_id": "1",
                 "project_name": "project2",
-                "active_status": "1"
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1",
+                    "Company_Configs": [
+                        {
+                            "id": "2",
+                            "company_id": "1",
+                            "config_id": "1",
+                            "config_value": "UTC",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Company_Roles": [
+                        {
+                            "id": "123",
+                            "company_id": "1",
+                            "role_name": "5eaa8e9d39261",
+                            "active_status": "0"
+                        }
+                    ]
+                }
             }
         }
     }
@@ -268,9 +612,9 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/users" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
-    -d '{"user":"new_user","password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1","Users_Have_Roles":[{"id":"2","user_id":"1","role_id":"2"}],"Routes_Have_Roles":[{"id":"1","route_id":"1","role_id":"2","right_id":"1"},{"id":"2","route_id":"2","role_id":"2","right_id":"2"},{"id":"3","route_id":"3","role_id":"2","right_id":"3"},{"id":"4","route_id":"4","role_id":"2","right_id":"4"},{"id":"5","route_id":"5","role_id":"2","right_id":"5"}]}]}'
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"user":"new_user","password":"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T","company_roles":[{"id":"63","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"2","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"123","company_id":"1","role_name":"5eaa8e9d39261","active_status":"0"}]},"Users_Have_Roles":[{"id":"82","user_id":"1","role_id":"63","Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"842","route_id":"16","role_id":"63","right_id":"842","Routes":{"id":"16","name":"Create_Employee","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"842","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"843","route_id":"12","role_id":"63","right_id":"843","Routes":{"id":"12","name":"Create_Role","implicit_allow":"0","module":"Company"},"Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"843","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"844","route_id":"3","role_id":"63","right_id":"844","Routes":{"id":"3","name":"Create_User","implicit_allow":"0","module":"Company"},"Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"844","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"845","route_id":"18","role_id":"63","right_id":"845","Routes":{"id":"18","name":"Delete_Employee","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"845","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"846","route_id":"13","role_id":"63","right_id":"846","Routes":{"id":"13","name":"Delete_Role","implicit_allow":"0","module":"Company"},"Company_Roles":{"id":"63","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"846","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}]}]}'
 
 ```
 
@@ -282,56 +626,184 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 let body = {
     "user": "new_user",
-    "password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "password": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
     "company_roles": [
         {
-            "id": "2",
+            "id": "63",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "123",
+                        "company_id": "1",
+                        "role_name": "5eaa8e9d39261",
+                        "active_status": "0"
+                    }
+                ]
+            },
             "Users_Have_Roles": [
                 {
-                    "id": "2",
+                    "id": "82",
                     "user_id": "1",
-                    "role_id": "2"
+                    "role_id": "63",
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
                 }
             ],
             "Routes_Have_Roles": [
                 {
-                    "id": "1",
-                    "route_id": "1",
-                    "role_id": "2",
-                    "right_id": "1"
+                    "id": "842",
+                    "route_id": "16",
+                    "role_id": "63",
+                    "right_id": "842",
+                    "Routes": {
+                        "id": "16",
+                        "name": "Create_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "842",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "2",
-                    "route_id": "2",
-                    "role_id": "2",
-                    "right_id": "2"
+                    "id": "843",
+                    "route_id": "12",
+                    "role_id": "63",
+                    "right_id": "843",
+                    "Routes": {
+                        "id": "12",
+                        "name": "Create_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "843",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "3",
+                    "id": "844",
                     "route_id": "3",
-                    "role_id": "2",
-                    "right_id": "3"
+                    "role_id": "63",
+                    "right_id": "844",
+                    "Routes": {
+                        "id": "3",
+                        "name": "Create_User",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "844",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "4",
-                    "route_id": "4",
-                    "role_id": "2",
-                    "right_id": "4"
+                    "id": "845",
+                    "route_id": "18",
+                    "role_id": "63",
+                    "right_id": "845",
+                    "Routes": {
+                        "id": "18",
+                        "name": "Delete_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "845",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "5",
-                    "route_id": "5",
-                    "role_id": "2",
-                    "right_id": "5"
+                    "id": "846",
+                    "route_id": "13",
+                    "role_id": "63",
+                    "right_id": "846",
+                    "Routes": {
+                        "id": "13",
+                        "name": "Delete_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "846",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 }
             ]
         }
@@ -354,7 +826,7 @@ fetch(url, {
 {
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 89,
+        "id": 114,
         "username": "new_user",
         "company_id": 1,
         "project_name": "project2",
@@ -393,9 +865,9 @@ curl -X PUT \
     "https://project.dsfellowship.com/api/v1/users/new_user" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
-    -d '{"new_password":"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1"}],"active_status":true}'
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"new_password":"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T","company_roles":[{"id":"63","company_id":"1","role_name":"master","active_status":"1"}],"active_status":true}'
 
 ```
 
@@ -407,15 +879,15 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 let body = {
-    "new_password": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
+    "new_password": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
     "company_roles": [
         {
-            "id": "2",
+            "id": "63",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1"
@@ -440,7 +912,7 @@ fetch(url, {
 {
     "message": "User successfully updated",
     "user": {
-        "id": "89",
+        "id": "114",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -478,8 +950,8 @@ curl -X DELETE \
     "https://project.dsfellowship.com/api/v1/users/new_user?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
 ```
 
 ```javascript
@@ -496,8 +968,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 fetch(url, {
@@ -515,7 +987,7 @@ fetch(url, {
 {
     "message": "User Successfully Deleted",
     "user": {
-        "id": "89",
+        "id": "114",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -550,8 +1022,8 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/roles?include_disabled_objects=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
 ```
 
 ```javascript
@@ -573,8 +1045,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 fetch(url, {
@@ -592,390 +1064,349 @@ fetch(url, {
 {
     "message": "Response Objects",
     "Company_Role": {
-        "master": {
-            "id": "2",
+        "master - 63": {
+            "id": "63",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "123",
+                        "company_id": "1",
+                        "role_name": "5eaa8e9d39261",
+                        "active_status": "0"
+                    }
+                ]
+            },
             "Users_Have_Roles": [
                 {
-                    "id": "2",
+                    "id": "82",
                     "user_id": "1",
-                    "role_id": "2"
+                    "role_id": "63",
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
                 }
             ],
             "Routes_Have_Roles": [
                 {
-                    "id": "1",
-                    "route_id": "1",
-                    "role_id": "2",
-                    "right_id": "1"
+                    "id": "842",
+                    "route_id": "16",
+                    "role_id": "63",
+                    "right_id": "842",
+                    "Routes": {
+                        "id": "16",
+                        "name": "Create_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "842",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "2",
-                    "route_id": "2",
-                    "role_id": "2",
-                    "right_id": "2"
+                    "id": "843",
+                    "route_id": "12",
+                    "role_id": "63",
+                    "right_id": "843",
+                    "Routes": {
+                        "id": "12",
+                        "name": "Create_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "843",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "3",
+                    "id": "844",
                     "route_id": "3",
-                    "role_id": "2",
-                    "right_id": "3"
+                    "role_id": "63",
+                    "right_id": "844",
+                    "Routes": {
+                        "id": "3",
+                        "name": "Create_User",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "844",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "4",
-                    "route_id": "4",
-                    "role_id": "2",
-                    "right_id": "4"
+                    "id": "845",
+                    "route_id": "18",
+                    "role_id": "63",
+                    "right_id": "845",
+                    "Routes": {
+                        "id": "18",
+                        "name": "Delete_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "845",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "5",
-                    "route_id": "5",
-                    "role_id": "2",
-                    "right_id": "5"
+                    "id": "846",
+                    "route_id": "13",
+                    "role_id": "63",
+                    "right_id": "846",
+                    "Routes": {
+                        "id": "13",
+                        "name": "Delete_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "63",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "846",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 }
             ]
         },
-        "5ea358e714492": {
-            "id": "9",
-            "company_id": "1",
-            "role_name": "5ea358e714492",
+        "master - 126": {
+            "id": "126",
+            "company_id": "116",
+            "role_name": "master",
             "active_status": "1",
-            "Routes_Have_Roles": [
+            "Companies": {
+                "id": "116",
+                "company_name": "documentation_company",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "112",
+                        "company_id": "116",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Users_Have_Roles": [
                 {
-                    "id": "64",
-                    "route_id": "12",
-                    "role_id": "9",
-                    "right_id": "64"
-                },
-                {
-                    "id": "65",
-                    "route_id": "3",
-                    "role_id": "9",
-                    "right_id": "65"
-                },
-                {
-                    "id": "66",
-                    "route_id": "13",
-                    "role_id": "9",
-                    "right_id": "66"
-                },
-                {
-                    "id": "67",
-                    "route_id": "10",
-                    "role_id": "9",
-                    "right_id": "67"
-                },
-                {
-                    "id": "68",
-                    "route_id": "14",
-                    "role_id": "9",
-                    "right_id": "68"
+                    "id": "171",
+                    "user_id": "113",
+                    "role_id": "126",
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
                 }
-            ]
-        },
-        "5ea35c33f172e": {
-            "id": "10",
-            "company_id": "1",
-            "role_name": "5ea35c33f172e",
-            "active_status": "1",
+            ],
             "Routes_Have_Roles": [
                 {
-                    "id": "72",
+                    "id": "1673",
+                    "route_id": "16",
+                    "role_id": "126",
+                    "right_id": "1673",
+                    "Routes": {
+                        "id": "16",
+                        "name": "Create_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "1673",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "1674",
                     "route_id": "12",
-                    "role_id": "10",
-                    "right_id": "72"
+                    "role_id": "126",
+                    "right_id": "1674",
+                    "Routes": {
+                        "id": "12",
+                        "name": "Create_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "1674",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "73",
+                    "id": "1675",
                     "route_id": "3",
-                    "role_id": "10",
-                    "right_id": "73"
+                    "role_id": "126",
+                    "right_id": "1675",
+                    "Routes": {
+                        "id": "3",
+                        "name": "Create_User",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "1675",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 },
                 {
-                    "id": "74",
+                    "id": "1676",
+                    "route_id": "18",
+                    "role_id": "126",
+                    "right_id": "1676",
+                    "Routes": {
+                        "id": "18",
+                        "name": "Delete_Employee",
+                        "implicit_allow": "0",
+                        "module": "CDM"
+                    },
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "1676",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
+                },
+                {
+                    "id": "1677",
                     "route_id": "13",
-                    "role_id": "10",
-                    "right_id": "74"
-                },
-                {
-                    "id": "75",
-                    "route_id": "10",
-                    "role_id": "10",
-                    "right_id": "75"
-                },
-                {
-                    "id": "76",
-                    "route_id": "14",
-                    "role_id": "10",
-                    "right_id": "76"
-                }
-            ]
-        },
-        "5ea35c747e77f": {
-            "id": "11",
-            "company_id": "1",
-            "role_name": "5ea35c747e77f",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "80",
-                    "route_id": "12",
-                    "role_id": "11",
-                    "right_id": "80"
-                },
-                {
-                    "id": "81",
-                    "route_id": "3",
-                    "role_id": "11",
-                    "right_id": "81"
-                },
-                {
-                    "id": "82",
-                    "route_id": "13",
-                    "role_id": "11",
-                    "right_id": "82"
-                },
-                {
-                    "id": "83",
-                    "route_id": "10",
-                    "role_id": "11",
-                    "right_id": "83"
-                },
-                {
-                    "id": "84",
-                    "route_id": "14",
-                    "role_id": "11",
-                    "right_id": "84"
-                }
-            ]
-        },
-        "5ea3628f9f8af": {
-            "id": "12",
-            "company_id": "1",
-            "role_name": "5ea3628f9f8af",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "88",
-                    "route_id": "12",
-                    "role_id": "12",
-                    "right_id": "88"
-                },
-                {
-                    "id": "89",
-                    "route_id": "3",
-                    "role_id": "12",
-                    "right_id": "89"
-                },
-                {
-                    "id": "90",
-                    "route_id": "13",
-                    "role_id": "12",
-                    "right_id": "90"
-                },
-                {
-                    "id": "91",
-                    "route_id": "10",
-                    "role_id": "12",
-                    "right_id": "91"
-                },
-                {
-                    "id": "92",
-                    "route_id": "14",
-                    "role_id": "12",
-                    "right_id": "92"
-                }
-            ]
-        },
-        "5ea3643372858": {
-            "id": "13",
-            "company_id": "1",
-            "role_name": "5ea3643372858",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "96",
-                    "route_id": "12",
-                    "role_id": "13",
-                    "right_id": "96"
-                },
-                {
-                    "id": "97",
-                    "route_id": "3",
-                    "role_id": "13",
-                    "right_id": "97"
-                },
-                {
-                    "id": "98",
-                    "route_id": "13",
-                    "role_id": "13",
-                    "right_id": "98"
-                },
-                {
-                    "id": "99",
-                    "route_id": "10",
-                    "role_id": "13",
-                    "right_id": "99"
-                },
-                {
-                    "id": "100",
-                    "route_id": "14",
-                    "role_id": "13",
-                    "right_id": "100"
-                }
-            ]
-        },
-        "5ea369528cba4": {
-            "id": "16",
-            "company_id": "1",
-            "role_name": "5ea369528cba4",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "120",
-                    "route_id": "12",
-                    "role_id": "16",
-                    "right_id": "120"
-                },
-                {
-                    "id": "121",
-                    "route_id": "3",
-                    "role_id": "16",
-                    "right_id": "121"
-                },
-                {
-                    "id": "122",
-                    "route_id": "13",
-                    "role_id": "16",
-                    "right_id": "122"
-                },
-                {
-                    "id": "123",
-                    "route_id": "10",
-                    "role_id": "16",
-                    "right_id": "123"
-                },
-                {
-                    "id": "124",
-                    "route_id": "14",
-                    "role_id": "16",
-                    "right_id": "124"
-                }
-            ]
-        },
-        "5ea64f78a1f4b": {
-            "id": "68",
-            "company_id": "1",
-            "role_name": "5ea64f78a1f4b",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "536",
-                    "route_id": "12",
-                    "role_id": "68",
-                    "right_id": "536"
-                },
-                {
-                    "id": "537",
-                    "route_id": "3",
-                    "role_id": "68",
-                    "right_id": "537"
-                },
-                {
-                    "id": "538",
-                    "route_id": "13",
-                    "role_id": "68",
-                    "right_id": "538"
-                },
-                {
-                    "id": "539",
-                    "route_id": "10",
-                    "role_id": "68",
-                    "right_id": "539"
-                },
-                {
-                    "id": "540",
-                    "route_id": "14",
-                    "role_id": "68",
-                    "right_id": "540"
-                }
-            ]
-        },
-        "5ea6510869884": {
-            "id": "70",
-            "company_id": "1",
-            "role_name": "5ea6510869884",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "552",
-                    "route_id": "12",
-                    "role_id": "70",
-                    "right_id": "552"
-                },
-                {
-                    "id": "553",
-                    "route_id": "3",
-                    "role_id": "70",
-                    "right_id": "553"
-                },
-                {
-                    "id": "554",
-                    "route_id": "13",
-                    "role_id": "70",
-                    "right_id": "554"
-                },
-                {
-                    "id": "555",
-                    "route_id": "10",
-                    "role_id": "70",
-                    "right_id": "555"
-                },
-                {
-                    "id": "556",
-                    "route_id": "14",
-                    "role_id": "70",
-                    "right_id": "556"
-                }
-            ]
-        },
-        "5ea651b81dd8f": {
-            "id": "72",
-            "company_id": "1",
-            "role_name": "5ea651b81dd8f",
-            "active_status": "1",
-            "Routes_Have_Roles": [
-                {
-                    "id": "568",
-                    "route_id": "12",
-                    "role_id": "72",
-                    "right_id": "568"
-                },
-                {
-                    "id": "569",
-                    "route_id": "3",
-                    "role_id": "72",
-                    "right_id": "569"
-                },
-                {
-                    "id": "570",
-                    "route_id": "13",
-                    "role_id": "72",
-                    "right_id": "570"
-                },
-                {
-                    "id": "571",
-                    "route_id": "10",
-                    "role_id": "72",
-                    "right_id": "571"
-                },
-                {
-                    "id": "572",
-                    "route_id": "14",
-                    "role_id": "72",
-                    "right_id": "572"
+                    "role_id": "126",
+                    "right_id": "1677",
+                    "Routes": {
+                        "id": "13",
+                        "name": "Delete_Role",
+                        "implicit_allow": "0",
+                        "module": "Company"
+                    },
+                    "Company_Roles": {
+                        "id": "126",
+                        "company_id": "116",
+                        "role_name": "master",
+                        "active_status": "1"
+                    },
+                    "Rights": {
+                        "id": "1677",
+                        "get": "1",
+                        "destroy": "1",
+                        "post": "1",
+                        "patch": "1",
+                        "put": "1"
+                    }
                 }
             ]
         }
@@ -1014,9 +1445,9 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/roles" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea6774337b12"}'
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eaa8f2994e43"}'
 
 ```
 
@@ -1028,8 +1459,8 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 let body = {
@@ -1055,7 +1486,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5ea6774337b12"
+    "role_name": "5eaa8f2994e43"
 }
 
 fetch(url, {
@@ -1074,9 +1505,9 @@ fetch(url, {
 {
     "message": "Company Role created",
     "company role": {
-        "id": "89",
+        "id": "127",
         "company_id": "1",
-        "role_name": "5ea6774337b12",
+        "role_name": "5eaa8f2994e43",
         "active_status": "1"
     }
 }
@@ -1111,25 +1542,25 @@ is the complete modal you are expecting
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/roles/89" \
+    "https://project.dsfellowship.com/api/v1/roles/127" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ea67743bef36","active_status":true}'
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eaa8f2a1d459","active_status":true}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/89"
+    "https://project.dsfellowship.com/api/v1/roles/127"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 let body = {
@@ -1155,7 +1586,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5ea67743bef36",
+    "role_name": "5eaa8f2a1d459",
     "active_status": true
 }
 
@@ -1175,9 +1606,9 @@ fetch(url, {
 {
     "message": "Company Role Updated",
     "company role": {
-        "id": "89",
+        "id": "127",
         "company_id": "1",
-        "role_name": "5ea67743bef36",
+        "role_name": "5eaa8f2a1d459",
         "active_status": 1
     }
 }
@@ -1216,16 +1647,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/roles/89?active_status=" \
+    "https://project.dsfellowship.com/api/v1/roles/127?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "User-Access-Token: .GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "User-Access-Token: UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/89"
+    "https://project.dsfellowship.com/api/v1/roles/127"
 );
 
 let params = {
@@ -1237,8 +1668,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "User-Access-Token": ".GSH.kjWap?u+Rq5tJsD$WyP0BySF?S+Hc$Nw8yHhLaCy",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "User-Access-Token": "UPWQQLFYg9FB5SAfGd6OFllS=p+E5N$Y.iFlgMlPwLH0C",
 };
 
 fetch(url, {
@@ -1285,8 +1716,8 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&include_details=2&details_offset=0&details_limit=5&offset=0&limit=10&include_disabled_objects=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
 ```
 
 ```javascript
@@ -1309,8 +1740,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 fetch(url, {
@@ -1328,7 +1759,7 @@ fetch(url, {
 {
     "message": "Response Objects",
     "Company": {
-        "System": {
+        "System - 1": {
             "id": "1",
             "company_name": "System",
             "active_status": "1",
@@ -1338,128 +1769,152 @@ fetch(url, {
                     "company_id": "1",
                     "config_id": "1",
                     "config_value": "UTC",
-                    "active_status": "1"
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "1",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
                 },
                 {
                     "id": "1",
                     "company_id": "1",
                     "config_id": "2",
                     "config_value": "300",
-                    "active_status": "1"
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "2",
+                        "active_status": "1",
+                        "config_name": "session_time_limit",
+                        "default_value": "300"
+                    }
                 }
             ],
             "Company_Roles": [
                 {
-                    "id": "9",
+                    "id": "123",
                     "company_id": "1",
-                    "role_name": "5ea358e714492",
-                    "active_status": "1",
+                    "role_name": "5eaa8e9d39261",
+                    "active_status": "0",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
                     "Routes_Have_Roles": [
                         {
-                            "id": "64",
-                            "route_id": "12",
-                            "role_id": "9",
-                            "right_id": "64"
+                            "id": "1634",
+                            "route_id": "16",
+                            "role_id": "123",
+                            "right_id": "1634"
                         }
                     ]
                 },
                 {
-                    "id": "10",
+                    "id": "63",
                     "company_id": "1",
-                    "role_name": "5ea35c33f172e",
+                    "role_name": "master",
                     "active_status": "1",
-                    "Routes_Have_Roles": [
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    },
+                    "Users_Have_Roles": [
                         {
-                            "id": "72",
-                            "route_id": "12",
-                            "role_id": "10",
-                            "right_id": "72"
+                            "id": "82",
+                            "user_id": "1",
+                            "role_id": "63"
                         }
-                    ]
-                },
-                {
-                    "id": "11",
-                    "company_id": "1",
-                    "role_name": "5ea35c747e77f",
-                    "active_status": "1",
+                    ],
                     "Routes_Have_Roles": [
                         {
-                            "id": "80",
-                            "route_id": "12",
-                            "role_id": "11",
-                            "right_id": "80"
-                        }
-                    ]
-                },
-                {
-                    "id": "12",
-                    "company_id": "1",
-                    "role_name": "5ea3628f9f8af",
-                    "active_status": "1",
-                    "Routes_Have_Roles": [
-                        {
-                            "id": "88",
-                            "route_id": "12",
-                            "role_id": "12",
-                            "right_id": "88"
-                        }
-                    ]
-                },
-                {
-                    "id": "13",
-                    "company_id": "1",
-                    "role_name": "5ea3643372858",
-                    "active_status": "1",
-                    "Routes_Have_Roles": [
-                        {
-                            "id": "96",
-                            "route_id": "12",
-                            "role_id": "13",
-                            "right_id": "96"
+                            "id": "842",
+                            "route_id": "16",
+                            "role_id": "63",
+                            "right_id": "842"
                         }
                     ]
                 }
             ]
         },
-        "documentation_company": {
-            "id": "52",
+        "documentation_company - 116": {
+            "id": "116",
             "company_name": "documentation_company",
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "84",
-                    "company_id": "52",
+                    "id": "112",
+                    "company_id": "116",
                     "config_id": "1",
                     "config_value": "UTC",
-                    "active_status": "1"
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "116",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "1",
+                        "active_status": "1",
+                        "config_name": "company_time_zone",
+                        "default_value": "UTC"
+                    }
                 },
                 {
-                    "id": "83",
-                    "company_id": "52",
+                    "id": "111",
+                    "company_id": "116",
                     "config_id": "2",
                     "config_value": "300",
-                    "active_status": "1"
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "116",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
+                    "Configs": {
+                        "id": "2",
+                        "active_status": "1",
+                        "config_name": "session_time_limit",
+                        "default_value": "300"
+                    }
                 }
             ],
             "Company_Roles": [
                 {
-                    "id": "87",
-                    "company_id": "52",
+                    "id": "126",
+                    "company_id": "116",
                     "role_name": "master",
                     "active_status": "1",
+                    "Companies": {
+                        "id": "116",
+                        "company_name": "documentation_company",
+                        "active_status": "1"
+                    },
                     "Users_Have_Roles": [
                         {
-                            "id": "144",
-                            "user_id": "88",
-                            "role_id": "87"
+                            "id": "171",
+                            "user_id": "113",
+                            "role_id": "126"
                         }
                     ],
                     "Routes_Have_Roles": [
                         {
-                            "id": "689",
-                            "route_id": "12",
-                            "role_id": "87",
-                            "right_id": "689"
+                            "id": "1673",
+                            "route_id": "16",
+                            "role_id": "126",
+                            "right_id": "1673"
                         }
                     ]
                 }
@@ -1501,8 +1956,8 @@ curl -X POST \
     "https://project.dsfellowship.com/api/v1/company" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5" \
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA" \
     -d '{"company_name":"documentation_company"}'
 
 ```
@@ -1515,8 +1970,8 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 let body = {
@@ -1538,9 +1993,9 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "xJ7rGB9K$l8j.9",
+    "master_password": "tj10YLk19rsSa6",
     "company": {
-        "id": 53,
+        "id": 117,
         "company_name": "documentation_company",
         "active_status": 1
     }
@@ -1569,7 +2024,7 @@ curl -X GET \
     -G "https://project.dsfellowship.com/doc.json" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
 ```
 
 ```javascript
@@ -1580,7 +2035,7 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 fetch(url, {
@@ -1599,7 +2054,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "433c870b-43ec-452d-b5dc-e918198946a7",
+        "_postman_id": "c27123ec-60c2-427a-aa20-4270b6369dcc",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -1637,16 +2092,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\"\n}"
+                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T\"\n}"
                         },
                         "description": "Returns a unique access_token used to authenticate in place of the username and password\nThe access_token experation date is based on the company_config session_timeout which is comany specific",
                         "response": []
@@ -1694,11 +2149,221 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "CDM",
+            "description": "",
+            "item": [
+                {
+                    "name": "{POST} employees\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/employees",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"Bob\",\n    \"last_name\": \"Grillman\",\n    \"title\": \"The Builder\",\n    \"description\": \"Amazing Biceps\",\n    \"email\": \"Bob@amazingbiceps.com\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{GET} employees\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/employees",
+                            "query": [
+                                {
+                                    "key": "include_disabled_objects",
+                                    "value": "",
+                                    "description": "{bool}",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_details",
+                                    "value": "2",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "details_offset",
+                                    "value": "0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "details_limit",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{PUT} employees\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/employees\/:employee",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "employee",
+                                    "key": "employee",
+                                    "value": "51",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"title\": \"The Founder\",\n    \"active_status\": true\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{DELETE} {employee}\/employees\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/employees\/:employee",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} When true object will be marked inactive.  When false the object will be deleted.",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "employee",
+                                    "key": "employee",
+                                    "value": "51",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
@@ -1773,11 +2438,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
@@ -1809,16 +2474,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"2\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"2\"\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1\",\n                    \"route_id\": \"1\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"1\"\n                },\n                {\n                    \"id\": \"2\",\n                    \"route_id\": \"2\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"2\"\n                },\n                {\n                    \"id\": \"3\",\n                    \"route_id\": \"3\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"3\"\n                },\n                {\n                    \"id\": \"4\",\n                    \"route_id\": \"4\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"4\"\n                },\n                {\n                    \"id\": \"5\",\n                    \"route_id\": \"5\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"5\"\n                }\n            ]\n        }\n    ]\n}"
+                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T\",\n    \"company_roles\": [\n        {\n            \"id\": \"63\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"123\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"5eaa8e9d39261\",\n                        \"active_status\": \"0\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"82\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"63\",\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"168\",\n                    \"user_id\": \"111\",\n                    \"role_id\": \"63\",\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"842\",\n                    \"route_id\": \"16\",\n                    \"role_id\": \"63\",\n                    \"right_id\": \"842\",\n                    \"Routes\": {\n                        \"id\": \"16\",\n                        \"name\": \"Create_Employee\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"842\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"843\",\n                    \"route_id\": \"12\",\n                    \"role_id\": \"63\",\n                    \"right_id\": \"843\",\n                    \"Routes\": {\n                        \"id\": \"12\",\n                        \"name\": \"Create_Role\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Company\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"843\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"844\",\n                    \"route_id\": \"3\",\n                    \"role_id\": \"63\",\n                    \"right_id\": \"844\",\n                    \"Routes\": {\n                        \"id\": \"3\",\n                        \"name\": \"Create_User\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Company\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"844\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"845\",\n                    \"route_id\": \"18\",\n                    \"role_id\": \"63\",\n                    \"right_id\": \"845\",\n                    \"Routes\": {\n                        \"id\": \"18\",\n                        \"name\": \"Delete_Employee\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"845\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"846\",\n                    \"route_id\": \"13\",\n                    \"role_id\": \"63\",\n                    \"right_id\": \"846\",\n                    \"Routes\": {\n                        \"id\": \"13\",\n                        \"name\": \"Delete_Role\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Company\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"63\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"846\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
                         },
                         "description": "Create a user",
                         "response": []
@@ -1853,16 +2518,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"new_password\": \"c7X2ItzT1FuJpgB?oorN3HK8nacTygmN\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ],\n    \"active_status\": true\n}"
+                            "raw": "{\n    \"new_password\": \"NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T\",\n    \"company_roles\": [\n        {\n            \"id\": \"63\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ],\n    \"active_status\": true\n}"
                         },
                         "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
                         "response": []
@@ -1904,11 +2569,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
@@ -1977,11 +2642,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
@@ -2013,16 +2678,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea6753c90181\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eaa8ec278264\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
@@ -2040,7 +2705,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "",
+                                    "value": "125",
                                     "description": "{int}"
                                 }
                             ]
@@ -2057,16 +2722,16 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ea6753cae679\",\n    \"active_status\": true\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eaa8ec2f3079\",\n    \"active_status\": true\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []
@@ -2091,7 +2756,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "",
+                                    "value": "125",
                                     "description": "{int}"
                                 }
                             ]
@@ -2108,11 +2773,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "6rrfwmLl5IpdEWjVQMEaxb21PG0uHJjAQGKq7zqxY1Qc6"
+                                "value": "j4UfXYJPsSt1TQ3XQSpGSrDW8L4G8b4CNM7Ob8$1g+mZs"
                             }
                         ],
                         "body": {
@@ -2187,11 +2852,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
@@ -2223,11 +2888,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
@@ -2265,7 +2930,7 @@ fetch(url, {
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
@@ -2304,11 +2969,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
@@ -2348,11 +3013,11 @@ fetch(url, {
                             },
                             {
                                 "key": "client-id",
-                                "value": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN"
+                                "value": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+                                "value": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
                             }
                         ],
                         "body": {
@@ -2386,8 +3051,8 @@ curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/routes?include_disabled_objects=1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
 ```
 
 ```javascript
@@ -2404,8 +3069,8 @@ Object.keys(params)
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 fetch(url, {
@@ -2427,21 +3092,25 @@ fetch(url, {
         "original": {
             "message": "Response Objects",
             "Route": {
-                "apidoc.json": 9,
-                "Create_Company": 5,
-                "Create_Role": 12,
-                "Create_User": 3,
-                "Delete_Role": 13,
-                "Delete_User": 10,
-                "Edit_Role": 14,
-                "Enable_Default_User": 11,
-                "List_Companies": 4,
-                "List_Roles": 6,
-                "List_Routes": 8,
-                "List_Users": 2,
-                "Update_User": 7,
-                "User_Signin": 1,
-                "User_Signout": 15
+                "apidoc.json - 9": 9,
+                "Create_Company - 5": 5,
+                "Create_Employee - 16": 16,
+                "Create_Role - 12": 12,
+                "Create_User - 3": 3,
+                "Delete_Employee - 18": 18,
+                "Delete_Role - 13": 13,
+                "Delete_User - 10": 10,
+                "Edit_Role - 14": 14,
+                "Enable_Default_User - 11": 11,
+                "List_Companies - 4": 4,
+                "List_Employees - 15": 15,
+                "List_Roles - 6": 6,
+                "List_Routes - 8": 8,
+                "List_Users - 2": 2,
+                "Update_Employee - 17": 17,
+                "Update_User - 7": 7,
+                "User_Signin - 1": 1,
+                "User_Signout - 19": 19
             }
         },
         "exception": null
@@ -2473,8 +3142,8 @@ curl -X PUT \
     "https://project.dsfellowship.com/api/v1/1/default_user/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: c7X2ItzT1FuJpgB?oorN3HK8nacTygmN" \
-    -H "secret-token: KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5"
+    -H "client-id: NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T" \
+    -H "secret-token: ?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA"
 ```
 
 ```javascript
@@ -2485,8 +3154,8 @@ const url = new URL(
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "c7X2ItzT1FuJpgB?oorN3HK8nacTygmN",
-    "secret-token": "KydrxxVjcE$ZN=W4UZoI9fp8oeYqOyUEvg3z37WawSlzVjG5",
+    "client-id": "NCJ12fQciiGcuR.7vbLou0M6Z+pj2u7T",
+    "secret-token": "?un$Y$CxxdMk+nOZ2bO$5g3MXoqyJ76p8x2uA9szrO=eq1KA",
 };
 
 fetch(url, {
