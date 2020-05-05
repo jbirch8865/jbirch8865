@@ -12,7 +12,7 @@
         "cwd": "",
         "port": 9000
     },
-    
+
     {
         "name": "Listen for XDebug",
         "type": "php",

@@ -62,7 +62,7 @@ class CompanyServiceProvider extends ServiceProvider
 
         app()->bind('Create_Customer', function (){
             $this->helperfunctions->Validate_Post_Field_Required('customer_name',$this->toolbelt->Get_Customers()->Get_Column('customer_name'));
-            $this->helperfunctions->Validate_Post_Int_Field_Required('credit_status',$this->toolbelt->Get_Customers()->Get_Column('credit_status'));
+            $this->helperfunctions->Validate_Post_Int_Field_Required('credit_status',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
             $this->helperfunctions->Validate_Post_Field('ccb',$this->toolbelt->Get_Customers()->Get_Column('ccb'));
             $this->helperfunctions->Validate_Post_Field('website',$this->toolbelt->Get_Customers()->Get_Column('website'));
             $customer = new Customer;
@@ -70,11 +70,7 @@ class CompanyServiceProvider extends ServiceProvider
         });
         app()->bind('Update_Customer', function (){
             $this->helperfunctions->Validate_Post_Field('customer_name',$this->toolbelt->Get_Customers()->Get_Column('customer_name'));
-            $this->helperfunctions->Validate_Post_Int_Field('credit_status',$this->toolbelt->Get_Customers()->Get_Column('credit_status'));
-            $this->toolbelt->Get_Credit_Statuses()->Get_Column('id')->Set_Field_Value(app()->request->input('credit_status'));
-            app()->request->validate([
-                'credit_status' => [new Does_This_Exist_In_Context($this->toolbelt->Get_Credit_Statuses()->Get_Column('id'))]
-            ]);
+            $this->helperfunctions->Validate_Post_Int_Field('credit_status',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
             $this->helperfunctions->Validate_Post_Field('ccb',$this->toolbelt->Get_Customers()->Get_Column('ccb'));
             $this->helperfunctions->Validate_Post_Field('website',$this->toolbelt->Get_Customers()->Get_Column('website'));
             $this->helperfunctions->Validate_Uri_Int_Parameter('customer',$this->toolbelt->Get_Customers()->Get_Column('id'));

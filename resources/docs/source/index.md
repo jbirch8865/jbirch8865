@@ -76,9 +76,9 @@ fetch(url, {
     "Program_Session": {
         "id": "12",
         "client_id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-        "access_token": "0X1YZ54Wq4l?Zi5Qu+roBgQd8m1BgysElU=DDpvvL6Xxn",
+        "access_token": "AW?CJIeLt$HfNoCLZsAXEspC0K?L9vgmKbz++oR5jJl6H",
         "user_id": "57",
-        "experation_timestamp": "2020-05-04 06:20:03"
+        "experation_timestamp": "2020-05-05 19:16:48"
     }
 }
 ```
@@ -110,7 +110,7 @@ curl -X DELETE \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -128,7 +128,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -148,9 +148,9 @@ fetch(url, {
     "Program_Session": {
         "id": "12",
         "client_id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-        "access_token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+        "access_token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
         "user_id": "57",
-        "experation_timestamp": "2020-05-04 06:10:13"
+        "experation_timestamp": "2020-05-05 19:06:59"
     }
 }
 ```
@@ -186,7 +186,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -209,7 +209,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -257,7 +257,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"first_name":"Bob","last_name":"Grillman","title":"The Builder","description":"Amazing Biceps","email":"Bob@amazingbiceps.com"}'
 
 ```
@@ -271,7 +271,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -298,7 +298,7 @@ fetch(url, {
 {
     "message": "Employee Created",
     "Employee": {
-        "id": 20,
+        "id": 28,
         "first_name": "Bob",
         "last_name": "Grillman",
         "title": "The Builder",
@@ -335,7 +335,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"name":"Good"}'
 
 ```
@@ -349,7 +349,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -372,7 +372,7 @@ fetch(url, {
 {
     "message": "Credit_Status Created",
     "Credit_Status": {
-        "id": 26,
+        "id": 36,
         "credit_status_name": "Good",
         "company_id": 1,
         "active_status": 1
@@ -401,7 +401,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -424,7 +424,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -442,8 +442,8 @@ fetch(url, {
 {
     "message": "Response Objects",
     "Credit_Status": {
-        "Good - 26": {
-            "id": "26",
+        "Good - 33": {
+            "id": "33",
             "credit_status_name": "Good",
             "company_id": "1",
             "active_status": "1",
@@ -470,7 +470,43 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "26",
+                        "id": "33",
+                        "credit_status_name": "Good",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good - 36": {
+            "id": "36",
+            "credit_status_name": "Good",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "52",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "66",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "33",
                         "credit_status_name": "Good",
                         "company_id": "1",
                         "active_status": "1"
@@ -505,25 +541,25 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/credit_statuses/26" \
+    "https://project.dsfellowship.com/api/v1/credit_statuses/36" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"name":"Good 80"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses/26"
+    "https://project.dsfellowship.com/api/v1/credit_statuses/36"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -546,7 +582,7 @@ fetch(url, {
 {
     "message": "Credit Status Updated",
     "Credit_Status": {
-        "id": "26",
+        "id": "36",
         "credit_status_name": "Good 80",
         "company_id": "1",
         "active_status": "1"
@@ -582,8 +618,8 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"customer_name":"Bob The Builder","credit_status":26,"ccb":"","website":"www.amazingbiceps.com"}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"customer_name":"Bob The Builder","credit_status":36,"ccb":"","website":"www.amazingbiceps.com"}'
 
 ```
 
@@ -596,12 +632,12 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
     "customer_name": "Bob The Builder",
-    "credit_status": 26,
+    "credit_status": 36,
     "ccb": "",
     "website": "www.amazingbiceps.com"
 }
@@ -622,9 +658,9 @@ fetch(url, {
 {
     "message": "Customer Created",
     "Customer": {
-        "id": 26,
+        "id": 33,
         "customer_name": "Bob The Builder",
-        "credit_status": 26,
+        "credit_status": 36,
         "website": "www.amazingbiceps.com",
         "ccb": "",
         "company_id": 1,
@@ -657,7 +693,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -680,7 +716,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -698,10 +734,10 @@ fetch(url, {
 {
     "message": "Response Objects",
     "Customer": {
-        "Bob The Builder - 26": {
-            "id": "26",
+        "Bob The Builder - 33": {
+            "id": "33",
             "customer_name": "Bob The Builder",
-            "credit_status": "26",
+            "credit_status": "36",
             "website": "www.amazingbiceps.com",
             "ccb": "",
             "company_id": "1",
@@ -729,15 +765,15 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "26",
-                        "credit_status_name": "Good 80",
+                        "id": "33",
+                        "credit_status_name": "Good",
                         "company_id": "1",
                         "active_status": "1"
                     }
                 ]
             },
             "Credit_Statuses": {
-                "id": "26",
+                "id": "36",
                 "credit_status_name": "Good 80",
                 "company_id": "1",
                 "active_status": "1",
@@ -775,30 +811,30 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/customers/26" \
+    "https://project.dsfellowship.com/api/v1/customers/33" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"customer_name":"Bob and Son The Builders","credit_status":26,"ccb":"","website":"www.amazingbiceps.com"}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"customer_name":"Bob and Son The Builders","credit_status":36,"ccb":"","website":"www.amazingbiceps.com"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/26"
+    "https://project.dsfellowship.com/api/v1/customers/33"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
     "customer_name": "Bob and Son The Builders",
-    "credit_status": 26,
+    "credit_status": 36,
     "ccb": "",
     "website": "www.amazingbiceps.com"
 }
@@ -819,9 +855,9 @@ fetch(url, {
 {
     "message": "Customer Updated",
     "Customer": {
-        "id": "26",
+        "id": "33",
         "customer_name": "Bob and Son The Builders",
-        "credit_status": 26,
+        "credit_status": 36,
         "website": "www.amazingbiceps.com",
         "ccb": "",
         "company_id": "1",
@@ -861,7 +897,7 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"equipment_name":"F3452"}'
 
 ```
@@ -875,7 +911,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -898,7 +934,7 @@ fetch(url, {
 {
     "message": "Equipment Created",
     "Equipment": {
-        "id": 26,
+        "id": 33,
         "equipment_name": "F3452",
         "company_id": 1,
         "active_status": 1
@@ -927,7 +963,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -950,7 +986,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -968,8 +1004,8 @@ fetch(url, {
 {
     "message": "Response Objects",
     "Equipment": {
-        "F3452 - 26": {
-            "id": "26",
+        "F3452 - 33": {
+            "id": "33",
             "equipment_name": "F3452",
             "company_id": "1",
             "active_status": "1",
@@ -996,7 +1032,7 @@ fetch(url, {
                 ],
                 "Equipments": [
                     {
-                        "id": "26",
+                        "id": "33",
                         "equipment_name": "F3452",
                         "company_id": "1",
                         "active_status": "1"
@@ -1004,8 +1040,8 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "26",
-                        "credit_status_name": "Good 80",
+                        "id": "33",
+                        "credit_status_name": "Good",
                         "company_id": "1",
                         "active_status": "1"
                     }
@@ -1039,25 +1075,25 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/equipment/26" \
+    "https://project.dsfellowship.com/api/v1/equipment/33" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"equipment_name":"F3453"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/equipment/26"
+    "https://project.dsfellowship.com/api/v1/equipment/33"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -1080,7 +1116,7 @@ fetch(url, {
 {
     "message": "Equipment Updated",
     "Equipment": {
-        "id": "26",
+        "id": "33",
         "equipment_name": "F3453",
         "company_id": "1",
         "active_status": "1"
@@ -1112,16 +1148,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/equipment/26?active_status=" \
+    "https://project.dsfellowship.com/api/v1/equipment/33?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/equipment/26"
+    "https://project.dsfellowship.com/api/v1/equipment/33"
 );
 
 let params = {
@@ -1134,7 +1170,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1177,16 +1213,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/customers/26/customer_addresses?include_disabled_objects=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
+    -G "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses?include_disabled_objects=&include_details=2&details_offset=0&details_limit=5&limit=10&offset=0" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/26/customer_addresses"
+    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses"
 );
 
 let params = {
@@ -1204,7 +1240,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1253,29 +1289,29 @@ Parameter | Status | Description
 
 ```bash
 curl -X POST \
-    "https://project.dsfellowship.com/api/v1/customers/26/customer_addresses" \
+    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"customer_id":26,"description":"Physical","city":"Portland","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"customer_id":33,"description":"Physical","city":"Portland","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/26/customer_addresses"
+    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
-    "customer_id": 26,
+    "customer_id": 33,
     "description": "Physical",
     "city": "Portland",
     "state": "OR",
@@ -1304,7 +1340,7 @@ fetch(url, {
 {
     "message": "Customer Address Created",
     "Customer_Address": {
-        "id": 19,
+        "id": 26,
         "description": "Physical",
         "name": "",
         "street1": "1234 NW Front St",
@@ -1353,16 +1389,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/customers/26?active_status=" \
+    "https://project.dsfellowship.com/api/v1/customers/33?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/26"
+    "https://project.dsfellowship.com/api/v1/customers/33"
 );
 
 let params = {
@@ -1375,7 +1411,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1418,16 +1454,16 @@ Parameter | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/credit_statuses/26?active_status=" \
+    "https://project.dsfellowship.com/api/v1/credit_statuses/36?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses/26"
+    "https://project.dsfellowship.com/api/v1/credit_statuses/36"
 );
 
 let params = {
@@ -1440,7 +1476,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1491,7 +1527,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -1514,7 +1550,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1556,6 +1592,14 @@ fetch(url, {
                             "id": "66",
                             "company_id": "1",
                             "role_name": "master",
+                            "active_status": "1"
+                        }
+                    ],
+                    "Credit_Statuses": [
+                        {
+                            "id": "33",
+                            "credit_status_name": "Good",
+                            "company_id": "1",
                             "active_status": "1"
                         }
                     ]
@@ -1608,8 +1652,8 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"user":"new_user","password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK","company_roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"52","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1"}]},"Users_Have_Roles":[{"id":"79","user_id":"57","role_id":"66","Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"1959","route_id":"25","role_id":"66","right_id":"1959","Routes":{"id":"25","name":"Create_Credit_Status","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1959","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1960","route_id":"21","role_id":"66","right_id":"1960","Routes":{"id":"21","name":"Create_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1960","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1961","route_id":"33","role_id":"66","right_id":"1961","Routes":{"id":"33","name":"Create_Customer_Address","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1961","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1962","route_id":"16","role_id":"66","right_id":"1962","Routes":{"id":"16","name":"Create_Employee","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1962","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1963","route_id":"29","role_id":"66","right_id":"1963","Routes":{"id":"29","name":"Create_Equipment","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1963","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}]}]}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"user":"new_user","password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK","company_roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"52","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1"}],"Credit_Statuses":[{"id":"33","credit_status_name":"Good","company_id":"1","active_status":"1"}]},"Users_Have_Roles":[{"id":"79","user_id":"57","role_id":"66","Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"1959","route_id":"25","role_id":"66","right_id":"1959","Routes":{"id":"25","name":"Create_Credit_Status","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1959","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1960","route_id":"21","role_id":"66","right_id":"1960","Routes":{"id":"21","name":"Create_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1960","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1961","route_id":"33","role_id":"66","right_id":"1961","Routes":{"id":"33","name":"Create_Customer_Address","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1961","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1962","route_id":"16","role_id":"66","right_id":"1962","Routes":{"id":"16","name":"Create_Employee","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1962","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1963","route_id":"29","role_id":"66","right_id":"1963","Routes":{"id":"29","name":"Create_Equipment","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1963","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}]}]}'
 
 ```
 
@@ -1622,7 +1666,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -1652,6 +1696,14 @@ let body = {
                         "id": "66",
                         "company_id": "1",
                         "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "33",
+                        "credit_status_name": "Good",
+                        "company_id": "1",
                         "active_status": "1"
                     }
                 ]
@@ -1821,7 +1873,7 @@ fetch(url, {
 {
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 63,
+        "id": 80,
         "username": "new_user",
         "company_id": 1,
         "project_name": "project2",
@@ -1861,7 +1913,7 @@ curl -X PUT \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"new_password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK","company_roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1"}]}'
 
 ```
@@ -1875,7 +1927,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -1906,7 +1958,7 @@ fetch(url, {
 {
     "message": "User successfully updated",
     "user": {
-        "id": "63",
+        "id": "80",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -1944,7 +1996,7 @@ curl -X DELETE \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -1962,7 +2014,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -1980,7 +2032,7 @@ fetch(url, {
 {
     "message": "User Successfully Deleted",
     "user": {
-        "id": "63",
+        "id": "80",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -2016,7 +2068,7 @@ curl -X GET \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
@@ -2039,7 +2091,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -2080,6 +2132,14 @@ fetch(url, {
                         "id": "66",
                         "company_id": "1",
                         "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "33",
+                        "credit_status_name": "Good",
+                        "company_id": "1",
                         "active_status": "1"
                     }
                 ]
@@ -2266,8 +2326,8 @@ curl -X POST \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eafb2ea3f184"}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb1ba77623df"}'
 
 ```
 
@@ -2280,7 +2340,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -2306,7 +2366,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5eafb2ea3f184"
+    "role_name": "5eb1ba77623df"
 }
 
 fetch(url, {
@@ -2325,9 +2385,9 @@ fetch(url, {
 {
     "message": "Company Role created",
     "company role": {
-        "id": "73",
+        "id": "90",
         "company_id": "1",
-        "role_name": "5eafb2ea3f184",
+        "role_name": "5eb1ba77623df",
         "active_status": "1"
     }
 }
@@ -2362,25 +2422,25 @@ is the complete modal you are expecting
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/roles/73" \
+    "https://project.dsfellowship.com/api/v1/roles/90" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eafb2eb71a08"}'
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb1ba78d61fb"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/73"
+    "https://project.dsfellowship.com/api/v1/roles/90"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -2406,7 +2466,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5eafb2eb71a08"
+    "role_name": "5eb1ba78d61fb"
 }
 
 fetch(url, {
@@ -2425,10 +2485,10 @@ fetch(url, {
 {
     "message": "Company Role Updated",
     "company role": {
-        "id": "73",
+        "id": "90",
         "company_id": "1",
-        "role_name": "5eafb2eb71a08",
-        "active_status": 1
+        "role_name": "5eb1ba78d61fb",
+        "active_status": "1"
     }
 }
 ```
@@ -2465,16 +2525,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/roles/73?active_status=" \
+    "https://project.dsfellowship.com/api/v1/roles/90?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/73"
+    "https://project.dsfellowship.com/api/v1/roles/90"
 );
 
 let params = {
@@ -2487,7 +2547,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -2646,22 +2706,50 @@ fetch(url, {
                         }
                     ]
                 }
+            ],
+            "Credit_Statuses": [
+                {
+                    "id": "33",
+                    "credit_status_name": "Good",
+                    "company_id": "1",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    }
+                }
             ]
         },
-        "documentation_company - 89": {
-            "id": "89",
-            "company_name": "documentation_company",
+        "Chris and Sons - 106": {
+            "id": "106",
+            "company_name": "Chris and Sons",
+            "active_status": "1"
+        },
+        "Chris and Sons1 - 107": {
+            "id": "107",
+            "company_name": "Chris and Sons1",
+            "active_status": "1"
+        },
+        "Chris and Sons2 - 108": {
+            "id": "108",
+            "company_name": "Chris and Sons2",
+            "active_status": "1"
+        },
+        "Chris and Sons3 - 109": {
+            "id": "109",
+            "company_name": "Chris and Sons3",
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "50",
-                    "company_id": "89",
+                    "id": "62",
+                    "company_id": "109",
                     "config_id": "1",
                     "config_value": "UTC",
                     "active_status": "1",
                     "Companies": {
-                        "id": "89",
-                        "company_name": "documentation_company",
+                        "id": "109",
+                        "company_name": "Chris and Sons3",
                         "active_status": "1"
                     },
                     "Configs": {
@@ -2672,14 +2760,14 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "49",
-                    "company_id": "89",
+                    "id": "61",
+                    "company_id": "109",
                     "config_id": "2",
                     "config_value": "300",
                     "active_status": "1",
                     "Companies": {
-                        "id": "89",
-                        "company_name": "documentation_company",
+                        "id": "109",
+                        "company_name": "Chris and Sons3",
                         "active_status": "1"
                     },
                     "Configs": {
@@ -2692,30 +2780,54 @@ fetch(url, {
             ],
             "Company_Roles": [
                 {
-                    "id": "64",
-                    "company_id": "89",
+                    "id": "76",
+                    "company_id": "109",
                     "role_name": "master",
                     "active_status": "1",
                     "Companies": {
-                        "id": "89",
-                        "company_name": "documentation_company",
+                        "id": "109",
+                        "company_name": "Chris and Sons3",
                         "active_status": "1"
                     },
                     "Users_Have_Roles": [
                         {
-                            "id": "77",
-                            "user_id": "56",
-                            "role_id": "64"
+                            "id": "90",
+                            "user_id": "66",
+                            "role_id": "76"
                         }
                     ],
                     "Routes_Have_Roles": [
                         {
-                            "id": "1899",
+                            "id": "2262",
                             "route_id": "25",
-                            "role_id": "64",
-                            "right_id": "1899"
+                            "role_id": "76",
+                            "right_id": "2262"
                         }
                     ]
+                }
+            ],
+            "Credit_Statuses": [
+                {
+                    "id": "27",
+                    "credit_status_name": "Good",
+                    "company_id": "109",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "109",
+                        "company_name": "Chris and Sons3",
+                        "active_status": "1"
+                    }
+                },
+                {
+                    "id": "28",
+                    "credit_status_name": "Good 90",
+                    "company_id": "109",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "109",
+                        "company_name": "Chris and Sons3",
+                        "active_status": "1"
+                    }
                 }
             ]
         }
@@ -2792,9 +2904,9 @@ fetch(url, {
 ```json
 {
     "message": "Company successfully created",
-    "master_password": "156i=xSwD+5zWH",
+    "master_password": "78RUh25eEhi=$+",
     "company": {
-        "id": 103,
+        "id": 116,
         "company_name": "documentation_company",
         "active_status": 1
     }
@@ -2818,7 +2930,7 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/companies/103?active_status=" \
+    "https://project.dsfellowship.com/api/v1/companies/116?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
@@ -2827,7 +2939,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/companies/103"
+    "https://project.dsfellowship.com/api/v1/companies/116"
 );
 
 let params = {
@@ -2917,9 +3029,9 @@ fetch(url, {
 {
     "variables": [],
     "info": {
-        "name": "Laravel API",
-        "_postman_id": "4d8b2889-c21f-4485-ad29-3bdf2c82cf23",
-        "description": "",
+        "name": "All Postman Endpoints",
+        "_postman_id": "e79528af-06ee-4fd8-8e97-ceb787172982",
+        "description": "Use this collection to test all the endpoints using postmans",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
     "item": [
@@ -3017,7 +3129,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3096,7 +3208,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3132,7 +3244,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3168,7 +3280,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3241,7 +3353,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3264,7 +3376,7 @@ fetch(url, {
                                 {
                                     "id": "credit_status",
                                     "key": "credit_status",
-                                    "value": "24",
+                                    "value": "35",
                                     "description": "{int}"
                                 }
                             ]
@@ -3285,7 +3397,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3321,12 +3433,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"customer_name\": \"Bob The Builder\",\n    \"credit_status\": 24,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
+                            "raw": "{\n    \"customer_name\": \"Bob The Builder\",\n    \"credit_status\": 35,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -3394,7 +3506,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3417,7 +3529,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -3438,12 +3550,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"customer_name\": \"Bob and Son The Builders\",\n    \"credit_status\": 24,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
+                            "raw": "{\n    \"customer_name\": \"Bob and Son The Builders\",\n    \"credit_status\": 35,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -3474,7 +3586,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3547,7 +3659,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3570,7 +3682,7 @@ fetch(url, {
                                 {
                                     "id": "equipment",
                                     "key": "equipment",
-                                    "value": "24",
+                                    "value": "32",
                                     "description": "{int}"
                                 }
                             ]
@@ -3591,7 +3703,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3621,7 +3733,7 @@ fetch(url, {
                                 {
                                     "id": "equipment",
                                     "key": "equipment",
-                                    "value": "24",
+                                    "value": "32",
                                     "description": "{int}"
                                 }
                             ]
@@ -3642,7 +3754,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3702,7 +3814,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -3723,7 +3835,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3746,7 +3858,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -3767,12 +3879,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"customer_id\": 24,\n    \"description\": \"Physical\",\n    \"city\": \"Portland\",\n    \"state\": \"OR\",\n    \"street1\": \"1234 NW Front St\",\n    \"street2\": \"Suite 203\",\n    \"zip\": \"97123\",\n    \"lat\": \"123.000001254\",\n    \"lng\": \"-312.45675\",\n    \"url\": \"\",\n    \"google_id\": \"\"\n}"
+                            "raw": "{\n    \"description\": \"Physical\",\n    \"city\": \"Portland\",\n    \"state\": \"OR\",\n    \"street1\": \"1234 NW Front St\",\n    \"street2\": \"Suite 203\",\n    \"zip\": \"97123\",\n    \"lat\": \"123.000001254\",\n    \"lng\": \"-312.45675\",\n    \"url\": \"\",\n    \"google_id\": \"\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -3797,7 +3909,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "24",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -3818,7 +3930,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3848,7 +3960,7 @@ fetch(url, {
                                 {
                                     "id": "credit_status",
                                     "key": "credit_status",
-                                    "value": "24",
+                                    "value": "35",
                                     "description": "{int}"
                                 }
                             ]
@@ -3869,7 +3981,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3948,7 +4060,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -3984,12 +4096,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"50\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Credit_Statuses\": [\n                    {\n                        \"id\": \"1\",\n                        \"credit_status_name\": \"Good 80\",\n                        \"company_id\": \"1\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"People_Belong_To_Company\": [\n                    {\n                        \"id\": \"1\",\n                        \"company_id\": \"1\",\n                        \"people_id\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"57\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"50\",\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1473\",\n                    \"route_id\": \"25\",\n                    \"role_id\": \"50\",\n                    \"right_id\": \"1473\",\n                    \"Routes\": {\n                        \"id\": \"25\",\n                        \"name\": \"Create_Credit_Status\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1473\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1474\",\n                    \"route_id\": \"21\",\n                    \"role_id\": \"50\",\n                    \"right_id\": \"1474\",\n                    \"Routes\": {\n                        \"id\": \"21\",\n                        \"name\": \"Create_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1474\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1475\",\n                    \"route_id\": \"33\",\n                    \"role_id\": \"50\",\n                    \"right_id\": \"1475\",\n                    \"Routes\": {\n                        \"id\": \"33\",\n                        \"name\": \"Create_Customer_Address\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1475\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1476\",\n                    \"route_id\": \"16\",\n                    \"role_id\": \"50\",\n                    \"right_id\": \"1476\",\n                    \"Routes\": {\n                        \"id\": \"16\",\n                        \"name\": \"Create_Employee\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1476\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1477\",\n                    \"route_id\": \"29\",\n                    \"role_id\": \"50\",\n                    \"right_id\": \"1477\",\n                    \"Routes\": {\n                        \"id\": \"29\",\n                        \"name\": \"Create_Equipment\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"50\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1477\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"66\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"52\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Credit_Statuses\": [\n                    {\n                        \"id\": \"33\",\n                        \"credit_status_name\": \"Good\",\n                        \"company_id\": \"1\",\n                        \"active_status\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"79\",\n                    \"user_id\": \"57\",\n                    \"role_id\": \"66\",\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1959\",\n                    \"route_id\": \"25\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1959\",\n                    \"Routes\": {\n                        \"id\": \"25\",\n                        \"name\": \"Create_Credit_Status\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1959\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1960\",\n                    \"route_id\": \"21\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1960\",\n                    \"Routes\": {\n                        \"id\": \"21\",\n                        \"name\": \"Create_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1960\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1961\",\n                    \"route_id\": \"33\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1961\",\n                    \"Routes\": {\n                        \"id\": \"33\",\n                        \"name\": \"Create_Customer_Address\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1961\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1962\",\n                    \"route_id\": \"16\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1962\",\n                    \"Routes\": {\n                        \"id\": \"16\",\n                        \"name\": \"Create_Employee\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1962\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1963\",\n                    \"route_id\": \"29\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1963\",\n                    \"Routes\": {\n                        \"id\": \"29\",\n                        \"name\": \"Create_Equipment\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1963\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
                         },
                         "description": "Create a user",
                         "response": []
@@ -4028,12 +4140,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"new_password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"50\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ]\n}"
+                            "raw": "{\n    \"new_password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"66\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ]\n}"
                         },
                         "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
                         "response": []
@@ -4079,7 +4191,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4152,7 +4264,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4188,12 +4300,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eafad4cbe396\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb1b9b99fb29\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
@@ -4211,7 +4323,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "61",
+                                    "value": "88",
                                     "description": "{int}"
                                 }
                             ]
@@ -4232,12 +4344,12 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eafad4e02bc9\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb1b9bb30a8b\"\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []
@@ -4262,7 +4374,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "61",
+                                    "value": "88",
                                     "description": "{int}"
                                 }
                             ]
@@ -4283,7 +4395,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4428,7 +4540,7 @@ fetch(url, {
                                 {
                                     "id": "company",
                                     "key": "company",
-                                    "value": "88",
+                                    "value": "115",
                                     "description": "{int}"
                                 }
                             ]
@@ -4448,8 +4560,8 @@ fetch(url, {
                                 "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
                             },
                             {
-                                "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "key": "secret-token",
+                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
                             }
                         ],
                         "body": {
@@ -4596,7 +4708,7 @@ fetch(url, {
                                 {
                                     "id": "people",
                                     "key": "people",
-                                    "value": "18",
+                                    "value": "27",
                                     "description": "{int}"
                                 }
                             ]
@@ -4617,7 +4729,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4647,7 +4759,7 @@ fetch(url, {
                                 {
                                     "id": "people",
                                     "key": "people",
-                                    "value": "18",
+                                    "value": "27",
                                     "description": "{int}"
                                 }
                             ]
@@ -4668,7 +4780,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4691,7 +4803,7 @@ fetch(url, {
                                 {
                                     "id": "address",
                                     "key": "address",
-                                    "value": "17",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -4712,7 +4824,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4742,7 +4854,7 @@ fetch(url, {
                                 {
                                     "id": "address",
                                     "key": "address",
-                                    "value": "17",
+                                    "value": "",
                                     "description": "{int}"
                                 }
                             ]
@@ -4763,7 +4875,7 @@ fetch(url, {
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "4FTE284FBp=3QxEIKNQS?Ckw4OnGA9YcmBOvu5h.Bzcjq"
+                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
                             }
                         ],
                         "body": {
@@ -4958,25 +5070,25 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/peoples/20" \
+    "https://project.dsfellowship.com/api/v1/peoples/28" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"first_name":"Bobby","last_name":"Grillman","title":"The Founder","description":"Amazing Biceps","email":"Bob@amazingbiceps.com"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/peoples/20"
+    "https://project.dsfellowship.com/api/v1/peoples/28"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -5003,7 +5115,7 @@ fetch(url, {
 {
     "message": "People Updated",
     "People": {
-        "id": "20",
+        "id": "28",
         "first_name": "Bobby",
         "last_name": "Grillman",
         "title": "The Founder",
@@ -5043,16 +5155,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/peoples/20?active_status=" \
+    "https://project.dsfellowship.com/api/v1/peoples/28?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/peoples/20"
+    "https://project.dsfellowship.com/api/v1/peoples/28"
 );
 
 let params = {
@@ -5065,7 +5177,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {
@@ -5108,25 +5220,25 @@ Parameter | Status | Description
 
 ```bash
 curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/addresses/19" \
+    "https://project.dsfellowship.com/api/v1/addresses/26" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+" \
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
     -d '{"description":"Physical","city":"Sand Iago","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/addresses/19"
+    "https://project.dsfellowship.com/api/v1/addresses/26"
 );
 
 let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 let body = {
@@ -5158,7 +5270,7 @@ fetch(url, {
 {
     "message": "Address Updated",
     "Address": {
-        "id": "19",
+        "id": "26",
         "description": "Physical",
         "name": "",
         "street1": "1234 NW Front St",
@@ -5208,16 +5320,16 @@ Parameter | Type | Status | Description
 
 ```bash
 curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/addresses/19?active_status=" \
+    "https://project.dsfellowship.com/api/v1/addresses/26?active_status=" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+"
+    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"
 ```
 
 ```javascript
 const url = new URL(
-    "https://project.dsfellowship.com/api/v1/addresses/19"
+    "https://project.dsfellowship.com/api/v1/addresses/26"
 );
 
 let params = {
@@ -5230,7 +5342,7 @@ let headers = {
     "Content-Type": "application/json",
     "Accept": "application/json",
     "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "sHPrejSEZPqjHnUmu856uo2uklI0UG4T?cX0VIOHj1GA+",
+    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
 };
 
 fetch(url, {

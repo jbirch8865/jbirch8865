@@ -302,7 +302,7 @@ class Add_Post_Data extends Strategy
             try
             {
                 $company = new \app\Helpers\Company;
-                $company->Load_Company_By_Name('documentation_company');
+                $company->Load_Company_By_Name('documentation_company',true);
                 $company->Delete_Company(false);
             } catch (\Active_Record\Active_Record_Object_Failed_To_Load $e){}
                 $array['company_name'] = [

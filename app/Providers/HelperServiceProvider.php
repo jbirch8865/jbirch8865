@@ -243,12 +243,20 @@ class HelperServiceProvider extends ServiceProvider
         app()->request->validate([
             $field_name => ['required','gt:0'],
         ]);
+        $column->Set_Field_Value(app()->request->input($field_name));
+        app()->request->validate([
+            $field_name => [new Does_This_Exist_In_Context($column)]
+        ]);
     }
     function Validate_Post_Int_Field($field_name,\DatabaseLink\Column $column) : void
     {
-        app()->request->validate([
-            $field_name => ['gt:0'],
-        ]);
+        if(app()->request->input($field_name,false))
+        {
+            $column->Set_Field_Value(app()->request->input($field_name));
+            app()->request->validate([
+                $field_name => [new Does_This_Exist_In_Context($column)]
+            ]);    
+        }
     }
 
     function Validate_Header_Field_Required(string $field_name,\DatabaseLink\Column $column) : void
