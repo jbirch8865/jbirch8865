@@ -77,6 +77,11 @@ class Add_URI_Parameters extends Strategy
         $array = [];
         global $documentation_role_id_to_delete;
         global $documentation_employee_id_to_delete;
+        global $documentation_customer_id_to_delete;
+        global $documentation_credit_status_id_to_delete;
+        global $documentation_equipment_id_to_delete;
+        global $documentation_customer_address_id_to_delete;
+        global $documentation_company_id_to_delete;
         if($route->named('Delete_User'))
         {
             $array['user'] = [
@@ -117,13 +122,53 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => 'default'
             ];
-        }elseif($route->named('Update_Employee') || $route->named('Delete_Employee'))
+        }elseif($route->named('Update_People') || $route->named('Delete_People'))
         {
-            $array['employee'] = [
+            $array['people'] = [
                 'type' => 'int',
                 'description' => '{int}',
                 'required' => true,
                 'value' => $documentation_employee_id_to_delete
+            ];
+        }elseif($route->named('Delete_Company'))
+        {
+            $array['company'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_company_id_to_delete
+            ];
+        }elseif($route->named('Update_Customer') || $route->named('Delete_Customer') || $route->named('List_Customer_Addresses') || $route->named('Create_Customer_Address'))
+        {
+            $array['customer'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_customer_id_to_delete
+            ];
+        }elseif($route->named('Update_Credit_Status') || $route->named('Delete_Credit_Status'))
+        {
+            $array['credit_status'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_credit_status_id_to_delete
+            ];
+        }elseif($route->named('Update_Equipment') || $route->named('Delete_Equipment'))
+        {
+            $array['equipment'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_equipment_id_to_delete
+            ];
+        }elseif($route->named('Update_Address') || $route->named('Delete_Address'))
+        {
+            $array['address'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_customer_address_id_to_delete
             ];
         }
         return $array;
@@ -134,15 +179,7 @@ class Add_Query_Data extends Strategy
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
     {
         $array = [];
-        if($method->name == 'index')
-        {
-            $array['include_disabled_objects'] = [
-                'type' => 'bool',
-                'description' => '{bool}',
-                'required' => true,
-                'value' => true
-            ];
-        }elseif($method->name == 'destroy')
+        if($method->name == 'destroy')
         {
             $array['active_status'] = [
                 'type' => 'bool',
@@ -153,6 +190,12 @@ class Add_Query_Data extends Strategy
         }
         if($method->name == 'index' && !$route->named('List_Routes'))
         {
+            $array['include_disabled_objects'] = [
+                'type' => 'bool',
+                'description' => '{bool}',
+                'required' => true,
+                'value' => true
+            ];
             $array['include_disabled_objects'] = [
                     'type' => 'bool',
                     'description' => '{bool}',
@@ -190,7 +233,6 @@ class Add_Query_Data extends Strategy
                     'value' => '0'
             ];
         }
-
         return $array;
     }
 }
@@ -201,6 +243,8 @@ class Add_Post_Data extends Strategy
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
     {
         $array = [];
+        global $documentation_credit_status_id_to_delete;
+        global $documentation_customer_id_to_delete;
         if($route->named('User_Signin'))
         {
             $toolbelt = new \Test_Tools\toolbelt;
@@ -304,11 +348,11 @@ class Add_Post_Data extends Strategy
            ];
         }elseif($route->named('Create_Employee'))
         {
-            $array['first_name'] = [
-                'type' => 'string',
-                'description' => '{string}',
-                'required' => true,
-                'value' => "Bob"
+           $array['first_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Bob"
            ];
            $array['last_name'] = [
             'type' => 'string',
@@ -335,24 +379,255 @@ class Add_Post_Data extends Strategy
             'value' => "Bob@amazingbiceps.com"
            ];
 
-        }elseif($route->named('Update_Employee'))
+        }elseif($route->named('Update_People'))
         {
+           $array['first_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Bobby"
+           ];
+           $array['last_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Grillman"
+           ];
            $array['title'] = [
             'type' => 'string',
             'description' => '{string}',
             'required' => false,
             'value' => "The Founder"
            ];
-        }
-        if($method->name == 'update' && !$route->named('Enable_Default_User'))
+           $array['description'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Amazing Biceps"
+           ];
+           $array['email'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Bob@amazingbiceps.com"
+           ];
+        }elseif($route->named('Create_Customer'))
         {
-            $array['active_status'] = [
-                    'type' => 'bool',
-                    'description' => '{string}',
-                    'required' => false,
-                    'value' => true
+           $array['customer_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Bob The Builder"
+           ];
+           $array['credit_status'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => $documentation_credit_status_id_to_delete
+           ];
+           $array['ccb'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => ""
+           ];
+           $array['website'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "www.amazingbiceps.com"
+           ];
+
+        }elseif($route->named('Update_Customer'))
+        {
+            $array['customer_name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "Bob and Son The Builders"
             ];
-        }
+            $array['credit_status'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => false,
+                'value' => $documentation_credit_status_id_to_delete
+            ];
+            $array['ccb'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => ""
+            ];
+            $array['website'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "www.amazingbiceps.com"
+            ];
+        }elseif($route->named('Create_Credit_Status'))
+        {
+           $array['name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Good"
+           ];
+        }elseif($route->named('Update_Credit_Status'))
+        {
+            $array['name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "Good 80"
+            ];
+        }elseif($route->named('Create_Equipment'))
+        {
+           $array['equipment_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "F3452"
+           ];
+        }elseif($route->named('Update_Equipment'))
+        {
+            $array['equipment_name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "F3453"
+            ];
+        }elseif($route->named('Create_Customer_Address'))
+        {
+           $array['customer_id'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => $documentation_customer_id_to_delete,
+           ];
+           $array['description'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Physical"
+           ];
+           $array['city'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Portland"
+           ];
+           $array['state'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "OR"
+           ];
+           $array['street1'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "1234 NW Front St"
+           ];
+           $array['street2'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "Suite 203"
+           ];
+           $array['zip'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => false,
+            'value' => "97123"
+           ];
+           $array['lat'] = [
+            'type' => 'string',
+            'description' => '{string} Latitude Coordinate',
+            'required' => false,
+            'value' => "123.000001254"
+           ];
+           $array['lng'] = [
+            'type' => 'string',
+            'description' => '{string} Longitude Coordinate',
+            'required' => false,
+            'value' => "-312.45675"
+           ];
+           $array['url'] = [
+            'type' => 'string',
+            'description' => '{string} a url you would like to link to this address.',
+            'required' => false,
+            'value' => ""
+           ];
+           $array['google_id'] = [
+            'type' => 'string',
+            'description' => '{string} if present supply the google location id for extra google features',
+            'required' => false,
+            'value' => ""
+           ];
+
+        }elseif($route->named('Update_Address'))
+        {
+            $array['description'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "Physical"
+               ];
+               $array['city'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "Sand Iago"
+               ];
+               $array['state'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "OR"
+               ];
+               $array['street1'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "1234 NW Front St"
+               ];
+               $array['street2'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "Suite 203"
+               ];
+               $array['zip'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => "97123"
+               ];
+               $array['lat'] = [
+                'type' => 'string',
+                'description' => '{string} Latitude Coordinate',
+                'required' => false,
+                'value' => "123.000001254"
+               ];
+               $array['lng'] = [
+                'type' => 'string',
+                'description' => '{string} Longitude Coordinate',
+                'required' => false,
+                'value' => "-312.45675"
+               ];
+               $array['url'] = [
+                'type' => 'string',
+                'description' => '{string} a url you would like to link to this address.',
+                'required' => false,
+                'value' => ""
+               ];
+               $array['google_id'] = [
+                'type' => 'string',
+                'description' => '{string} if present supply the google location id for extra google features',
+                'required' => false,
+                'value' => ""
+               ];
+            }
         return $array;
     }
 

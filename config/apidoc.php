@@ -58,12 +58,12 @@ return [
         /*
          * The name for the exported Postman collection. Default: config('app.name')." API"
          */
-        'name' => null,
+        'name' => 'All Postman Endpoints',
 
         /*
          * The description for the exported Postman collection.
          */
-        'description' => null,
+        'description' => "Use this collection to test all the endpoints using postmans",
 
         /*
          * The "Auth" section that should appear in the postman collection. See the schema docs for more information:
@@ -162,7 +162,7 @@ return [
                      */
                     'config' => [
                         'app.env' => 'documentation',
-                        'app.debug' => false,
+                        'app.debug' => true,
                         // 'service.key' => 'value',
                     ],
 

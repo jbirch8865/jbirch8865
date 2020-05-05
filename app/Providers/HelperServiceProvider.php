@@ -7,6 +7,7 @@ use app\Helpers\Company;
 use app\Helpers\Route;
 use app\Helpers\User;
 use app\Helpers\Program;
+use App\Rules\Does_This_Exist_In_Context;
 use Illuminate\Support\ServiceProvider;
 use app\Rules\Unique_User;
 use App\Rules\Validate_Unique_Value_In_Column;
@@ -45,7 +46,7 @@ class HelperServiceProvider extends ServiceProvider
         $this->toolbelt = new \Test_Tools\toolbelt;
         app()->bind('Company',function(){
             $company = new Company;
-            $this->Validate_Uri_Int_Parameter('company');
+            $this->Validate_Uri_Int_Parameter('company',$this->toolbelt->Get_Companies()->Get_Column('id'));
             try
             {
                 $company->Load_Object_By_ID(app()->request->company);
@@ -70,7 +71,7 @@ class HelperServiceProvider extends ServiceProvider
             }
         });
 
-        app()->bind('Program',function(){
+        app()->bind('Create_Program',function(){
             app()->request->validate([
                 'limit' => ['lte:100','gte:1'],
                 'details_limit' => ['lte:25','gte:1'],
@@ -78,7 +79,7 @@ class HelperServiceProvider extends ServiceProvider
                 'details_offset' => ['gte:0'],
                 'include_details' => ['gte:0','lte:5']
             ]);
-            $this->Validate_Header_Field_Required('client-id',$this->toolbelt->Programs->Get_Column('client_id'));
+            $this->Validate_Header_Field_Required('client-id',$this->toolbelt->Get_Programs()->Get_Column('client_id'));
             $program = new Program;
             try
             {
@@ -93,8 +94,8 @@ class HelperServiceProvider extends ServiceProvider
 
         app()->bind('Program_Session_Username',function(){
 
-            $this->Validate_Post_Field_Required('user',$this->toolbelt->Users->Get_Column('username'));
-            $this->Validate_Post_Field_Required('password',$this->toolbelt->Users->Get_Column('verified_hashed_password'));
+            $this->Validate_Post_Field_Required('user',$this->toolbelt->Get_Users(false)->Get_Column('username'));
+            $this->Validate_Post_Field_Required('password',$this->toolbelt->Get_Users(false)->Get_Column('verified_hashed_password'));
             $session = new Program_Session;
             try
             {
@@ -118,7 +119,7 @@ class HelperServiceProvider extends ServiceProvider
 
 
         app()->bind('Program_Session_Access_Token',function(){
-            $this->Validate_Header_Field_Required('User-Access-Token',$this->toolbelt->Programs_Have_Sessions->Get_Column('access_token'));
+            $this->Validate_Header_Field_Required('User-Access-Token',$this->toolbelt->Get_Programs_Have_Sessions()->Get_Column('access_token'));
             $session = new Program_Session;
             try
             {
@@ -154,8 +155,8 @@ class HelperServiceProvider extends ServiceProvider
 
         app()->bind('Get_Active_User', function(){
 
-            $this->Validate_Post_Field_Required('user',$this->toolbelt->Users->Get_Column('username'));
-            $this->Validate_Post_Field_Required('password',$this->toolbelt->Users->Get_Column('verified_hashed_password'));
+            $this->Validate_Post_Field_Required('user',$this->toolbelt->Get_Users()->Get_Column('username'));
+            $this->Validate_Post_Field_Required('password',$this->toolbelt->Get_Users()->Get_Column('verified_hashed_password'));
             try
             {
                 return new User(app()->request->input('user'),app()->request->input('password'),$this->toolbelt->Get_Company());
@@ -175,8 +176,8 @@ class HelperServiceProvider extends ServiceProvider
         });
 
         app()->bind('Get_Any_User', function(){
-            $this->Validate_Post_Field_Required('user',$this->toolbelt->Users->Get_Column('username'));
-            $this->Validate_Post_Field_Required('password',$this->toolbelt->Users->Get_Column('verified_hashed_password'));
+            $this->Validate_Post_Field_Required('user',$this->toolbelt->Get_Users()->Get_Column('username'));
+            $this->Validate_Post_Field_Required('password',$this->toolbelt->Get_Users()->Get_Column('verified_hashed_password'));
             try
             {
                 return new User(app()->request->input('user'),app()->request->input('password'),$this->toolbelt->Get_Company(),false,false);
@@ -192,22 +193,22 @@ class HelperServiceProvider extends ServiceProvider
         });
 
         app()->bind('Create_User', function(){
-            $this->Validate_Post_Field_Required('user',$this->toolbelt->Users->Get_Column('username'));
-            $this->Validate_Post_Field_Required('password',$this->toolbelt->Users->Get_Column('verified_hashed_password'));
+            $this->Validate_Post_Field_Required('user',$this->toolbelt->Get_Users()->Get_Column('username'));
+            $this->Validate_Post_Field_Required('password',$this->toolbelt->Get_Users()->Get_Column('verified_hashed_password'));
             $columns = [];
-            $this->toolbelt->Users->Get_Column('company_id')->Set_Field_Value($this->toolbelt->Get_Company()->Get_Verified_ID());
-            $this->toolbelt->Users->Get_Column('project_name')->Set_Field_Value($this->toolbelt->cConfigs->Get_Name_Of_Project());
-            $columns[] = $this->toolbelt->Users->Get_Column('company_id');
-            $columns[] = $this->toolbelt->Users->Get_Column('project_name');
+            $this->toolbelt->Get_Users()->Get_Column('company_id')->Set_Field_Value($this->toolbelt->Get_Company()->Get_Verified_ID());
+            $this->toolbelt->Get_Users()->Get_Column('project_name')->Set_Field_Value($this->toolbelt->cConfigs->Get_Name_Of_Project());
+            $columns[] = $this->toolbelt->Get_Users()->Get_Column('company_id');
+            $columns[] = $this->toolbelt->Get_Users()->Get_Column('project_name');
             app()->request->validate([
-                'user' => [new Validate_Unique_Value_In_Columns($columns,$this->toolbelt->Users->Get_Column('username'))],
+                'user' => [new Validate_Unique_Value_In_Columns($columns,$this->toolbelt->Get_Users()->Get_Column('username'))],
                 ]);
             $user = new User(app()->request->input('user'),app()->request->input('password'),$this->toolbelt->Get_Company(),true);
             return $user;
         });
 
         app()->bind('Update_User', function(){
-            $this->Validate_Uri_String_Parameter('user',$this->toolbelt->Users->Get_Column('username'));
+            $this->Validate_Uri_String_Parameter('user',$this->toolbelt->Get_Users()->Get_Column('username'));
             try
             {
                 $user = new User(app()->request->user,'skip_check',$this->toolbelt->Get_Company(),false,false);
@@ -237,6 +238,19 @@ class HelperServiceProvider extends ServiceProvider
         ]);
     }
 
+    function Validate_Post_Int_Field_Required($field_name,\DatabaseLink\Column $column) : void
+    {
+        app()->request->validate([
+            $field_name => ['required','gt:0'],
+        ]);
+    }
+    function Validate_Post_Int_Field($field_name,\DatabaseLink\Column $column) : void
+    {
+        app()->request->validate([
+            $field_name => ['gt:0'],
+        ]);
+    }
+
     function Validate_Header_Field_Required(string $field_name,\DatabaseLink\Column $column) : void
     {
         $header_name = $field_name;
@@ -251,7 +265,7 @@ class HelperServiceProvider extends ServiceProvider
             exit();
         }
     }
-    function Validate_Uri_Int_Parameter($param) :void
+    function Validate_Uri_Int_Parameter($param,\DatabaseLink\Column $column) :void
     {
         if(!isset(app()->request->$param))
         {
@@ -266,29 +280,26 @@ class HelperServiceProvider extends ServiceProvider
             Response_400(['message' => $param.'parameter is malformed.'],app()->request)->send();
             exit();
         }
+        $column->Set_Field_Value(app()->request->$param);
+        app()->request->validate([$param => [new Does_This_Exist_In_Context($column)]]);
     }
     function Validate_Uri_String_Parameter($param,\DatabaseLink\Column $column) :void
     {
-        $value = $column->table_dblink->database_dblink->dblink->Escape_String(app()->request->$param);
         if(!isset(app()->request->$param))
         {
             Response_400(['message' => $param.' is required in the url.'],app()->request)->send();
             exit();
         }elseif(!is_string(app()->request->$param))
         {
-            Response_400(['message' => $param.'parameter must be an integer.'],app()->request)->send();
+            Response_400(['message' => $param.'parameter must be an string.'],app()->request)->send();
             exit();
         }elseif($column->Get_Data_Length() < strlen(app()->request->$param))
         {
             Response_400(['message' => $param.'parameter is malformed.'],app()->request)->send();
             exit();
-        }elseif(
-            !$column->table_dblink->database_dblink->dblink->Does_This_Return_A_Count_Of_More_Than_Zero(
-                $column->table_dblink->Get_Table_Name(),
-                $column->Get_Column_Name()." = '".$value."'",'understood'))
-        {
-            Response_400(['message' => $param.' '.$value.' does not exist.'],app()->request)->send();
         }
+        $column->Set_Field_Value(app()->request->$param);
+        app()->request->validate([$param => [new Does_This_Exist_In_Context($column)]]);
     }
 
 }

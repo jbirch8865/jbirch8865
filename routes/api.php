@@ -12,19 +12,13 @@ Route::group(['prefix' => 'v1'],function(){
 
 
     Route::resource('users', 'UsersController',[
-        'only' => ['index','store','update'],
+        'only' => ['index','store','update','destroy'],
         'names' => [
             'index' => 'List_Users',
             'store' => 'Create_User',
-            'update' => 'Update_User']
+            'update' => 'Update_User',
+            'destroy' => 'Delete_User']
         ])->middleware('company_access_token');
-
-
-    Route::resource('users', 'UsersController',[
-            'only' => ['destroy'],
-            'names' => [
-                'destroy' => 'Delete_User']
-            ])->middleware('company_access_token');
 
 
     Route::resource('roles', 'CompanyRole',[
@@ -39,37 +33,110 @@ Route::group(['prefix' => 'v1'],function(){
 
 
     Route::resource('employees', 'EmployeesController',[
+        'only' => ['store','index'],
+        'names' => [
+            'store' => 'Create_Employee',
+            'index' => 'List_Employees']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('peoples', 'PeopleController',[
+        'only' => ['update','destroy'],
+        'names' => [
+            'update' => 'Update_People',
+            'destroy' => 'Delete_People']
+        ])->middleware(['company_access_token']);
+
+
+
+    Route::resource('credit_statuses', 'CreditStatusController',[
         'only' => ['store'],
         'names' => [
-            'store' => 'Create_Employee']
-        ])->middleware(['company_access_token','object_validate_relations']);
+            'store' => 'Create_Credit_Status']
+        ])->middleware(['company_access_token']);
 
 
-    Route::resource('employees', 'EmployeesController',[
+    Route::resource('credit_statuses', 'CreditStatusController',[
+        'only' => ['index','update'],
+        'names' => [
+            'index' => 'List_Credit_Statuses',
+            'update' => 'Update_Credit_Status']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('customers', 'CustomersController',[
+        'only' => ['store'],
+        'names' => [
+            'store' => 'Create_Customer']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('customers', 'CustomersController',[
+        'only' => ['index','update'],
+        'names' => [
+            'index' => 'List_Customers',
+            'update' => 'Update_Customer']
+        ])->middleware(['company_access_token']);
+
+    Route::resource('equipment', 'EquipmentController',[
+        'only' => ['store'],
+        'names' => [
+            'store' => 'Create_Equipment']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('equipment', 'EquipmentController',[
         'only' => ['index','update','destroy'],
         'names' => [
-            'index' => 'List_Employees',
-            'update' => 'Update_Employee',
-            'destroy' => 'Delete_Employee']
-        ])->middleware(['company_access_token','object_validate_relations']);
+            'index' => 'List_Equipment',
+            'update' => 'Update_Equipment',
+            'destroy' => 'Delete_Equipment']
+        ])->middleware(['company_access_token']);
 
+    Route::resource('/customers/{customer}/customer_addresses', 'CustomerAddressController',[
+        'only' => ['store','index'],
+        'names' => [
+            'index' => 'List_Customer_Addresses',
+            'store' => 'Create_Customer_Address']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('addresses', 'AddressController',[
+        'only' => ['update','destroy'],
+        'names' => [
+            'update' => 'Update_Address',
+            'destroy' => 'Delete_Address']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('customers', 'CustomersController',[
+        'only' => ['destroy'],
+        'names' => [
+            'destroy' => 'Delete_Customer']
+        ])->middleware(['company_access_token']);
+
+    Route::resource('credit_statuses', 'CreditStatusController',[
+        'only' => ['destroy'],
+        'names' => [
+            'destroy' => 'Delete_Credit_Status']
+        ])->middleware(['company_access_token']);
 
     Route::resource('/companies', 'CompanyController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Companies']
-    ]);
+        ]);
 
 
-    Route::resource('/company', 'CompanyController',[
+    Route::resource('/companies', 'CompanyController',[
         'only' => ['store'],
         'names' => ['store' => 'Create_Company']
-    ]);
+        ]);
 
 
     Route::resource('/routes', 'RouteController',[
         'only' => ['index'],
         'names' => ['index' => 'List_Routes']
-    ]);
+        ]);
 
 
     Route::resource('/{company}/default_user', 'UserController',[
@@ -77,8 +144,11 @@ Route::group(['prefix' => 'v1'],function(){
         'names' => ['update' => 'Enable_Default_User']
     ])->middleware('company');
 
-
-    Route::resource('{company}/signin', 'SigninController',[
+    Route::resource('companies', 'CompanyController',[
+        'only' => ['destroy'],
+        'names' => ['destroy' => 'Delete_Company']
+    ]);
+    Route::resource('companies/{company}/signin', 'SigninController',[
         'only' => ['destroy'],
         'names' => ['destroy' => 'User_Signout']
     ])->middleware('company');

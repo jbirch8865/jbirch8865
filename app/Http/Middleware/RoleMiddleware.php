@@ -37,7 +37,7 @@ class RoleMiddleware
             {
                 return Response_422(['message' => 'The secret-token header is required.'],$request);
             }
-            if(strlen($request->header('secret-token')) > $toolbelt->Programs->Get_Column('secret')->Get_Data_Length())
+            if(strlen($request->header('secret-token')) > $toolbelt->Get_Programs()->Get_Column('secret')->Get_Data_Length())
             {
                 return Response_422(['message' => 'secret-token is malformed.'],$request);
             }

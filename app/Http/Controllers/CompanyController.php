@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use app\Facades\Companies;
+use app\Helpers\Company;
 use app\Helpers\User;
 use app\Helpers\User_Role;
+use App\Providers\HelperServiceProvider;
 use App\Rules\Validate_Unique_Value_In_Column;
 use App\Rules\Validate_Value_Exists_In_Column;
 
@@ -16,9 +18,10 @@ use App\Rules\Validate_Value_Exists_In_Column;
 class CompanyController extends Controller
 {
     private \Test_Tools\toolbelt $toolbelt;
-
+    private HelperServiceProvider $helperprovider;
     function __construct()
     {
+        $this->helperprovider = new HelperServiceProvider(app());
         $this->toolbelt = new \Test_Tools\toolbelt;
     }
     /**
@@ -35,7 +38,7 @@ class CompanyController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->toolbelt->Companies->Get_All_Objects('Company',$request);
+        return $this->toolbelt->Get_Companies()->Get_All_Objects('Company',$request);
     }
 
     /**
@@ -49,10 +52,12 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'company_name' => ['required','max:'.$this->toolbelt->Companies->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->Companies->Get_Column('company_name'))]
+            'company_name' => ['required','max:'.$this->toolbelt->Get_Companies()->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->Get_Companies()->Get_Column('company_name'))]
         ]);
         $company = new \app\Helpers\Company;
         $company->Set_Company_Name($request->input('company_name'));
+        global $documentation_company_id_to_delete;
+        $documentation_company_id_to_delete = $company->Get_Verified_ID();
         $password = Generate_CSPRNG(14);
         $user = new \app\Helpers\User('default',$password,$company,true);
         $user_role = new \app\Helpers\User_Role;
@@ -63,6 +68,25 @@ class CompanyController extends Controller
             'master_password' => $password,
             'company' => $company->Get_API_Response_Collection()
         ],$request);
+    }
+
+    /**
+     * {DELETE} {company}/companies/v1/api
+     */
+    public function destroy($id)
+    {
+        $this->helperprovider->Validate_Uri_Int_Parameter('company',$this->toolbelt->Get_Companies()->Get_Column('id'));
+        $company = new Company;
+        $company->Load_Object_By_ID(app()->request->company);
+        $company->Delete_Active_Record();
+        if(app()->request->input('active_status'))
+        {
+            return Response_201(['message' => 'Company Disabled',
+            'Company' => $company->Get_API_Response_Collection()],app()->request);
+        }else
+        {
+            return Response_201(['message' => 'Company Deleted'],app()->request);
+        }
     }
 
 }

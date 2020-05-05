@@ -43,13 +43,13 @@ class SigninController extends Controller
         {
             return Response_422(['message' => 'This user doesn\'t appear to belong to the user-access-token'],app()->request);
         }
-        $this->toolbelt->Users->LimitBy($this->toolbelt->Users->Get_Column('company_id')->Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
-        $this->toolbelt->Users->AndLimitBy($this->toolbelt->Users->Get_Column('username')->Equals($username));
-        $this->toolbelt->Users->Query_Table(['id']);
-        $user_id = $this->toolbelt->Users->Get_Queried_Data();
+        $this->toolbelt->Get_Users()->LimitBy($this->toolbelt->Get_Users()->Get_Column('company_id')->Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
+        $this->toolbelt->Get_Users()->AndLimitBy($this->toolbelt->Get_Users()->Get_Column('username')->Equals($username));
+        $this->toolbelt->Get_Users()->Query_Table(['id']);
+        $user_id = $this->toolbelt->Get_Users()->Get_Queried_Data();
         $user_id = $user_id['id'];
-        $this->toolbelt->Programs_Have_Sessions->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
-        $access_token = $this->toolbelt->Programs_Have_Sessions->Get_Queried_Data();
+        $this->toolbelt->Get_Programs_Have_Sessions()->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
+        $access_token = $this->toolbelt->Get_Programs_Have_Sessions()->Get_Queried_Data();
         $access_token = $access_token['access_token'];
         $program_session = new \app\Helpers\Program_Session;
         $program_session->Load_Session_By_Access_Token($access_token);

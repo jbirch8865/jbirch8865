@@ -23,7 +23,7 @@ class RouteController extends Controller
     {
         return Response_200([
             'message' => 'List of Current Routes',
-            'Routes' => $this->toolbelt->Routes->Get_All_Objects('Route',app()->request)
+            'Routes' => $this->toolbelt->Get_Routes()->Get_All_Objects('Route',app()->request)
         ],app()->request);
     }
 }

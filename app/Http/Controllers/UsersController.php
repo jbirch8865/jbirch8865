@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use app\Facades\Users;
+use app\Helpers\User;
 use App\Rules\Validate_Active_Status_True;
 use App\Rules\Validate_Object_With_ID;
 use App\Rules\Validate_Value_Exists_In_Column;
@@ -27,12 +28,10 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         $company = $this->toolbelt->Get_Company();
-        $this->toolbelt->Users->LimitBy($this->toolbelt->Users->Get_Column('company_id')->
-        Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
-        $this->toolbelt->Users->Query_Table(['username']);
+        $this->toolbelt->Get_Users()->Query_Table(['username'],true);
         $users = array();
         $count = 0;
-        While($row = $this->toolbelt->Users->Get_Queried_Data())
+        While($row = $this->toolbelt->Get_Users()->Get_Queried_Data())
         {
             $user = new \app\Helpers\User($row['username'],'skip_check',$company,false,$request->input('include_disabled',false));
             $users[$row['username']] = $user->Get_API_Response_Collection();
@@ -51,7 +50,7 @@ class UsersController extends Controller
     {
         $request->validate([
             'company_roles' => ['required','array'],
-            'company_roles.*.id' => ['int','required',new Validate_Value_Exists_In_Column($this->toolbelt->Company_Roles->Get_Column('id'))]
+            'company_roles.*.id' => ['int','required',new Validate_Value_Exists_In_Column($this->toolbelt->Get_Company_Roles()->Get_Column('id'))]
         ]);
         if($request->user == 'default')
         {
@@ -84,10 +83,9 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         app()->request->validate([
-            'new_password' => ['Max:'.$this->toolbelt->Users->Get_Column('verified_hashed_password')->Get_Data_Length()],
+            'new_password' => ['Max:'.$this->toolbelt->Get_Users()->Get_Column('verified_hashed_password')->Get_Data_Length()],
             'company_roles' => ['Required','Array'],
-            'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->Company_Roles->Get_Column('id'))],
-            'active_status' => ['Required','Boolean',new Validate_Active_Status_True]
+            'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->Get_Company_Roles()->Get_Column('id'))]
         ]);
         $user = $this->toolbelt->Get_User(3);
         $user->Change_Password($request->input('new_password'));

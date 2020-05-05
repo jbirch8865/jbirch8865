@@ -18,8 +18,8 @@ class Kernel extends HttpKernel
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
+//        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\TrimStrings::class,
-        \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
     /**
@@ -39,7 +39,7 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            'throttle:60,1',
+            'throttle:100,1',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \App\Http\Middleware\ProgramMiddleware::class,
             \App\Http\Middleware\RoleMiddleware::class
@@ -66,7 +66,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'company' => \App\Http\Middleware\Company::class,
         'company_access_token' => \App\Http\Middleware\company_access_token::class,
-        'object_validate_relations' => \App\Http\Middleware\Object_Validate_Relations::class,
 ];
 
 }
