@@ -54,6 +54,19 @@ class Add_Client_ID_Header extends Strategy
 
 }
 
+class Add_Content_Type_Header extends Strategy
+{
+    public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
+    {
+        $array = [];
+        if (strtolower($method->name) == 'put' || strtolower($method->name) == 'patch' || strtolower($method->name) == 'post') {
+            $array['Content-Type'] = 'application/json';
+        }
+        return $array;
+    }
+
+}
+
 class Add_Access_Token extends Strategy
 {
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])

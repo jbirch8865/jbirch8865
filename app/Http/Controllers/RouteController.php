@@ -15,6 +15,7 @@ class RouteController extends Controller
     }
     /**
      * {GET} routes/v1/api
+     *
      * See all the endpoints and if their explicit rights
      *
      * @return \Illuminate\Http\Response

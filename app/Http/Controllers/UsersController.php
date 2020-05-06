@@ -9,6 +9,7 @@ use App\Rules\Validate_Value_Exists_In_Column;
 use Illuminate\Http\Request;
 /**
  * @group Company
+ *
  * Basic CRUD operations for Companies, Company Configs and Users
  */
 class UsersController extends Controller
@@ -22,6 +23,7 @@ class UsersController extends Controller
 
     /**
      * {GET} users/v1/api
+     *
      * Return a list of users belonging to the company
      *
      */
@@ -72,6 +74,7 @@ class UsersController extends Controller
 
     /**
      * {PUT} {user}/users/v1/api
+     *
      * Currently this endpoint is only able to change a password and re-enable a disabled user
      * Please note that the User-Access-Token does not have to be the access token for the username
      * you are changing the password for.  It just needs to be a user that has rights to this endpoint.
@@ -108,7 +111,7 @@ class UsersController extends Controller
     {
         $user = $this->toolbelt->Get_User(3);
         $user->Delete_Active_Record();
-        return Response_201(['message' => 'User Successfully Deleted',
+        return Response_201(['message' => 'User Successfully Deleted/Disabled',
         'user' => $user->Get_API_Response_Collection()],$request);
 
     }

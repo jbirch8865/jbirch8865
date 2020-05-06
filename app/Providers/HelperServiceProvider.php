@@ -238,14 +238,14 @@ class HelperServiceProvider extends ServiceProvider
         ]);
     }
 
-    function Validate_Post_Int_Field_Required($field_name,\DatabaseLink\Column $column) : void
+    function Validate_Post_Int_Field_Required($field_name,\DatabaseLink\Column $column,bool $include_inactive = false) : void
     {
         app()->request->validate([
             $field_name => ['required','gt:0'],
         ]);
         $column->Set_Field_Value(app()->request->input($field_name));
         app()->request->validate([
-            $field_name => [new Does_This_Exist_In_Context($column)]
+            $field_name => [new Does_This_Exist_In_Context($column,$include_inactive)]
         ]);
     }
     function Validate_Post_Int_Field($field_name,\DatabaseLink\Column $column) : void
@@ -255,7 +255,7 @@ class HelperServiceProvider extends ServiceProvider
             $column->Set_Field_Value(app()->request->input($field_name));
             app()->request->validate([
                 $field_name => [new Does_This_Exist_In_Context($column)]
-            ]);    
+            ]);
         }
     }
 
@@ -281,11 +281,11 @@ class HelperServiceProvider extends ServiceProvider
             exit();
         }elseif(!is_numeric(app()->request->$param))
         {
-            Response_400(['message' => $param.'parameter must be an integer.'],app()->request)->send();
+            Response_400(['message' => $param.' parameter must be an integer.'],app()->request)->send();
             exit();
         }elseif(app()->request->$param <= 0)
         {
-            Response_400(['message' => $param.'parameter is malformed.'],app()->request)->send();
+            Response_400(['message' => $param.' parameter is malformed.'],app()->request)->send();
             exit();
         }
         $column->Set_Field_Value(app()->request->$param);
@@ -299,11 +299,11 @@ class HelperServiceProvider extends ServiceProvider
             exit();
         }elseif(!is_string(app()->request->$param))
         {
-            Response_400(['message' => $param.'parameter must be an string.'],app()->request)->send();
+            Response_400(['message' => $param.' parameter must be an string.'],app()->request)->send();
             exit();
         }elseif($column->Get_Data_Length() < strlen(app()->request->$param))
         {
-            Response_400(['message' => $param.'parameter is malformed.'],app()->request)->send();
+            Response_400(['message' => $param.' parameter is malformed.'],app()->request)->send();
             exit();
         }
         $column->Set_Field_Value(app()->request->$param);

@@ -26,6 +26,7 @@ class CompanyController extends Controller
     }
     /**
      * {GET} companies/v1/api
+     *
      * List all companies
      *
      * @queryParam include_disabled if set will only return active companies Example: true

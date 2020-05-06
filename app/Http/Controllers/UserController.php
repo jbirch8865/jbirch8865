@@ -27,6 +27,7 @@ class UserController extends Controller
     /**
      * @group Tools
      * {PUT} default_user/{company}/v1/api
+     *
      * This endpoint is exclusively to re-enable the default user specified
      * it should be used when for some reason ALL users in a company are locked out
      * or at least one person doesn't have all rights.
