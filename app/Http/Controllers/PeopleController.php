@@ -49,7 +49,7 @@ class PeopleController extends Controller
     }
 
     /**
-     * {DELETE} {employee}/employees/v1/api
+     * {DELETE} {people}/peoples/v1/api
      */
     public function destroy($id)
     {

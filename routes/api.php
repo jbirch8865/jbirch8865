@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Test_Tools\toolbelt;
 
 Route::group(['prefix' => 'v1'],function(){
 
@@ -21,7 +22,7 @@ Route::group(['prefix' => 'v1'],function(){
         ])->middleware('company_access_token');
 
 
-    Route::resource('roles', 'CompanyRole',[
+    Route::resource('company_roles', 'CompanyRole',[
         'only' => ['index','store','update','destroy'],
         'names' => [
             'index' => 'List_Roles',
@@ -49,14 +50,14 @@ Route::group(['prefix' => 'v1'],function(){
 
 
 
-    Route::resource('credit_statuses', 'CreditStatusController',[
+    Route::resource('creditstatuses', 'CreditStatusController',[
         'only' => ['store'],
         'names' => [
             'store' => 'Create_Credit_Status']
         ])->middleware(['company_access_token']);
 
 
-    Route::resource('credit_statuses', 'CreditStatusController',[
+    Route::resource('creditstatuses', 'CreditStatusController',[
         'only' => ['index','update'],
         'names' => [
             'index' => 'List_Credit_Statuses',
@@ -93,7 +94,7 @@ Route::group(['prefix' => 'v1'],function(){
             'destroy' => 'Delete_Equipment']
         ])->middleware(['company_access_token']);
 
-    Route::resource('/customers/{customer}/customer_addresses', 'CustomerAddressController',[
+    Route::resource('/customers/{customer}/customeraddresses', 'CustomerAddressController',[
         'only' => ['store','index'],
         'names' => [
             'index' => 'List_Customer_Addresses',
@@ -108,6 +109,23 @@ Route::group(['prefix' => 'v1'],function(){
             'destroy' => 'Delete_Address']
         ])->middleware(['company_access_token']);
 
+    require_once 'TagControllerRoutes.php';
+
+    Route::resource('/customers/{customer}/phonenumbers', 'CustomerPhoneNumberController',[
+        'only' => ['store','index'],
+        'names' => [
+            'index' => 'List_Customer_Phone_Numbers',
+            'store' => 'Create_Customer_Phone_Number']
+        ])->middleware(['company_access_token']);
+
+
+    Route::resource('phonenumbers', 'PhoneNumberController',[
+        'only' => ['update','destroy'],
+        'names' => [
+            'update' => 'Update_Phone_Number',
+            'destroy' => 'Delete_Phone_Number']
+        ])->middleware(['company_access_token']);
+
 
     Route::resource('customers', 'CustomersController',[
         'only' => ['destroy'],
@@ -115,7 +133,7 @@ Route::group(['prefix' => 'v1'],function(){
             'destroy' => 'Delete_Customer']
         ])->middleware(['company_access_token']);
 
-    Route::resource('credit_statuses', 'CreditStatusController',[
+    Route::resource('creditstatuses', 'CreditStatusController',[
         'only' => ['destroy'],
         'names' => [
             'destroy' => 'Delete_Credit_Status']
@@ -139,7 +157,7 @@ Route::group(['prefix' => 'v1'],function(){
         ]);
 
 
-    Route::resource('/{company}/default_user', 'UserController',[
+    Route::resource('/{company}/defaultuser', 'UserController',[
         'only' => ['update'],
         'names' => ['update' => 'Enable_Default_User']
     ])->middleware('company');
@@ -153,7 +171,12 @@ Route::group(['prefix' => 'v1'],function(){
         'names' => ['destroy' => 'User_Signout']
     ])->middleware('company');
 });
-
+Route::post('v1/twiliotokens', function () {
+    $twilio = new \sms\twilio;
+    app()->request->validate(['token' => ['required','string','lt:35']]);
+    $twilio->Set_Token(app()->request->input('token'));
+    return Response_201(['message' => 'Token successfully updated.'],app()->request);
+});
 Route::get('{any}', function ($any = null) {
     return response()->json([
         'message' => 'Not a valid endpoint'

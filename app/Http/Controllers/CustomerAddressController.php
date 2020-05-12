@@ -28,21 +28,21 @@ class CustomerAddressController extends Controller
      */
     public function store(Request $request)
     {
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Description(app()->request->input('description'),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_City(app()->request->input('city'),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_State(app()->request->input('state'),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Name(app()->request->input('name',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Street1(app()->request->input('street1',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Street2(app()->request->input('street2',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Zip(app()->request->input('zip',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Lat(app()->request->input('lat',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_Lng(app()->request->input('lng',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Address_URL(app()->request->input('url',''),false);
-        $this->toolbelt->Get_Customer_Address(2)->Set_Google_ID(app()->request->input('google_id',''));
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Description(app()->request->input('description'),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_City(app()->request->input('city'),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_State(app()->request->input('state'),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Name(app()->request->input('name',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Street1(app()->request->input('street1',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Street2(app()->request->input('street2',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Zip(app()->request->input('zip',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Lat(app()->request->input('lat',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_Lng(app()->request->input('lng',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Address_URL(app()->request->input('url',''),false);
+        $this->toolbelt->Get_Customer_Address()->Set_Google_ID(app()->request->input('google_id',''));
         global $documentation_customer_address_id_to_delete;
-        $documentation_customer_address_id_to_delete = $this->toolbelt->Get_Customer_Address(2)->Get_Verified_ID();
+        $documentation_customer_address_id_to_delete = $this->toolbelt->Get_Customer_Address()->Get_Verified_ID();
         return Response_201(['message' => 'Customer Address Created',
-        'Customer_Address' => $this->toolbelt->Get_Customer_Address(2)->Get_API_Response_Collection()],$request);
+        'Customer_Address' => $this->toolbelt->Get_Customer_Address()->Get_API_Response_Collection()],$request);
     }
 
 }

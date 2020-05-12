@@ -77,9 +77,10 @@ class AddressController extends Controller
         if(app()->request->input('active_status'))
         {
             return Response_201(['message' => 'Address Disabled',
-            'Address' => $this->toolbelt->Get_Address(3)->Get_API_Response_Collection()],app()->request);
+            'Address' => $this->toolbelt->Get_Address(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
             return Response_201(['message' => 'Address Deleted'],app()->request);
         }
-    }}
+    }
+}

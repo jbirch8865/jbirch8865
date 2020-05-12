@@ -2,15 +2,17 @@
 
 namespace App\Providers;
 
+use app\Helpers\Company_Role;
 use app\Helpers\Credit_Status;
 use app\Helpers\Customer;
 use app\Helpers\Employee;
 use app\Helpers\Equipment;
-use App\Rules\Validate_Unique_Value_In_Columns;
-use App\Rules\Validate_Value_Exists_In_Column;
 use Illuminate\Support\ServiceProvider;
 use \app\Helpers\People;
-use App\Rules\Does_This_Exist_In_Context;
+use app\Helpers\Tag;
+use app\Helpers\Tags_Have_Role;
+use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Str;
 
 class CompanyServiceProvider extends ServiceProvider
 {
@@ -24,8 +26,6 @@ class CompanyServiceProvider extends ServiceProvider
     {
         $this->toolbelt = new \Test_Tools\toolbelt;
         $this->helperfunctions = new \App\Providers\HelperServiceProvider(app());
-
-
         app()->bind('Create_Employee', function(){
             $this->helperfunctions->Validate_Post_Field_Required('first_name',$this->toolbelt->Get_Peoples()->Get_Column('first_name'));
             $this->helperfunctions->Validate_Post_Field_Required('last_name',$this->toolbelt->Get_Peoples()->Get_Column('last_name'));
@@ -74,7 +74,6 @@ class CompanyServiceProvider extends ServiceProvider
             $this->helperfunctions->Validate_Post_Field('ccb',$this->toolbelt->Get_Customers()->Get_Column('ccb'));
             $this->helperfunctions->Validate_Post_Field('website',$this->toolbelt->Get_Customers()->Get_Column('website'));
             $this->helperfunctions->Validate_Uri_Int_Parameter('customer',$this->toolbelt->Get_Customers()->Get_Column('id'));
-
             $customer = new Customer;
             $customer->Load_Object_By_ID(app()->request->customer);
             return $customer;
@@ -91,16 +90,16 @@ class CompanyServiceProvider extends ServiceProvider
             return $credit_status;
         });
         app()->bind('Update_Credit_Status', function (){
-            $this->helperfunctions->Validate_Uri_Int_Parameter('credit_status',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('creditstatus',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
             $this->helperfunctions->Validate_Post_Field('name',$this->toolbelt->Get_Credit_Statuses()->Get_Column('credit_status_name'));
             $credit_status = new Credit_Status;
-            $credit_status->Load_Object_By_ID(app()->request->credit_status);
+            $credit_status->Load_Object_By_ID(app()->request->creditstatus);
             return $credit_status;
         });
         app()->bind('Delete_Credit_Status', function(){
-            $this->helperfunctions->Validate_Uri_Int_Parameter('credit_status',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('creditstatus',$this->toolbelt->Get_Credit_Statuses()->Get_Column('id'));
             $credit_status = new Credit_Status;
-            $credit_status->Load_Object_By_ID(app()->request->credit_status);
+            $credit_status->Load_Object_By_ID(app()->request->creditstatus);
             return $credit_status;
          });
          app()->bind('Create_Equipment', function (){
@@ -133,6 +132,7 @@ class CompanyServiceProvider extends ServiceProvider
             $this->helperfunctions->Validate_Post_Field('lng',$this->toolbelt->Get_Addresses()->Get_Column('lng'));
             $this->helperfunctions->Validate_Post_Field('url',$this->toolbelt->Get_Addresses()->Get_Column('url'));
             $this->helperfunctions->Validate_Post_Field('google_id',$this->toolbelt->Get_Addresses()->Get_Column('google_id'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('customer',$this->toolbelt->Get_Customers()->Get_Column('id'));
             $customer_address = new \app\Helpers\Customer_Address;
             return $customer_address;
         });
@@ -159,8 +159,87 @@ class CompanyServiceProvider extends ServiceProvider
             $address->Load_Object_By_ID(app()->request->address);
             return $address;
          });
-
-
-
+         app()->bind('Create_Customer_Phone_Number', function(){
+            $this->helperfunctions->Validate_Post_Field_Required('description',$this->toolbelt->Get_Phone_Numbers()->Get_Column('description'));
+            $this->helperfunctions->Validate_Post_Field_Required('area_code',$this->toolbelt->Get_Phone_Numbers()->Get_Column('area_code'));
+            $this->helperfunctions->Validate_Post_Field_Required('prefix',$this->toolbelt->Get_Phone_Numbers()->Get_Column('prefix'));
+            $this->helperfunctions->Validate_Post_Field_Required('suffix',$this->toolbelt->Get_Phone_Numbers()->Get_Column('suffix'));
+            $this->helperfunctions->Validate_Post_Field('ext',$this->toolbelt->Get_Phone_Numbers()->Get_Column('ext'));
+            $this->helperfunctions->Validate_Post_Field('country_code',$this->toolbelt->Get_Phone_Numbers()->Get_Column('country_code'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('customer',$this->toolbelt->Get_Customers()->Get_Column('id'));
+            $customer_phone_number = new \app\Helpers\Customer_Phone_Number;
+            return $customer_phone_number;
+        });
+        app()->bind('Update_Phone_Number', function(){
+            $this->helperfunctions->Validate_Post_Field('description',$this->toolbelt->Get_Phone_Numbers()->Get_Column('description'));
+            $this->helperfunctions->Validate_Post_Field('area_code',$this->toolbelt->Get_Phone_Numbers()->Get_Column('area_code'));
+            $this->helperfunctions->Validate_Post_Field('prefix',$this->toolbelt->Get_Phone_Numbers()->Get_Column('prefix'));
+            $this->helperfunctions->Validate_Post_Field('suffix',$this->toolbelt->Get_Phone_Numbers()->Get_Column('suffix'));
+            $this->helperfunctions->Validate_Post_Field('ext',$this->toolbelt->Get_Phone_Numbers()->Get_Column('ext'));
+            $this->helperfunctions->Validate_Post_Field('country_code',$this->toolbelt->Get_Phone_Numbers()->Get_Column('country_code'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('phonenumber',$this->toolbelt->Get_Phone_Numbers()->Get_Column('id'));
+            $phone_number = new \app\Helpers\Phone_Number;
+            $phone_number->Load_Object_By_ID(app()->request->phonenumber);
+            return $phone_number;
+        });
+        app()->bind('Delete_Phone_Number', function(){
+            $this->helperfunctions->Validate_Uri_Int_Parameter('phonenumber',$this->toolbelt->Get_Phone_Numbers()->Get_Column('id'));
+            $phone_number = new \app\Helpers\Phone_Number;
+            $phone_number->Load_Object_By_ID(app()->request->phonenumber);
+            return $phone_number;
+         });
+        app()->bind('Create_Tag', function(){
+            $this->helperfunctions->Validate_Post_Field_Required('tag_name',$this->toolbelt->Get_Tags()->Get_Column('name'));
+            $tag = new Tag;
+            $tag->Set_Company($this->toolbelt->Get_Company(),false);
+            return $tag;
+        });
+        app()->bind('Update_Tag', function(){
+            $this->helperfunctions->Validate_Post_Field('tag_name',$this->toolbelt->Get_Tags(false)->Get_Column('name'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('tag',$this->toolbelt->Get_Tags(false)->Get_Column('id'));
+            $tag = new Tag;
+            $tag->Load_Object_By_ID(app()->request->tag);
+            return $tag;
+        });
+        app()->bind('Delete_Tag', function(){
+            $this->helperfunctions->Validate_Uri_Int_Parameter('tag',$this->toolbelt->Get_Tags(false)->Get_Column('id'));
+            $tag = new Tag;
+            $tag->Load_Object_By_ID(app()->request->tag);
+            return $tag;
+         });
+         app()->bind('Create_Add_Tag', function($app,$parameters){
+            $this->helperfunctions->Validate_Post_Int_Field_Required('addtag',$this->toolbelt->Get_Object_Tags($parameters['object']->table_dblink->Get_Table_Name())->Get_Column('tag_id'));
+            $tag = new Tag;
+            $tag->Load_Object_By_ID(app()->request->input('addtag'));
+            return $tag;
+         });
+        app()->bind('Delete_Add_Tag', function($app,$parameters){
+            $this->helperfunctions->Validate_Uri_Int_Parameter('addtag',$this->toolbelt->Get_Object_Has_Tags($parameters['object'])->Get_Column('tag_id'));
+            $tag = new Tag;
+            $tag->Load_Object_By_ID(app()->request->input('addtag'));
+            return $tag;
+         });
+         app()->bind('Create_Tags_Have_Role', function(){
+            $this->helperfunctions->Validate_Post_Int_Field_Required('role',$this->toolbelt->Get_Company_Roles()->Get_Column('id'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('tag',$this->toolbelt->Get_Object_Tags($this->toolbelt->Tags)->Get_Column('id'));
+            app()->request->validate([
+                'get' => ['bool'],
+                'post' => ['bool'],
+                'destroy' => ['bool']
+            ]);
+            $tags_have_role = new Tags_Have_Role;
+            return $tags_have_role;
+        });
+        app()->bind('Delete_Tags_Have_Role', function(){
+            $this->helperfunctions->Validate_Uri_Int_Parameter('role',$this->toolbelt->Get_Company_Roles()->Get_Column('id'));
+            $this->helperfunctions->Validate_Uri_Int_Parameter('tag',$this->toolbelt->Get_Tags()->Get_Column('id'));
+            $tags_have_role = new Tags_Have_Role;
+            $tag = new Tag;
+            $tag->Load_Object_By_ID(app()->request->tag);
+            $role = new Company_Role;
+            $role->Load_Object_By_ID(app()->request->role);
+            $tags_have_role->Load_By_Tag_And_Role($tag,$role);
+            return $tags_have_role;
+        });
     }
 }

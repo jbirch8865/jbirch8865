@@ -95,6 +95,8 @@ class Add_URI_Parameters extends Strategy
         global $documentation_equipment_id_to_delete;
         global $documentation_customer_address_id_to_delete;
         global $documentation_company_id_to_delete;
+        global $documentation_customer_phone_number_id_to_delete;
+        global $documentation_tag_tag_id_to_delete;
         if($route->named('Delete_User'))
         {
             $array['user'] = [
@@ -151,7 +153,7 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $documentation_company_id_to_delete
             ];
-        }elseif($route->named('Update_Customer') || $route->named('Delete_Customer') || $route->named('List_Customer_Addresses') || $route->named('Create_Customer_Address'))
+        }elseif($route->named('Update_Customer') || $route->named('Delete_Customer') || $route->named('List_Customer_Addresses') || $route->named('Create_Customer_Address') || $route->named('Create_Customer_Phone_Number') || $route->named('List_Customer_Phone_Numbers'))
         {
             $array['customer'] = [
                 'type' => 'int',
@@ -159,9 +161,17 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $documentation_customer_id_to_delete
             ];
+        }elseif($route->named('Update_Tag') || $route->named('Delete_Tag'))
+        {
+            $array['tag'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_tag_tag_id_to_delete
+            ];
         }elseif($route->named('Update_Credit_Status') || $route->named('Delete_Credit_Status'))
         {
-            $array['credit_status'] = [
+            $array['creditstatus'] = [
                 'type' => 'int',
                 'description' => '{int}',
                 'required' => true,
@@ -182,6 +192,14 @@ class Add_URI_Parameters extends Strategy
                 'description' => '{int}',
                 'required' => true,
                 'value' => $documentation_customer_address_id_to_delete
+            ];
+        }elseif($route->named('Update_Phone_Number') || $route->named('Delete_Phone_Number'))
+        {
+            $array['phonenumber'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_customer_phone_number_id_to_delete
             ];
         }
         return $array;
@@ -249,8 +267,6 @@ class Add_Query_Data extends Strategy
         return $array;
     }
 }
-
-
 class Add_Post_Data extends Strategy
 {
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
@@ -358,6 +374,14 @@ class Add_Post_Data extends Strategy
                     ]
                 ]
             ]
+           ];
+        }elseif($route->named('Create_Customer_Tag') || $route->named('Update_Tag'))
+        {
+            $array['tag_name'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => true,
+                'value' => uniqid()
            ];
         }elseif($route->named('Create_Employee'))
         {
@@ -511,12 +535,6 @@ class Add_Post_Data extends Strategy
             ];
         }elseif($route->named('Create_Customer_Address'))
         {
-           $array['customer_id'] = [
-            'type' => 'int',
-            'description' => '{int}',
-            'required' => true,
-            'value' => $documentation_customer_id_to_delete,
-           ];
            $array['description'] = [
             'type' => 'string',
             'description' => '{string}',
@@ -577,7 +595,52 @@ class Add_Post_Data extends Strategy
             'required' => false,
             'value' => ""
            ];
-
+        }elseif($route->named('Create_Customer_Tag'))
+        {
+           $array['tag_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Concrete"
+           ];
+        }elseif($route->named('Create_Customer_Phone_Number'))
+        {
+            $array['description'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => 'Home 1'
+            ];
+            $array['area_code'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => '503'
+           ];
+           $array['prefix'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => '631'
+           ];
+           $array['suffix'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => '8865'
+           ];
+           $array['ext'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '1234'
+           ];
+           $array['country_code'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => 1
+           ];
         }elseif($route->named('Update_Address'))
         {
             $array['description'] = [
@@ -640,7 +703,45 @@ class Add_Post_Data extends Strategy
                 'required' => false,
                 'value' => ""
                ];
-            }
+        }elseif($route->named('Update_Phone_Number'))
+        {
+            $array['description'] = [
+                'type' => 'string',
+                'description' => '{string}',
+                'required' => false,
+                'value' => 'cell'
+               ];
+            $array['area_code'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '503'
+           ];
+           $array['prefix'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '828'
+           ];
+           $array['suffix'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '7180'
+           ];
+           $array['ext'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '1234'
+           ];
+           $array['country_code'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => false,
+            'value' => '1'
+           ];
+        }
         return $array;
     }
 

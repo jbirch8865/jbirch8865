@@ -49,7 +49,8 @@ Route::get('/sdlc', function () {
                 'Deploy to Production'
             ]
     ];
-    return view('sdlc',compact('steps'));
+    return Response_200($steps,app()->request);
+    //return view('sdlc',compact('steps'));
 });
 
 Route::get('sdlc/writecode', function () {

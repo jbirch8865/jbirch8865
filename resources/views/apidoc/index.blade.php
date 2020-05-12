@@ -59,26 +59,26 @@ The access_token experation date is based on the company_config session_timeout 
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/1/signin" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w" \
-    -d '{"user":"default","password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8" \
+    -H "Content-Type: application/json" \
+    -d '{"user":"default","password":"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/1/signin"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 let body = {
     "user": "default",
-    "password": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+    "password": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
 }
 
 fetch(url, {
@@ -93,11 +93,11 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "Program_Session": {
-        "id": "12",
-        "client_id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-        "access_token": "AW?CJIeLt$HfNoCLZsAXEspC0K?L9vgmKbz++oR5jJl6H",
-        "user_id": "57",
-        "experation_timestamp": "2020-05-05 19:16:48"
+        "id": "3",
+        "client_id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+        "access_token": "=gNVMLxJOOPn=TDiz9?h=S$04tEj4UGLlV0sOO2PMBJyI",
+        "user_id": "1",
+        "experation_timestamp": "2020-05-10 06:40:51"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -152,10 +152,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "https://project.dsfellowship.com/api/v1/companies/1/signin/default?active_status=" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/companies/1/signin/default"
 );
@@ -167,10 +166,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -185,11 +184,11 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Session revoked",
     "Program_Session": {
-        "id": "12",
-        "client_id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-        "access_token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
-        "user_id": "57",
-        "experation_timestamp": "2020-05-05 19:06:59"
+        "id": "3",
+        "client_id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+        "access_token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+        "user_id": "1",
+        "experation_timestamp": "2020-05-10 06:31:10"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -242,10 +241,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/employees?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/employees"
 );
@@ -262,10 +260,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -333,10 +331,10 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/employees" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"first_name":"Bob","last_name":"Grillman","title":"The Builder","description":"Amazing Biceps","email":"Bob@amazingbiceps.com"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -344,10 +342,10 @@ fetch(url, {
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -371,7 +369,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Employee Created",
     "Employee": {
-        "id": 28,
+        "id": 11,
         "first_name": "Bob",
         "last_name": "Grillman",
         "title": "The Builder",
@@ -427,28 +425,28 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_76b5bb081b7655196b60780d41943e4e -->
-<!-- START_ae78e363d7824b20483f3bf00da06146 -->
-<h2>{POST} credit_statuses/v1/api</h2>
+<!-- START_4ae2add2ef264683a8a9e6ab16bae2f3 -->
+<h2>{POST} creditstatuses/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "https://project.dsfellowship.com/api/v1/credit_statuses" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/creditstatuses" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"name":"Good"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses"
+    "https://project.dsfellowship.com/api/v1/creditstatuses"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -468,14 +466,14 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Credit_Status Created",
     "Credit_Status": {
-        "id": 36,
+        "id": 11,
         "credit_status_name": "Good",
         "company_id": 1,
         "active_status": 1
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/credit_statuses</code></p>
+<p><code>POST api/v1/creditstatuses</code></p>
 <h4>Body Parameters</h4>
 <table>
 <thead>
@@ -495,20 +493,19 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_ae78e363d7824b20483f3bf00da06146 -->
-<!-- START_ee8f0ed845b360f577e52399c18ac577 -->
-<h2>{GET} credit_statuses/v1/api</h2>
+<!-- END_4ae2add2ef264683a8a9e6ab16bae2f3 -->
+<!-- START_81005cc50aac34cd5507d224bfe2fdfb -->
+<h2>{GET} creditstatuses/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/credit_statuses?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
+    -G "https://project.dsfellowship.com/api/v1/creditstatuses?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses"
+    "https://project.dsfellowship.com/api/v1/creditstatuses"
 );
 
 let params = {
@@ -523,10 +520,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -541,9 +538,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Credit_Status": {
-        "Good - 33": {
-            "id": "33",
-            "credit_status_name": "Good",
+        "Good 80 - 2": {
+            "id": "2",
+            "credit_status_name": "Good 80",
             "company_id": "1",
             "active_status": "1",
             "Companies": {
@@ -552,7 +549,7 @@ fetch(url, {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -561,7 +558,7 @@ fetch(url, {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -569,16 +566,304 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
                 ]
             }
         },
-        "Good - 36": {
-            "id": "36",
+        "Good 80 - 3": {
+            "id": "3",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 4": {
+            "id": "4",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 5": {
+            "id": "5",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 6": {
+            "id": "6",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 7": {
+            "id": "7",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 8": {
+            "id": "8",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 9": {
+            "id": "9",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good 80 - 10": {
+            "id": "10",
+            "credit_status_name": "Good 80",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        },
+        "Good - 11": {
+            "id": "11",
             "credit_status_name": "Good",
             "company_id": "1",
             "active_status": "1",
@@ -588,7 +873,7 @@ fetch(url, {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -597,7 +882,7 @@ fetch(url, {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -605,8 +890,8 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
@@ -616,7 +901,7 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/credit_statuses</code></p>
+<p><code>GET api/v1/creditstatuses</code></p>
 <h4>Query Parameters</h4>
 <table>
 <thead>
@@ -659,29 +944,29 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_ee8f0ed845b360f577e52399c18ac577 -->
-<!-- START_8373bb28a1572074b02e7a56846e9edc -->
-<h2>{PUT} {credit_status}/credit_statuses/v1/api</h2>
+<!-- END_81005cc50aac34cd5507d224bfe2fdfb -->
+<!-- START_8724fb8d28b3369b26fcafe957895f3b -->
+<h2>{PUT} {creditstatus}/credit_statuses/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/credit_statuses/36" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/creditstatuses/11" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"name":"Good 80"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses/36"
+    "https://project.dsfellowship.com/api/v1/creditstatuses/11"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -701,15 +986,15 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Credit Status Updated",
     "Credit_Status": {
-        "id": "36",
+        "id": "11",
         "credit_status_name": "Good 80",
         "company_id": "1",
         "active_status": "1"
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/v1/credit_statuses/{credit_status}</code></p>
-<p><code>PATCH api/v1/credit_statuses/{credit_status}</code></p>
+<p><code>PUT api/v1/creditstatuses/{creditstatus}</code></p>
+<p><code>PATCH api/v1/creditstatuses/{creditstatus}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -721,7 +1006,7 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>credit_status</code></td>
+<td><code>creditstatus</code></td>
 <td>required</td>
 <td>{int}</td>
 </tr>
@@ -746,7 +1031,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_8373bb28a1572074b02e7a56846e9edc -->
+<!-- END_8724fb8d28b3369b26fcafe957895f3b -->
 <!-- START_d113b631052d46d41c6de1f91d8905f4 -->
 <h2>{POST} customers/v1/api</h2>
 <blockquote>
@@ -754,26 +1039,26 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/customers" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"customer_name":"Bob The Builder","credit_status":36,"ccb":"","website":"www.amazingbiceps.com"}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"customer_name":"Bob The Builder","credit_status":11,"ccb":"","website":"www.amazingbiceps.com"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/customers"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
     "customer_name": "Bob The Builder",
-    "credit_status": 36,
+    "credit_status": 11,
     "ccb": "",
     "website": "www.amazingbiceps.com"
 }
@@ -791,9 +1076,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Customer Created",
     "Customer": {
-        "id": 33,
+        "id": 11,
         "customer_name": "Bob The Builder",
-        "credit_status": 36,
+        "credit_status": 11,
         "website": "www.amazingbiceps.com",
         "ccb": "",
         "company_id": 1,
@@ -847,10 +1132,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/customers?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/customers"
 );
@@ -867,10 +1151,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -885,10 +1169,10 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Customer": {
-        "Bob The Builder - 33": {
-            "id": "33",
-            "customer_name": "Bob The Builder",
-            "credit_status": "36",
+        "Bob and Son The Builders - 2": {
+            "id": "2",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "2",
             "website": "www.amazingbiceps.com",
             "ccb": "",
             "company_id": "1",
@@ -899,7 +1183,7 @@ fetch(url, {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -908,7 +1192,7 @@ fetch(url, {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -916,15 +1200,465 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
                 ]
             },
             "Credit_Statuses": {
-                "id": "36",
+                "id": "2",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 3": {
+            "id": "3",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "3",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "3",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 4": {
+            "id": "4",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "4",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "4",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 5": {
+            "id": "5",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "5",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "5",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 6": {
+            "id": "6",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "6",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "6",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 7": {
+            "id": "7",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "7",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "7",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 8": {
+            "id": "8",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "8",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "8",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 9": {
+            "id": "9",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "9",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "9",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob and Son The Builders - 10": {
+            "id": "10",
+            "customer_name": "Bob and Son The Builders",
+            "credit_status": "10",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "10",
+                "credit_status_name": "Good 80",
+                "company_id": "1",
+                "active_status": "1",
+                "Companies": {
+                    "id": "1",
+                    "company_name": "System",
+                    "active_status": "1"
+                }
+            }
+        },
+        "Bob The Builder - 11": {
+            "id": "11",
+            "customer_name": "Bob The Builder",
+            "credit_status": "11",
+            "website": "www.amazingbiceps.com",
+            "ccb": "",
+            "company_id": "1",
+            "active_status": "1",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            },
+            "Credit_Statuses": {
+                "id": "11",
                 "credit_status_name": "Good 80",
                 "company_id": "1",
                 "active_status": "1",
@@ -988,27 +1722,27 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/customers/33" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/customers/11" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"customer_name":"Bob and Son The Builders","credit_status":36,"ccb":"","website":"www.amazingbiceps.com"}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"customer_name":"Bob and Son The Builders","credit_status":11,"ccb":"","website":"www.amazingbiceps.com"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/33"
+    "https://project.dsfellowship.com/api/v1/customers/11"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
     "customer_name": "Bob and Son The Builders",
-    "credit_status": 36,
+    "credit_status": 11,
     "ccb": "",
     "website": "www.amazingbiceps.com"
 }
@@ -1026,9 +1760,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Customer Updated",
     "Customer": {
-        "id": "33",
+        "id": "11",
         "customer_name": "Bob and Son The Builders",
-        "credit_status": 36,
+        "credit_status": 11,
         "website": "www.amazingbiceps.com",
         "ccb": "",
         "company_id": "1",
@@ -1100,10 +1834,10 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/equipment" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"equipment_name":"F3452"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -1111,10 +1845,10 @@ fetch(url, {
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -1134,7 +1868,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Equipment Created",
     "Equipment": {
-        "id": 33,
+        "id": 11,
         "equipment_name": "F3452",
         "company_id": 1,
         "active_status": 1
@@ -1169,10 +1903,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/equipment?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/equipment"
 );
@@ -1189,10 +1922,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1207,8 +1940,8 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Equipment": {
-        "F3452 - 33": {
-            "id": "33",
+        "F3452 - 11": {
+            "id": "11",
             "equipment_name": "F3452",
             "company_id": "1",
             "active_status": "1",
@@ -1218,7 +1951,7 @@ fetch(url, {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -1227,7 +1960,7 @@ fetch(url, {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -1235,7 +1968,7 @@ fetch(url, {
                 ],
                 "Equipments": [
                     {
-                        "id": "33",
+                        "id": "11",
                         "equipment_name": "F3452",
                         "company_id": "1",
                         "active_status": "1"
@@ -1243,8 +1976,8 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
@@ -1304,22 +2037,22 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/equipment/33" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/equipment/11" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"equipment_name":"F3453"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/equipment/33"
+    "https://project.dsfellowship.com/api/v1/equipment/11"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -1339,7 +2072,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Equipment Updated",
     "Equipment": {
-        "id": "33",
+        "id": "11",
         "equipment_name": "F3453",
         "company_id": "1",
         "active_status": "1"
@@ -1391,13 +2124,12 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/equipment/33?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/equipment/11?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/equipment/33"
+    "https://project.dsfellowship.com/api/v1/equipment/11"
 );
 
 let params = {
@@ -1407,10 +2139,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1462,19 +2194,18 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_6684b9b8c09eab38e28e1d63210b302b -->
-<!-- START_2a14a188f45b7e75b826287c6fdc8cc3 -->
+<!-- START_d8c47f1a8318e20b72fbb34a2b7582e8 -->
 <h2>{GET} customer_addresses/{customer}/customers/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
+    -G "https://project.dsfellowship.com/api/v1/customers/11/customeraddresses?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses"
+    "https://project.dsfellowship.com/api/v1/customers/11/customeraddresses"
 );
 
 let params = {
@@ -1489,10 +2220,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1509,7 +2240,7 @@ fetch(url, {
     "Customer_Address": []
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>GET api/v1/customers/{customer}/customer_addresses</code></p>
+<p><code>GET api/v1/customers/{customer}/customeraddresses</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1569,33 +2300,32 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_2a14a188f45b7e75b826287c6fdc8cc3 -->
-<!-- START_6a0206ccbd4b64accfaf0a7b659292ed -->
+<!-- END_d8c47f1a8318e20b72fbb34a2b7582e8 -->
+<!-- START_444e58b8665537b015b6aed35d40c41a -->
 <h2>{POST} customer_addresses/{customer}/customers/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/customers/11/customeraddresses" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"customer_id":33,"description":"Physical","city":"Portland","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"description":"Physical","city":"Portland","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/33/customer_addresses"
+    "https://project.dsfellowship.com/api/v1/customers/11/customeraddresses"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
-    "customer_id": 33,
     "description": "Physical",
     "city": "Portland",
     "state": "OR",
@@ -1621,7 +2351,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Customer Address Created",
     "Customer_Address": {
-        "id": 26,
+        "id": 11,
         "description": "Physical",
         "name": "",
         "street1": "1234 NW Front St",
@@ -1637,7 +2367,7 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>POST api/v1/customers/{customer}/customer_addresses</code></p>
+<p><code>POST api/v1/customers/{customer}/customeraddresses</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1666,12 +2396,6 @@ fetch(url, {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>customer_id</code></td>
-<td>int</td>
-<td>required</td>
-<td>{int}</td>
-</tr>
 <tr>
 <td><code>description</code></td>
 <td>string</td>
@@ -1734,20 +2458,449 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_6a0206ccbd4b64accfaf0a7b659292ed -->
+<!-- END_444e58b8665537b015b6aed35d40c41a -->
+<!-- START_3bfc0cad953371df6b2df2810a6fb01d -->
+<h2>{GET} tags/customers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/customers/tags?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/customers/tags"
+);
+
+let params = {
+    "include_disabled_objects": "",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "5",
+    "limit": "10",
+    "offset": "0",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Response Objects",
+    "Tag": {
+        "5eb79cf55bd32 - 2": {
+            "id": "2",
+            "name": "5eb79cf55bd32",
+            "company_id": "1",
+            "object_table_name": "Customers",
+            "Companies": {
+                "id": "1",
+                "company_name": "System",
+                "active_status": "1",
+                "Company_Configs": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "config_id": "1",
+                        "config_value": "UTC",
+                        "active_status": "1"
+                    }
+                ],
+                "Company_Roles": [
+                    {
+                        "id": "2",
+                        "company_id": "1",
+                        "role_name": "master",
+                        "active_status": "1"
+                    }
+                ],
+                "Credit_Statuses": [
+                    {
+                        "id": "2",
+                        "credit_status_name": "Good 80",
+                        "company_id": "1",
+                        "active_status": "1"
+                    }
+                ]
+            }
+        }
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/customers/tags</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>include_disabled_objects</code></td>
+<td>optional</td>
+<td>{bool}</td>
+</tr>
+<tr>
+<td><code>include_details</code></td>
+<td>optional</td>
+<td>{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.</td>
+</tr>
+<tr>
+<td><code>details_offset</code></td>
+<td>optional</td>
+<td>{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td><code>details_limit</code></td>
+<td>optional</td>
+<td>{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>optional</td>
+<td>{int} How many objects do you want to return. Must be a number between 1 and 100.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>optional</td>
+<td>{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_3bfc0cad953371df6b2df2810a6fb01d -->
+<!-- START_18b5a0d1985927835c8f57e9f20660dd -->
+<h2>{POST} tags/customers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "https://project.dsfellowship.com/api/v1/customers/tags" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"tag_name":"5eb7a0d159918"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/customers/tags"
+);
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+let body = {
+    "tag_name": "5eb7a0d159918"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Customer Tag Created",
+    "Customer_Tag": {
+        "id": 6,
+        "name": "5eb7a0d159918",
+        "company_id": 1,
+        "object_table_name": "Customers"
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/customers/tags</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>{string}</td>
+</tr>
+</tbody>
+</table>
+<!-- END_18b5a0d1985927835c8f57e9f20660dd -->
+<!-- START_115e1a6e1c6f387d892a1d18582c55e6 -->
+<h2>{GET} phonenumbers/{customer}/customers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://project.dsfellowship.com/api/v1/customers/11/phonenumbers?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/customers/11/phonenumbers"
+);
+
+let params = {
+    "include_disabled_objects": "",
+    "include_details": "2",
+    "details_offset": "0",
+    "details_limit": "5",
+    "limit": "10",
+    "offset": "0",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Response Objects",
+    "Customer_Phone_Number": []
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/v1/customers/{customer}/phonenumbers</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customer</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>include_disabled_objects</code></td>
+<td>optional</td>
+<td>{bool}</td>
+</tr>
+<tr>
+<td><code>include_details</code></td>
+<td>optional</td>
+<td>{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.</td>
+</tr>
+<tr>
+<td><code>details_offset</code></td>
+<td>optional</td>
+<td>{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.</td>
+</tr>
+<tr>
+<td><code>details_limit</code></td>
+<td>optional</td>
+<td>{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>optional</td>
+<td>{int} How many objects do you want to return. Must be a number between 1 and 100.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>optional</td>
+<td>{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_115e1a6e1c6f387d892a1d18582c55e6 -->
+<!-- START_cb32251418e5f4078eb929d6c504aa8f -->
+<h2>{POST} phonenumbers/{customer}/customers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "https://project.dsfellowship.com/api/v1/customers/11/phonenumbers" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"description":"Home 1","area_code":"503","prefix":"631","suffix":"8865","ext":"1234","country_code":1}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/customers/11/phonenumbers"
+);
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+let body = {
+    "description": "Home 1",
+    "area_code": "503",
+    "prefix": "631",
+    "suffix": "8865",
+    "ext": "1234",
+    "country_code": 1
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Customer Phone Number Created",
+    "Customer_Phone_Number": {
+        "id": 2,
+        "description": "Home 1",
+        "country_code": 1,
+        "area_code": 503,
+        "prefix": 631,
+        "suffix": 8865,
+        "ext": 1234,
+        "type": "landline",
+        "carrier": "Clear Creek Mutual Tel. Co.",
+        "company_id": 1
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/v1/customers/{customer}/phonenumbers</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>customer</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>optional</td>
+<td>{string}</td>
+</tr>
+<tr>
+<td><code>area_code</code></td>
+<td>int</td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>int</td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>suffix</code></td>
+<td>int</td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<!-- END_cb32251418e5f4078eb929d6c504aa8f -->
 <!-- START_dbe522f7ae20a209a9068bfaefe9fc01 -->
 <h2>{DELETE} {customer}/customers/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/customers/33?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/customers/11?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/customers/33"
+    "https://project.dsfellowship.com/api/v1/customers/11"
 );
 
 let params = {
@@ -1757,10 +2910,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1812,19 +2965,18 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_dbe522f7ae20a209a9068bfaefe9fc01 -->
-<!-- START_7e6176fbd50cfd97beab0ab609ac833b -->
-<h2>{DELETE} {credit_status}/credit_statuses/v1/api</h2>
+<!-- START_b3f889412af8021019fddbb9dcad8eb4 -->
+<h2>{DELETE} {creditstatus}/credit_statuses/v1/api</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/credit_statuses/36?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/creditstatuses/11?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/credit_statuses/36"
+    "https://project.dsfellowship.com/api/v1/creditstatuses/11"
 );
 
 let params = {
@@ -1834,10 +2986,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1853,7 +3005,7 @@ fetch(url, {
     "message": "Credit_Status Deleted"
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>DELETE api/v1/credit_statuses/{credit_status}</code></p>
+<p><code>DELETE api/v1/creditstatuses/{creditstatus}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -1865,7 +3017,7 @@ fetch(url, {
 </thead>
 <tbody>
 <tr>
-<td><code>credit_status</code></td>
+<td><code>creditstatus</code></td>
 <td>required</td>
 <td>{int}</td>
 </tr>
@@ -1888,7 +3040,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_7e6176fbd50cfd97beab0ab609ac833b -->
+<!-- END_b3f889412af8021019fddbb9dcad8eb4 -->
 <h1>Company</h1>
 <p>Basic CRUD operations for Companies, Company Configs and Users</p>
 <!-- START_1aff981da377ba9a1bbc56ff8efaec0d -->
@@ -1899,10 +3051,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/users?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/users"
 );
@@ -1919,10 +3070,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -1938,7 +3089,7 @@ fetch(url, {
     "message": {
         "Users": {
             "default": {
-                "id": "57",
+                "id": "1",
                 "username": "default",
                 "company_id": "1",
                 "project_name": "project2",
@@ -1949,7 +3100,7 @@ fetch(url, {
                     "active_status": "1",
                     "Company_Configs": [
                         {
-                            "id": "52",
+                            "id": "2",
                             "company_id": "1",
                             "config_id": "1",
                             "config_value": "UTC",
@@ -1958,7 +3109,7 @@ fetch(url, {
                     ],
                     "Company_Roles": [
                         {
-                            "id": "66",
+                            "id": "2",
                             "company_id": "1",
                             "role_name": "master",
                             "active_status": "1"
@@ -1966,8 +3117,8 @@ fetch(url, {
                     ],
                     "Credit_Statuses": [
                         {
-                            "id": "33",
-                            "credit_status_name": "Good",
+                            "id": "2",
+                            "credit_status_name": "Good 80",
                             "company_id": "1",
                             "active_status": "1"
                         }
@@ -1975,11 +3126,11 @@ fetch(url, {
                 },
                 "Users_Have_Roles": [
                     {
-                        "id": "79",
-                        "user_id": "57",
-                        "role_id": "66",
+                        "id": "2",
+                        "user_id": "1",
+                        "role_id": "2",
                         "Company_Roles": {
-                            "id": "66",
+                            "id": "2",
                             "company_id": "1",
                             "role_name": "master",
                             "active_status": "1"
@@ -2043,29 +3194,29 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/users" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"user":"new_user","password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK","company_roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"52","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1"}],"Credit_Statuses":[{"id":"33","credit_status_name":"Good","company_id":"1","active_status":"1"}]},"Users_Have_Roles":[{"id":"79","user_id":"57","role_id":"66","Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"1959","route_id":"25","role_id":"66","right_id":"1959","Routes":{"id":"25","name":"Create_Credit_Status","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1959","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1960","route_id":"21","role_id":"66","right_id":"1960","Routes":{"id":"21","name":"Create_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1960","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1961","route_id":"33","role_id":"66","right_id":"1961","Routes":{"id":"33","name":"Create_Customer_Address","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1961","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1962","route_id":"16","role_id":"66","right_id":"1962","Routes":{"id":"16","name":"Create_Employee","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1962","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"1963","route_id":"29","role_id":"66","right_id":"1963","Routes":{"id":"29","name":"Create_Equipment","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"66","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1963","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}]}]}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"user":"new_user","password":"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"2","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1"}],"Credit_Statuses":[{"id":"2","credit_status_name":"Good 80","company_id":"1","active_status":"1"}]},"Users_Have_Roles":[{"id":"2","user_id":"1","role_id":"2","Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"1","route_id":"1","role_id":"2","right_id":"1","Routes":{"id":"1","name":"User_Signin","implicit_allow":"1","module":""},"Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"1","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"2","route_id":"2","role_id":"2","right_id":"2","Routes":{"id":"2","name":"List_Users","implicit_allow":"0","module":"Company"},"Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"2","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"3","route_id":"3","role_id":"2","right_id":"3","Routes":{"id":"3","name":"Create_User","implicit_allow":"0","module":"Company"},"Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"3","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"4","route_id":"4","role_id":"2","right_id":"4","Routes":{"id":"4","name":"List_Companies","implicit_allow":"1","module":""},"Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"4","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5","route_id":"5","role_id":"2","right_id":"5","Routes":{"id":"5","name":"Create_Company","implicit_allow":"1","module":""},"Company_Roles":{"id":"2","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}]}]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/users"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
     "user": "new_user",
-    "password": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
+    "password": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
     "company_roles": [
         {
-            "id": "66",
+            "id": "2",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1",
@@ -2075,7 +3226,7 @@ let body = {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -2084,7 +3235,7 @@ let body = {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -2092,8 +3243,8 @@ let body = {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
@@ -2101,11 +3252,11 @@ let body = {
             },
             "Users_Have_Roles": [
                 {
-                    "id": "79",
-                    "user_id": "57",
-                    "role_id": "66",
+                    "id": "2",
+                    "user_id": "1",
+                    "role_id": "2",
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -2114,24 +3265,24 @@ let body = {
             ],
             "Routes_Have_Roles": [
                 {
-                    "id": "1959",
-                    "route_id": "25",
-                    "role_id": "66",
-                    "right_id": "1959",
+                    "id": "1",
+                    "route_id": "1",
+                    "role_id": "2",
+                    "right_id": "1",
                     "Routes": {
-                        "id": "25",
-                        "name": "Create_Credit_Status",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "1",
+                        "name": "User_Signin",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1959",
+                        "id": "1",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2140,24 +3291,24 @@ let body = {
                     }
                 },
                 {
-                    "id": "1960",
-                    "route_id": "21",
-                    "role_id": "66",
-                    "right_id": "1960",
+                    "id": "2",
+                    "route_id": "2",
+                    "role_id": "2",
+                    "right_id": "2",
                     "Routes": {
-                        "id": "21",
-                        "name": "Create_Customer",
+                        "id": "2",
+                        "name": "List_Users",
                         "implicit_allow": "0",
-                        "module": "CDM"
+                        "module": "Company"
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1960",
+                        "id": "2",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2166,24 +3317,24 @@ let body = {
                     }
                 },
                 {
-                    "id": "1961",
-                    "route_id": "33",
-                    "role_id": "66",
-                    "right_id": "1961",
+                    "id": "3",
+                    "route_id": "3",
+                    "role_id": "2",
+                    "right_id": "3",
                     "Routes": {
-                        "id": "33",
-                        "name": "Create_Customer_Address",
+                        "id": "3",
+                        "name": "Create_User",
                         "implicit_allow": "0",
-                        "module": "CDM"
+                        "module": "Company"
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1961",
+                        "id": "3",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2192,24 +3343,24 @@ let body = {
                     }
                 },
                 {
-                    "id": "1962",
-                    "route_id": "16",
-                    "role_id": "66",
-                    "right_id": "1962",
+                    "id": "4",
+                    "route_id": "4",
+                    "role_id": "2",
+                    "right_id": "4",
                     "Routes": {
-                        "id": "16",
-                        "name": "Create_Employee",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "4",
+                        "name": "List_Companies",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1962",
+                        "id": "4",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2218,24 +3369,24 @@ let body = {
                     }
                 },
                 {
-                    "id": "1963",
-                    "route_id": "29",
-                    "role_id": "66",
-                    "right_id": "1963",
+                    "id": "5",
+                    "route_id": "5",
+                    "role_id": "2",
+                    "right_id": "5",
                     "Routes": {
-                        "id": "29",
-                        "name": "Create_Equipment",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "5",
+                        "name": "Create_Company",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1963",
+                        "id": "5",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2261,7 +3412,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User successfully created or already exists with that password",
     "user": {
-        "id": 80,
+        "id": 18,
         "username": "new_user",
         "company_id": 1,
         "project_name": "project2",
@@ -2306,8 +3457,8 @@ fetch(url, {
 <h2>{PUT} {user}/users/v1/api</h2>
 <p>Currently this endpoint is only able to change a password and re-enable a disabled user
 Please note that the User-Access-Token does not have to be the access token for the username
-you are changing the password for.  It just needs to be a user that has rights to this endpoint.</p>
-<p>Currently there is no way for the User to change their own password if they don't have rights
+you are changing the password for.  It just needs to be a user that has rights to this endpoint.
+Currently there is no way for the User to change their own password if they don't have rights
 to this endpoint.  So you would need to first authenticate with a user who does have rights to change
 the password.  This could be accomplished by first enabling the default user, authenticating and updating
 the password.  Then remember to disable the default user.</p>
@@ -2316,28 +3467,28 @@ the password.  Then remember to disable the default user.</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
     "https://project.dsfellowship.com/api/v1/users/new_user" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"new_password":"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK","company_roles":[{"id":"66","company_id":"1","role_name":"master","active_status":"1"}]}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"new_password":"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT","company_roles":[{"id":"2","company_id":"1","role_name":"master","active_status":"1"}]}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/users/new_user"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
-    "new_password": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
+    "new_password": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
     "company_roles": [
         {
-            "id": "66",
+            "id": "2",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1"
@@ -2358,7 +3509,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "User successfully updated",
     "user": {
-        "id": "80",
+        "id": "18",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -2418,10 +3569,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
     "https://project.dsfellowship.com/api/v1/users/new_user?active_status=" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/users/new_user"
 );
@@ -2433,10 +3583,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -2449,9 +3599,9 @@ fetch(url, {
 <p>Example response (201):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "User Successfully Deleted",
+    "message": "User Successfully Deleted\/Disabled",
     "user": {
-        "id": "80",
+        "id": "18",
         "username": "new_user",
         "company_id": "1",
         "project_name": "project2",
@@ -2502,10 +3652,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/roles?include_disabled_objects=&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;limit=10&amp;offset=0" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/roles"
 );
@@ -2522,10 +3671,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -2540,8 +3689,8 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Response Objects",
     "Company_Role": {
-        "master - 66": {
-            "id": "66",
+        "master - 2": {
+            "id": "2",
             "company_id": "1",
             "role_name": "master",
             "active_status": "1",
@@ -2551,7 +3700,7 @@ fetch(url, {
                 "active_status": "1",
                 "Company_Configs": [
                     {
-                        "id": "52",
+                        "id": "2",
                         "company_id": "1",
                         "config_id": "1",
                         "config_value": "UTC",
@@ -2560,7 +3709,7 @@ fetch(url, {
                 ],
                 "Company_Roles": [
                     {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -2568,8 +3717,8 @@ fetch(url, {
                 ],
                 "Credit_Statuses": [
                     {
-                        "id": "33",
-                        "credit_status_name": "Good",
+                        "id": "2",
+                        "credit_status_name": "Good 80",
                         "company_id": "1",
                         "active_status": "1"
                     }
@@ -2577,11 +3726,11 @@ fetch(url, {
             },
             "Users_Have_Roles": [
                 {
-                    "id": "79",
-                    "user_id": "57",
-                    "role_id": "66",
+                    "id": "2",
+                    "user_id": "1",
+                    "role_id": "2",
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
@@ -2590,24 +3739,24 @@ fetch(url, {
             ],
             "Routes_Have_Roles": [
                 {
-                    "id": "1959",
-                    "route_id": "25",
-                    "role_id": "66",
-                    "right_id": "1959",
+                    "id": "1",
+                    "route_id": "1",
+                    "role_id": "2",
+                    "right_id": "1",
                     "Routes": {
-                        "id": "25",
-                        "name": "Create_Credit_Status",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "1",
+                        "name": "User_Signin",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1959",
+                        "id": "1",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2616,24 +3765,24 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "1960",
-                    "route_id": "21",
-                    "role_id": "66",
-                    "right_id": "1960",
+                    "id": "2",
+                    "route_id": "2",
+                    "role_id": "2",
+                    "right_id": "2",
                     "Routes": {
-                        "id": "21",
-                        "name": "Create_Customer",
+                        "id": "2",
+                        "name": "List_Users",
                         "implicit_allow": "0",
-                        "module": "CDM"
+                        "module": "Company"
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1960",
+                        "id": "2",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2642,24 +3791,24 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "1961",
-                    "route_id": "33",
-                    "role_id": "66",
-                    "right_id": "1961",
+                    "id": "3",
+                    "route_id": "3",
+                    "role_id": "2",
+                    "right_id": "3",
                     "Routes": {
-                        "id": "33",
-                        "name": "Create_Customer_Address",
+                        "id": "3",
+                        "name": "Create_User",
                         "implicit_allow": "0",
-                        "module": "CDM"
+                        "module": "Company"
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1961",
+                        "id": "3",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2668,24 +3817,24 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "1962",
-                    "route_id": "16",
-                    "role_id": "66",
-                    "right_id": "1962",
+                    "id": "4",
+                    "route_id": "4",
+                    "role_id": "2",
+                    "right_id": "4",
                     "Routes": {
-                        "id": "16",
-                        "name": "Create_Employee",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "4",
+                        "name": "List_Companies",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1962",
+                        "id": "4",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2694,24 +3843,24 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "1963",
-                    "route_id": "29",
-                    "role_id": "66",
-                    "right_id": "1963",
+                    "id": "5",
+                    "route_id": "5",
+                    "role_id": "2",
+                    "right_id": "5",
                     "Routes": {
-                        "id": "29",
-                        "name": "Create_Equipment",
-                        "implicit_allow": "0",
-                        "module": "CDM"
+                        "id": "5",
+                        "name": "Create_Company",
+                        "implicit_allow": "1",
+                        "module": ""
                     },
                     "Company_Roles": {
-                        "id": "66",
+                        "id": "2",
                         "company_id": "1",
                         "role_name": "master",
                         "active_status": "1"
                     },
                     "Rights": {
-                        "id": "1963",
+                        "id": "5",
                         "get": "1",
                         "destroy": "1",
                         "post": "1",
@@ -2779,21 +3928,21 @@ with that route.</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/roles" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb1ba77623df"}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb7a0ca74b84"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/roles"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -2819,7 +3968,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5eb1ba77623df"
+    "role_name": "5eb7a0ca74b84"
 }
 
 fetch(url, {
@@ -2835,9 +3984,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role created",
     "company role": {
-        "id": "90",
+        "id": "20",
         "company_id": "1",
-        "role_name": "5eb1ba77623df",
+        "role_name": "5eb7a0ca74b84",
         "active_status": "1"
     }
 }</code></pre>
@@ -2920,22 +4069,22 @@ is the complete modal you are expecting</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/roles/90" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/roles/20" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb1ba78d61fb"}'
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5eb7a0cd94a54"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/90"
+    "https://project.dsfellowship.com/api/v1/roles/20"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -2961,7 +4110,7 @@ let body = {
             }
         }
     ],
-    "role_name": "5eb1ba78d61fb"
+    "role_name": "5eb7a0cd94a54"
 }
 
 fetch(url, {
@@ -2977,9 +4126,9 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Company Role Updated",
     "company role": {
-        "id": "90",
+        "id": "20",
         "company_id": "1",
-        "role_name": "5eb1ba78d61fb",
+        "role_name": "5eb7a0cd94a54",
         "active_status": "1"
     }
 }</code></pre>
@@ -3077,13 +4226,12 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/roles/90?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/roles/20?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/roles/90"
+    "https://project.dsfellowship.com/api/v1/roles/20"
 );
 
 let params = {
@@ -3093,10 +4241,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -3156,10 +4304,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/companies?include_disabled=true&amp;include_details=2&amp;details_offset=0&amp;details_limit=5&amp;offset=0&amp;limit=10&amp;include_disabled_objects=" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/companies"
 );
@@ -3177,10 +4324,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -3201,7 +4348,7 @@ fetch(url, {
             "active_status": "1",
             "Company_Configs": [
                 {
-                    "id": "52",
+                    "id": "2",
                     "company_id": "1",
                     "config_id": "1",
                     "config_value": "UTC",
@@ -3219,7 +4366,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "id": "51",
+                    "id": "1",
                     "company_id": "1",
                     "config_id": "2",
                     "config_value": "300",
@@ -3239,7 +4386,7 @@ fetch(url, {
             ],
             "Company_Roles": [
                 {
-                    "id": "66",
+                    "id": "2",
                     "company_id": "1",
                     "role_name": "master",
                     "active_status": "1",
@@ -3250,25 +4397,25 @@ fetch(url, {
                     },
                     "Users_Have_Roles": [
                         {
-                            "id": "79",
-                            "user_id": "57",
-                            "role_id": "66"
+                            "id": "2",
+                            "user_id": "1",
+                            "role_id": "2"
                         }
                     ],
                     "Routes_Have_Roles": [
                         {
-                            "id": "1959",
-                            "route_id": "25",
-                            "role_id": "66",
-                            "right_id": "1959"
+                            "id": "1",
+                            "route_id": "1",
+                            "role_id": "2",
+                            "right_id": "1"
                         }
                     ]
                 }
             ],
             "Credit_Statuses": [
                 {
-                    "id": "33",
-                    "credit_status_name": "Good",
+                    "id": "2",
+                    "credit_status_name": "Good 80",
                     "company_id": "1",
                     "active_status": "1",
                     "Companies": {
@@ -3276,114 +4423,48 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     }
-                }
-            ]
-        },
-        "Chris and Sons - 106": {
-            "id": "106",
-            "company_name": "Chris and Sons",
-            "active_status": "1"
-        },
-        "Chris and Sons1 - 107": {
-            "id": "107",
-            "company_name": "Chris and Sons1",
-            "active_status": "1"
-        },
-        "Chris and Sons2 - 108": {
-            "id": "108",
-            "company_name": "Chris and Sons2",
-            "active_status": "1"
-        },
-        "Chris and Sons3 - 109": {
-            "id": "109",
-            "company_name": "Chris and Sons3",
-            "active_status": "1",
-            "Company_Configs": [
+                },
                 {
-                    "id": "62",
-                    "company_id": "109",
-                    "config_id": "1",
-                    "config_value": "UTC",
+                    "id": "3",
+                    "credit_status_name": "Good 80",
+                    "company_id": "1",
                     "active_status": "1",
                     "Companies": {
-                        "id": "109",
-                        "company_name": "Chris and Sons3",
-                        "active_status": "1"
-                    },
-                    "Configs": {
                         "id": "1",
-                        "active_status": "1",
-                        "config_name": "company_time_zone",
-                        "default_value": "UTC"
-                    }
-                },
-                {
-                    "id": "61",
-                    "company_id": "109",
-                    "config_id": "2",
-                    "config_value": "300",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "109",
-                        "company_name": "Chris and Sons3",
-                        "active_status": "1"
-                    },
-                    "Configs": {
-                        "id": "2",
-                        "active_status": "1",
-                        "config_name": "session_time_limit",
-                        "default_value": "300"
-                    }
-                }
-            ],
-            "Company_Roles": [
-                {
-                    "id": "76",
-                    "company_id": "109",
-                    "role_name": "master",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "109",
-                        "company_name": "Chris and Sons3",
-                        "active_status": "1"
-                    },
-                    "Users_Have_Roles": [
-                        {
-                            "id": "90",
-                            "user_id": "66",
-                            "role_id": "76"
-                        }
-                    ],
-                    "Routes_Have_Roles": [
-                        {
-                            "id": "2262",
-                            "route_id": "25",
-                            "role_id": "76",
-                            "right_id": "2262"
-                        }
-                    ]
-                }
-            ],
-            "Credit_Statuses": [
-                {
-                    "id": "27",
-                    "credit_status_name": "Good",
-                    "company_id": "109",
-                    "active_status": "1",
-                    "Companies": {
-                        "id": "109",
-                        "company_name": "Chris and Sons3",
+                        "company_name": "System",
                         "active_status": "1"
                     }
                 },
                 {
-                    "id": "28",
-                    "credit_status_name": "Good 90",
-                    "company_id": "109",
+                    "id": "4",
+                    "credit_status_name": "Good 80",
+                    "company_id": "1",
                     "active_status": "1",
                     "Companies": {
-                        "id": "109",
-                        "company_name": "Chris and Sons3",
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    }
+                },
+                {
+                    "id": "5",
+                    "credit_status_name": "Good 80",
+                    "company_id": "1",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
+                        "active_status": "1"
+                    }
+                },
+                {
+                    "id": "6",
+                    "credit_status_name": "Good 80",
+                    "company_id": "1",
+                    "active_status": "1",
+                    "Companies": {
+                        "id": "1",
+                        "company_name": "System",
                         "active_status": "1"
                     }
                 }
@@ -3452,10 +4533,10 @@ Make sure to record the default password upon success, this password is unrecove
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
     "https://project.dsfellowship.com/api/v1/companies" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8" \
+    -H "Content-Type: application/json" \
     -d '{"company_name":"documentation_company"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
@@ -3463,10 +4544,10 @@ Make sure to record the default password upon success, this password is unrecove
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -3485,9 +4566,9 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "message": "Company successfully created",
-    "master_password": "78RUh25eEhi=$+",
+    "master_password": "Vv=FRU7w$YaArl",
     "company": {
-        "id": 116,
+        "id": 15,
         "company_name": "documentation_company",
         "active_status": 1
     }
@@ -3520,13 +4601,12 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/companies/116?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/companies/15?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/companies/116"
+    "https://project.dsfellowship.com/api/v1/companies/15"
 );
 
 let params = {
@@ -3536,10 +4616,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -3599,17 +4679,16 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/doc.json" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"</code></pre>
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/doc.json"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -3625,7 +4704,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "All Postman Endpoints",
-        "_postman_id": "e79528af-06ee-4fd8-8e97-ceb787172982",
+        "_postman_id": "57c6d221-cc81-4d98-95cc-a7599fabd4a0",
         "description": "Use this collection to test all the endpoints using postmans",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -3654,25 +4733,21 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\"\n}"
+                            "raw": "{\n    \"user\": \"default\",\n    \"password\": \"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT\"\n}"
                         },
                         "description": "Returns a unique access_token used to authenticate in place of the username and password\nThe access_token experation date is based on the company_config session_timeout which is comany specific",
                         "response": []
@@ -3711,20 +4786,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -3790,20 +4861,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -3826,20 +4893,16 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -3851,31 +4914,27 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{POST} credit_statuses\/v1\/api",
+                    "name": "{POST} creditstatuses\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/credit_statuses",
+                            "path": "api\/v1\/creditstatuses",
                             "query": []
                         },
                         "method": "POST",
                         "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -3887,12 +4946,12 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} credit_statuses\/v1\/api",
+                    "name": "{GET} creditstatuses\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/credit_statuses",
+                            "path": "api\/v1\/creditstatuses",
                             "query": [
                                 {
                                     "key": "include_disabled_objects",
@@ -3935,20 +4994,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -3960,18 +5015,18 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{PUT} {credit_status}\/credit_statuses\/v1\/api",
+                    "name": "{PUT} {creditstatus}\/credit_statuses\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/credit_statuses\/:credit_status",
+                            "path": "api\/v1\/creditstatuses\/:creditstatus",
                             "query": [],
                             "variable": [
                                 {
-                                    "id": "credit_status",
-                                    "key": "credit_status",
-                                    "value": "35",
+                                    "id": "creditstatus",
+                                    "key": "creditstatus",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -3979,20 +5034,16 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4015,25 +5066,21 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"customer_name\": \"Bob The Builder\",\n    \"credit_status\": 35,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
+                            "raw": "{\n    \"customer_name\": \"Bob The Builder\",\n    \"credit_status\": 1,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -4088,20 +5135,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4124,7 +5167,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4132,25 +5175,21 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"customer_name\": \"Bob and Son The Builders\",\n    \"credit_status\": 35,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
+                            "raw": "{\n    \"customer_name\": \"Bob and Son The Builders\",\n    \"credit_status\": 1,\n    \"ccb\": \"\",\n    \"website\": \"www.amazingbiceps.com\"\n}"
                         },
                         "description": "",
                         "response": []
@@ -4168,20 +5207,16 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4241,20 +5276,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4277,7 +5308,7 @@ fetch(url, {
                                 {
                                     "id": "equipment",
                                     "key": "equipment",
-                                    "value": "32",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4285,20 +5316,16 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4328,7 +5355,7 @@ fetch(url, {
                                 {
                                     "id": "equipment",
                                     "key": "equipment",
-                                    "value": "32",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4336,20 +5363,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4366,7 +5389,7 @@ fetch(url, {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/customers\/:customer\/customer_addresses",
+                            "path": "api\/v1\/customers\/:customer\/customeraddresses",
                             "query": [
                                 {
                                     "key": "include_disabled_objects",
@@ -4409,7 +5432,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4417,20 +5440,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4447,13 +5466,13 @@ fetch(url, {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/customers\/:customer\/customer_addresses",
+                            "path": "api\/v1\/customers\/:customer\/customeraddresses",
                             "query": [],
                             "variable": [
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4461,25 +5480,231 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
+                                "key": "Accept",
                                 "value": "application\/json"
                             },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"description\": \"Physical\",\n    \"city\": \"Portland\",\n    \"state\": \"OR\",\n    \"street1\": \"1234 NW Front St\",\n    \"street2\": \"Suite 203\",\n    \"zip\": \"97123\",\n    \"lat\": \"123.000001254\",\n    \"lng\": \"-312.45675\",\n    \"url\": \"\",\n    \"google_id\": \"\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{GET} tags\/customers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/customers\/tags",
+                            "query": [
+                                {
+                                    "key": "include_disabled_objects",
+                                    "value": "",
+                                    "description": "{bool}",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_details",
+                                    "value": "2",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "details_offset",
+                                    "value": "0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "details_limit",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"description\": \"Physical\",\n    \"city\": \"Portland\",\n    \"state\": \"OR\",\n    \"street1\": \"1234 NW Front St\",\n    \"street2\": \"Suite 203\",\n    \"zip\": \"97123\",\n    \"lat\": \"123.000001254\",\n    \"lng\": \"-312.45675\",\n    \"url\": \"\",\n    \"google_id\": \"\"\n}"
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{POST} tags\/customers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/customers\/tags",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"tag_name\": \"5eb79a5c046f5\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{GET} phonenumbers\/{customer}\/customers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/customers\/:customer\/phonenumbers",
+                            "query": [
+                                {
+                                    "key": "include_disabled_objects",
+                                    "value": "",
+                                    "description": "{bool}",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "include_details",
+                                    "value": "2",
+                                    "description": "{int} Include the entire object model of the object.  If set the integer determines how many levels deep you want to return for related objects.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "details_offset",
+                                    "value": "0",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "details_limit",
+                                    "value": "5",
+                                    "description": "{int} If include_details is false this is ignored.  For related objects how many do you want to return. Must be a number between 1 and 25.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "{int} How many objects do you want to return. Must be a number between 1 and 100.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "{int} Which object index to you want to start at for the return value. Zero is the first object.  Must be a number greater than 0.",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{POST} phonenumbers\/{customer}\/customers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/customers\/:customer\/phonenumbers",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "customer",
+                                    "key": "customer",
+                                    "value": "1",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"description\": \"Home 1\",\n    \"area_code\": \"503\",\n    \"prefix\": \"631\",\n    \"suffix\": \"8865\",\n    \"ext\": \"1234\",\n    \"country_code\": 1\n}"
                         },
                         "description": "",
                         "response": []
@@ -4504,7 +5729,7 @@ fetch(url, {
                                 {
                                     "id": "customer",
                                     "key": "customer",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4512,20 +5737,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4537,12 +5758,12 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{DELETE} {credit_status}\/credit_statuses\/v1\/api",
+                    "name": "{DELETE} {creditstatus}\/credit_statuses\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/credit_statuses\/:credit_status",
+                            "path": "api\/v1\/creditstatuses\/:creditstatus",
                             "query": [
                                 {
                                     "key": "active_status",
@@ -4553,9 +5774,9 @@ fetch(url, {
                             ],
                             "variable": [
                                 {
-                                    "id": "credit_status",
-                                    "key": "credit_status",
-                                    "value": "35",
+                                    "id": "creditstatus",
+                                    "key": "creditstatus",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -4563,20 +5784,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4591,10 +5808,10 @@ fetch(url, {
         },
         {
             "name": "Company",
-            "description": "Basic CRUD operations for Companies, Company Configs and Users",
+            "description": "\nBasic CRUD operations for Companies, Company Configs and Users",
             "item": [
                 {
-                    "name": "{GET} users\/v1\/api\nReturn a list of users belonging to the company",
+                    "name": "{GET} users\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -4642,27 +5859,23 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "Return a list of users belonging to the company",
                         "response": []
                     }
                 },
@@ -4678,32 +5891,28 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"66\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"52\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Credit_Statuses\": [\n                    {\n                        \"id\": \"33\",\n                        \"credit_status_name\": \"Good\",\n                        \"company_id\": \"1\",\n                        \"active_status\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"79\",\n                    \"user_id\": \"57\",\n                    \"role_id\": \"66\",\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1959\",\n                    \"route_id\": \"25\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1959\",\n                    \"Routes\": {\n                        \"id\": \"25\",\n                        \"name\": \"Create_Credit_Status\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1959\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1960\",\n                    \"route_id\": \"21\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1960\",\n                    \"Routes\": {\n                        \"id\": \"21\",\n                        \"name\": \"Create_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1960\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1961\",\n                    \"route_id\": \"33\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1961\",\n                    \"Routes\": {\n                        \"id\": \"33\",\n                        \"name\": \"Create_Customer_Address\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1961\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1962\",\n                    \"route_id\": \"16\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1962\",\n                    \"Routes\": {\n                        \"id\": \"16\",\n                        \"name\": \"Create_Employee\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1962\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"1963\",\n                    \"route_id\": \"29\",\n                    \"role_id\": \"66\",\n                    \"right_id\": \"1963\",\n                    \"Routes\": {\n                        \"id\": \"29\",\n                        \"name\": \"Create_Equipment\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"66\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1963\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"2\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"2\",\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"1\",\n                    \"route_id\": \"1\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"1\",\n                    \"Routes\": {\n                        \"id\": \"1\",\n                        \"name\": \"User_Signin\",\n                        \"implicit_allow\": \"1\",\n                        \"module\": \"\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"1\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"2\",\n                    \"route_id\": \"2\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"2\",\n                    \"Routes\": {\n                        \"id\": \"2\",\n                        \"name\": \"List_Users\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Company\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"2\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"3\",\n                    \"route_id\": \"3\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"3\",\n                    \"Routes\": {\n                        \"id\": \"3\",\n                        \"name\": \"Create_User\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Company\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"3\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"4\",\n                    \"route_id\": \"4\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"4\",\n                    \"Routes\": {\n                        \"id\": \"4\",\n                        \"name\": \"List_Companies\",\n                        \"implicit_allow\": \"1\",\n                        \"module\": \"\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"4\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5\",\n                    \"route_id\": \"5\",\n                    \"role_id\": \"2\",\n                    \"right_id\": \"5\",\n                    \"Routes\": {\n                        \"id\": \"5\",\n                        \"name\": \"Create_Company\",\n                        \"implicit_allow\": \"1\",\n                        \"module\": \"\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
                         },
                         "description": "Create a user",
                         "response": []
                     }
                 },
                 {
-                    "name": "{PUT} {user}\/users\/v1\/api\nCurrently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.",
+                    "name": "{PUT} {user}\/users\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -4722,27 +5931,23 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"new_password\": \"BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK\",\n    \"company_roles\": [\n        {\n            \"id\": \"66\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ]\n}"
+                            "raw": "{\n    \"new_password\": \"1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT\",\n    \"company_roles\": [\n        {\n            \"id\": \"2\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\"\n        }\n    ]\n}"
                         },
-                        "description": "Currently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
+                        "description": "Currently this endpoint is only able to change a password and re-enable a disabled user\nPlease note that the User-Access-Token does not have to be the access token for the username\nyou are changing the password for.  It just needs to be a user that has rights to this endpoint.\nCurrently there is no way for the User to change their own password if they don't have rights\nto this endpoint.  So you would need to first authenticate with a user who does have rights to change\nthe password.  This could be accomplished by first enabling the default user, authenticating and updating\nthe password.  Then remember to disable the default user.",
                         "response": []
                     }
                 },
@@ -4773,20 +5978,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4846,20 +6047,16 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -4882,25 +6079,21 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb1b9b99fb29\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb79a55d690c\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
@@ -4918,7 +6111,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "88",
+                                    "value": "9",
                                     "description": "{int}"
                                 }
                             ]
@@ -4926,25 +6119,21 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb1b9bb30a8b\"\n}"
+                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5eb79a58d1010\"\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []
@@ -4969,7 +6158,7 @@ fetch(url, {
                                 {
                                     "id": "role",
                                     "key": "role",
-                                    "value": "88",
+                                    "value": "9",
                                     "description": "{int}"
                                 }
                             ]
@@ -4977,20 +6166,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -5002,7 +6187,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} companies\/v1\/api\nList all companies",
+                    "name": "{GET} companies\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -5056,27 +6241,23 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "List all companies",
                         "response": []
                     }
                 },
@@ -5092,20 +6273,16 @@ fetch(url, {
                         "method": "POST",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
@@ -5135,7 +6312,7 @@ fetch(url, {
                                 {
                                     "id": "company",
                                     "key": "company",
-                                    "value": "115",
+                                    "value": "14",
                                     "description": "{int}"
                                 }
                             ]
@@ -5143,20 +6320,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
@@ -5185,16 +6358,12 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
@@ -5206,7 +6375,7 @@ fetch(url, {
                     }
                 },
                 {
-                    "name": "{GET} routes\/v1\/api\nSee all the endpoints and if their explicit rights",
+                    "name": "{GET} routes\/v1\/api",
                     "request": {
                         "url": {
                             "protocol": "https",
@@ -5217,37 +6386,33 @@ fetch(url, {
                         "method": "GET",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
                             "mode": "raw",
                             "raw": "[]"
                         },
-                        "description": "",
+                        "description": "See all the endpoints and if their explicit rights",
                         "response": []
                     }
                 },
                 {
-                    "name": "{PUT} default_user\/{company}\/v1\/api\nThis endpoint is exclusively to re-enable the default user specified\nit should be used when for some reason ALL users in a company are locked out\nor at least one person doesn't have all rights.",
+                    "name": "{PUT} default_user\/{company}\/v1\/api\n\nThis endpoint is exclusively to re-enable the default user specified\nit should be used when for some reason ALL users in a company are locked out\nor at least one person doesn't have all rights.",
                     "request": {
                         "url": {
                             "protocol": "https",
                             "host": "project.dsfellowship.com",
-                            "path": "api\/v1\/:company\/default_user\/:default_user",
+                            "path": "api\/v1\/:company\/defaultuser\/:defaultuser",
                             "query": [],
                             "variable": [
                                 {
@@ -5261,20 +6426,16 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "secret-token",
-                                "value": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"
+                                "value": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"
                             }
                         ],
                         "body": {
@@ -5303,7 +6464,7 @@ fetch(url, {
                                 {
                                     "id": "people",
                                     "key": "people",
-                                    "value": "27",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -5311,20 +6472,16 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -5354,7 +6511,7 @@ fetch(url, {
                                 {
                                     "id": "people",
                                     "key": "people",
-                                    "value": "27",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -5362,20 +6519,16 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -5398,7 +6551,7 @@ fetch(url, {
                                 {
                                     "id": "address",
                                     "key": "address",
-                                    "value": "",
+                                    "value": "1",
                                     "description": "{int}"
                                 }
                             ]
@@ -5406,20 +6559,16 @@ fetch(url, {
                         "method": "PUT",
                         "header": [
                             {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -5449,6 +6598,93 @@ fetch(url, {
                                 {
                                     "id": "address",
                                     "key": "address",
+                                    "value": "1",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{PUT} {tag}\/tags\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/tags\/:tag",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "tag",
+                                    "key": "tag",
+                                    "value": "",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"tag_name\": \"5eb79a5c14118\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{DELETE} {tag}\/tags\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/tags\/:tag",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} When true object will be marked inactive.  When false the object will be deleted.",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "tag",
+                                    "key": "tag",
                                     "value": "",
                                     "description": "{int}"
                                 }
@@ -5457,20 +6693,103 @@ fetch(url, {
                         "method": "DELETE",
                         "header": [
                             {
-                                "key": "Content-Type",
+                                "key": "Accept",
                                 "value": "application\/json"
                             },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{PUT} {phonenumber}\/phonenumbers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/phonenumbers\/:phonenumber",
+                            "query": [],
+                            "variable": [
+                                {
+                                    "id": "phonenumber",
+                                    "key": "phonenumber",
+                                    "value": "1",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
                             {
                                 "key": "Accept",
                                 "value": "application\/json"
                             },
                             {
                                 "key": "client-id",
-                                "value": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK"
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
                             },
                             {
                                 "key": "User-Access-Token",
-                                "value": "gBJWICxzEfqs9ucuVVcQgL0jnA92qxUwbMo=bOkjdOiF+"
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"description\": \"cell\",\n    \"area_code\": \"503\",\n    \"prefix\": \"828\",\n    \"suffix\": \"7180\",\n    \"ext\": \"1234\",\n    \"country_code\": \"1\"\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "{DELETE} {phonenumber}\/phonenumbers\/v1\/api",
+                    "request": {
+                        "url": {
+                            "protocol": "https",
+                            "host": "project.dsfellowship.com",
+                            "path": "api\/v1\/phonenumbers\/:phonenumber",
+                            "query": [
+                                {
+                                    "key": "active_status",
+                                    "value": "",
+                                    "description": "{bool} When true object will be marked inactive.  When false the object will be deleted.",
+                                    "disabled": false
+                                }
+                            ],
+                            "variable": [
+                                {
+                                    "id": "phonenumber",
+                                    "key": "phonenumber",
+                                    "value": "1",
+                                    "description": "{int}"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "client-id",
+                                "value": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT"
+                            },
+                            {
+                                "key": "User-Access-Token",
+                                "value": "m1bFopC8GieFyzb.Kjb04fS6eFrkmCgcwIU6qIiVzoOcp"
                             }
                         ],
                         "body": {
@@ -5496,19 +6815,18 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
     -G "https://project.dsfellowship.com/api/v1/routes" \
-    -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://project.dsfellowship.com/api/v1/routes"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -5532,6 +6850,8 @@ fetch(url, {
                 "Create_Credit_Status - 25": 25,
                 "Create_Customer - 21": 21,
                 "Create_Customer_Address - 33": 33,
+                "Create_Customer_Phone_Number - 38": 38,
+                "Create_Customer_Tag - 45": 45,
                 "Create_Employee - 16": 16,
                 "Create_Equipment - 29": 29,
                 "Create_Role - 12": 12,
@@ -5542,7 +6862,9 @@ fetch(url, {
                 "Delete_Customer - 23": 23,
                 "Delete_Equipment - 31": 31,
                 "Delete_People - 18": 18,
+                "Delete_Phone_Number - 40": 40,
                 "Delete_Role - 13": 13,
+                "Delete_Tag - 43": 43,
                 "Delete_User - 10": 10,
                 "Edit_Role - 14": 14,
                 "Enable_Default_User - 11": 11,
@@ -5550,16 +6872,21 @@ fetch(url, {
                 "List_Credit_Statuses - 24": 24,
                 "List_Customers - 20": 20,
                 "List_Customer_Addresses - 32": 32,
+                "List_Customer_Phone_Numbers - 37": 37,
+                "List_Customer_Tags - 44": 44,
                 "List_Employees - 15": 15,
                 "List_Equipment - 28": 28,
                 "List_Roles - 6": 6,
                 "List_Routes - 8": 8,
                 "List_Users - 2": 2,
+                "twilio_token_rotate - 41": 41,
                 "Update_Address - 34": 34,
                 "Update_Credit_Status - 26": 26,
                 "Update_Customer - 22": 22,
                 "Update_Equipment - 30": 30,
                 "Update_People - 17": 17,
+                "Update_Phone_Number - 39": 39,
+                "Update_Tag - 42": 42,
                 "Update_User - 7": 7,
                 "User_Signin - 1": 1,
                 "User_Signout - 19": 19
@@ -5571,7 +6898,7 @@ fetch(url, {
 <h3>HTTP Request</h3>
 <p><code>GET api/v1/routes</code></p>
 <!-- END_392f39a571495220f725e466d873f08b -->
-<!-- START_bc0f2a216f00c2aa2122a1a7be9ad77b -->
+<!-- START_5801090f750b2ce9f663ab6aa53090e0 -->
 <h2>{PUT} default_user/{company}/v1/api</h2>
 <p>This endpoint is exclusively to re-enable the default user specified
 it should be used when for some reason ALL users in a company are locked out
@@ -5580,20 +6907,19 @@ or at least one person doesn&#039;t have all rights.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/1/default_user/1" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/1/defaultuser/1" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "secret-token: Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "secret-token: HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/1/default_user/1"
+    "https://project.dsfellowship.com/api/v1/1/defaultuser/1"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "secret-token": "Rm$6fDJn=BHuSyR$EJcCn2GyKcl2Mx+=ztF?pcUgR2jQT+?w",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "secret-token": "HR1O3+JO.8fUGBTR24NR1YQYSw9UtFOdos?zXdpa$ZFs+ra8",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -5608,7 +6934,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Default User Enabled",
     "user": {
-        "id": "57",
+        "id": "1",
         "username": "default",
         "company_id": "1",
         "project_name": "project2",
@@ -5616,8 +6942,8 @@ fetch(url, {
     }
 }</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT api/v1/{company}/default_user/{default_user}</code></p>
-<p><code>PATCH api/v1/{company}/default_user/{default_user}</code></p>
+<p><code>PUT api/v1/{company}/defaultuser/{defaultuser}</code></p>
+<p><code>PATCH api/v1/{company}/defaultuser/{defaultuser}</code></p>
 <h4>URL Parameters</h4>
 <table>
 <thead>
@@ -5640,7 +6966,7 @@ fetch(url, {
 </tr>
 </tbody>
 </table>
-<!-- END_bc0f2a216f00c2aa2122a1a7be9ad77b -->
+<!-- END_5801090f750b2ce9f663ab6aa53090e0 -->
 <h1>Universal Objects</h1>
 <!-- START_88fd2695ee6fa84ecd268c1eb91a3831 -->
 <h2>{PUT} {people}/peoples/v1/api</h2>
@@ -5648,22 +6974,22 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/peoples/28" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/peoples/11" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"first_name":"Bobby","last_name":"Grillman","title":"The Founder","description":"Amazing Biceps","email":"Bob@amazingbiceps.com"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/peoples/28"
+    "https://project.dsfellowship.com/api/v1/peoples/11"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -5687,7 +7013,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "People Updated",
     "People": {
-        "id": "28",
+        "id": "11",
         "first_name": "Bobby",
         "last_name": "Grillman",
         "title": "The Founder",
@@ -5767,13 +7093,12 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/peoples/28?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/peoples/11?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/peoples/28"
+    "https://project.dsfellowship.com/api/v1/peoples/11"
 );
 
 let params = {
@@ -5783,10 +7108,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -5844,22 +7169,22 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://project.dsfellowship.com/api/v1/addresses/26" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/addresses/11" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
     -d '{"description":"Physical","city":"Sand Iago","state":"OR","street1":"1234 NW Front St","street2":"Suite 203","zip":"97123","lat":"123.000001254","lng":"-312.45675","url":"","google_id":""}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/addresses/26"
+    "https://project.dsfellowship.com/api/v1/addresses/11"
 );
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 let body = {
@@ -5888,7 +7213,7 @@ fetch(url, {
 <pre><code class="language-json">{
     "message": "Address Updated",
     "Address": {
-        "id": "26",
+        "id": "11",
         "description": "Physical",
         "name": "",
         "street1": "1234 NW Front St",
@@ -6003,13 +7328,12 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://project.dsfellowship.com/api/v1/addresses/26?active_status=" \
-    -H "Content-Type: application/json" \
+    "https://project.dsfellowship.com/api/v1/addresses/11?active_status=" \
     -H "Accept: application/json" \
-    -H "client-id: BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK" \
-    -H "User-Access-Token: JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD"</code></pre>
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://project.dsfellowship.com/api/v1/addresses/26"
+    "https://project.dsfellowship.com/api/v1/addresses/11"
 );
 
 let params = {
@@ -6019,10 +7343,10 @@ Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
-    "Content-Type": "application/json",
     "Accept": "application/json",
-    "client-id": "BTR.5pDNVGHo$S4Qh?Lqu5Qozlm.4GIK",
-    "User-Access-Token": "JdYjfzG6oUw$vnkKh$jqXylj7bw4.AaZ5tGiR1wSqBxjD",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
 };
 
 fetch(url, {
@@ -6074,6 +7398,373 @@ fetch(url, {
 </tbody>
 </table>
 <!-- END_6be3601e0e26cb2c00bffdad74949b0e -->
+<!-- START_bc9cb4c2371521e7e1379696effcfa43 -->
+<h2>{PUT} {tag}/tags/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "https://project.dsfellowship.com/api/v1/tags/6" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"tag_name":"5eb7a0d172bb0"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/tags/6"
+);
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+let body = {
+    "tag_name": "5eb7a0d172bb0"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Tag Updated",
+    "Tag": {
+        "id": "6",
+        "name": "5eb7a0d172bb0",
+        "company_id": "1",
+        "object_table_name": "Customers"
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/v1/tags/{tag}</code></p>
+<p><code>PATCH api/v1/tags/{tag}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag_name</code></td>
+<td>string</td>
+<td>required</td>
+<td>{string}</td>
+</tr>
+</tbody>
+</table>
+<!-- END_bc9cb4c2371521e7e1379696effcfa43 -->
+<!-- START_a5d0790b7aa15c5f66eac1ae30c9a136 -->
+<h2>{DELETE} {tag}/tags/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "https://project.dsfellowship.com/api/v1/tags/6?active_status=" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/tags/6"
+);
+
+let params = {
+    "active_status": "",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Tag Deleted"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/v1/tags/{tag}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active_status</code></td>
+<td>required</td>
+<td>{bool} When true object will be marked inactive.  When false the object will be deleted.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_a5d0790b7aa15c5f66eac1ae30c9a136 -->
+<!-- START_18dce138f62ceade24d48d10e034bdf8 -->
+<h2>{PUT} {phonenumber}/phonenumbers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "https://project.dsfellowship.com/api/v1/phonenumbers/2" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe" \
+    -H "Content-Type: application/json" \
+    -d '{"description":"cell","area_code":"503","prefix":"828","suffix":"7180","ext":"1234","country_code":"1"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/phonenumbers/2"
+);
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+let body = {
+    "description": "cell",
+    "area_code": "503",
+    "prefix": "828",
+    "suffix": "7180",
+    "ext": "1234",
+    "country_code": "1"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Phone Number Updated",
+    "Phone Number": {
+        "id": "2",
+        "description": "cell",
+        "country_code": 1,
+        "area_code": 503,
+        "prefix": 828,
+        "suffix": 7180,
+        "ext": 1234,
+        "type": "mobile",
+        "carrier": "Verizon Wireless",
+        "company_id": "1"
+    }
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/v1/phonenumbers/{phonenumber}</code></p>
+<p><code>PATCH api/v1/phonenumbers/{phonenumber}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phonenumber</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>optional</td>
+<td>{string}</td>
+</tr>
+<tr>
+<td><code>area_code</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>suffix</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>ext</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+<tr>
+<td><code>country_code</code></td>
+<td>int</td>
+<td>optional</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<!-- END_18dce138f62ceade24d48d10e034bdf8 -->
+<!-- START_f6d874671d4ebba08364ec4dca2ff7af -->
+<h2>{DELETE} {phonenumber}/phonenumbers/v1/api</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "https://project.dsfellowship.com/api/v1/phonenumbers/2?active_status=" \
+    -H "Accept: application/json" \
+    -H "client-id: 1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT" \
+    -H "User-Access-Token: c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://project.dsfellowship.com/api/v1/phonenumbers/2"
+);
+
+let params = {
+    "active_status": "",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Accept": "application/json",
+    "client-id": "1m4m46l7SoSj5R.M4NS8$gf=yn?MtqkT",
+    "User-Access-Token": "c?Vn2mNbUmKF2v?dgzbPgRsjQxzv$WmbBHQfGo=mITTfe",
+    "Content-Type": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (201):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Phone Number Deleted"
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/v1/phonenumbers/{phonenumber}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phonenumber</code></td>
+<td>required</td>
+<td>{int}</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>active_status</code></td>
+<td>required</td>
+<td>{bool} When true object will be marked inactive.  When false the object will be deleted.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_f6d874671d4ebba08364ec4dca2ff7af -->
       </div>
       <div class="dark-box">
                         <div class="lang-selector">

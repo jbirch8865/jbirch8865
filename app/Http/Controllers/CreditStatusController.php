@@ -16,14 +16,14 @@ class CreditStatusController extends Controller
         $this->toolbelt = new \Test_Tools\toolbelt;
     }
     /**
-     * {GET} credit_statuses/v1/api
+     * {GET} creditstatuses/v1/api
      */
     public function index()
     {
         return $this->toolbelt->Get_Credit_Statuses()->Get_All_Objects('Credit_Status',app()->request);
     }
     /**
-     * {POST} credit_statuses/v1/api
+     * {POST} creditstatuses/v1/api
      */
     public function store(Request $request)
     {
@@ -36,7 +36,7 @@ class CreditStatusController extends Controller
         'Credit_Status' => $this->toolbelt->Get_Credit_Status(2)->Get_API_Response_Collection()],$request);
     }
     /**
-     * {PUT} {credit_status}/credit_statuses/v1/api
+     * {PUT} {creditstatus}/credit_statuses/v1/api
      */
     public function update(Request $request, $id)
     {
@@ -50,7 +50,7 @@ class CreditStatusController extends Controller
         'Credit_Status' => $this->toolbelt->Get_Credit_Status(3)->Get_API_Response_Collection()],$request);
     }
     /**
-     * {DELETE} {credit_status}/credit_statuses/v1/api
+     * {DELETE} {creditstatus}/credit_statuses/v1/api
      */
     public function destroy($id)
     {

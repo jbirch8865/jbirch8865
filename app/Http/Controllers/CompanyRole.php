@@ -20,7 +20,7 @@ class CompanyRole extends Controller
         $this->toolbelt = new \Test_Tools\toolbelt;
     }
     /**
-     * {GET} roles/v1/api
+     * {GET} company_roles/v1/api
      *
      */
     public function index(Request $request)
@@ -74,7 +74,7 @@ class CompanyRole extends Controller
 
     }
     /**
-     * {POST} roles/v1/api
+     * {POST} company_roles/v1/api
      *
      * So a company role is just a company and a name
      * However, in order to create a company you need to provide
@@ -133,7 +133,7 @@ class CompanyRole extends Controller
     }
 
     /**
-     * {PUT} roles/v1/api
+     * {PUT} company_roles/v1/api
      *
      * This will recreate the role with the provided modal
      * Anything previous will be deleted so make sure this
@@ -174,7 +174,7 @@ class CompanyRole extends Controller
                 $this->Process_By_Route_ID($route_info,$role);
             }else
             {
-                $toolbelt = new \Test_Tooles\toolbelt;
+                $toolbelt = new \Test_Tools\toolbelt;
                 $toolbelt->Get_Routes()->Query_Single_Table(['id'],false,"WHERE `module` = '".$route_info['module']."'");
                 while($row = $toolbelt->Get_Routes()->Get_Queried_Data())
                 {
@@ -191,7 +191,7 @@ class CompanyRole extends Controller
     }
 
     /**
-     * {DELETE} roles/v1/api
+     * {DELETE} company_roles/v1/api
      */
     public function destroy($role_id)
     {
