@@ -39,7 +39,7 @@ class CompanyController extends Controller
      */
     public function index(Request $request)
     {
-        return $this->toolbelt->Get_Companies()->Get_All_Objects('Company',$request);
+        return $this->toolbelt->tables->Get_Companies()->Get_All_Objects('Company',$request);
     }
 
     /**
@@ -53,7 +53,7 @@ class CompanyController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'company_name' => ['required','max:'.$this->toolbelt->Get_Companies()->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->Get_Companies()->Get_Column('company_name'))]
+            'company_name' => ['required','max:'.$this->toolbelt->tables->Get_Companies()->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->tables->Get_Companies()->Get_Column('company_name'))]
         ]);
         $company = new \app\Helpers\Company;
         $company->Set_Company_Name($request->input('company_name'));
@@ -76,7 +76,7 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $this->helperprovider->Validate_Uri_Int_Parameter('company',$this->toolbelt->Get_Companies()->Get_Column('id'));
+        $this->helperprovider->Validate_Uri_Int_Parameter('company',$this->toolbelt->tables->Get_Companies()->Get_Column('id'));
         $company = new Company;
         $company->Load_Object_By_ID(app()->request->company);
         $company->Delete_Active_Record();

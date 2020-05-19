@@ -3,6 +3,7 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Test_Tools\Toolbelt;
 
 class Does_This_Exist_In_Context implements Rule
 {
@@ -25,22 +26,23 @@ class Does_This_Exist_In_Context implements Rule
         {
             $only_active_exists = true;
         }
+        $toolbelt = new Toolbelt;
         if(!$include_inactive)
         {
             if($all_exists && !$only_active_exists)
             {
-                Response_422(['message' => 'Sorry '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().' is currently disabled.'],app()->request)->send();
+                $toolbelt->functions->Response_422(['message' => 'Sorry '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().' is currently disabled.'],app()->request)->send();
                 exit();
             }elseif(!$all_exists)
             {
-                Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
+                $toolbelt->functions->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
                 exit();
             }
         }else
         {
             if(!$all_exists)
             {
-                Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
+                $toolbelt->functions->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
                 exit();
             }
         }

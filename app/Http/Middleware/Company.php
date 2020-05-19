@@ -17,7 +17,7 @@ class Company
     public function handle($request, Closure $next)
     {
         $toolbelt = new \Test_Tools\toolbelt;
-        $toolbelt->Get_Company(false);
+        $toolbelt->objects->Get_Company(false);
         return $next($request);
     }
 }

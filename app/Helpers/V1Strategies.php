@@ -1,5 +1,6 @@
 <?php
 
+use app\Helpers\Company;
 use \app\Helpers\Route as HelpersRoute;
 use Faker\UniqueGenerator;
 use Illuminate\Routing\Route;
@@ -97,6 +98,7 @@ class Add_URI_Parameters extends Strategy
         global $documentation_company_id_to_delete;
         global $documentation_customer_phone_number_id_to_delete;
         global $documentation_tag_tag_id_to_delete;
+        global $documentation_customer_tag_id_to_delete;
         if($route->named('Delete_User'))
         {
             $array['user'] = [
@@ -123,7 +125,7 @@ class Add_URI_Parameters extends Strategy
             ];
         }elseif($route->named('Delete_Role') || $route->named('Edit_Role'))
         {
-            $array['role'] = [
+            $array['company_role'] = [
             'type' => 'int',
             'description' => '{int}',
             'required' => true,
@@ -153,7 +155,7 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $documentation_company_id_to_delete
             ];
-        }elseif($route->named('Update_Customer') || $route->named('Delete_Customer') || $route->named('List_Customer_Addresses') || $route->named('Create_Customer_Address') || $route->named('Create_Customer_Phone_Number') || $route->named('List_Customer_Phone_Numbers'))
+        }elseif($route->named('Update_Customer') || $route->named('Delete_Customer') || $route->named('List_Customer_Addresses') || $route->named('Create_Customer_Address') || $route->named('Create_Customer_Phone_Number') || $route->named('List_Customer_Phone_Numbers') || $route->named('Add_Tag_To_Customer') || $route->named('Remove_Tag_From_Customer') || $route->named('List_Tags_On_Customer'))
         {
             $array['customer'] = [
                 'type' => 'int',
@@ -161,7 +163,7 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $documentation_customer_id_to_delete
             ];
-        }elseif($route->named('Update_Tag') || $route->named('Delete_Tag'))
+        }elseif($route->named('Update_Tag') || $route->named('Delete_Tag') || $route->named('Add_Role_To_Tag') || $route->named('List_Roles_On_Tag') || $route->named('Remove_Role_From_Tag'))
         {
             $array['tag'] = [
                 'type' => 'int',
@@ -201,6 +203,15 @@ class Add_URI_Parameters extends Strategy
                 'required' => true,
                 'value' => $documentation_customer_phone_number_id_to_delete
             ];
+        }elseif($route->named('Add_Tag_To_Tag') || $route->named('List_Tags_On_Tag') || $route->named('Remove_Tag_From_Tag'))
+        {
+            $array['tag'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_customer_tag_id_to_delete
+            ];
+
         }
         return $array;
     }
@@ -271,9 +282,12 @@ class Add_Post_Data extends Strategy
 {
     public function __invoke(Route $route, \ReflectionClass $controller, \ReflectionMethod $method, array $routeRules, array $context = [])
     {
+        $company = new Company;
+        $company->Load_Object_By_ID(1);
         $array = [];
         global $documentation_credit_status_id_to_delete;
-        global $documentation_customer_id_to_delete;
+        global $documentation_tag_tag_id_to_delete;
+        global $documentation_customer_tag_id_to_delete;
         if($route->named('User_Signin'))
         {
             $toolbelt = new \Test_Tools\toolbelt;
@@ -309,7 +323,7 @@ class Add_Post_Data extends Strategy
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [$toolbelt->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->objects->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Update_User'))
         {
@@ -324,7 +338,7 @@ class Add_Post_Data extends Strategy
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [$toolbelt->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->objects->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Create_Company'))
         {
@@ -603,6 +617,40 @@ class Add_Post_Data extends Strategy
             'required' => true,
             'value' => "Concrete"
            ];
+        }elseif($route->named('Create_Tag_Tag'))
+        {
+           $array['tag_name'] = [
+            'type' => 'string',
+            'description' => '{string}',
+            'required' => true,
+            'value' => "Staff"
+           ];
+        }elseif($route->named('Add_Role_To_Tag') || $route->named('Remove_Role_From_Tag'))
+        {
+           $array['role'] = [
+            'type' => 'int',
+            'description' => '{int}',
+            'required' => true,
+            'value' => $company->Get_Master_Role()->Get_Verified_ID()
+           ];
+           $array['get'] = [
+            'type' => 'bool',
+            'description' => '{bool}',
+            'required' => false,
+            'value' => false
+           ];
+           $array['post'] = [
+            'type' => 'bool',
+            'description' => '{bool}',
+            'required' => false,
+            'value' => true
+           ];
+           $array['destroy'] = [
+            'type' => 'bool',
+            'description' => '{bool}',
+            'required' => false,
+            'value' => true
+           ];
         }elseif($route->named('Create_Customer_Phone_Number'))
         {
             $array['description'] = [
@@ -741,6 +789,24 @@ class Add_Post_Data extends Strategy
             'required' => false,
             'value' => '1'
            ];
+        }elseif($route->named('Add_Tag_To_Tag')|| $route->named('Remove_Tag_From_Tag'))
+        {
+            $array['addtag'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_tag_tag_id_to_delete
+            ];
+
+        }elseif($route->named('Add_Tag_To_Customer') || $route->named('Remove_Tag_From_Customer'))
+        {
+            $array['addtag'] = [
+                'type' => 'int',
+                'description' => '{int}',
+                'required' => true,
+                'value' => $documentation_customer_tag_id_to_delete
+            ];
+
         }
         return $array;
     }

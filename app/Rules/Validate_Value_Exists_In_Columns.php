@@ -28,15 +28,15 @@ class Validate_Value_Exists_In_Columns implements Rule
         {
             if($key === array_key_first($this->columns))
             {
-                $toolbelt->$table_name->LimitBy($column->Equals($column->Get_Field_Value()));
+                $toolbelt->tables->$table_name->LimitBy($column->Equals($column->Get_Field_Value()));
             }else
             {
-                $toolbelt->$table_name->AndLimitBy($column->Equals($column->Get_Field_Value()));
+                $toolbelt->tables->$table_name->AndLimitBy($column->Equals($column->Get_Field_Value()));
             }
         }
-        $toolbelt->$table_name->AndLimitBy($this->column->Equals($value));
-        $toolbelt->$table_name->Query_Table(['id']);
-        if($toolbelt->$table_name->Get_Number_Of_Rows_In_Query() == 0)
+        $toolbelt->tables->$table_name->AndLimitBy($this->column->Equals($value));
+        $toolbelt->tables->$table_name->Query_Table(['id']);
+        if($toolbelt->tables->$table_name->Get_Number_Of_Rows_In_Query() == 0)
         {
             return false;
         }else

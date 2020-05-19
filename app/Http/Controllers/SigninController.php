@@ -26,9 +26,9 @@ class SigninController extends Controller
      */
     public function store(Request $request,int $company_id)
     {
-        $this->toolbelt->Get_Program_Session(true);
-        return Response_201([
-            'Program_Session' => $this->toolbelt->Get_Program_Session(true)->Get_API_Response_Collection()
+        $this->toolbelt->objects->Get_Program_Session(true);
+        return $this->toolbelt->functions->Response_201([
+            'Program_Session' => $this->toolbelt->objects->Get_Program_Session(true)->Get_API_Response_Collection()
         ],$request);
     }
 
@@ -38,23 +38,23 @@ class SigninController extends Controller
      */
     public function destroy($co,$user_name)
     {
-        $username = $this->toolbelt->dblink->dblink->Escape_String($user_name);
-        if($this->toolbelt->Get_Program_Session()->Get_Username() != $username)
+        $username = $this->toolbelt->tables->dblink->dblink->Escape_String($user_name);
+        if($this->toolbelt->objects->Get_Program_Session()->Get_Username() != $username)
         {
-            return Response_422(['message' => 'This user doesn\'t appear to belong to the user-access-token'],app()->request);
+            return $this->toolbelt->functions->Response_422(['message' => 'This user doesn\'t appear to belong to the user-access-token'],app()->request);
         }
-        $this->toolbelt->Get_Users()->LimitBy($this->toolbelt->Get_Users()->Get_Column('company_id')->Equals($this->toolbelt->Get_Company()->Get_Verified_ID()));
-        $this->toolbelt->Get_Users()->AndLimitBy($this->toolbelt->Get_Users()->Get_Column('username')->Equals($username));
-        $this->toolbelt->Get_Users()->Query_Table(['id']);
-        $user_id = $this->toolbelt->Get_Users()->Get_Queried_Data();
+        $this->toolbelt->tables->Get_Users()->LimitBy($this->toolbelt->tables->Get_Users()->Get_Column('company_id')->Equals($this->toolbelt->objects->Get_Company()->Get_Verified_ID()));
+        $this->toolbelt->tables->Get_Users()->AndLimitBy($this->toolbelt->tables->Get_Users()->Get_Column('username')->Equals($username));
+        $this->toolbelt->tables->Get_Users()->Query_Table(['id']);
+        $user_id = $this->toolbelt->tables->Get_Users()->Get_Queried_Data();
         $user_id = $user_id['id'];
-        $this->toolbelt->Get_Programs_Have_Sessions()->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
-        $access_token = $this->toolbelt->Get_Programs_Have_Sessions()->Get_Queried_Data();
+        $this->toolbelt->tables->Get_Programs_Have_Sessions()->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
+        $access_token = $this->toolbelt->tables->Get_Programs_Have_Sessions()->Get_Queried_Data();
         $access_token = $access_token['access_token'];
         $program_session = new \app\Helpers\Program_Session;
         $program_session->Load_Session_By_Access_Token($access_token);
         $program_session->Revoke_Session();
-        return Response_201(['message' => 'Session revoked',
+        return $this->toolbelt->functions->Response_201(['message' => 'Session revoked',
             'Program_Session' => $program_session->Get_API_Response_Collection()
         ],app()->request);
     }

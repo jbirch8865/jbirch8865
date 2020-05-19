@@ -29,16 +29,16 @@ class UsersController extends Controller
      */
     public function index(Request $request)
     {
-        $company = $this->toolbelt->Get_Company();
-        $this->toolbelt->Get_Users()->Query_Table(['username'],true);
+        $company = $this->toolbelt->objects->Get_Company();
+        $this->toolbelt->tables->Get_Users()->Query_Table(['username'],true);
         $users = array();
         $count = 0;
-        While($row = $this->toolbelt->Get_Users()->Get_Queried_Data())
+        While($row = $this->toolbelt->tables->Get_Users()->Get_Queried_Data())
         {
             $user = new \app\Helpers\User($row['username'],'skip_check',$company,false,$request->input('include_disabled',false));
             $users[$row['username']] = $user->Get_API_Response_Collection();
         }
-        return Response_200([
+        return $this->toolbelt->functions->Response_200([
             'message' => array('Users' => $users)
         ],$request);
     }
@@ -52,13 +52,13 @@ class UsersController extends Controller
     {
         $request->validate([
             'company_roles' => ['required','array'],
-            'company_roles.*.id' => ['int','required',new Validate_Value_Exists_In_Column($this->toolbelt->Get_Company_Roles()->Get_Column('id'))]
+            'company_roles.*.id' => ['int','required',new Validate_Value_Exists_In_Column($this->toolbelt->tables->Get_Company_Roles()->Get_Column('id'))]
         ]);
         if($request->user == 'default')
         {
-            return Response_422(['message' => 'Default user already created'],$request);
+            return $this->toolbelt->functions->Response_422(['message' => 'Default user already created'],$request);
         }
-        $user = $this->toolbelt->Get_User(2);
+        $user = $this->toolbelt->objects->Get_User(2);
         $user->Remove_All_Roles();
         ForEach($request->input('company_roles') as $company_role)
         {
@@ -66,7 +66,7 @@ class UsersController extends Controller
             $role->Load_Object_By_ID($company_role['id']);
             $user->Assign_Company_Role($role);
         }
-        return Response_201([
+        return $this->toolbelt->functions->Response_201([
             'message' => 'User successfully created or already exists with that password',
             'user' => $user->Get_API_Response_Collection()
         ],$request);
@@ -86,11 +86,11 @@ class UsersController extends Controller
     public function update(Request $request, $id)
     {
         app()->request->validate([
-            'new_password' => ['Max:'.$this->toolbelt->Get_Users()->Get_Column('verified_hashed_password')->Get_Data_Length()],
+            'new_password' => ['Max:'.$this->toolbelt->tables->Get_Users()->Get_Column('verified_hashed_password')->Get_Data_Length()],
             'company_roles' => ['Required','Array'],
-            'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->Get_Company_Roles()->Get_Column('id'))]
+            'company_roles.*.id' => ['Required','Integer','required_with:company_roles',new Validate_Value_Exists_In_Column($this->toolbelt->tables->Get_Company_Roles()->Get_Column('id'))]
         ]);
-        $user = $this->toolbelt->Get_User(3);
+        $user = $this->toolbelt->objects->Get_User(3);
         $user->Change_Password($request->input('new_password'));
         $user->Remove_All_Roles();
         ForEach($request->input('company_roles') as $company_role)
@@ -100,7 +100,7 @@ class UsersController extends Controller
             $user->Assign_Company_Role($role);
         }
         $user->Set_Active_Status(true);
-        return Response_201(['message' => 'User successfully updated',
+        return $this->toolbelt->functions->Response_201(['message' => 'User successfully updated',
         'user' => $user->Get_API_Response_Collection()],$request);
     }
     /**
@@ -109,9 +109,9 @@ class UsersController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $user = $this->toolbelt->Get_User(3);
+        $user = $this->toolbelt->objects->Get_User(3);
         $user->Delete_Active_Record();
-        return Response_201(['message' => 'User Successfully Deleted/Disabled',
+        return $this->toolbelt->functions->Response_201(['message' => 'User Successfully Deleted/Disabled',
         'user' => $user->Get_API_Response_Collection()],$request);
 
     }
