@@ -22,9 +22,9 @@ class RouteController extends Controller
      */
     public function index()
     {
-        return $this->toolbelt->functions->Response_200([
+        return $this->toolbelt->Use_Functions()->Response_200([
             'message' => 'List of Current Routes',
-            'Routes' => $this->toolbelt->tables->Get_Routes()->Get_All_Objects('Route',app()->request)
+            'Routes' => $this->toolbelt->Use_Tables()->Get_Routes()->Get_All_Objects('Route',app()->request)
         ],app()->request);
     }
 }

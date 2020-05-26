@@ -35,7 +35,7 @@ class Add_Secret_ID_Header extends Strategy
         if($cur_route->Am_I_Implicitly_Allowed())
         {
             $toolbelt = new \Test_Tools\toolbelt;
-            $array['secret-token'] = $toolbelt->cConfigs->Get_Secret_ID();
+            $array['secret-token'] = $toolbelt->Use_cConfigs()->Get_Secret_ID();
         }
         return $array;
     }
@@ -48,7 +48,7 @@ class Add_Client_ID_Header extends Strategy
         $array = [];
         if ($route->uri() != 'doc.json') {
             $toolbelt = new \Test_Tools\toolbelt;
-            $array['client-id'] = $toolbelt->cConfigs->Get_Client_ID();
+            $array['client-id'] = $toolbelt->Use_cConfigs()->Get_Client_ID();
         }
         return $array;
     }
@@ -301,7 +301,7 @@ class Add_Post_Data extends Strategy
                 'type' => 'string',
                 'description' => '{string}',
                 'required' => true,
-                'value' => $toolbelt->cConfigs->Get_Client_ID()
+                'value' => $toolbelt->Use_cConfigs()->Get_Client_ID()
             ];
 
         }elseif($route->named('Create_User'))
@@ -317,13 +317,13 @@ class Add_Post_Data extends Strategy
                 'type' => 'string',
                 'description' => '{string}',
                 'required' => true,
-                'value' => $toolbelt->cConfigs->Get_Client_ID()
+                'value' => $toolbelt->Use_cConfigs()->Get_Client_ID()
             ];
             $array['company_roles'] = [
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [$toolbelt->objects->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->Use_Objects()->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Update_User'))
         {
@@ -332,13 +332,13 @@ class Add_Post_Data extends Strategy
                 'type' => 'string',
                 'description' => '{string}',
                 'required' => false,
-                'value' => $toolbelt->cConfigs->Get_Client_ID()
+                'value' => $toolbelt->Use_cConfigs()->Get_Client_ID()
             ];
             $array['company_roles'] = [
                 'type' => 'array',
                 'description' => '{array}',
                 'required' => true,
-                'value' => [$toolbelt->objects->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
+                'value' => [$toolbelt->Use_Objects()->Get_Company()->Get_Master_Role()->Get_API_Response_Collection()]
             ];
         }elseif($route->named('Create_Company'))
         {
@@ -362,7 +362,7 @@ class Add_Post_Data extends Strategy
                 'required' => true,
                 'value' => uniqid()
            ];
-           $array['Routes_Have_Roles'] = [
+           $array['Roles_Have_Routes'] = [
             'type' => 'array',
             'description' => '{array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.',
             'required' => true,

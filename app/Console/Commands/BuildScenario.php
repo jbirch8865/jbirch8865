@@ -40,6 +40,6 @@ class BuildScenario extends Command
     public function handle()
     {
         $toolbelt = new Toolbelt;
-        $toolbelt->test_cases->Build_Full_Scenario();
+        $toolbelt->Use_Test_Cases()->Build_Full_Scenario();
     }
 }

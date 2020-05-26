@@ -35,7 +35,7 @@ class EmployeesController extends Controller
         $this->toolbelt->object->Get_Employee(2)->Set_Email(app()->request->input('email',''));
         global $documentation_employee_id_to_delete;
         $documentation_employee_id_to_delete = $this->toolbelt->object->Get_Employee(2)->Get_Verified_ID();
-        return $this->toolbelt->functions->Response_201(['message' => 'Employee Created',
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Employee Created',
         'Employee' => $this->toolbelt->object->Get_Employee(2)->Get_API_Response_Collection()],$request);
     }
 }

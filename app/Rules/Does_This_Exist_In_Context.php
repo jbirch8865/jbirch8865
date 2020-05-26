@@ -31,18 +31,18 @@ class Does_This_Exist_In_Context implements Rule
         {
             if($all_exists && !$only_active_exists)
             {
-                $toolbelt->functions->Response_422(['message' => 'Sorry '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().' is currently disabled.'],app()->request)->send();
+                $toolbelt->Use_Functions()->Response_422(['message' => 'Sorry '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().' is currently disabled.'],app()->request)->send();
                 exit();
             }elseif(!$all_exists)
             {
-                $toolbelt->functions->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
+                $toolbelt->Use_Functions()->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
                 exit();
             }
         }else
         {
             if(!$all_exists)
             {
-                $toolbelt->functions->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
+                $toolbelt->Use_Functions()->Response_422(['message' => 'Sorry I can\'t find '.$this->value.' in context of '.$column->table_dblink->Get_Table_Name().'.'],app()->request)->send();
                 exit();
             }
         }

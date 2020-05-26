@@ -22,30 +22,28 @@ class PeopleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->toolbelt->tables->Get_Peoples()->Get_Column('id')->Set_Field_Value($id);
-        $this->toolbelt->functions->Enable_Disabled_Object($this->toolbelt->tables->Get_Peoples()->Get_Column('id'),new People);
         if(app()->request->input('description',false))
         {
-            $this->toolbelt->objects->Get_People(3)->Set_Description(app()->request->input('description'));
+            $this->toolbelt->Use_Objects()->Get_People(3)->Set_Description(app()->request->input('description'));
         }
         if(app()->request->input('title',false))
         {
-            $this->toolbelt->objects->Get_People(3)->Set_Title(app()->request->input('title'));
+            $this->toolbelt->Use_Objects()->Get_People(3)->Set_Title(app()->request->input('title'));
         }
         if(app()->request->input('first_name',false))
         {
-            $this->toolbelt->objects->Get_People(3)->Set_first_name(app()->request->input('first_name'));
+            $this->toolbelt->Use_Objects()->Get_People(3)->Set_first_name(app()->request->input('first_name'));
         }
         if(app()->request->input('last_name',false))
         {
-            $this->toolbelt->objects->Get_People(3)->Set_Last_Name(app()->request->input('last_name'));
+            $this->toolbelt->Use_Objects()->Get_People(3)->Set_Last_Name(app()->request->input('last_name'));
         }
         if(app()->request->input('email',false))
         {
-            $this->toolbelt->objects->Get_People(3)->Set_Email(app()->request->input('email'));
+            $this->toolbelt->Use_Objects()->Get_People(3)->Set_Email(app()->request->input('email'));
         }
-        return $this->toolbelt->functions->Response_201(['message' => 'People Updated',
-        'People' => $this->toolbelt->objects->Get_People(3)->Get_API_Response_Collection()],$request);
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'People Updated',
+        'People' => $this->toolbelt->Use_Objects()->Get_People(3)->Get_API_Response_Collection()],$request);
     }
 
     /**
@@ -53,14 +51,14 @@ class PeopleController extends Controller
      */
     public function destroy($id)
     {
-        $this->toolbelt->objects->Get_People(1)->Delete_Active_Record();
+        $this->toolbelt->Use_Objects()->Get_People(1)->Delete_Active_Record();
         if(app()->request->input('active_status'))
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'People Disabled',
-            'Employee' => $this->toolbelt->objects->Get_People(1)->Get_API_Response_Collection()],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'People Disabled',
+            'Employee' => $this->toolbelt->Use_Objects()->Get_People(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'People Deleted'],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'People Deleted'],app()->request);
         }
     }
 }

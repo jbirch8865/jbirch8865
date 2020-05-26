@@ -22,19 +22,19 @@ class TagController extends Controller
     public function index(Request $request)
     {
         $tag = new Tag;
-        return $this->toolbelt->tables->Get_Object_Tags($tag)->Get_All_Objects('Tag',$request);
+        return $this->toolbelt->Use_Tables()->Get_Object_Tags($tag)->Get_All_Objects('Tag',$request);
     }
     /**
      * {POST} addtags/tags/v1/api
      */
     public function store(Request $request)
     {
-        $this->toolbelt->objects->Get_Tag(2)->Set_Tag_Name(app()->request->input('tag_name'),false);
-        $this->toolbelt->objects->Get_Tag(2)->Set_Table_Name($this->toolbelt->tables->Tags);
+        $this->toolbelt->Use_Objects()->Get_Tag(2)->Set_Tag_Name(app()->request->input('tag_name'),false);
+        $this->toolbelt->Use_Objects()->Get_Tag(2)->Set_Table_Name($this->toolbelt->Use_Tables()->Tags);
         global $documentation_tag_tag_id_to_delete;
-        $documentation_tag_tag_id_to_delete = $this->toolbelt->objects->Get_Tag(2)->Get_Verified_ID();
-        return $this->toolbelt->functions->Response_201(['message' => 'Tag Tag Created',
-        'Tag_Tag' => $this->toolbelt->objects->Get_Tag(2)->Get_API_Response_Collection()],$request);
+        $documentation_tag_tag_id_to_delete = $this->toolbelt->Use_Objects()->Get_Tag(2)->Get_Verified_ID();
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Tag Tag Created',
+        'Tag_Tag' => $this->toolbelt->Use_Objects()->Get_Tag(2)->Get_API_Response_Collection()],$request);
     }
 
     /**
@@ -44,10 +44,10 @@ class TagController extends Controller
     {
         if(app()->request->input('tag_name',false))
         {
-            $this->toolbelt->objects->Get_Tag(3)->Set_Tag_Name(app()->request->input('tag_name'));
+            $this->toolbelt->Use_Objects()->Get_Tag(3)->Set_Tag_Name(app()->request->input('tag_name'));
         }
-        return $this->toolbelt->functions->Response_201(['message' => 'Tag Updated',
-        'Tag' => $this->toolbelt->objects->Get_Tag(3)->Get_API_Response_Collection()],$request);
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Tag Updated',
+        'Tag' => $this->toolbelt->Use_Objects()->Get_Tag(3)->Get_API_Response_Collection()],$request);
     }
 
     /**
@@ -55,14 +55,14 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        $this->toolbelt->objects->Get_Tag(1)->Delete_Active_Record();
+        $this->toolbelt->Use_Objects()->Get_Tag(1)->Delete_Active_Record();
         if(app()->request->input('active_status'))
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Tag Disabled',
-            'Tag' => $this->toolbelt->objects->Get_Tag(1)->Get_API_Response_Collection()],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Tag Disabled',
+            'Tag' => $this->toolbelt->Use_Objects()->Get_Tag(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Tag Deleted'],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Tag Deleted'],app()->request);
         }
     }
 }

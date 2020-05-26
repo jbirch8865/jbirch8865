@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', $toolbelt->cConfigs->Get_Name_Of_Project()),
+    'name' => env('APP_NAME', $toolbelt->Use_cConfigs()->Get_Name_Of_Project()),
 
     /*
     |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ return [
     |
     */
 
-    'env' => env('APP_ENV', $toolbelt->cConfigs->Get_Environment()),
+    'env' => env('APP_ENV', $toolbelt->Use_cConfigs()->Get_Environment()),
 
     /*
     |--------------------------------------------------------------------------

@@ -24,36 +24,36 @@ class PhoneNumberController extends Controller
         $update = false;
         if(app()->request->input('description',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Description(app()->request->input('description'));
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Description(app()->request->input('description'));
         }
         if(app()->request->input('area_code',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Area_Code(app()->request->input('area_code'),false);
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Area_Code(app()->request->input('area_code'),false);
             $update = true;
         }
         if(app()->request->input('prefix',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Prefix(app()->request->input('prefix'),false);
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Prefix(app()->request->input('prefix'),false);
             $update = true;
         }
         if(app()->request->input('suffix',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Suffix(app()->request->input('suffix'));
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Suffix(app()->request->input('suffix'));
         }
         if(app()->request->input('ext',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Ext(app()->request->input('ext'));
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Ext(app()->request->input('ext'));
         }
         if(app()->request->input('country_code',false))
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Set_Phone_Number_Country_Code(app()->request->input('country_code'));
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Set_Phone_Number_Country_Code(app()->request->input('country_code'));
         }
         if($update)
         {
-            $this->toolbelt->objects->Get_Phone_Number(3)->Create_Object();
+            $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Create_Object();
         }
-        return $this->toolbelt->functions->Response_201(['message' => 'Phone Number Updated',
-        'Phone Number' => $this->toolbelt->objects->Get_Phone_Number(3)->Get_API_Response_Collection()],$request);
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Phone Number Updated',
+        'Phone Number' => $this->toolbelt->Use_Objects()->Get_Phone_Number(3)->Get_API_Response_Collection()],$request);
     }
 
     /**
@@ -61,14 +61,14 @@ class PhoneNumberController extends Controller
      */
     public function destroy($id)
     {
-        $this->toolbelt->objects->Get_Phone_Number(1)->Delete_Active_Record();
+        $this->toolbelt->Use_Objects()->Get_Phone_Number(1)->Delete_Active_Record();
         if(app()->request->input('active_status'))
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Phone Number Disabled',
-            'Address' => $this->toolbelt->objects->Get_Phone_Number(1)->Get_API_Response_Collection()],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Phone Number Disabled',
+            'Address' => $this->toolbelt->Use_Objects()->Get_Phone_Number(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Phone Number Deleted'],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Phone Number Deleted'],app()->request);
         }
     }
 }

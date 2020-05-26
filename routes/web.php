@@ -51,7 +51,7 @@ Route::get('/sdlc', function () {
             ]
     ];
     $toolbelt = new Toolbelt;
-    return $toolbelt->functions->Response_200($steps,app()->request);
+    return $toolbelt->Use_Functions()->Response_200($steps,app()->request);
     //return view('sdlc',compact('steps'));
 });
 

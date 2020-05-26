@@ -26,37 +26,35 @@ class SigninController extends Controller
      */
     public function store(Request $request,int $company_id)
     {
-        $this->toolbelt->objects->Get_Program_Session(true);
-        return $this->toolbelt->functions->Response_201([
-            'Program_Session' => $this->toolbelt->objects->Get_Program_Session(true)->Get_API_Response_Collection()
+        try
+        {
+            $this->toolbelt->Use_Objects()->Get_Program_Session(2)->Create_New_Session($this->toolbelt->Use_Objects()->Get_Program(),$this->toolbelt->Use_Objects()->Get_Company(false),app()->request->input('user'),app()->request->input('password'));
+        } catch (\app\Helpers\Incorrect_Password $e)
+        {
+            return $this->toolbelt->Use_Functions()->Response_401(['message' => 'credentials incorrect.'],app()->request);
+        } catch (\app\Helpers\User_Does_Not_Exist $e)
+        {
+            return $this->toolbelt->Use_Functions()->Response_401(['message' => 'credentials incorrect.'],app()->request);
+        } catch (\Active_Record\Object_Is_Currently_Inactive $e)
+        {
+            return $this->toolbelt->Use_Functions()->Response_401(['message' => 'The user is currently inactive.'],app()->request);
+        }
+        return $this->toolbelt->Use_Functions()->Response_201([
+            'Program_Session' => $this->toolbelt->Use_Objects()->Get_Program_Session(2)->Get_API_Response_Collection()
         ],$request);
     }
 
     /**
-     * {DELETE} {user}/signin/{company}/v1/api
+     * {DELETE} signin/{company}/v1/api
      *
      */
     public function destroy($co,$user_name)
     {
-        $username = $this->toolbelt->tables->dblink->dblink->Escape_String($user_name);
-        if($this->toolbelt->objects->Get_Program_Session()->Get_Username() != $username)
-        {
-            return $this->toolbelt->functions->Response_422(['message' => 'This user doesn\'t appear to belong to the user-access-token'],app()->request);
-        }
-        $this->toolbelt->tables->Get_Users()->LimitBy($this->toolbelt->tables->Get_Users()->Get_Column('company_id')->Equals($this->toolbelt->objects->Get_Company()->Get_Verified_ID()));
-        $this->toolbelt->tables->Get_Users()->AndLimitBy($this->toolbelt->tables->Get_Users()->Get_Column('username')->Equals($username));
-        $this->toolbelt->tables->Get_Users()->Query_Table(['id']);
-        $user_id = $this->toolbelt->tables->Get_Users()->Get_Queried_Data();
-        $user_id = $user_id['id'];
-        $this->toolbelt->tables->Get_Programs_Have_Sessions()->Query_Single_Table(['access_token'],false,"WHERE `user_id` = '".$user_id."'");
-        $access_token = $this->toolbelt->tables->Get_Programs_Have_Sessions()->Get_Queried_Data();
-        $access_token = $access_token['access_token'];
-        $program_session = new \app\Helpers\Program_Session;
-        $program_session->Load_Session_By_Access_Token($access_token);
-        $program_session->Revoke_Session();
-        return $this->toolbelt->functions->Response_201(['message' => 'Session revoked',
-            'Program_Session' => $program_session->Get_API_Response_Collection()
-        ],app()->request);
+        $this->toolbelt->Use_Objects()->Get_Program_Session(1)->Revoke_Session();
+        return $this->toolbelt->Use_Functions()->Response_201([
+            'Program_Session' => $this->toolbelt->Use_Objects()->Get_Program_Session(1)->Get_API_Response_Collection()
+        ]);
+
     }
 
 }

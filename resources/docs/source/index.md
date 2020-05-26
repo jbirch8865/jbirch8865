@@ -3285,7 +3285,7 @@ curl -X POST \
     -H "client-id: 2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7" \
     -H "User-Access-Token: taYC7bvL0xoEJlkLFM8m?3N5cNoXZvlL?tbJMEJgq+NsV" \
     -H "Content-Type: application/json" \
-    -d '{"user":"new_user","password":"2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7","company_roles":[{"id":"102","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"2","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"9","company_id":"1","role_name":"5ebdde4d53e93","active_status":"1"}],"Credit_Statuses":[{"id":"2","credit_status_name":"Good 80","company_id":"1","active_status":"1"}]},"Users_Have_Roles":[{"id":"135","user_id":"1","role_id":"102","Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}}],"Routes_Have_Roles":[{"id":"5057","route_id":"46","role_id":"102","right_id":"5057","Routes":{"id":"46","name":"Add_Role_To_Tag","implicit_allow":"0","module":"Global"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5057","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5058","route_id":"50","role_id":"102","right_id":"5058","Routes":{"id":"50","name":"Add_Tag_To_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5058","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5059","route_id":"48","role_id":"102","right_id":"5059","Routes":{"id":"48","name":"Add_Tag_To_Tag","implicit_allow":"0","module":"Global"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5059","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5060","route_id":"25","role_id":"102","right_id":"5060","Routes":{"id":"25","name":"Create_Credit_Status","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5060","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5061","route_id":"21","role_id":"102","right_id":"5061","Routes":{"id":"21","name":"Create_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5061","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}],"Tags_Have_Roles":[{"tag_id":"56","role_id":"102","get":"0","destroy":"1","post":"1","Tags":{"id":"56","name":"Staff","company_id":"1","object_table_name":"Tags","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"61","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"61","name":"5ebf6d19b6f1c","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"68","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"68","name":"Staff","company_id":"1","object_table_name":"Tags","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"69","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"69","name":"5ebf721e444c4","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"73","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"73","name":"5ebf75afa1d65","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}}]}]}'
+    -d '{"user":"new_user","password":"2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7","company_roles":[{"id":"102","company_id":"1","role_name":"master","active_status":"1","Companies":{"id":"1","company_name":"System","active_status":"1","Company_Configs":[{"id":"2","company_id":"1","config_id":"1","config_value":"UTC","active_status":"1"}],"Company_Roles":[{"id":"9","company_id":"1","role_name":"5ebdde4d53e93","active_status":"1"}],"Credit_Statuses":[{"id":"2","credit_status_name":"Good 80","company_id":"1","active_status":"1"}]},"Users_Have_Roles":[{"id":"135","user_id":"1","role_id":"102","Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}}],"Roles_Have_Routes":[{"id":"5057","route_id":"46","role_id":"102","right_id":"5057","Routes":{"id":"46","name":"Add_Role_To_Tag","implicit_allow":"0","module":"Global"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5057","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5058","route_id":"50","role_id":"102","right_id":"5058","Routes":{"id":"50","name":"Add_Tag_To_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5058","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5059","route_id":"48","role_id":"102","right_id":"5059","Routes":{"id":"48","name":"Add_Tag_To_Tag","implicit_allow":"0","module":"Global"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5059","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5060","route_id":"25","role_id":"102","right_id":"5060","Routes":{"id":"25","name":"Create_Credit_Status","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5060","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}},{"id":"5061","route_id":"21","role_id":"102","right_id":"5061","Routes":{"id":"21","name":"Create_Customer","implicit_allow":"0","module":"CDM"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"},"Rights":{"id":"5061","get":"1","destroy":"1","post":"1","patch":"1","put":"1"}}],"Tags_Have_Roles":[{"tag_id":"56","role_id":"102","get":"0","destroy":"1","post":"1","Tags":{"id":"56","name":"Staff","company_id":"1","object_table_name":"Tags","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"61","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"61","name":"5ebf6d19b6f1c","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"68","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"68","name":"Staff","company_id":"1","object_table_name":"Tags","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"69","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"69","name":"5ebf721e444c4","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}},{"tag_id":"73","role_id":"102","get":"1","destroy":"1","post":"1","Tags":{"id":"73","name":"5ebf75afa1d65","company_id":"1","object_table_name":"Customers","active_status":"1"},"Company_Roles":{"id":"102","company_id":"1","role_name":"master","active_status":"1"}}]}]}'
 
 ```
 
@@ -3353,7 +3353,7 @@ let body = {
                     }
                 }
             ],
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "5057",
                     "route_id": "46",
@@ -3876,7 +3876,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "345",
                     "route_id": "46",
@@ -4044,7 +4044,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "441",
                     "route_id": "46",
@@ -4212,7 +4212,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "849",
                     "route_id": "46",
@@ -4380,7 +4380,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "897",
                     "route_id": "46",
@@ -4548,7 +4548,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "1353",
                     "route_id": "46",
@@ -4716,7 +4716,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "1753",
                     "route_id": "46",
@@ -4884,7 +4884,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "2201",
                     "route_id": "46",
@@ -5052,7 +5052,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "2249",
                     "route_id": "46",
@@ -5220,7 +5220,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "2705",
                     "route_id": "46",
@@ -5388,7 +5388,7 @@ fetch(url, {
                     }
                 ]
             },
-            "Routes_Have_Roles": [
+            "Roles_Have_Routes": [
                 {
                     "id": "2753",
                     "route_id": "46",
@@ -5558,7 +5558,7 @@ curl -X POST \
     -H "client-id: 2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7" \
     -H "User-Access-Token: taYC7bvL0xoEJlkLFM8m?3N5cNoXZvlL?tbJMEJgq+NsV" \
     -H "Content-Type: application/json" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ebf8aa2083e1"}'
+    -d '{"Roles_Have_Routes":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ebf8aa2083e1"}'
 
 ```
 
@@ -5575,7 +5575,7 @@ let headers = {
 };
 
 let body = {
-    "Routes_Have_Roles": [
+    "Roles_Have_Routes": [
         {
             "route_id": "3",
             "Rights": {
@@ -5630,15 +5630,15 @@ fetch(url, {
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `Routes_Have_Roles.*.module` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
-        `Routes_Have_Roles.*.route_id` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
-        `Routes_Have_Roles.*.get` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.post` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.put` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.patch` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.delete` | boolean |  optional  | true allows method false denys method
+    `Roles_Have_Routes.*.module` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
+        `Roles_Have_Routes.*.route_id` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
+        `Roles_Have_Routes.*.get` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.post` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.put` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.patch` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.delete` | boolean |  optional  | true allows method false denys method
         `role_name` | string |  required  | {string}
-        `Routes_Have_Roles` | array |  required  | {array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.
+        `Roles_Have_Routes` | array |  required  | {array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.
     
 <!-- END_8b1cd3229109d7604afa03e922e6852c -->
 
@@ -5658,7 +5658,7 @@ curl -X PUT \
     -H "client-id: 2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7" \
     -H "User-Access-Token: taYC7bvL0xoEJlkLFM8m?3N5cNoXZvlL?tbJMEJgq+NsV" \
     -H "Content-Type: application/json" \
-    -d '{"Routes_Have_Roles":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ebf8aa43bee9"}'
+    -d '{"Roles_Have_Routes":[{"route_id":"3","Rights":{"get":true,"post":false,"patch":false,"put":false,"destroy":false}},{"route_id":"6","Rights":{"get":false,"post":true,"patch":false,"put":false,"destroy":false}}],"role_name":"5ebf8aa43bee9"}'
 
 ```
 
@@ -5675,7 +5675,7 @@ let headers = {
 };
 
 let body = {
-    "Routes_Have_Roles": [
+    "Roles_Have_Routes": [
         {
             "route_id": "3",
             "Rights": {
@@ -5737,15 +5737,15 @@ Parameter | Status | Description
 #### Body Parameters
 Parameter | Type | Status | Description
 --------- | ------- | ------- | ------- | -----------
-    `Routes_Have_Roles.*.module` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles. Example Company
-        `Routes_Have_Roles.*.route_id` | integer |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
-        `Routes_Have_Roles.*.get` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.post` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.put` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.patch` | boolean |  optional  | true allows method false denys method
-        `Routes_Have_Roles.*.delete` | boolean |  optional  | true allows method false denys method
+    `Roles_Have_Routes.*.module` | string |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles. Example Company
+        `Roles_Have_Routes.*.route_id` | integer |  optional  | if route_id is missing then the module name will be used to create rights with multiple roles.
+        `Roles_Have_Routes.*.get` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.post` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.put` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.patch` | boolean |  optional  | true allows method false denys method
+        `Roles_Have_Routes.*.delete` | boolean |  optional  | true allows method false denys method
         `role_name` | string |  required  | {string}
-        `Routes_Have_Roles` | array |  required  | {array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.
+        `Roles_Have_Routes` | array |  required  | {array[array]} Needs to contain a key value pair for each route_id you are linking too, plus a Rights key with an array of get,post,destroy,patch,put keys and their corresponding boolean values you want.
     
 <!-- END_a905afb85b5d8c75078ccd8f099f3b9f -->
 
@@ -5920,7 +5920,7 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     },
-                    "Routes_Have_Roles": [
+                    "Roles_Have_Routes": [
                         {
                             "id": "345",
                             "route_id": "46",
@@ -5939,7 +5939,7 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     },
-                    "Routes_Have_Roles": [
+                    "Roles_Have_Routes": [
                         {
                             "id": "441",
                             "route_id": "46",
@@ -5958,7 +5958,7 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     },
-                    "Routes_Have_Roles": [
+                    "Roles_Have_Routes": [
                         {
                             "id": "849",
                             "route_id": "46",
@@ -5977,7 +5977,7 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     },
-                    "Routes_Have_Roles": [
+                    "Roles_Have_Routes": [
                         {
                             "id": "897",
                             "route_id": "46",
@@ -5996,7 +5996,7 @@ fetch(url, {
                         "company_name": "System",
                         "active_status": "1"
                     },
-                    "Routes_Have_Roles": [
+                    "Roles_Have_Routes": [
                         {
                             "id": "1353",
                             "route_id": "46",
@@ -7634,7 +7634,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7\",\n    \"company_roles\": [\n        {\n            \"id\": \"102\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"9\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"5ebdde4d53e93\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Credit_Statuses\": [\n                    {\n                        \"id\": \"2\",\n                        \"credit_status_name\": \"Good 80\",\n                        \"company_id\": \"1\",\n                        \"active_status\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"135\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"102\",\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Routes_Have_Roles\": [\n                {\n                    \"id\": \"5057\",\n                    \"route_id\": \"46\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5057\",\n                    \"Routes\": {\n                        \"id\": \"46\",\n                        \"name\": \"Add_Role_To_Tag\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Global\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5057\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5058\",\n                    \"route_id\": \"50\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5058\",\n                    \"Routes\": {\n                        \"id\": \"50\",\n                        \"name\": \"Add_Tag_To_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5058\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5059\",\n                    \"route_id\": \"48\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5059\",\n                    \"Routes\": {\n                        \"id\": \"48\",\n                        \"name\": \"Add_Tag_To_Tag\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Global\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5059\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5060\",\n                    \"route_id\": \"25\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5060\",\n                    \"Routes\": {\n                        \"id\": \"25\",\n                        \"name\": \"Create_Credit_Status\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5060\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5061\",\n                    \"route_id\": \"21\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5061\",\n                    \"Routes\": {\n                        \"id\": \"21\",\n                        \"name\": \"Create_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5061\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ],\n            \"Tags_Have_Roles\": [\n                {\n                    \"tag_id\": \"56\",\n                    \"role_id\": \"102\",\n                    \"get\": \"0\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"56\",\n                        \"name\": \"Staff\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Tags\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"61\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"61\",\n                        \"name\": \"5ebf6d19b6f1c\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"68\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"68\",\n                        \"name\": \"Staff\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Tags\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"69\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"69\",\n                        \"name\": \"5ebf721e444c4\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"73\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"73\",\n                        \"name\": \"5ebf75afa1d65\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+                            "raw": "{\n    \"user\": \"new_user\",\n    \"password\": \"2spsZ5sv80r98g=VEI7XmmEwq6xMJNm7\",\n    \"company_roles\": [\n        {\n            \"id\": \"102\",\n            \"company_id\": \"1\",\n            \"role_name\": \"master\",\n            \"active_status\": \"1\",\n            \"Companies\": {\n                \"id\": \"1\",\n                \"company_name\": \"System\",\n                \"active_status\": \"1\",\n                \"Company_Configs\": [\n                    {\n                        \"id\": \"2\",\n                        \"company_id\": \"1\",\n                        \"config_id\": \"1\",\n                        \"config_value\": \"UTC\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Company_Roles\": [\n                    {\n                        \"id\": \"9\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"5ebdde4d53e93\",\n                        \"active_status\": \"1\"\n                    }\n                ],\n                \"Credit_Statuses\": [\n                    {\n                        \"id\": \"2\",\n                        \"credit_status_name\": \"Good 80\",\n                        \"company_id\": \"1\",\n                        \"active_status\": \"1\"\n                    }\n                ]\n            },\n            \"Users_Have_Roles\": [\n                {\n                    \"id\": \"135\",\n                    \"user_id\": \"1\",\n                    \"role_id\": \"102\",\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ],\n            \"Roles_Have_Routes\": [\n                {\n                    \"id\": \"5057\",\n                    \"route_id\": \"46\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5057\",\n                    \"Routes\": {\n                        \"id\": \"46\",\n                        \"name\": \"Add_Role_To_Tag\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Global\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5057\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5058\",\n                    \"route_id\": \"50\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5058\",\n                    \"Routes\": {\n                        \"id\": \"50\",\n                        \"name\": \"Add_Tag_To_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5058\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5059\",\n                    \"route_id\": \"48\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5059\",\n                    \"Routes\": {\n                        \"id\": \"48\",\n                        \"name\": \"Add_Tag_To_Tag\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"Global\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5059\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5060\",\n                    \"route_id\": \"25\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5060\",\n                    \"Routes\": {\n                        \"id\": \"25\",\n                        \"name\": \"Create_Credit_Status\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5060\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                },\n                {\n                    \"id\": \"5061\",\n                    \"route_id\": \"21\",\n                    \"role_id\": \"102\",\n                    \"right_id\": \"5061\",\n                    \"Routes\": {\n                        \"id\": \"21\",\n                        \"name\": \"Create_Customer\",\n                        \"implicit_allow\": \"0\",\n                        \"module\": \"CDM\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Rights\": {\n                        \"id\": \"5061\",\n                        \"get\": \"1\",\n                        \"destroy\": \"1\",\n                        \"post\": \"1\",\n                        \"patch\": \"1\",\n                        \"put\": \"1\"\n                    }\n                }\n            ],\n            \"Tags_Have_Roles\": [\n                {\n                    \"tag_id\": \"56\",\n                    \"role_id\": \"102\",\n                    \"get\": \"0\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"56\",\n                        \"name\": \"Staff\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Tags\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"61\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"61\",\n                        \"name\": \"5ebf6d19b6f1c\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"68\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"68\",\n                        \"name\": \"Staff\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Tags\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"69\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"69\",\n                        \"name\": \"5ebf721e444c4\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                },\n                {\n                    \"tag_id\": \"73\",\n                    \"role_id\": \"102\",\n                    \"get\": \"1\",\n                    \"destroy\": \"1\",\n                    \"post\": \"1\",\n                    \"Tags\": {\n                        \"id\": \"73\",\n                        \"name\": \"5ebf75afa1d65\",\n                        \"company_id\": \"1\",\n                        \"object_table_name\": \"Customers\",\n                        \"active_status\": \"1\"\n                    },\n                    \"Company_Roles\": {\n                        \"id\": \"102\",\n                        \"company_id\": \"1\",\n                        \"role_name\": \"master\",\n                        \"active_status\": \"1\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
                         },
                         "description": "Create a user",
                         "response": []
@@ -7822,7 +7822,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ebf8a53d5f9b\"\n}"
+                            "raw": "{\n    \"Roles_Have_Routes\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ebf8a53d5f9b\"\n}"
                         },
                         "description": "So a company role is just a company and a name\nHowever, in order to create a company you need to provide\nan array of routes and the associated rights you would like\nwith that route.",
                         "response": []
@@ -7862,7 +7862,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"Routes_Have_Roles\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ebf8a5605c2d\"\n}"
+                            "raw": "{\n    \"Roles_Have_Routes\": [\n        {\n            \"route_id\": \"3\",\n            \"Rights\": {\n                \"get\": true,\n                \"post\": false,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        },\n        {\n            \"route_id\": \"6\",\n            \"Rights\": {\n                \"get\": false,\n                \"post\": true,\n                \"patch\": false,\n                \"put\": false,\n                \"destroy\": false\n            }\n        }\n    ],\n    \"role_name\": \"5ebf8a5605c2d\"\n}"
                         },
                         "description": "This will recreate the role with the provided modal\nAnything previous will be deleted so make sure this\nis the complete modal you are expecting",
                         "response": []

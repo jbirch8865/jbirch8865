@@ -16,7 +16,7 @@ class company_access_token
     public function handle($request, Closure $next)
     {
         $toolbelt = new \Test_Tools\toolbelt;
-        $toolbelt->objects->Get_Company();
+        $toolbelt->Use_Objects()->Get_Company();
         return $next($request);
     }
 }

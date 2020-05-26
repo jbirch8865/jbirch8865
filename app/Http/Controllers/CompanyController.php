@@ -28,18 +28,10 @@ class CompanyController extends Controller
      * {GET} companies/v1/api
      *
      * List all companies
-     *
-     * @queryParam include_disabled if set will only return active companies Example: true
-     * @queryParam include_details is a number between 0 and 5 which will return the entire object to the depth you specified default is disabled Example: 2
-     * @queryParam details_offset a number between 0 and infinite that represents which object to start with for objects relating to Companies default is 0 Example: 0
-     * @queryParam details_limit a number between 1 and 25 representing the number of records to return after the offset for related objects default is 1 Example: 1
-     * @queryParam offset a number between 0 and infinite that represents which object to start with default is 0 Example: 0
-     * @queryParam limit a number between 1 and 100 representing the number of records to return after the offset default is 50 Example: 1
-     *
      */
     public function index(Request $request)
     {
-        return $this->toolbelt->tables->Get_Companies()->Get_All_Objects('Company',$request);
+        return $this->toolbelt->Use_Tables()->Get_Companies()->Get_All_Objects('Company',$request);
     }
 
     /**
@@ -52,22 +44,13 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'company_name' => ['required','max:'.$this->toolbelt->tables->Get_Companies()->Get_Column('company_name')->Get_Data_Length(),new Validate_Unique_Value_In_Column($this->toolbelt->tables->Get_Companies()->Get_Column('company_name'))]
-        ]);
-        $company = new \app\Helpers\Company;
-        $company->Set_Company_Name($request->input('company_name'));
+        $password = $this->toolbelt->Use_Objects()->Get_New_Company(2)->Create_Company_With_Users($request->input('company_name'));
         global $documentation_company_id_to_delete;
-        $documentation_company_id_to_delete = $company->Get_Verified_ID();
-        $password = Generate_CSPRNG(14);
-        $user = new \app\Helpers\User('default',$password,$company,true);
-        $user_role = new \app\Helpers\User_Role;
-        $user_role->Set_Role($company->Company_Roles[0],false);
-        $user_role->Set_User($user);
-        return Response_201([
+        $documentation_company_id_to_delete = $this->toolbelt->Use_Objects()->Get_New_Company(2)->Get_Verified_ID();
+        return $this->toolbelt->Use_Functions()->Response_201([
             'message' => 'Company successfully created',
             'master_password' => $password,
-            'company' => $company->Get_API_Response_Collection()
+            'company' => $this->toolbelt->Use_Objects()->Get_New_Company(2)->Get_API_Response_Collection()
         ],$request);
     }
 
@@ -76,17 +59,14 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        $this->helperprovider->Validate_Uri_Int_Parameter('company',$this->toolbelt->tables->Get_Companies()->Get_Column('id'));
-        $company = new Company;
-        $company->Load_Object_By_ID(app()->request->company);
-        $company->Delete_Active_Record();
+        $this->toolbelt->Use_Objects()->Get_New_Company(1)->Delete_Active_Record();
         if(app()->request->input('active_status'))
         {
-            return Response_201(['message' => 'Company Disabled',
-            'Company' => $company->Get_API_Response_Collection()],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Company Disabled',
+            'Company' => $this->toolbelt->Use_Objects()->Get_New_Company(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
-            return Response_201(['message' => 'Company Deleted'],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Company Deleted'],app()->request);
         }
     }
 

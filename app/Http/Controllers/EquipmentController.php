@@ -20,19 +20,18 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        return $this->toolbelt->tables->Get_Equipments()->Get_All_Objects('Equipment',app()->request);
+        return $this->toolbelt->Use_Tables()->Get_Equipments()->Get_All_Objects('Equipment',app()->request);
     }
     /**
      * {POST} equipment/v1/api
      */
     public function store(Request $request)
     {
-        $this->toolbelt->object->Get_Equipment(2);
         $this->toolbelt->object->Get_Equipment(2)->Set_Company($this->toolbelt->object->Get_Company(),false);
         $this->toolbelt->object->Get_Equipment(2)->Set_Equipment_Name(app()->request->input('equipment_name'));
         global $documentation_equipment_id_to_delete;
         $documentation_equipment_id_to_delete = $this->toolbelt->object->Get_Equipment(2)->Get_Verified_ID();
-        return $this->toolbelt->functions->Response_201(['message' => 'Equipment Created',
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Equipment Created',
         'Equipment' => $this->toolbelt->object->Get_Equipment(2)->Get_API_Response_Collection()],$request);
     }
     /**
@@ -40,14 +39,11 @@ class EquipmentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->toolbelt->object->Get_Equipments()->Get_Column('id')->Set_Field_Value($id);
-        $this->toolbelt->functions->Enable_Disabled_Object($this->toolbelt->tables->Get_Equipments()->Get_Column('id'),new Equipment);
-        $this->toolbelt->object->Get_Equipment(3);
         if(app()->request->input('equipment_name',false))
         {
             $this->toolbelt->object->Get_Equipment(3)->Set_Equipment_Name(app()->request->input('equipment_name'));
         }
-        return $this->toolbelt->functions->Response_201(['message' => 'Equipment Updated',
+        return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Equipment Updated',
         'Equipment' => $this->toolbelt->object->Get_Equipment(3)->Get_API_Response_Collection()],$request);
     }
     /**
@@ -55,15 +51,14 @@ class EquipmentController extends Controller
      */
     public function destroy($id)
     {
-    //    $this->toolbelt->Get_Equipment(1);
         $this->toolbelt->object->Get_Equipment(1)->Delete_Active_Record();
         if(app()->request->input('active_status'))
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Equipment Disabled',
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Equipment Disabled',
             'Equipment' => $this->toolbelt->object->Get_Equipment(1)->Get_API_Response_Collection()],app()->request);
         }else
         {
-            return $this->toolbelt->functions->Response_201(['message' => 'Equipment Deleted'],app()->request);
+            return $this->toolbelt->Use_Functions()->Response_201(['message' => 'Equipment Deleted'],app()->request);
         }
     }
 }
