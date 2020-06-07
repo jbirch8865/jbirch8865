@@ -237,7 +237,7 @@ class CompanyServiceProvider extends ServiceProvider
             $tags_have_role = new Tags_Have_Role;
             return $tags_have_role;
         });
-        app()->bind('Create_Tags_Have_Role', function(){
+        app()->bind('Update_Tags_Have_Role', function(){
             $this->toolbelt->Use_Laravel_Toolbelt()->Validate_Post_Int_Field_Required('role',$this->toolbelt->Use_Tables()->Get_Company_Roles()->Get_Column('id'));
             $tag = new Tag;
             $this->toolbelt->Use_Laravel_Toolbelt()->Validate_Uri_Int_Parameter('tag',$this->toolbelt->Use_Tables()->Get_Object_Tags($tag)->Get_Column('id'));

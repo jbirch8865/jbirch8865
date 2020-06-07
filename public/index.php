@@ -48,6 +48,8 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 | and wonderful application we have prepared for them.
 |
 */
+$cConfigs = new \config\ConfigurationFile;
+$cConfigs->Set_Entry_Point_API();
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
 
